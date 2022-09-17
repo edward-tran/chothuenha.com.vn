@@ -1,0 +1,20 @@
+{% if  banners %}
+  <section class="awe-section-9">
+             <section class="brandsection clearfix">
+                <div class="col-lg-12">
+                   <h2 class="title clearfix margin-bottom-30">
+                      <span><span class="cl">{{ heading_title }}</span></span>
+                   </h2>
+                   <div class="slickbrand clearfix">
+                      {% for banner in banners %}
+                      <div>
+                         <div class="item">
+                            <img class="lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaEAAAEqAQMAAACGEX2aAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAACZJREFUaN7twTEBAAAAwiD7pzbFPmAAAAAAAAAAAAAAAAAAAAAQOz7cAAG8Je16AAAAAElFTkSuQmCC" data-src="{{ banner.image }}" alt="{{ banner.title }}"/>
+                         </div>
+                      </div>
+                     {% endfor %}
+                   </div>
+                </div>
+             </section>
+          </section>
+{% endif %}

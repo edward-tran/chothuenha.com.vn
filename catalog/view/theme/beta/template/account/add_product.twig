@@ -1,0 +1,761 @@
+{{header}}
+
+
+<div id="account-product" class="container " ng-controller="addProductCtrl">
+   <div class="page-header">
+   <ul class="breadcrumb">
+      {% for breadcrumb in breadcrumbs %}
+      <li>
+         <a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a>
+      </li>
+      {% endfor %}
+   </ul>
+</div>
+   {% if success %}
+   <div class="alert alert-success alert-dismissible">
+      <i class="fa fa-check-circle">
+      </i> {{ success }}
+   </div>
+   {% endif %}
+   <div class="sc-imcLir cExqpY">
+      <div class="sc-cnDXgy jLoZCb">
+         <div class="sc-iTEgap irNxZq">
+            <div class="sc-fXjxNs krxuIx">
+            
+               <div class="sc-fOVmZe eIvYUl">
+               	<form class="form_add_product" method='post' action='' enctype="multipart/form-data">
+                  <div class="ant-row sc-dJFksB bnWOyC row">
+                     <div class="ant-col sc-NkCfE cPpyiJ col-md-10 offset-md-1">
+                        <div>
+                           <div class="sc-hVubsW iFVGQB">
+                              <h3 class="sc-dlfnbm lhekIy sc-hZffQQ ipTemm" >
+                                 Đăng tin mới
+                                 <div class="sc-fubCfw iAFymC sc-eRKbQR cWmUkR" >Thông tin có dấu <span type="negative" class="sc-iqHYGH hYnvdt">(*)</span> là bắt buộc, không đăng lại tin đã đăng trên www.chothuenha.com.vn.</div>
+                              </h3>
+                              <div class="sc-ibhdcv brUFAe">
+                                 <div class="sc-fMpoBE kaA-dYf">
+
+                                    <div class="row">
+                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                          <div class="form-group required">
+                                             <label class="control-label">Loại hình cho thuê</label>
+                                             <select class="form-control" name="type_id" id="input-type-id" data-placeholder=" --- Không --- ">
+                                                <option value="">-- Chọn loại hình cho thuê --</option>
+                                             </select>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 
+
+                                      <div class="row">
+                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                          <div class="form-group required">
+                                             <label class="control-label">Tỉnh/Thành phố</label>
+                                             <select class="form-control" name="zone_id" id="input-zone-id" data-placeholder=" --- Không --- ">
+                                                <option value="">-- Tỉnh/Thành phố --</option>
+                                             </select>
+                                          </div>
+                                       </div>
+                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                          <div class="form-group required">
+                                             <label class="control-label">Quận/Huyện</label>
+                                    <select class="form-control" name="district_id" id="input-district-id" data-placeholder=" --- Không --- ">
+                                       <option value="">-- Quận/Huyện --</option>
+                                    </select>
+                                          </div>
+                                       </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                          <div class="form-group required">
+                                             <label class="control-label">Phường/Xã</label>
+                                    <select class="form-control" name="ward_id" id="input-ward-id" data-placeholder=" --- Không --- ">
+                                       <option value="">-- Phường/Xã --</option>
+                                    </select>
+                                          </div>
+                                       </div>
+                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                          <div class="form-group required">
+                                             <label class="control-label">Đường phố</label>
+                                                <select class="form-control" name="street_id" id="input-street-id" data-placeholder=" --- Không --- ">
+                                          <option value="">-- Đường phố --</option>
+                                       </select>
+                                          </div>
+                                       </div>
+                                    </div>
+
+                                    <div class="row">
+                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                          <div class="form-group required">
+                                             <label class="control-label">Địa chỉ hiển thị trên tin đăng (Số nhà) </label>
+                                                <input type="text" name="location" id="input-location" placeholder="Số nhà" class="form-control">
+                                          </div>
+                                       </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                          <div class="form-group required">
+                                             <label class="control-label">Vị trí trên bản đồ</label>
+                                                <div class="js-maps" style="height:400px; width: 100%; background-color: #f1f1f1;"><iframe id="maps" width="100%" height="100%" style="border:0" loading="lazy" allowfullscreen="" src="image/data/maps.jpg"></iframe></div>
+                                          </div>
+                                       </div>
+                                    </div>
+
+
+                                    
+                                  
+
+                                    
+
+                           
+
+                                 </div>
+                              </div>
+                           </div>
+
+                           <div class="sc-eCyqne ldmnbh">
+                              <h3 class="sc-dlfnbm lhekIy sc-iYqmuz bIeWuD" >
+                                 Thông tin mô tả
+                              </h3>
+                              <div class="sc-hCCwSF hkPyXW">
+                                <div class="form-group required">
+                                    <label class="control-label">Tiêu đề *</label>
+                                       <textarea class="form-control" name="name" id="input-name" placeholder="VD: Bán nhà riêng 50m2 chính chủ tại Cầu Giấy"></textarea>
+                                       <span>Tối thiểu 30 ký tự, tối đa 99 ký tự</span>
+                                 </div>
+                                 <div class="form-group required">
+                                    <label class="control-label">Mô tả</label>
+                                       <textarea rows="10" class="form-control" name="description" id="input-description" placeholder="Nhập mô tả chung về bất động sản của bạn. Ví dụ: Khu nhà có vị trí thuận lợi, gần công viên, gần trường học ... "></textarea>
+                                       <span>Tối thiểu 30 ký tự, tối đa 3.000 ký tự</span>
+                                 </div>
+
+                                 <div class="form-group required">
+                                          <label class="control-label">Mức giá *</label>
+                                          <input type-id="currency" onkeyup="formatCurrency(this);" type="text" class="form-control" name="price" id="input-price" placeholder="Nhập giá, VD 12000000">
+                                    </div>
+
+                                 <div class="form-group required">
+                                    <label class="control-label">Diện tích căn nhà *</label>
+                                       <input type="number" class="form-control" name="acreage" id="input-acreage" placeholder="Nhập diện tích, VD 80 m2">
+                                 </div>
+
+                                   <div class="row">
+                                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                          <label class="control-label bold">Số phòng ngủ</label>
+                                       </div>
+                                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                          <div class="numbers-row">
+                                             <input class="form-control quantity" value="0" name="bedroom" id="input-bedroom">
+                                          </div>
+                                       </div>
+                                    </div>
+
+                                    <div class="row">
+                                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                          <label class="control-label bold">Số toilet</label>
+                                       </div>
+                                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                          <div class="numbers-row">
+                                          <input class="form-control quantity" value="0" name="bathroom" id="input-bathroom">
+                                          </div>
+                                       </div>
+                                    </div>
+
+                                    <div class="form-group required">
+                                       <label class="control-label">Hướng chính</label>
+                                       <select class="form-control" name="direction_house_id" id="input-direction-house_id" data-placeholder=" --- Không --- ">
+                                          <option value="">-- Chọn hướng chính --</option>
+                                       </select>
+                                    </div>
+
+                                     <div class="sc-lmcoqz hZaHKU">
+                                       <div class="sc-dcxYdx dRpxbW">
+                                          <h3  class="sc-dlfnbm lhekIy">Hình ảnh</h3>
+                                          <div class="sc-eWuggI eoRZvm"></div>
+                                          <div class="sc-gTgzIj fTLLNh">
+                                             <div class="sc-knLdlU gGDRwY">
+                                                <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" font-size="16px">
+                                                   <path fill-rule="evenodd" clip-rule="evenodd" d="M2.25 12C2.25 6.61522 6.61522 2.25 12 2.25C17.3848 2.25 21.75 6.61522 21.75 12C21.75 17.3848 17.3848 21.75 12 21.75C6.61522 21.75 2.25 17.3848 2.25 12ZM12 7.75C10.8917 7.75 9.96738 8.47508 9.72413 9.3771C9.61628 9.77702 9.20465 10.0138 8.80472 9.90595C8.40479 9.7981 8.16802 9.38647 8.27587 8.98654C8.70934 7.37913 10.2678 6.25 12 6.25C14.0801 6.25 15.75 7.87091 15.75 9.90909C15.75 11.3648 14.6776 12.0945 13.9756 12.5722C13.9577 12.5844 13.9399 12.5964 13.9225 12.6083C13.0988 13.1699 12.75 13.4581 12.75 14C12.75 14.4142 12.4142 14.75 12 14.75C11.5858 14.75 11.25 14.4142 11.25 14C11.25 12.6066 12.3013 11.8947 12.9848 11.4319C13.0165 11.4104 13.0475 11.3894 13.0775 11.369C13.8779 10.8232 14.25 10.5071 14.25 9.90909C14.25 8.73398 13.2867 7.75 12 7.75ZM12 16.24C12.4142 16.24 12.75 16.5758 12.75 16.99V17C12.75 17.4142 12.4142 17.75 12 17.75C11.5858 17.75 11.25 17.4142 11.25 17V16.99C11.25 16.5758 11.5858 16.24 12 16.24Z" fill="currentColor"></path>
+                                                </svg>
+                                             </div>
+                                          </div>
+                                       </div>
+
+                                       <div class="sc-ja-dpGc gYusMa">
+                                          <div class="sc-lxjJS jBPyMZ">
+                                             <span type="secondary" class="sc-iqHYGH fwttXz">Tin rao có ảnh sẽ được xem nhiều hơn gấp 10 lần và được nhiều người gọi gấp 5 lần so với tin rao không có ảnh. Hãy đăng ảnh để được giao dịch nhanh chóng!</span><span type="secondary" class="sc-iqHYGH fwttXz">Xem thêm <a href="" target="_blank" rel="noreferrer"><span type="negative" class="sc-dIUggk xEfgI">Quy định đăng tin</span></a> để biết thêm chi tiết.</span>
+                                             <section>
+                                                <div class="input-field">
+                                                   <div tabindex="0">
+                                                       <div id="input-image">
+                                                          
+                                                       </div>
+                                                       <div class="image_upload" id="input-temp-image" style="padding-top: .5rem;">
+                                                          
+                                                       </div>
+                                                   </div>
+                                                </div>
+                                             </section>
+                                          </div>
+                                       </div>
+
+                                       <ul id="display-new-images"></ul>
+                                       <ul id="display-preloaded-images"></ul>
+
+
+                                      
+                                       <div class="sc-fXvjs endHJt sc-dobjRs jkWdUe">
+                                           <h3  class="sc-dlfnbm lhekIy">Video Link (Youtube)</h3>
+                                          <div class="sc-gGTGfU fSjCQg">
+                                             <input autocomplete="off" id="input-video" name="video" maxlength="100" placeholder="VD: https://www.youtube.com/watch?v=303rGAVcCA4" type="text"  class="sc-ihnbgO kgrouh form-control" value="">
+                                          </div>
+                                       </div>
+                                 </div>
+
+
+                              </div>
+                           </div>
+
+                         
+
+                        </div>
+
+
+                        <div class="sc-dkIStl gONGlh">
+                           <div>
+                              <div class="sc-imtDmL iFERIa">
+                                 <div>
+                                    <div class="sc-fHaJjb kuperp">
+                                       <!-- <button type="button" class="sc-kLgntA jXvlyk" ng-click="reviewProduct($event)">
+                                          <div class="sc-iktFzd gaGeRK"><span  class="sc-iwyYcG gBmyGv">Xem trước giao diện</span></div>
+                                       </button> -->
+                                       <button type="button" class="sc-kLgntA hjHBEZ" ng-click="nextAddProduct($event)">
+                                          <div class="sc-iktFzd gaGeRK">
+                                             <span  class="sc-iwyYcG gBmyGv">Tiếp tục</span>
+                                             <span class="sc-hiSbYr huRFSL">
+                                                <div class="sc-gWHgXt ikxKmn">
+                                                   <svg font-size="16px" width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                      <path xmlns="http://www.w3.org/2000/svg" d="M9 20L17 12L9 4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                   </svg>
+                                                </div>
+                                             </span>
+                                          </div>
+                                       </button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+
+                     </div>
+
+                    
+
+
+
+
+                  </div>
+                </form>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+   <div class="ReactModalConfirmProduct ReactModal__Overlay ReactModal__Overlay--after-open modal fade modal_center" tabindex="-1" role="dialog" aria-hidden="true" id="ReactModalConfirmProduct">
+   <div class="modal-dialog">
+      <div class="ReactModal__Content ReactModal__Content--after-open modal-content">
+         <div class="sc-fkubWd hpdicD" style="height: auto; display: flex;">
+            <div class="sc-iuGMqu kKOGoe"><h5 class="sc-eCssSg jNJTkf">Bạn có chắc chắn xác nhận đăng tin?</h5></div>
+            <div class="sc-eCjkpP hpyseS" ng-click="closeModel($event, 'ReactModalConfirmProduct', false)">
+               <svg font-size="24px" width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19 5L5 19" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M19 19L5 5" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+               </svg>
+            </div>
+         </div>
+         
+         <div class="sc-gfHAkt iJDgoh hidden">
+            <div class="sc-cscDqW ckpuwl">
+               <div class="sc-bqyKva kNPgPf confirm_service_name" style="margin-bottom: 8px; word-break: break-all;"></div>
+              <!--  <div class="sc-fuddRA gqDLJn">
+                  <span class="sc-kEjbxe bhKKEC"><span class="confirm_price_service"></span>/tháng</span>
+               </div>
+            -->
+             <!--   <div class="sc-xYrCb eNJDUu"></div>
+               <div class="sc-fuddRA fRRaOG">
+                  <div class="sc-iBPRYJ jfvWqv">Số ngày đăng tin</div>
+                  <div type="secondary" class="sc-iBPRYJ fTqJhL confirm_date_post"></div>
+               </div> -->
+
+               <div class="sc-xYrCb eNJDUu"></div>
+               <div class="sc-fuddRA fRRaOG">
+                  <div class="sc-iBPRYJ jfvWqv">Ngày đăng tin</div>
+                  <!-- <div type="secondary" class="sc-iBPRYJ fTqJhL confirm_from_date"></div> -->
+               </div>
+
+              <!--  <div class="sc-xYrCb eNJDUu"></div>
+               <div class="sc-fuddRA fRRaOG">
+                  <div class="sc-iBPRYJ jfvWqv">Ngày hết hạn</div>
+                  <div type="secondary" class="sc-iBPRYJ fTqJhL confirm_to_date"></div>
+               </div>
+               -->
+               <div class="sc-xYrCb eNJDUu"></div>
+               <div class="sc-fuddRA fRRaOG">
+                  <div class="sc-iBPRYJ jfvWqv">Đơn giá / ngày</div>
+                  <div type="secondary" class="sc-iBPRYJ fTqJhL confirm_price_service"></div>
+               </div>
+            </div>
+            <!-- <div class="sc-dRdNNs btYtPl" style="margin: 8px 0px;">
+               <div class="sc-loxJbH gNsuQT"></div>
+               <div class="sc-cUmtma qwzFA">
+                  <div class="sc-iBPRYJ jfvWqv">VAT (10%)</div>
+                  <div type="tertiary" class="sc-iBPRYJ oLMna">
+                     <span type="secondary" class="sc-idOhPF jOmGtR confirm_price_vat">
+                       
+                     </span>
+               </div>
+
+               </div>
+               <div class="sc-hqeptv jHPrOq"></div>
+               <div>
+                  <div class="sc-cUmtma cMBlQH">
+                     <div class="sc-iBPRYJ jfvWqv">Tổng cộng</div>
+                     <div class="sc-cUmtma fNavVe">
+                        <div class="sc-dQppl cVCjcE confirm_price_finnal"></div>
+                     </div>
+                  </div>
+               </div>
+
+               <div style="text-align: left; margin-top: 16px;"><span type="primary" class="sc-iqHYGH fbfOsb note_post"></span></div>
+
+            </div> -->
+         </div>
+
+         <div class="sc-irOQnY dGmIxJ">
+            <div></div>
+            <div class="sc-dNyEce kYIehs">
+               <button ng-click="closeModel($event, 'ReactModalConfirmProduct', false)" class="sc-kLgntA bwpqkK sc-fWHrfq cXqieI">
+                  <div class="sc-iktFzd gaGeRK"><span class="sc-iwyYcG gBmyGv">Thay đổi</span></div>
+               </button>
+               <button class="sc-kLgntA cIlsIO" ng-click="acceptAddProduct($event)">
+                  <div class="sc-iktFzd gaGeRK"><span class="sc-iwyYcG gBmyGv">Đăng tin</span></div>
+               </button>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+   var country_id = '{{ country_id }}';
+</script>
+
+<script type="text/javascript">
+
+$('#input-type-id').select2({
+   allowClear: true,
+   theme: "bootstrap",
+   cache: true,
+   ajax: { 
+   url: 'index.php?routing=localisation/type/getTypes',
+   dataType: 'json',
+   delay: false,
+   data: function (params) {
+      return {
+         filter_name: params.term, // search term
+         page: params.page
+      };
+   },
+   processResults: function (data, page) {
+      return {
+         results: $.map(data, function (item) {
+            return {
+            text: item.name,
+            id: item.type_id
+            }
+         })
+      };
+   }
+   },
+});
+
+
+
+$('select[name=\'zone_id\']').select2({
+	allowClear: true,
+	theme: "bootstrap",
+	cache: true,
+	ajax: { 
+	url: 'index.php?routing=localisation/zone/getZonesByCountryId&country_id=230',
+	dataType: 'json',
+	delay: false,
+	data: function (params) {
+		return {
+			filter_name: params.term, // search term
+			page: params.page
+		};
+	},
+	processResults: function (data, page) {
+		return {
+			results: $.map(data, function (item) {
+				return {
+				text: item.name,
+				id: item.zone_id
+				}
+			})
+		};
+	}
+	},
+});
+
+
+
+$('select[name=\'post_type_id\']').select2({
+   allowClear: true,
+   theme: "bootstrap",
+   cache: true,
+   ajax: { 
+   url: 'index.php?routing=localisation/post_type/getPostTypes',
+   dataType: 'json',
+   delay: false,
+   data: function (params) {
+      return {
+         filter_name: params.term, // search term
+         page: params.page
+      };
+   },
+   processResults: function (data, page) {
+      return {
+         results: $.map(data, function (item) {
+            return {
+            text: item.name,
+            id: item.post_type_id
+            }
+         })
+      };
+   }
+   },
+});
+
+function formatDate(date) {
+     var d = new Date(date),
+         month = '' + (d.getMonth() + 1),
+         day = '' + d.getDate(),
+         year = d.getFullYear();
+
+     if (month.length < 2) month = '0' + month;
+     if (day.length < 2) day = '0' + day;
+
+     return [year, month, day].join('-');
+ }
+
+$('select[name=\'post_type_id\'], select[name=\'date_post_id\'], input[name=\'from_date\']').on('change', function(){
+   let post_type_id = $('select[name=\'post_type_id\']').val();
+   let date_post_id = $('select[name=\'date_post_id\']').val();
+   let from_date = $('input[name=\'from_date\']').val();
+   $.ajax({
+      url: 'index.php?routing=localisation/post_type/getPriceSerice',
+      type: 'post',
+      data: {
+         post_type_id: post_type_id,
+         date_post_id: date_post_id,
+         from_date: from_date,
+      },
+      dataType: 'json',
+      beforeSend: function() {
+      },
+      success: function(json) {
+         if (json['status'] == true) {
+            $('#price_service').html(json.price_service);
+            $('#price_vat').html(json.price_vat);
+            $('#price_finnal').html(json.price_finnal);
+            $('#date_post').html(json.date_post);
+            $('#from_date').html(json.from_date);
+            $('#to_date').html(json.to_date);
+         }
+      }
+   });
+});
+
+$('select[name=\'date_post_id\']').select2({
+   allowClear: true,
+   theme: "bootstrap",
+   cache: true,
+   ajax: { 
+   url: 'index.php?routing=localisation/post_type/getDatePosts',
+   dataType: 'json',
+   delay: false,
+   data: function (params) {
+      return {
+         filter_name: params.term, // search term
+         page: params.page
+      };
+   },
+   processResults: function (data, page) {
+      return {
+         results: $.map(data, function (item) {
+            return {
+            text: item.name,
+            id: item.date_post_id
+            }
+         })
+      };
+   }
+   },
+});
+
+
+
+
+$('select[name=\'zone_id\']').on('change', function(){
+
+	let zone_id = $(this).val();
+    $('select[name=\'district_id\']').select2({
+		allowClear: true,
+		theme: "bootstrap",
+		cache: false,
+		ajax: { 
+		url: 'index.php?routing=localisation/district/getDistrictCode&zone_id='+zone_id,
+		dataType: 'json',
+		delay: 250,
+		data: function (params) {
+			return {
+   			filter_name: params.term, // search term
+   			page: params.page
+			};
+		},
+		processResults: function (data, page) {
+			return {
+   			results: $.map(data, function (item) {
+   				return {
+   				text: item.name,
+   				id: item.district_id
+   				}
+   			})
+			};
+
+		}
+		},
+  	});
+});
+
+$('select[name=\'district_id\']').on('change', function(){
+	let district_id = $(this).val();
+    $('select[name=\'ward_id\']').select2({
+		allowClear: true,
+		theme: "bootstrap",
+		cache: false,
+		ajax: { 
+		url: 'index.php?routing=localisation/ward/getWardCode&district_id='+district_id,
+		dataType: 'json',
+		delay: 250,
+		data: function (params) {
+			return {
+			filter_name: params.term, // search term
+			page: params.page
+			};
+		},
+		processResults: function (data, page) {
+         let district_id = $('select[name=\'district_id\']').val();
+         loadStreets(district_id);
+			return {
+			results: $.map(data, function (item) {
+				return {
+				text: item.name,
+				id: item.ward_id
+				}
+			})
+			};
+		}
+		},
+  	});
+});
+
+$('select[name=\'district_id\']').on('change', function(){
+	let district_id = $('select[name=\'district_id\']').val();
+    loadStreets(district_id);
+});
+
+function loadStreets(district_id) {
+   $('select[name=\'street_id\']').select2({
+      allowClear: true,
+      theme: "bootstrap",
+      cache: false,
+      ajax: { 
+      url: 'index.php?routing=localisation/street/getStreetByDistrictId&district_id='+district_id,
+      dataType: 'json',
+      delay: 250,
+      data: function (params) {
+         return {
+         filter_name: params.term, // search term
+         page: params.page
+         };
+      },
+      processResults: function (data, page) {
+         return {
+         results: $.map(data, function (item) {
+            return {
+            text: item.name,
+            id: item.street_id
+            }
+         })
+         };
+      }
+      },
+   });
+}
+
+
+$('select[name=\'zone_id\']').on('change', function(){
+   let $this = $(this);
+   removeDanger($this);
+   reloadMapp();
+   $('select[name=\'district_id\']').empty();
+   $('select[name=\'ward_id\']').empty();
+   $('select[name=\'street_id\']').empty();
+});
+
+$('select[name=\'district_id\']').on('change', function(){
+   let $this = $(this);
+   removeDanger($this);
+   reloadMapp();
+   $('select[name=\'ward_id\']').empty();
+   $('select[name=\'street_id\']').empty(); 
+});
+
+$('select[name=\'ward_id\']').on('change', function(){
+   let $this = $(this);
+   removeDanger($this);
+   reloadMapp();
+});
+
+$('select[name=\'street_id\']').on('change', function(){
+   let $this = $(this);
+   removeDanger($this);
+   reloadMapp();
+});
+
+
+function reloadMapp() {
+   var $iframe = $('#' + 'maps');
+   var url = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyDchyX-A_d7CfLqRnkv14Nrzx3aJe0F-8U&q=';
+
+   var filter_street_name = $('select[name=\'street_id\']').find('option:selected').text();
+   var filter_street_id = $('select[name=\'street_id\']').val();
+   if (filter_street_name && filter_street_id) {
+      url +=  encodeURIComponent(filter_street_name)+', ';
+   }
+
+   var filter_ward_name = $('select[name=\'ward_id\']').find('option:selected').text();
+   var filter_ward_id = $('select[name=\'ward_id\']').val();
+   if (filter_ward_name && filter_ward_id) {
+      url +=  encodeURIComponent(filter_ward_name)+', ';
+   }
+
+   var filter_district_name = $('select[name=\'district_id\']').find('option:selected').text();
+   var filter_district_id = $('select[name=\'district_id\']').val();
+   if (filter_district_name && filter_district_id) {
+      url +=  encodeURIComponent(filter_district_name)+', ';
+   }
+
+   var filter_zone_name = $('select[name=\'zone_id\']').find('option:selected').text();
+   var filter_zone_id = $('select[name=\'zone_id\']').val();
+   if (filter_zone_name && filter_zone_id) {
+      url +=  encodeURIComponent(filter_zone_name);
+   }
+
+   if ($iframe.length) {
+        $iframe.attr('src',url);
+        return false;
+   }
+   return true;
+}
+
+
+
+
+function removeDanger($this) {
+   $this.parents('.form-group').removeClass('has-error');
+   $this.parents('.form-group').find('.text-danger').remove();
+};
+
+
+$('select[name=\'direction_house_id\']').select2({
+      allowClear: true,
+      theme: "bootstrap",
+      cache: false,
+      ajax: { 
+      url: 'index.php?routing=localisation/direction_house/getDirectionHouses',
+      dataType: 'json',
+      delay: 250,
+      data: function (params) {
+         return {
+         filter_name: params.term, // search term
+         page: params.page
+         };
+      },
+      processResults: function (data, page) {
+         return {
+         results: $.map(data, function (item) {
+            return {
+            text: item.name,
+            id: item.direction_house_id
+            }
+         })
+         };
+      }
+      },
+});
+
+
+$('select[name=\'direction_balcony_id\']').select2({
+      allowClear: true,
+      theme: "bootstrap",
+      cache: false,
+      ajax: { 
+      url: 'index.php?routing=localisation/direction_house/getDirectionHouses',
+      dataType: 'json',
+      delay: 250,
+      data: function (params) {
+         return {
+         filter_name: params.term, // search term
+         page: params.page
+         };
+      },
+      processResults: function (data, page) {
+         return {
+         results: $.map(data, function (item) {
+            return {
+            text: item.name,
+            id: item.direction_house_id
+            }
+         })
+         };
+      }
+      },
+});
+
+
+</script>
+
+
+<script>
+    $(function () {
+
+        $('.image_upload').imageUploader();
+
+      
+
+    });
+</script>
+
+
+{{footer}}

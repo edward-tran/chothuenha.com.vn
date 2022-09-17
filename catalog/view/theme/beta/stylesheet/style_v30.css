@@ -1,0 +1,2421 @@
+
+
+a .panel-heading {
+    color: #F26522;
+    background: #fff
+}
+
+a .panel-heading:after {
+    content: "\f0aa";
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 18px;
+    color: #F26522;
+    transition: all 0.5s ease
+}
+
+a p.payopt-discript {
+    display: none
+}
+
+a.collapsed p.payopt-discript {
+    display: block
+}
+
+a.list-group-item {
+    font-weight: 400
+}
+
+a.list-group-item:after {
+    content: "\f105";
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 18px;
+    color: #999;
+    transition: all 0.5s ease
+}
+
+p.payopt-discript {
+    margin-bottom: 0;
+    padding-top: 7px;
+    color: #666;
+    font-size: 11px
+}
+
+h5.form-title {
+    margin-top: 0;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #dcdcdc;
+    margin-bottom: 20px
+}
+
+.greenFont {
+    color: #090;
+    position: relative;
+}
+
+.greenLFont {
+    color: #5CB85C
+}
+
+.blueFont {
+    color: #069
+}
+
+.redFont {
+    color: #C00
+}
+
+.grayFont {
+    color: #464646
+}
+
+.whiteFont {
+    color: #fff
+}
+
+.font11 {
+    font-size: 11px
+}
+
+.OrrgFont, .orrageFont {
+    color: #f30
+}
+
+.allCap {
+    text-transform: uppercase
+}
+
+.fontS13 {
+    font-size: 13px
+}
+
+.fontS14 {
+    font-size: 14px
+}
+
+.fontS15 {
+    font-size: 15px
+}
+
+.bold {
+    font-weight: 700
+}
+
+.rlv {
+    position: relative
+}
+
+
+h4.title a.closeOrder {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30px;
+    height: 35px;
+    text-align: center;
+    background: #d1d1d1;
+    line-height: 35px;
+    font-size: 13px;
+    color: #666;
+    font-weight: 700;
+    display: none
+}
+
+h4.title a.closeOrder:hover {
+    background: #C9302C;
+    color: #fff
+}
+
+.linktxt {
+    text-decoration: underline
+}
+
+.mform2btn {
+    padding-bottom: 20px
+}
+
+.pdbt0 {
+    padding-bottom: 0
+}
+
+.mrtopfr {
+    margin-top: -10px
+}
+
+
+.mdevice {
+    background: #F9FAFC;
+    border-radius: 4px
+}
+
+.cancel-order {
+    display: block
+}
+
+.checkOut {
+    padding-top: 5px
+}
+
+.bgtitle {
+    background: url(../images/visamaster.png) no-repeat 100% 50%
+}
+
+.wrapCont {
+    padding: 0 15px;
+    background: #fafafa
+}
+
+#header .logo .logoM {
+    width: 160px;
+    display: block;
+    float: left;
+    background: none repeat scroll 0% 0% #fff;
+    margin: 0;
+    height: 80px;
+    overflow: hidden
+}
+
+#header .logo .logoM:before {
+    content: ' ';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%
+}
+
+#header .logo .logoM img {
+    vertical-align: middle;
+    display: inline-block;
+    width: 100%;
+    object-fit: contain;
+    height: 100%;
+}
+
+#header .hotline .dropdown a img {
+    width: 18px;
+    border-radius: 50%
+}
+
+#header .hotline .dropdown:last-child {
+    border-left: none
+}
+
+#header .merChName {
+    padding-top: 2px;
+    float: left;
+    padding-left: 15px
+}
+
+#header .merChName h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    margin-top: 0;
+    font-weight: 500
+}
+
+#header .merChName p {
+    font-size: 12px;
+    margin: 0;
+    line-height: 15px
+}
+
+.invoice {
+    padding: 0
+}
+
+.invoiceCont {
+    padding: 13px
+}
+
+.invoiceCont .Merchantlogo {
+    width: 140px;
+    height: 80px;
+    margin: 0 auto;
+    border: 1px solid #DDD;
+    background: #fff;
+    overflow: hidden;
+    text-align: center
+}
+
+h5.merChTitle {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 5px
+}
+
+p.merChMail {
+    font-size: 12px;
+    text-align: center
+}
+
+.invoiceCont .Merchantlogo img {
+    height: 100%
+}
+
+.brdRightIner {
+    border-right: 1px solid #dcdcdc;
+    padding-right: 15px;
+    min-height: 460px
+}
+
+.brdRight {
+    border-right: 0 solid #f2f2f2;
+    padding-right: 0;
+    background: #fff;
+    border-radius: 4px 0 0 4px;
+    box-shadow: 4px 0 3px -4px rgba(0, 0, 0, .2)
+}
+
+.brdRightIner h4.payopt-title {
+    margin-top: 0;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    color: #666
+}
+
+.panel-group {
+    margin-bottom: 0;
+    padding-bottom: 20px
+}
+
+.nldbbox {
+    position: relative;
+    margin-top: 10px
+}
+
+.nldbboxCont {
+    margin-left: 30px;
+    text-align: center
+}
+
+.nldbboxCont .nldbtxt {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 5px;
+    padding: 3px 0 3px 35px
+}
+
+.nldbboxCont p {
+    padding: 0 5px 10px 35px;
+    font-size: 11px;
+    line-height: 13px;
+    color: #fff;
+    margin-bottom: 0
+}
+
+.icon-nldb {
+    display: inline-block;
+    position: absolute;
+    top: -14px;
+    left: 10px
+}
+
+.gold, .diamond, .silver {
+    margin: 10px -13px 0
+}
+
+.diamond .icon-nldb {
+    background: url(../images/diamond_60.png) no-repeat;
+    width: 60px;
+    height: 77px;
+    -webkit-background-size: 60px 77px;
+    -moz-background-size: 60px 77px;
+    background-size: 60px 77px
+}
+
+.diamond {
+    background: #d9534f
+}
+
+.gold .icon-nldb {
+    background: url(../images/gold_60.png) no-repeat;
+    width: 60px;
+    height: 77px;
+    -webkit-background-size: 60px 77px;
+    -moz-background-size: 60px 77px;
+    background-size: 60px 77px
+}
+
+.gold {
+    background: #ba8836
+}
+
+.silver .icon-nldb {
+    background: url(../images/silver_60.png) no-repeat;
+    width: 60px;
+    height: 77px;
+    -webkit-background-size: 60px 77px;
+    -moz-background-size: 60px 77px;
+    background-size: 60px 77px
+}
+
+.silver {
+    background: #9aa3ac
+}
+
+.mFont {
+    font-size: 14px;
+    line-height: 18px
+}
+
+.nldbbox .mnldbtxt {
+    display: none
+}
+
+h4.btmLine {
+    border-bottom: 1px solid #dcdcdc;
+    padding-bottom: 8px;
+    position: relative
+}
+
+h4.btmLine a {
+    margin-right: 5px
+}
+
+.boxWrap {
+    border: 1px solid #e0e0e0;
+    background: #fff;
+    margin-bottom: 30px
+}
+
+.bankwrap i {
+    float: left
+}
+
+.bankwrap .cardInfo {
+    float: left;
+    padding: 10px
+}
+
+.bankwrap .cardInfo h4 {
+    font-size: 13px;
+    font-weight: 700
+}
+
+.bankwrap .cardInfo p {
+    font-weight: 500;
+    vertical-align: middle;
+    color: #333;
+    font-size: 16px
+}
+
+.bankwrap .cardInfo span {
+    position: absolute;
+    top: 8px;
+    right: 8px
+}
+
+.bankwrap a.backOpt {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #999;
+    color: #FFF;
+    font-size: 11px;
+    padding: 3px 5px
+}
+
+ul.cardList {
+    list-style-position: outside;
+    list-style-type: none;
+    margin: 0 0 0 -8px;
+    padding: 0 0 5px 0
+}
+
+ul.cardList li {
+    cursor: pointer
+}
+
+ul.cardList li {
+    float: left;
+    text-align: center;
+    margin-bottom: 8px;
+    margin-left: 8px;
+    position: relative
+}
+
+ul.cardList li .boxWrap {
+    margin: 0;
+    border-radius: 0;
+    padding: 2px
+}
+
+ul.cardList li:hover .boxWrap {
+    border-color: #AAA #AAA #666;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .7), 0 0 3px #FFF inset
+}
+
+ul.cardList li.currnt .boxWrap {
+    border: 1px solid #636363;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .4), 0 0 3px #FFF inset
+}
+
+ul.cardList li i.tick {
+    display: none
+}
+
+ul.cardList li.currnt i.tick {
+    display: block;
+    position: absolute;
+    bottom: -4px;
+    right: -4px;
+    z-index: 2;
+    background: url(../images/tick.png) no-repeat;
+    width: 25px;
+    height: 25px
+}
+
+ul.cardList li i {
+    display: block
+}
+
+ul.cardList li span {
+    margin: 4px -4px -4px;
+    display: block;
+    background: none repeat scroll 0% 0% #EDEDEC;
+    font-size: 15px;
+    padding: 3px 0;
+    border-radius: 0 0 3px 3px
+}
+
+ul.cardList li .boxWrap .moneyText {
+    font-size: 14px;
+    border-top: 1px solid #dcdcdc;
+    padding: 3px 0 0
+}
+
+ul.cardList li a {
+    color: inherit
+}
+
+ul.cardList li a:hover {
+    text-decoration: none
+}
+
+ul.cardList.mrgb0 {
+    margin-bottom: 0
+}
+
+i.VISA, i.MASTER, i.MASTERCARD, i.AMREX, i.JCB, i.VCB, i.AIRPAY, i.VRB, i.SHNB, i.TCB, i.MB, i.MBB, i.VIB, i.ICB, i.IVB, i.EXB, i.ACB, i.HDB, i.VB, i.WRB, i.MSB, i.NVB, i.DAB, i.SHB, i.OJB, i.SEA, i.SCB, i.TPB, i.PGB, i.BIDV, i.VINID, i.BIDC, i.AGB, i.STB, i.VPB, i.VAB, i.GPB, i.SGB, i.NAB, i.BAB, i.CBS, i.OCB, i.GAB, i.otherbank-logo, i.ABB, i.DAB, i.BVB, i.MBpay, i.VIETTEL, i.SMARTPAY, i.MOMO, i.MOBIFONE, i.VINAPHONE, i.GATE, i.Vcoin, i.gmobile, i.sfone, i.vietnamobile, i.cardVT, i.icon-nlfund, i.icon-nganluong, i.nganluong, i.SEA, i.NAB, i.addmore, i.Cardless, i.Addmore {
+    display: inline-block;
+    width: 96px;
+    height: 41px
+}
+
+i.Addmore {
+    -bkit-background-size: 96px 41px;
+    -moz-background-size: 96px 41px;
+    background-size: 96px 41px
+}
+
+i.Cardless {
+    background: url(../bank/ATM.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.NAB {
+    background: url(../bank/NAB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.JCB {
+    background: url(../bank/JCB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.SEA {
+    background: url(../bank/SEB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.SCB {
+    background: url(../bank/SCB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.ABB {
+    background: url(../bank/ABB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.SGB {
+    background: url(../bank/SGB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.AGB {
+    background: url(../bank/AGB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.GPB {
+    background: url(../bank/GPB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.PGB {
+    background: url(../bank/PGB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.VPB {
+    background: url(../bank/VPB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.VAB {
+    background: url(../bank/VAB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.NVB {
+    background: url(../bank/NVB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.MSB {
+    background: url(../bank/MSB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.HDB {
+    background: url(../bank/HDB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.VB {
+    background: url(../bank/VB.jpg) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.WRB {
+    background: url(../bank/WRB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.ACB {
+    background: url(../bank/ACB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.EXB {
+    background: url(../bank/EXB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.ICB {
+    background: url(../bank/ICB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.IVB {
+    background: url(../bank/IVB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.VIB {
+    background: url(../bank/VIB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.MB, i.MBB {
+    background: url(../bank/MB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.TCB {
+    background: url(../bank/TCB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.DAB {
+    background: url(../bank/DAB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.GAB {
+    background: url(../bank/GAB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.TPB {
+    background: url(../bank/TPB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.OCB {
+    background: url(../bank/OCB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.BAB {
+    background: url(../bank/BAB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.SHB {
+    background: url(../bank/SHB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.BIDV {
+    background: url(../bank/BIDV.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.VINID {
+    background: url(../bank/VINID.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.BIDC {
+    background: url(../bank/BIDC.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.MASTER, i.MASTERCARD {
+    background: url(../bank/MASTER.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.VCB {
+    background: url(../bank/VCB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.AIRPAY {
+    background: url(../bank/AIRPAY.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.VRB {
+    background: url(../bank/VRB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.SHNB {
+    background: url(../bank/SHNB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.STB {
+    background: url(../bank/STB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.BAB {
+    background: url(../bank/BAB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.VISA {
+    background: url(../bank/VISA.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.OJB {
+    background: url(../bank/OJB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.BVB {
+    background: url(../bank/BVB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.nganluong {
+    background: url(../bank/nganluong.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.icon-nganluong {
+    background: url(../bank/nl.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.icon-nlfund {
+    background: url(../bank/vimo.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.cardVT {
+    background: url(../bank/card.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.VIETTEL {
+    background: url(../bank/viettel.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.SMARTPAY {
+    background: url(../bank/SMARTPAY.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.MOMO {
+    background: url(../bank/MOMO.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.MOBIFONE {
+    background: url(../bank/mobifone.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.VINAPHONE {
+    background: url(../bank/vinaphone.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.vietnamobile {
+    background: url(../bank/vietnamobi.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.sfone {
+    background: url(../bank/sfone.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.gmobile {
+    background: url(../bank/gmobi.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.GATE {
+    background: url(../bank/gate.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.Vcoin {
+    background: url(../bank/Vcoin.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.otherbank-logo {
+    background: url(../bank/other.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.MBpay {
+    background: url(../bank/2pay.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.addmore {
+    background: url(../bank/add.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+h4.payopt-title .btn-sm {
+    padding-right: 2px;
+    padding-left: 2px
+}
+
+.mRadiocheck label {
+    padding-left: 0;
+    display: block;
+    padding-bottom: 7px
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        margin: 0
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .checkOut .col-sm-6 {
+        width: 100%
+    }
+
+    #header .logo {
+        position: inherit
+    }
+
+    #header .merChName p {
+        color: #fff
+    }
+
+    #header .logo .logoM, #header .merChName {
+        float: none
+    }
+
+    #header .merChName {
+        padding-left: 0
+    }
+
+    #header .hotline {
+        position: absolute;
+        right: 0;
+        top: 14px
+    }
+
+    .nlifrmBox .orderForm {
+        padding: 5px
+    }
+
+    #header .merChName h2 {
+        margin-bottom: 0
+    }
+
+    #header .logo .logoM {
+        border-radius: 3px
+    }
+
+    #header .logo .logoM {
+        height: 50px;
+        width: 100px
+    }
+}
+
+@media screen and (min-width: 640px) {
+    .mfright {
+        float: right
+    }
+
+    mfleft {
+        float: left
+    }
+}
+
+@media (max-width: 640px) {
+    .mform3 .col-sm-4 {
+        width: 100%
+    }
+
+    .mform3 .col-sm-8 {
+        width: 100%
+    }
+
+    .brdRightIner {
+        min-height: inherit
+    }
+
+    .bgtitle {
+        background: none
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .mfright {
+        float: none
+    }
+
+    .mfleft {
+        float: none
+    }
+
+    .col-span-4, .col-span-8 {
+        width: 100%
+    }
+
+    .invoiceCont, .invoice {
+        border-left: none;
+        border-radius: 4px;
+        background: none
+    }
+
+    .invoiceCont img {
+        width: 50px
+    }
+
+    .title {
+        margin: 0 2px 0 2px;
+        background: #fafafa;
+        margin-bottom: -1px;
+        background: #dcdcdc;
+        text-align: left;
+        padding-left: 10px;
+        font-size: 15px
+    }
+
+    .invoiceBg {
+        background: #fafafa;
+        margin: 0 2px;
+        padding-bottom: 9px
+    }
+
+    .iGqbIb {
+        background: url(../images/raw.png) repeat-x scroll 0 0 transparent;
+        height: 16px;
+        margin: -14px -13px;
+        position: relative
+    }
+
+    .nldbbox {
+        position: absolute;
+        top: 0;
+        right: 13px;
+        width: 70px;
+        text-align: center;
+        margin-top: 0
+    }
+
+    .gold .icon-nldb, .silver .icon-nldb, .diamond .icon-nldb {
+        width: 40px;
+        height: 50px;
+        -webkit-background-size: 40px 50px;
+        -moz-background-size: 40px 50px;
+        background-size: 40px 50px;
+        width: 40px;
+        position: static;
+        z-index: 999
+    }
+
+    .mFont {
+        font-size: 13px
+    }
+
+    .nldbbox .mnldbtxt {
+        display: block
+    }
+
+    .nldbbox .nldbboxCont {
+        display: none
+    }
+
+    .mnldbtxt {
+        display: block;
+        font-size: 10px;
+        color: #fff;
+        border-radius: 4px;
+        padding: 0 2px
+    }
+
+    .gold, .diamond, .silver {
+        padding: 5px
+    }
+
+    .brdRightIner {
+        border-right: none
+    }
+
+    .brdRight {
+        border-right: none
+    }
+
+    ul.cardList li .boxWrap {
+        padding: 2px
+    }
+
+    i.VISA, i.MASTER, i.AMREX, i.JCB, i.VCB, i.AIRPAY, i.VRB, i.SHNB, i.TCB, i.MB, i.MBB, i.VIB, i.ICB, i.EXB, i.ACB, i.HDB, i.VB, i.WRB, i.MSB, i.NVB, i.DAB, i.SHB, i.OJB, i.SEA, i.TPB, i.PGB, i.BIDV, i.VINID, i.BIDC, i.AGB, i.STB, i.VPB, i.VAB, i.GPB, i.SGB, i.NAB, i.BAB, i.CBS, i.OCB, i.GAB, i.otherbank-logo, i.ABB, i.DAB, i.BVB, i.MBpay, i.VIETTEL, i.SMARTPAY, i.MOMO, i.MOBIFONE, i.VINAPHONE, i.GATE, i.Vcoin, i.gmobile, i.sfone, i.vietnamobile, i.cardVT, i.icon-nlfund, i.icon-nganluong, i.nganluong, i.SEA, i.NAB, i.addmore, i.Cardless, i.Addmore {
+        display: inline-block;
+        width: 82px;
+        height: 41px
+    }
+
+    i.Addmore {
+        -bkit-background-size: 82px 41px;
+        -moz-background-size: 82px 41px;
+        background-size: 82px 41px
+    }
+
+    i.Cardless {
+        background: url(../bank/ATM.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.NAB {
+        background: url(../bank/NAB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.JCB {
+        background: url(../bank/JCB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.SEA {
+        background: url(../bank/SEB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.ABB {
+        background: url(../bank/ABB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.SGB {
+        background: url(../bank/SGB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.AGB {
+        background: url(../bank/AGB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.GPB {
+        background: url(../bank/GPB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.PGB {
+        background: url(../bank/PGB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.VPB {
+        background: url(../bank/VPB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.VAB {
+        background: url(../bank/VAB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.NVB {
+        background: url(../bank/NVB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.MSB {
+        background: url(../bank/MSB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.HDB {
+        background: url(../bank/HDB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.VB {
+        background: url(../bank/VB.jpg) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.WRB {
+        background: url(../bank/WRB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.ACB {
+        background: url(../bank/ACB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.EXB {
+        background: url(../bank/EXB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.ICB {
+        background: url(../bank/ICB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.VIB {
+        background: url(../bank/VIB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.MB, i.MBB {
+        background: url(../bank/MB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.TCB {
+        background: url(../bank/TCB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.DAB {
+        background: url(../bank/DAB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.GAB {
+        background: url(../bank/GAB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.TPB {
+        background: url(../bank/TPB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.OCB {
+        background: url(../bank/OCB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.BAB {
+        background: url(../bank/BAB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.SHB {
+        background: url(../bank/SHB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.BIDV {
+        background: url(../bank/BIDV.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.VINID {
+        background: url(../bank/VINID.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.BIDC {
+        background: url(../bank/BIDC.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.MASTER {
+        background: url(../bank/MASTE.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.VCB {
+        background: url(../bank/VCB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.AIRPAY {
+        background: url(../bank/AIRPAY.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.VRB {
+        background: url(../bank/VRB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.SHNB {
+        background: url(../bank/SHNB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.STB {
+        background: url(../bank/STB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.BAB {
+        background: url(../bank/BAB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.VISA {
+        background: url(../bank/VISA.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.OJB {
+        background: url(../bank/OJB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.BVB {
+        background: url(../bank/BVB.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.nganluong {
+        background: url(../bank/nganluong.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.icon-nganluong {
+        background: url(../bank/nl.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.icon-nlfund {
+        background: url(../bank/vimo.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.cardVT {
+        background: url(../bank/card.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.VIETTEL {
+        background: url(../bank/viettel.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.SMARTPAY {
+        background: url(../bank/SMARTPAY.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.MOMO {
+        background: url(../bank/MOMO.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.MOBIFONE {
+        background: url(../bank/mobifone.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.VINAPHONE {
+        background: url(../bank/vinaphone.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.vietnamobile {
+        background: url(../bank/vietnamobi.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.sfone {
+        background: url(../bank/sfone.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.VB {
+        background: url(../bank/VB.jpg) no-repeat scroll 50% 50%/ 94px 44px transparent
+    }
+
+    i.gmobile {
+        background: url(../bank/gmobi.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.WRB {
+        background: url(../bank/WRB.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+    }
+
+    i.GATE {
+        background: url(../bank/gate.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.Vcoin {
+        background: url(../bank/Vcoin.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.VB {
+        background: url(../bank/VB.jpg) no-repeat scroll 50% 50%/ 94px 44px transparent
+    }
+
+    i.otherbank-logo {
+        background: url(../bank/other.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.MBpay {
+        background: url(../bank/2pay.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    i.addmore {
+        background: url(../bank/add.png) no-repeat scroll 50% 50%/ 82px 41px transparent
+    }
+
+    .invoiceCont .Merchantlogo {
+        width: 80px;
+        height: 55px;
+        margin-bottom: 10px;
+        float: left;
+        margin-right: 8px
+    }
+
+    h5.merChTitle {
+        text-align: left;
+        padding-right: 55px;
+        margin-top: 0;
+        font-size: 14px
+    }
+
+    p.merChMail {
+        text-align: left
+    }
+
+    h4.title a.closeOrder {
+        display: block
+    }
+
+    .cancel-order {
+        display: none
+    }
+}
+
+.style-icon {
+    padding-left: 22px;
+    padding-top: 10px
+}
+
+i.icon-success-type {
+    width: 55px;
+    height: 32px;
+    display: block;
+    background: url(../images/success.png) no-repeat;
+    vertical-align: middle;
+    margin: 5px -5px
+}
+
+@media screen and (max-width: 480px) {
+    .invoiceCont, .invoice, .brdRight, .panel {
+        border-radius: 0
+    }
+
+    #header h1.logo img {
+        height: 30px
+    }
+
+    #header .hotline {
+        padding-top: 8px
+    }
+
+    h5.fundtitle {
+        padding-left: 0;
+        margin-bottom: 15px
+    }
+
+    .pdtop2 {
+        padding-top: 15px
+    }
+
+    .mform label.col-sm-5 {
+        float: left;
+        width: 35%;
+        text-align: left;
+        padding-right: 0;
+        padding-top: 4px
+    }
+
+    .mform .col-sm-7 {
+        float: left;
+        word-wrap: break-word;
+        padding-right: 0;
+        width: 65%
+    }
+
+    .mform2 {
+        padding: 15px 0 0
+    }
+
+    .mform2btn .btn {
+        margin-bottom: 15px
+    }
+
+    .mmode {
+        position: absolute;
+        top: 22px;
+        left: -35px
+    }
+
+    h4.payopt-title {
+        font-size: 15px;
+        padding-bottom: 0;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-weight: 700
+    }
+
+    h4.payopt-title .btn-sm {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-right: 2px
+    }
+
+    h4.media-heading {
+        font-size: 13px;
+        font-weight: 700
+    }
+
+    .pdtop2 {
+        padding-top: 10px
+    }
+
+    .mform0 label.col-sm-4 {
+        float: left;
+        width: 35%;
+        text-align: left;
+        padding-top: 4px
+    }
+
+    .mform0 .col-sm-8 {
+        float: left;
+        word-wrap: break-word;
+        width: 65%;
+        padding-left: 10px
+    }
+
+    .col-span-8 {
+        padding-left: 0
+    }
+
+    .brdRightIner {
+        padding: 15px
+    }
+
+    .brdRightIner .panel-group {
+        margin: 0 -15px
+    }
+
+    .mform2 label.col-sm-4 {
+        float: none;
+        width: 100%
+    }
+
+    .mform2 div.col-sm-3 {
+        width: 45%;
+        float: left;
+        padding-right: 0
+    }
+
+    .mform2 div.col-sm-4 {
+        float: left;
+        padding-left: 15px;
+        padding-right: 0
+    }
+
+    .mform2btn div.col-sm-4 {
+        width: 50%;
+        float: left;
+        padding-left: 15px
+    }
+
+    .mScode .col-sm-4 {
+        width: 50%;
+        float: left
+    }
+
+    .mform .col-sm-4 {
+        float: left;
+        width: 35%
+    }
+
+    .mform .col-sm-8 {
+        float: left;
+        width: 65%
+    }
+
+    ul.cardList {
+        margin-left: -5px
+    }
+
+    .nlpopBox-Cont {
+        padding-left: 0;
+        padding-right: 0
+    }
+
+    .panel-group .panel {
+        border-radius: 0
+    }
+
+    .brdRightIner h4.payopt-title {
+        padding-left: 0
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .pdl5 {
+        padding-left: 5px
+    }
+
+    .pdr5 {
+        padding-right: 15px
+    }
+
+    .mform2btn div.pdl5 {
+        padding-left: 5px
+    }
+
+    .mform .control-label {
+        padding-top: 5px
+    }
+
+    .mform0 label.col-sm-4 {
+        float: left;
+        width: 35%;
+        text-align: left;
+        padding-top: 4px
+    }
+
+    .mform0 .col-sm-8 {
+        float: left;
+        word-wrap: break-word;
+        width: 65%
+    }
+
+    h5.merChTitle {
+        text-align: left;
+        padding-right: 55px;
+        font-size: 13px;
+        font-weight: 700
+    }
+}
+
+.icon-olpayment, .icon-atmOnline, .icon-atmck, .icon-bankck, .icon-bankcash {
+    display: inline-block;
+    width: 50px;
+    height: 45px;
+    background: url(../images/icon.png) no-repeat;
+    margin-right: 8px
+}
+
+.icon-atmOnline {
+    background-position: 0 -240px
+}
+
+.icon-olpayment {
+    background-position: 0 -287px
+}
+
+.icon-bankck {
+    background-position: 0 -378px
+}
+
+.icon-atmck {
+    background-position: 0 -332px
+}
+
+.icon-bankcash {
+    background-position: 0 -428px
+}
+
+.footer {
+    padding-bottom: 20px
+}
+
+.social-network a {
+    color: #666;
+    border: 1px solid #bcbcbc;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    padding: 5px 0 0;
+    margin: 0 0 0 5px;
+    opacity: .3;
+    filter: alpha(opacity=40);
+    text-align: center;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease
+}
+
+.certificat-group {
+    padding: 0;
+    text-align: left
+}
+
+.social-network {
+    padding: 0;
+    text-align: right
+}
+
+.social-network .fa {
+    font-size: 22px
+}
+
+.social-network a:hover {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    border: 1px solid #bcbcbc
+}
+
+.copyright {
+    font-size: 12px;
+    color: #666;
+    padding: 5px 0 0
+}
+
+.icon-bank, .icon-pci {
+    width: 50px;
+    height: 37px;
+    display: inline-block;
+    background: url(../images/pci_dss.png) no-repeat
+}
+
+.icon-bank:hover {
+    background-position: 0 -37px
+}
+
+.icon-pci {
+    background-position: -50px 0
+}
+
+.icon-pci:hover {
+    background-position: -50px -37px
+}
+
+@media screen and (max-width: 550px) {
+    .footer .col-sm-3, .footer .col-sm-5, .footer .col-sm-4 {
+        width: 100%
+    }
+
+    .certificat-group, .copyright, .social-network {
+        text-align: center
+    }
+
+    .copyright {
+        padding-bottom: 8px
+    }
+
+    h4.panel-title {
+        font-size: 15px
+    }
+}
+
+.boxreport {
+    padding-bottom: 30px
+}
+
+i.icon-warning, i.icon-error, i.icon-success {
+    width: 55px;
+    height: 52px;
+    display: block;
+    background: url(../images/iconlarge.png) no-repeat;
+    vertical-align: middle;
+    margin-right: 15px
+}
+
+i.icon-warning {
+    background-position: -62px 0
+}
+
+i.icon-error {
+    background-position: -122px 0
+}
+
+.nlOrder-warning {
+    background: url(../images/022.gif) no-repeat scroll left 10px transparent;
+    margin-top: 0;
+    text-align: center;
+    color: #C00;
+    font-size: 14px;
+    width: 460px
+}
+
+.dropdown-menu > li.Account {
+    display: block;
+    padding: 8px 15px 8px 12px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857;
+    color: #252525;
+    white-space: nowrap;
+    font-size: 13px;
+    background: #fff;
+    margin-top: -4px;
+    border-bottom: 1px solid #dcdcdc
+}
+
+.dropdown-menu > li.Account h4.media-heading {
+    font-size: 14px;
+    margin-bottom: 5px
+}
+
+.dropdown-menu > li.Account p {
+    margin-bottom: 5px
+}
+
+.helpbtn {
+    position: fixed;
+    right: 0;
+    bottom: 0
+}
+
+.helpbtn a {
+    color: #fff
+}
+
+.loading-box {
+    text-align: center
+}
+
+.loading-box img {
+    margin: 10px 0
+}
+
+.loading {
+    -webkit-animation: spin 1s linear infinite;
+    -moz-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite
+}
+
+@-moz-keyframes spin {
+    100% {
+        -moz-transform: rotate(360deg)
+    }
+}
+
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+.virtualBg {
+    background-position: 106% 100%
+}
+
+
+
+
+
+img.nganluong_icon_sm {
+    height: 20px;
+    width: 20px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: 5px
+}
+
+img.nganluong_icon_xs {
+    height: 16px;
+    width: 16px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: 5px
+}
+
+img.nganluong_icon_md {
+    height: 60px;
+    width: 60px;
+    margin-left: 2px;
+    margin-right: 5px;
+    margin-bottom: 5px
+}
+
+.orderForm-xs {
+    display: none
+}
+
+.no-border {
+    border: none;
+    border-radius: 0
+}
+
+.no-padding {
+    padding: 0
+}
+
+.no-margin {
+    margin: 0
+}
+
+.no-box-shadow {
+    box-shadow: none
+}
+
+.panel-background {
+    background-color: #f26522
+}
+
+#header .merCnName-xs {
+    display: none;
+    color: #fff;
+    margin: 0
+}
+
+#header .merChName-xs h2 {
+    font-size: 13px;
+    margin-bottom: 5px;
+    margin-top: 8px
+}
+
+#header .merChName-xs p {
+    font-size: 11px;
+    margin: 0;
+    padding-top: 5px;
+    color: #666;
+    line-height: 15px
+}
+
+.merCn-heading, .order-heading {
+    padding: 10px 15px 10px
+}
+
+.trans-detail {
+    font-size: 12px
+}
+
+a.collapsed.merCnCollapse {
+    background-color: #f26522;
+    color: #fff
+}
+
+@media screen and (max-width: 768px) {
+    .nliHeader {
+        height: 65px
+    }
+
+    .orderForm {
+        display: none
+    }
+
+    .orderForm-xs {
+        border: none;
+        display: block
+    }
+
+    h4.btmLine {
+        border: none
+    }
+
+    .checkOut {
+        padding-top: 0
+    }
+
+    #header .merChName {
+        display: none
+    }
+
+    #header .merCnName-xs {
+        display: block
+    }
+
+    h4.payopt-title {
+        margin-top: 0;
+        padding-top: 20px;
+        font-size: 18px !important
+    }
+
+    .cardInfo > #bank_title {
+        display: none;
+        font-size: 12px
+    }
+
+    .nlOrder-warning {
+        width: 100% !important;
+        background: url(../images/022.gif) no-repeat scroll 50% 5px transparent;
+        padding-top: 50px
+    }
+
+    .success .media {
+        margin-top: 0
+    }
+
+    .greenFont i.fa-chevron-down {
+        font-size: 40px !important
+    }
+}
+
+i.ALP {
+    background: url(../bank/ALP.png) no-repeat scroll 50% 50%/ 94px 44px transparent;
+    display: inline-block;
+    width: 96px;
+    height: 41px
+}
+
+i.WCP {
+    background: url(../bank/WCP.png) no-repeat scroll 50% 50%/ 94px 44px transparent;
+    display: inline-block;
+    width: 96px;
+    height: 41px
+}
+
+i.GDB {
+    background: url(../bank/GDB.png) no-repeat scroll 50% 50%/ 94px 44px transparent;
+    display: inline-block;
+    width: 96px;
+    height: 41px
+}
+
+i.PAYOO {
+    background: url(../bank/PAYOO.png) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.LVB {
+    background: url(../bank/LVB.png) no-repeat scroll 50% 50%/ 94px 44px transparent;
+    display: inline-block;
+    width: 96px;
+    height: 41px
+}
+
+i.PVCOMBANK {
+    background: url(../bank/PVCOMBANK.jpg) no-repeat scroll 50% 50%/ 94px 44px transparent
+}
+
+i.VIETTELPAY {
+    background: url(../bank/VIETTELPAY.jpg) no-repeat scroll 50% 50%/ 94px 44px transparent;
+    display: inline-block;
+    width: 96px;
+    height: 41px
+}
+
+i.BANKPLUS {
+    background: url(../bank/BANKPLUS.png) no-repeat scroll 50% 50%/ 94px 44px transparent;
+    display: inline-block;
+    width: 96px;
+    height: 41px
+}
+
+i.VCBPAY {
+    background: url(../bank/VCBPAY.jpg) no-repeat scroll 50% 50%/ 94px 44px transparent;
+    display: inline-block;
+    width: 96px;
+    height: 41px
+}
+
+i.KLB {
+    background: url(../bank/KLB.png) no-repeat scroll 50% 50%/ 94px 44px transparent;
+    display: inline-block;
+    width: 96px;
+    height: 41px
+}
+
+i.PBVN {
+    background: url(../bank/PBVN.png) no-repeat scroll 50% 50%/ 94px 44px transparent;
+    display: inline-block;
+    width: 96px;
+    height: 41px
+}
+
+i.VB {
+    background: url(../bank/VB.jpg) no-repeat scroll 50% 50%/ 94px 44px transparent;
+    display: inline-block;
+    width: 96px;
+    height: 41px
+}
+
+.nlifrmBox {
+    height: auto;
+    background: #f8f8f8;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, .3);
+    border: 0 solid #666
+}
+
+.nlifrmBox-Cont {
+    padding: 10px 15px 30px;
+    background: #fff
+}
+
+.nlifrmBox-Cont .panel-group {
+    padding-bottom: 0
+}
+
+.nlifrmBox-Footer {
+    background: #4a4a4a;
+    position: relative;
+    bottom: 0;
+    height: 29px;
+    width: 100%
+}
+
+.nlifrmBox-Footer p {
+    margin-bottom: 0;
+    color: #ccc;
+    font-size: 11px;
+    text-align: left;
+    line-height: 13px;
+    padding: 8px 0 0 10px
+}
+
+.nlifrmBox-Footer .helpbtn {
+    position: absolute
+}
+
+.nlifrmBox-Footer .helpbtn .nlhelpbtn {
+    border-radius: 0
+}
+
+.helpbtn .nlhelpbtn {
+    width: auto;
+    background: #F26522;
+    border-radius: 4px 0 0;
+    padding: 5px 10px
+}
+
+.closeBox {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 22px;
+    height: 22px
+}
+
+.closeBox img {
+    width: 100%
+}
+
+.ifGqbIb {
+    background: url(../images/raw.png) repeat-x scroll 0 0 transparent;
+    height: 16px;
+    margin: -25px 0 -5px;
+    position: relative
+}
+
+ul.listCont {
+    margin: -10px 0 0;
+    padding: 0 0 10px 15px;
+    font-size: 11px
+}
+
+.orderForm table.table > thead > tr > th {
+    border-bottom: 1px solid #e8e7e7;
+    background: #f9fafc
+}
+
+@media screen and (max-width: 680px) {
+    .nliHeader {
+        background-image: none
+    }
+}
+
+@media screen and (max-width: 610px) {
+    i.VISA, i.MASTER, i.MASTERCARD, i.PAYOO, i.AMREX, i.JCB, i.VCB, i.AIRPAY, i.VRB, i.SHNB, i.SHNB, i.TCB, i.MB, i.MBB, i.VIB, i.ICB, i.EXB, i.ACB, i.HDB, i.VB, i.WRB, i.MSB, i.NVB, i.DAB, i.SHB, i.OJB, i.SEA, i.TPB, i.PGB, i.BIDV, i.VINID, i.BIDC, i.AGB, i.SCB, i.VPB, i.VAB, i.GPB, i.SGB, i.NAB, i.BAB, i.CBS, i.PDB, i.GAB, i.otherbank-logo, i.ABB, i.DAB, i.BVB, i.MBpay, i.VIETTEL, i.SMARTPAY, i.MOMO, i.MOBIFONE, i.VINAPHONE, i.GATE, i.Vcoin, i.gmobile, i.sfone, i.vietnamobile, i.cardVT, i.icon-nlfund, i.icon-nganluong, i.nganluong, i.SEA, i.NAB, i.addmore, i.Cardless, i.Addmore {
+        display: inline-block;
+        width: 77px;
+        height: 30px
+    }
+
+    i.Addmore {
+        -bkit-background-size: 96px 41px;
+        -moz-background-size: 96px 41px;
+        background-size: 96px 41px
+    }
+
+    i.Cardless {
+        background: url(../bank/ATM.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.NAB {
+        background: url(../bank/NAB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.JCB {
+        background: url(../bank/JCB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.SEA {
+        background: url(../bank/SEB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.ABB {
+        background: url(../bank/ABB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.SGB {
+        background: url(../bank/SGB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.AGB {
+        background: url(../bank/AGB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.GPB {
+        background: url(../bank/GPB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.PGB {
+        background: url(../bank/PGB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.VPB {
+        background: url(../bank/VPB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.VAB {
+        background: url(../bank/VAB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.NVB {
+        background: url(../bank/NVB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.MSB {
+        background: url(../bank/MSB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.HDB {
+        background: url(../bank/HDB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.VB {
+        background: url(../bank/VB.jpg) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.WRB {
+        background: url(../bank/WRB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.ACB {
+        background: url(../bank/ACB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.EXB {
+        background: url(../bank/EXB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.ICB {
+        background: url(../bank/ICB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.VIB {
+        background: url(../bank/VIB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.MB, i.MBB {
+        background: url(../bank/MB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.TCB {
+        background: url(../bank/TCB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.DAB {
+        background: url(../bank/DAB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.GAB {
+        background: url(../bank/GAB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.TPB {
+        background: url(../bank/TPB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.PDB {
+        background: url(../bank/PDB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.BAB {
+        background: url(../bank/BAB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.SHB {
+        background: url(../bank/SHB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.BIDV {
+        background: url(../bank/BIDV.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.VINID {
+        background: url(../bank/VINID.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.BIDC {
+        background: url(../bank/BIDC.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.MASTER, i.MASTERCARD {
+        background: url(../bank/MASTER.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.VCB {
+        background: url(../bank/VCB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.AIRPAY {
+        background: url(../bank/AIRPAY.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.VRB {
+        background: url(../bank/VRB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.SHNB {
+        background: url(../bank/SHNB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.SCB {
+        background: url(../bank/SCB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.BAB {
+        background: url(../bank/BAB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.VISA {
+        background: url(../bank/VISA.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.OJB {
+        background: url(../bank/OJB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.BVB {
+        background: url(../bank/BVB.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.nganluong {
+        background: url(../bank/nganluong.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.icon-nganluong {
+        background: url(../bank/nl.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.icon-nlfund {
+        background: url(../bank/vimo.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.cardVT {
+        background: url(../bank/card.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.VIETTEL {
+        background: url(../bank/viettel.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.SMARTPAY {
+        background: url(../bank/SMARTPAY.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.MOMO {
+        background: url(../bank/MOMO.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.MOBIFONE {
+        background: url(../bank/mobifone.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.VINAPHONE {
+        background: url(../bank/vinaphone.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.vietnamobile {
+        background: url(../bank/vietnamobi.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.sfone {
+        background: url(../bank/sfone.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.gmobile {
+        background: url(../bank/gmobi.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.PAYOO {
+        background: url(../bank/PAYOO.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.GATE {
+        background: url(../bank/gate.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.Vcoin {
+        background: url(../bank/Vcoin.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.otherbank-logo {
+        background: url(../bank/other.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.MBpay {
+        background: url(../bank/2pay.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+
+    i.addmore {
+        background: url(../bank/add.png) no-repeat scroll 50% 50% / 77px 35px transparent
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #header .nlpHeader h1.logo img {
+        width: 160px;
+        margin-left: 0
+    }
+
+    .nlifrmBox-Cont {
+        padding-top: 0;
+        padding-left: 0;
+        padding-right: 0;
+        background: #fff
+    }
+
+    .nlifrmBox-Cont .alert {
+        margin-left: 15px;
+        margin-right: 15px
+    }
+
+    .mform2 {
+        padding-top: 0
+    }
+}
+
+.checkout30 {
+    margin-top: 15px
+}
+
+@media screen and (min-width: 768px) {
+    .checkout30 {
+        margin-top: 35px
+    }
+}
+
+.checkout30 .box-content {
+    background-color: #fff;
+    -webkit-box-shadow: 0 2px 8px 0 rgba(35, 28, 21, .1);
+    -moz-box-shadow: 0 2px 8px 0 rgba(35, 28, 21, .1);
+    box-shadow: 0 2px 8px 0 rgba(35, 28, 21, .1);
+    border-radius: 6px;
+    padding: 15px;
+    position: relative;
+    border-top: 5px solid #f29657;
+    margin-bottom: 30px
+}
+
+.checkout30 .dropdown-menu {
+    border: none;
+    -webkit-box-shadow: 0 2px 8px 0 rgba(35, 28, 21, .1);
+    -moz-box-shadow: 0 2px 8px 0 rgba(35, 28, 21, .1);
+    box-shadow: 0 2px 8px 0 rgba(35, 28, 21, .1);
+    border-radius: 6px
+}
+
+.checkout30 .form-control {
+    background-color: #fff;
+    border: 1px solid #e8e7e7
+}
+
+.checkout30 #header .hotline {
+    position: absolute;
+    top: 10px;
+    right: 10px
+}
+
+.checkout30 .payopt-title {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px
+}
+
+.checkout30 .merCnCollapse {
+    color: #333
+}
+
+.checkout30 .orderForm {
+    margin: 15px;
+    background: #f9fafc
+}
+
+.checkout30 blockquote.small {
+    margin-top: 30px;
+    color: #bd2130
+}
+
+.greenFont i.fa-chevron-down {
+       padding-right: 5px;
+    font-size: 55px;
+    position: absolute;
+    left: -61px;
+    top: -11px;
+}
+
+.success .payopt-title {
+    padding: 10px;
+    margin-bottom: 0
+}
+
+.control-label {
+    color: #333
+}
+
+.checkout30 .qrcode .thumbnail {
+    border: none
+}
+
+.checkout30 .qrcode .bankwrap i {
+    float: none
+}
+
+.checkout30 .qrcode .qrImg {
+    width: 200px
+}
+
+.checkout30 .qrcode .shopping-cart-payment table > tbody > tr > td {
+    border-top: none;
+    border-bottom: 1px solid #ddd
+}
+
+.checkout30 .qrcode #trans_status_text {
+    margin: 10px 0 15px 0;
+    font-size: 16px
+}
+
+.checkout30 .qrcode .nlOrder-warning {
+    margin-top: 0;
+    padding-top: 50px;
+    background: url(../images/022.gif) no-repeat scroll center 10px transparent;
+    width: 100%
+}
+
+.checkout30 .qrcode a.btn {
+    display: block;
+    margin: 20px auto
+}
+
+.payopt-discript-qr247 {
+    font-size: 14px !important;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.m-b20 {
+    margin-bottom: 20px !important;
+}
+
+.p-r0 {
+    padding-right: 0 !important;
+}
+
+.d-flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+.section-bank-account > div, .section-tutorial > div {
+    padding: 15px 10px;
+}
+
+.border-green {
+    border: 1px solid #80fa5f;
+}
+
+#tutorial-info {
+    display: none;
+    background-color: rgba(1, 1, 1, 0.6);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+#tutorial-info>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 70px 15px;
+}
+#tutorial-info>div>span {
+    position: absolute;
+    top: 75px;
+    right: 26.3%;
+    font-size: 30px;
+    cursor: pointer;
+    color: gray;
+}
+#tutorial-info>div>img {
+    width: 50%;
+    max-width: 100%;
+}
+.tutorial-detail {
+    margin-top: 30px;
+    transform: scale(0.8);
+    cursor: pointer;
+}
+.float-right {
+    float: right;
+}
+.img-instruction {
+    text-align: center;
+}
+.img-instruction img {
+    width: 60%;
+}
+@media screen and (max-width: 768px) {
+    .checkout30 .qrcode a.btn {
+        width: 200px;
+        display: block;
+        margin: 10px auto
+    }
+    #tutorial-info>div>img {
+        width: 95%;
+    }
+    #tutorial-info>div>span {
+        top: 75px;
+        right: 7%;
+    }
+}
+

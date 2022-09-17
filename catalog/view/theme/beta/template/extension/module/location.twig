@@ -1,0 +1,71 @@
+ <section class="awe-section-5">
+             <section class="section_bds_duan clearfix">
+                <div class="container">
+                   <h2 class="title">
+                      <span>Bất động sản <span class="cl"> theo địa điểm</span></span>
+                   </h2>
+                </div>
+                <div class="container ">
+                   <div class="row data-banner">
+
+                      <div class="col-lg-9 col-md-9">
+
+                       
+
+                         <div class="row">
+                           {% for key,location in locations %}
+                           {% if (key == '0') or (key == '1') %}
+                            <div class="{{  key == '0' ? 'col-lg-5 col-md-5' : 'col-lg-7 col-md-7' }}">
+                               <div class="image_da margin-bottom clearfix">
+                                  <a class="block h clearfix" href="{{ location.href }}" title="{{ location.name }}">
+                                  <img class="loadnormal lazyload"   src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaEAAAEqAQMAAACGEX2aAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAACZJREFUaN7twTEBAAAAwiD7pzbFPmAAAAAAAAAAAAAAAAAAAAAQOz7cAAG8Je16AAAAAElFTkSuQmCC" data-src="{{ location.image }}" alt="{{ location.name }}"/>
+                                  <span>{{ location.name }}</span>
+                                  </a>
+                                  <span class="count">17<span>Dự án</span></span>
+                               </div>
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                         </div>
+
+                         <div class="row">
+                           {% for key,location in locations %}
+                           {% if (key == '2') or (key == '3') %}
+                            <div class="{{  key == '2' ? 'col-lg-7 col-md-7' : 'col-lg-5 col-md-5' }}">
+                               <div class="image_da clearfix">
+                                  <a class="block h clearfix" href="{{ location.href }}" title="{{ location.name }}">
+                                  <img class="loadnormal lazyload"   src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaEAAAEqAQMAAACGEX2aAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAACZJREFUaN7twTEBAAAAwiD7pzbFPmAAAAAAAAAAAAAAAAAAAAAQOz7cAAG8Je16AAAAAElFTkSuQmCC" data-src="{{ location.image }}" alt="{{ location.name }}"/>
+                                  <span>{{ location.name }}</span>
+                                  </a>
+                                  <span class="count">17<span>Dự án</span></span>
+                               </div>
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                         </div>
+
+
+                         
+
+                      </div>
+                       {% for key,location in locations %}
+                       {% if key == '4' %}
+                      <div class="col-lg-3 col-md-3">
+                         <div class="image_da clearfix">
+                            <a class="block clearfix" href="{{ location.href }}" title="{{ location.name }}">
+                            <img class=" loadheight lazyload"  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaEAAAEqAQMAAACGEX2aAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAACZJREFUaN7twTEBAAAAwiD7pzbFPmAAAAAAAAAAAAAAAAAAAAAQOz7cAAG8Je16AAAAAElFTkSuQmCC" data-src="{{ location.image }}" alt="{{ location.name }}"/>
+                            <span>{{ location.name }}</span>
+                            </a>
+                            <span class="count countoff">17<span>Dự án</span></span>
+                         </div>
+                      </div>
+                      {% endif %}
+                      {% endfor %}
+                   </div>
+                   <div class="slickbanner clearfix">
+                      <div>
+                      </div>
+                   </div>
+                </div>
+             </section>
+          </section>

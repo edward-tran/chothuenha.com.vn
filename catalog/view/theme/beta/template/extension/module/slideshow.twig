@@ -1,0 +1,58 @@
+<div class="swiper-viewport slideshow-main">
+  <div id="slideshow{{ module }}" class="owl-carousel swiper-container slideshow_custom">
+   {% for banner in banners %}
+
+      <iframe class="lazyload" loading="lazy" src="{{ banner.link }}" width="100%" height="560px" frameborder="0" scrolling="no" style="overflow:hidden"></iframe>
+      
+      {% endfor %}
+
+      
+  </div>
+  <div class="swiper-pagination slideshow{{ module }}"></div>
+  <div class="swiper-pager">
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+<script type="text/javascript"><!--
+$('#slideshow{{ module }}').owlCarousel({
+  autoplay: true,
+  autoplayTimeout: 2000,
+  loop: false,
+  singleItem: true,
+  nav: false,
+  pagination: true,
+  Pagination: true,
+  rewindNav : true,
+
+
+    responsive:{
+              0:{
+                  items:1,
+
+              },
+              750:{
+                  items:1,
+
+              },
+              970:{
+                  items:1,
+
+              },
+              1170:{
+                  items:1,
+
+              }
+          },
+        lazyLoad:true,
+        navText: [
+        '<i class="fa fa-5x"></i>',
+        '<i class="fa fa-5x"></i>'
+        ]
+        
+
+
+
+
+});
+--></script>

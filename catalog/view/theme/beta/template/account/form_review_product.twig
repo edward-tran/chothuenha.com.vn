@@ -1,0 +1,75 @@
+<div class="ReactModalPortal ReactModal__Overlay ReactModal__Overlay--after-open modal fade modal_center" tabindex="-1" role="dialog" aria-hidden="true" id="ReactModalPortal">
+   <div class="modal-dialog modal-lg">
+      <div class="ReactModal__Content ReactModal__Content--after-open modal-content">
+         <div class="sc-fkubWd hpdicD" style="height: auto; display: flex;">
+            <div style="display: flex;">
+               <div style="margin-right: 24px;">
+                  <button mode="vertical" type="border" color="secondary" id="list" class="sc-bAfeAT ijdeWz">
+                     <div class="sc-jYCGvq hFAhkg"><span type="primary" class="sc-idOhPF iiaWOZ">Trang danh sách</span></div>
+                  </button>
+                  <button mode="vertical" type="border" color="secondary" id="detail" class="sc-bAfeAT gLuXof">
+                     <div class="sc-jYCGvq hFAhkg"><span type="primary" class="sc-idOhPF iiaWOZ">Trang chi tiết</span></div>
+                  </button>
+               </div>
+            </div>
+            <div class="sc-eCjkpP hpyseS" ng-click="closeModel($event, 'ReactModalPortal')">
+               <svg font-size="24px" width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19 5L5 19" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M19 19L5 5" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+               </svg>
+            </div>
+         </div>
+         <div class="sc-gfHAkt ikdYeX">
+            <div class="re__main re__sr-preview">
+               <div class="re__srp re__main-content-layout js__main-container">
+                  <div class="re__main-content">
+                     <h1 class="re__srp-title">{{ product.name }}</h1>
+                     <span class="re__srp-total-count">Hiện có <span id="count-number">1</span> bất động sản.</span>
+                     <div class="re__srp-nav-bar js__srp-nav-bar">
+                        <div class="re__srp-filter">
+                           <div class="re__select--sm" id="divSortProduct" style="" tabindex="0">
+                              <span class="re__filter-label select-text ">
+                              <span class="select-text-content">Thông thường</span>
+                           </span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="re__srp-list js__srp-list home-listing" id="product-lists-web">
+                        <article class="home-item box-shadow border-radius vip40">
+                          <figure class="home-thumb">
+                            <a href="{{product.href}}" title="{{product.name}}">
+                             <img class="imag lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaEAAAEqAQMAAACGEX2aAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAACZJREFUaN7twTEBAAAAwiD7pzbFPmAAAAAAAAAAAAAAAAAAAAAQOz7cAAG8Je16AAAAAElFTkSuQmCC"  data-src="{{product.image}}" alt="{{product.href}}">
+                            </a>
+                            <span data-post-id="{{ product.product_id }}" class="{{ product.wishlist ? 'saved' : '' }} home-save js-btn-save" title="{{ button_wishlist }}"><i></i></span>
+                          </figure>
+                          <div class="home-meta">
+                            <h4 class="home-title"><a style="color: #055699;" href="{{product.href}}" title="{{product.name}}"><span class="star star-4"></span> {{product.name}} </a></h4>
+                            <div class="meta-row clearfix">
+                              <span class="home-price">{{ product.price }} <i>/tháng</i></span>
+                              <span class="home-acreage"> {{ product.acreage ? product.acreage : '---' }}m<sup>2</sup></span>
+                              <span class="home-bedroom">{{ product.bedroom ? product.bedroom : '---' }} pn</span>
+                              <span class="home-bathroom">{{ product.bathroom ? product.bathroom : '---' }} wc</span>
+                              <span class="home-publish">Hôm nay</span>
+                            </div>
+                            <div class="meta-row clearfix meta_author">
+                              <span class="home-broker">
+                                <img src="{{ product.customer_image }}"><span>{{ product.customer_full_name }}</span>
+                              </span>
+                              <a class="home-location" href="{{ product.link_location }}" title="{{ product.location }}">{{ product.location }}</a>
+                            </div>
+                            <div class="meta-row clearfix meta_description">
+                              <p class="home-summary">{{product.description}}</p>
+                            </div>
+                            </div>
+                         </article>
+                     </div>
+                     <div class="re__srp-list js__srp-detail" id="product-details-web">
+                       
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

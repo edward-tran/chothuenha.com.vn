@@ -1,0 +1,27 @@
+<style>
+	a{
+		text-decoration:none;
+	}
+</style>
+<table width="100%" border="1" cellpadding="10" style="font-family: Arial;">
+	<thead>
+		<tr>
+			<td>Product Image</td>
+			<td>Product Name</td>
+			<td>Price</td>
+		</tr>
+	</thead>
+	<tbody>
+		{% if products%}
+		{% for product in products %}
+		<tr>
+		  <td class="text-center">
+			<a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-thumbnail"></a>
+		  </td>
+		  <td class="text-left"><a href="{{ product.href }}">{{ product.name }}</a></td>
+		  <td class="text-left">{{ product.price }}</td>
+		</tr>
+		{% endfor %}
+		{% endif %}
+	</tbody>
+</table>

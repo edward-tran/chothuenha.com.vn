@@ -1,0 +1,600 @@
+{{ header }}
+
+
+<div id="account-edit" class="container" ng-controller="postCtrl">
+
+ 
+  <div class="row">{{ column_left }}
+    {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-sm-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content" class="{{ class }}">{{ content_top }}
+    
+        
+<div id="content">
+   <div class="container">
+      <div class="show_warning"></div>
+      <form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-project" class="form-horizontal">
+         <div class="row profile">
+          {{ menu_left_profile }}
+          <div class="right-col col-lg-9">
+            <div class="bg-right">
+              <div class="post-bg-Title mgt10">
+                  <h1>Đăng tin rao bán, cho thuê nhà đất</h1>
+                  <div>
+                  (Quý vị nhập thông tin nhà đất cần bán hoặc cho thuê vào các mục dưới đây)
+                  </div>
+              </div>
+
+              <div class="dang-tin-rao-tab">
+                <a class="active fl" href="/dang-tin-rao-vat-ban-nha-dat" title="Cần bán/Cho thuê">Cần bán/Cho thuê</a>
+                <a class="fl" href="/dang-tin-rao-vat-mua-nha-dat" title="Cần mua/Cần thuê">Cần mua/Cần thuê</a>
+              </div>
+
+              <div class="rowHeader">
+                <h2>Thông tin cơ bản</h2>
+                </div>
+
+                 <div class="panel panel-default">
+                    <div class="form-group required">
+                      <label class="col-sm-12 control-label" for="input-name">{{ entry_name }}</label>
+                      <div class="col-sm-12">
+                        <input type="text" name="project_description[{{ language_id }}][name]" value="{{ project_description[language_id] ? project_description[language_id].name }}" placeholder="{{entry_name}}" id="input-name" class="form-control" />
+                        {% if error_name[language_id] %}
+                        <div class="text-danger">{{ error_name[language_id] }}</div>
+                        {% endif %} </div>
+                    </div>
+
+                     <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group required">
+                            <label class="col-sm-12 control-label">
+                            <span>Hình Thức</span>
+                            </label>
+                            <div class="col-sm-12">
+                              <select class="form-control" name="product_type_id"  ng-change="changeProductType($event)" ng-model="product_type_id" id="input-product_type_id">
+                                <option value="" selected="selected">-- Hình Thức --</option>
+                                {% for product_type in product_types %}
+                                  <option value="{{ product_type.product_type_id }}">{{ product_type.name }}</option>
+                                {% endfor %}
+                              </select>
+                            </div>
+                         </div>
+                         </div>
+
+                         <div class="col-sm-6">
+                          <div class="form-group required">
+                            <label class="col-sm-12 control-label">
+                            <span>Loại</span>
+                            </label>
+                            <div class="col-sm-12">
+                              <select class="form-control" name="category_id" id="input-category_id">
+                                <option value="" selected="selected">-- Phân mục --</option>
+                              </select>
+                            </div>
+                         </div>
+                         </div>
+                     </div>
+
+                     <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group required">
+                            <label class="col-sm-12 control-label">
+                            <span>Tỉnh/Thành phố</span>
+                            </label>
+                            <div class="col-sm-12">
+                              <select class="form-control" name="zone_id" id="input-zone_id" data-placeholder="{{ text_none }}">
+                                <option value="">-- Tỉnh/Thành phố --</option>
+                              </select>
+                            </div>
+                         </div>
+                         </div>
+
+                         <div class="col-sm-6">
+                          <div class="form-group required">
+                            <label class="col-sm-12 control-label">
+                            <span>Quận/Huyện</span>
+                            </label>
+                            <div class="col-sm-12">
+                              <select class="form-control" name="district_id" id="input-district_id">
+                                <option value="" selected="selected">-- Quận/Huyện --</option>
+                              </select>
+                            </div>
+                         </div>
+                         </div>
+                     </div>
+
+
+                     <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group required">
+                            <label class="col-sm-12 control-label">
+                            <span>Phường/Xã</span>
+                            </label>
+                            <div class="col-sm-12">
+                              <select class="form-control" name="ward_id" id="input-ward_id">
+                                <option value="" selected="selected">-- Phường/Xã --</option>
+                              </select>
+                            </div>
+                         </div>
+                         </div>
+
+                         <div class="col-sm-6">
+                          <div class="form-group required">
+                            <label class="col-sm-12 control-label">
+                            <span>Đường/Phố</span>
+                            </label>
+                            <div class="col-sm-12">
+                              <input class="form-control" name="address_2" value="{{ address_2 }}" id="input-address_2" placeholder="Đường/Phố">
+                            </div>
+                         </div>
+                         </div>
+                     </div>
+
+                      <div class="row">
+                       <div class="col-sm-6">
+                          <div class="form-group required">
+                             <label class="col-sm-12 control-label" for="input-price">{{ column_price }}</label>
+                             <div class="col-sm-12">
+                                <div class="price">
+                                   <input type="text" name="price" value="{{ price }}" placeholder="{{column_price}}" id="input-price" class="form-control">
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label class="col-sm-12" for="input-weight-class">{{entry_weight_class}}</label>
+                            <div class="col-sm-12">
+                               <select name="weight_class_id" id="input-weight-class" class="form-control">
+                                  {% for weight_class in weight_classes %}
+                                  {% if weight_class.weight_class_id == weight_class_id %}
+                                  <option value="{{ weight_class.weight_class_id }}" selected="selected">{{ weight_class.title }}</option>
+                                  {% else %}
+                                  <option value="{{ weight_class.weight_class_id }}">{{ weight_class.title }}</option>
+                                  {% endif %}
+                                  {% endfor %}
+                                </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                 
+                      <div class="form-group required">
+                         <label class="col-sm-12 control-label" for="input-address">Địa chỉ</label>
+                         <div class="col-sm-12">
+                            <div class="price">
+                               <input type="text" name="address" value="" id="input-address" class="form-control" placeholder="Địa chỉ">
+                            </div>
+                         </div>
+                      </div>
+
+                  </div>
+
+                   <div class="rowHeader">
+                      <h2>THÔNG TIN MÔ TẢ</h2>
+                    </div>
+                  <div class="panel panel-default">
+                   
+                      <div class="row">
+
+                        <div class="col-lg-6">
+                          <div class="form-group">
+                            <label class="col-sm-12" for="input-description">Mô tả ngắn tối đa chỉ 3000 ký tự</label>
+                            <div class="col-sm-12">
+                              <textarea name="project_description[{{ language_id }}][description]" placeholder="{{ entry_description }}" id="input-description" class="form-control" rows="10">{{ project_description[language_id] ? project_description[language_id].description }}</textarea>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-6">
+                          <div class="text">
+                            <img src="https://file4.batdongsan.com.vn/images/Home/images/arrow.png" alt="">
+                            Giới thiệu chung về bất động sản của bạn. Ví dụ: Khu nhà có vị trí thuận lợi: Gần
+                            công viên, gần trường học ... Tổng diện tích 52m2, đường đi ô tô vào tận cửa.<br>
+                            <span style="color: #f00;">Lưu ý: tin rao chỉ để mệnh giá tiền Việt Nam Đồng.</span>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+
+                  <div class="rowHeader">
+                      <h2>THÔNG TIN KHÁC</h2>
+                    </div>
+                  <div class="panel panel-default">
+                    
+                    <label class="col-sm-12">Quý vị nên điền đầy đủ thông tin vào các mục dưới đây để tin đăng có hiệu quả hơn</label>
+
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="form-group">
+                         <label class="col-sm-12" for="input-address">Mặt tiền (m)</label>
+                         <div class="col-sm-12">
+                               <input type="text" name="width" value="{{ width }}" placeholder="{{entry_width}}" id="input-width" class="form-control" />
+                         </div>
+                      </div>
+                      </div>
+
+                      <div class="col-lg-6">
+                        <div class="form-group">
+                         <label class="col-sm-12" for="input-address">Đường vào (m)</label>
+                         <div class="col-sm-12">
+                               <input type="text" name="way_in" value="" placeholder="Đường vào (m)" id="input-width" class="form-control" />
+                         </div>
+                      </div>
+                      </div>
+
+                    </div>
+
+
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="form-group">
+                         <label class="col-sm-12" for="input-address">Hướng nhà</label>
+                         <div class="col-sm-12">
+                               <select class="form-control">
+                                <option value="0">KXĐ</option>
+                                <option value="1">Đông</option>
+                                <option value="2">Tây</option>
+                                <option value="3">Nam</option>
+                                <option value="4">Bắc</option>
+                                <option value="5">Đông-Bắc</option>
+                                <option value="6">Tây-Bắc</option>
+                                <option value="7">Tây-Nam</option>
+                                <option value="8">Đông-Nam</option></select>
+                         </div>
+                      </div>
+                      </div>
+
+                      <div class="col-lg-6">
+                        <div class="form-group">
+                         <label class="col-sm-12" for="input-address">Hướng ban công</label>
+                         <div class="col-sm-12">
+                               <select id="ddlBaconDirection" class="form-control">
+                                <option value="0">KXĐ</option>
+                                <option value="1">Đông</option>
+                                <option value="2">Tây</option>
+                                <option value="3">Nam</option>
+                                <option value="4">Bắc</option>
+                                <option value="5">Đông-Bắc</option>
+                                <option value="6">Tây-Bắc</option>
+                                <option value="7">Tây-Nam</option>
+                                <option value="8">Đông-Nam</option>
+                                </select>
+                         </div>
+                      </div>
+                      </div>
+                    </div>
+
+
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="form-group">
+                         <label class="col-sm-12" for="input-address">Số tầng</label>
+                         <div class="col-sm-12">
+                               <input type="text" name="" value="" placeholder="" id="input-width" class="form-control" />
+                         </div>
+                      </div>
+                      </div>
+
+                      <div class="col-lg-6">
+                        
+                      </div>
+                    </div>
+
+
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="form-group">
+                         <label class="col-sm-12" for="input-address">Số phòng ngủ</label>
+                         <div class="col-sm-12">
+                               <input type="text" name="" value="" placeholder="Số phòng ngủ" id="input-width" class="form-control" />
+                         </div>
+                      </div>
+                      </div>
+
+                      <div class="col-lg-6">
+                        <div class="form-group">
+                         <label class="col-sm-12" for="input-address">Số toilet</label>
+                         <div class="col-sm-12">
+                               <input type="text" name="" value="" placeholder="Số toilet" id="input-width" class="form-control" />
+                         </div>
+                      </div>
+                      </div>
+                    </div>
+
+
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="form-group">
+                         <label class="col-sm-12" for="input-address">Nội thất</label>
+                         <div class="col-sm-12">
+                               <textarea name="" placeholder="Nội thất" class="form-control" rows="10"></textarea>
+                         </div>
+                      </div>
+                      </div>
+
+                      <div class="col-lg-12">
+                        <div class="form-group">
+                         <label class="col-sm-12" for="input-address">Thông tin pháp lý</label>
+                         <div class="col-sm-12">
+                               <textarea name="" placeholder="Ví dụ: Đã có sổ đỏ. Đã có sổ hồng. Đã được phê duyệt quyết định đầu tư..."  class="form-control" rows="3"></textarea>
+                         </div>
+                      </div>
+                      </div>
+                    </div>
+
+
+
+                  </div>
+
+                  <div class="rowHeader">
+                      <h2>BẢN ĐỒ</h2>
+                    </div>
+                  <div class="panel panel-default">
+                      <div class="form-group">
+                        <div class="map-notify">
+                          Để tăng độ tin cậy và tin rao được nhiều người quan tâm hơn, hãy sửa vị trí tin rao của bạn trên bản đồ bằng cách kéo icon
+                          <img src="https://file4.batdongsan.com.vn/images/map-icon-detail.png" width="14" />
+                          tới đúng vị trí của tin rao. 
+                          </div>
+                                                  <div id="map_canvas"></div>
+                          <div id="addWarning" style="color: #f00; padding: 5px;"></div>
+                          <div class="map-notify">Có thể dữ liệu bản đồ không chính xác. Vì vậy nếu có bất kỳ sai xót nào xin bạn hãy báo cho chúng tôi để khắc phục kịp thời.</div>
+                          </div>
+                      </div>
+                  
+
+                  <div class="rowHeader">
+                      <h2>LIÊN HỆ</h2>
+                    </div>
+                  <div class="panel panel-default">
+                    <div class="form-group required">
+                         <label class="col-sm-12 control-label" for="input-author">Tên liên hệ</label>
+                         <div class="col-sm-12">
+                               <input type="text" name="author" value="{{ author }}" placeholder="Tên liên hệ" id="input-author" class="form-control" />
+                         </div>
+                      </div>
+                      <div class="form-group control-label">
+                         <label class="col-sm-12 control-label" for="input-address_author">Địa chỉ người đăng</label>
+                         <div class="col-sm-12">
+                               <input type="text" name="address_author" value="{{ address_author }}" placeholder="Địa chỉ người đăng" id="input-address_author" class="form-control" />
+                         </div>
+                      </div>
+
+                      <div class="form-group required">
+                         <label class="col-sm-12 control-label" for="input-telephone">Di động</label>
+                         <div class="col-sm-12">
+                               <input type="text" name="telephone" value="{{ telephone }}" placeholder="Di động" id="input-telephone" class="form-control" />
+                         </div>
+                      </div>
+                      <div class="form-group required">
+                         <label class="col-sm-12 control-label" for="input-email">Email</label>
+                         <div class="col-sm-12">
+                               <input type="text" name="email" value="{{ email }}" placeholder="Email" id="input-email" class="form-control" />
+                         </div>
+                      </div>
+                  </div>
+
+                   <div class="rowHeader">
+                      <h2>LỊCH ĐĂNG TIN</h2>
+                    </div>
+                  <div class="panel panel-default">
+                    <div class="row">
+                      <div class="col-lg-4">
+                         <div class="form-group">
+                         <label class="col-sm-12" for="">Loại tin rao</label>
+                         <div class="col-sm-12">
+                            <select id="ddlVipType" class="form-control">
+                                <option value="5">Tin thường</option><option value="4">Tin ưu đãi</option><option value="3">Tin Vip 3</option><option value="2">Tin Vip 2</option><option value="1">Tin Vip 1</option><option value="0">Vip đặc biệt</option>
+                            </select>
+                         </div>
+                      </div>
+                      </div>
+
+                      <div class="col-lg-4">
+                         <div class="form-group">
+                         <label class="col-sm-12" for="input-address">Ngày bắt đầu</label>
+                         <div class="col-sm-12">
+                            <input type="text" name="" value="" placeholder="Ngày bắt đầu" id="input-width" class="form-control" />
+                         </div>
+                      </div>
+                      </div>
+
+                      <div class="col-lg-4">
+                         <div class="form-group">
+                         <label class="col-sm-12" for="input-address">Ngày kết thúc</label>
+                         <div class="col-sm-12">
+                            <input type="text" name="" value="" placeholder="Ngày kết thúc" id="input-width" class="form-control" />
+                         </div>
+                      </div>
+                      </div>
+
+                      <div class="col-lg-12">
+                         <div class="form-group">
+                        <div id="vip_cofig_info_explain" style="">
+                          <strong>Tin thường</strong>: Là loại tin đăng bằng chữ <font color="#009AD2">màu xanh</font>, khung <font color="#009AD2">màu xanh</font>
+                        </div>
+                        <div class="vip_cofig_info">
+                            <div class="project-unitprice">
+                            <label>Đơn giá cuối cùng: </label>
+                            <span>2 nghìn 727 đồng/Ngày</span>
+                            </div>
+                            <div class="project-totaldate">
+                            <label>Số ngày: </label>
+                            <span>31 ngày</span>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="project-vipnotice">
+                          <img alt="vip icon" src="https://file4.batdongsan.com.vn/images/Home/images/vip-icon.jpg" style="padding-top: 3px;">
+                          <div>
+                          Quý khách nên chọn đăng tin Vip để có hiệu quả cao hơn, ví dụ: tin Vip1 có lượt
+                          xem trung bình cao hơn <strong>20 lần</strong> so với tin thường
+                          </div>
+                          </div>
+                      </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div class="rowHeader"><h2>Thành tiền</h2></div>
+                  <div class="panel panel-default">
+                    <div class="form-group">
+                      <div class="rowContent project-cost">
+                        <table border="1" class="tblPrice">
+                        <tbody><tr>
+                        <th>Phí đăng tin</th>
+                        <th>VAT(10%)</th>
+                        <th></th>
+                        <th>Thành tiền</th>
+                        </tr>
+                        <tr>
+                        <td id="lblPrice">84 nghìn 537 đồng</td>
+                        <td id="lblVAT">8 nghìn 454 đồng</td>
+                        <td></td>
+                        <td id="lblCost">93 nghìn</td>
+                        </tr>
+                        </tbody></table>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="panel panel-default">
+                  
+                    <div class="form-group text-center">
+                      <a href="javascript:;" class="btn btn-primary" ng-click="addProject($event)">Đăng tin</a>
+                    </div>
+                  </div>
+
+                  <div class="panel panel-default">
+                      <div class="form-group">
+                        Lưu ý:
+                        Quý khách đang sử dụng tính năng đăng tin nhanh của diemtinnhadat.com.vn. Tính năng này giúp Quý khách có thể đăng tin ngay mà không cần phải đăng ký hay đăng nhập như tại nhiều website khác. Tuy nhiên, để có thể quản lý được tin đăng của mình thuận lợi hơn thì Quý khách nên đăng ký và đăng nhập. Việc này cũng giúp Quý khách có thể đăng được nhiều tin hơn so với giới hạn tối đa 3 tin rao vặt nhà đất khi Quý khách không đăng nhập.
+                        Nếu gặp bất kỳ khó khăn gì trong việc đăng ký, đăng nhập, đăng tin hay trong việc sử dụng website nói chung, Quý vị hãy liên hệ ngay với tổng đài CSKH của chúng tôi: 1900 1881 hoặc email: hotro@batdongsan.com.vn để được trợ giúp
+                      </div>
+                  </div>
+                  </div>
+                         
+                         
+
+          </div>
+
+          {{ menu_right_profile }}
+            
+         </div>
+         <input type="hidden" name="project_id" value="266">
+       
+      </form>
+   </div>
+</div>
+{{ content_bottom }}</div>
+{{ column_right }}</div>
+</div>
+
+
+
+<!--- STAR ZONE ID -->
+  
+<script type="text/javascript">
+$('select[name=\'zone_id\']').on('click', function(){
+    $(this).select2({
+       allowClear: true,
+       theme: "bootstrap",
+       cache: true,
+       ajax: { 
+       url: "index.php?routing=localisation/country/country&country_id={{ config_country_id }}",
+       dataType: 'json',
+       delay: 250,
+       data: function (params) {
+        return {
+          filter_name: params.term, // search term
+          page: params.page
+        };
+      },
+     processResults: function (data, page) {
+       return {
+          results: $.map(data, function (item) {
+            return {
+              text: item.name,
+              id: item.zone_id
+            }
+          })
+       };
+     }
+    },
+  });
+})
+
+
+$('select[name=\'zone_id\']').on('change', function(){
+    $('select[name=\'district_id\']').select2({
+       allowClear: true,
+       theme: "bootstrap",
+       cache: false,
+       ajax: { 
+       url: 'index.php?routing=localisation/district/getDistrictCode&zone_id='+$(this).val(),
+       dataType: 'json',
+       delay: 250,
+       data: function (params) {
+        return {
+          filter_name: params.term, // search term
+          page: params.page
+        };
+      },
+     processResults: function (data, page) {
+       return {
+          results: $.map(data, function (item) {
+            return {
+              text: item.name,
+              id: item.district_id
+            }
+          })
+       };
+     }
+    },
+  });
+});
+
+
+$('select[name=\'district_id\']').on('change', function(){
+    $('select[name=\'ward_id\']').select2({
+       allowClear: true,
+       theme: "bootstrap",
+       cache: false,
+       ajax: { 
+       url: 'index.php?routing=localisation/ward/getWardCode&district_id='+$(this).val(),
+       dataType: 'json',
+       delay: 250,
+       data: function (params) {
+        return {
+          filter_name: params.term, // search term
+          page: params.page
+        };
+      },
+     processResults: function (data, page) {
+       return {
+          results: $.map(data, function (item) {
+            return {
+              text: item.name,
+              id: item.ward_id
+            }
+          })
+       };
+     }
+    },
+  });
+});
+
+
+
+</script>
+
+
+<!-- END ZONE ID  -->
+
+{{ footer }}

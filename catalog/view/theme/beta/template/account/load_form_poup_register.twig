@@ -1,0 +1,378 @@
+<script type="text/javascript" src="catalog/view/javascript/jquery/datetimepicker/moment/moment.min.js"></script>
+<script type="text/javascript" src="catalog/view/javascript/jquery/datetimepicker/moment/moment-with-locales.min.js"></script>
+<script type="text/javascript" src="catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js"></script>
+
+
+
+
+<div class="modal fade login" id="register" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content relative">
+            <div class="modal-header">
+                <h4 class="modal-title">Đăng ký</h4>
+                <span class="c-pointer" data-dismiss="modal" aria-label="Close">
+                    <i class="input-icon field-icon fa">
+                        <img src="catalog/view/theme/beta/images/ico_close.svg" alt="close">
+                    </i>
+                </span>
+            </div>
+            <div class="modal-body">
+                <form class="form bravo-form-register iiwis-form-register" method="post">
+
+     <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="form-group">
+                <input type="text" class="form-control" id="username" name="username" autocomplete="off" placeholder="Tên đăng nhập">
+                <i class="input-icon field-icon klook-icon-alt"></i>
+                <span class="invalid-feedback error error-username"></span>
+            </div>
+        </div>
+         <div class="col-lg-12 col-md-12">
+    <div class="form-group">
+        <input type="email" class="form-control" id="email" name="email" autocomplete="off" placeholder="Địa chỉ email">
+        <i class="input-icon klook-icon-email"></i>
+        <span class="invalid-feedback error error-email"></span>
+    </div>
+    </div>
+       
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-6 col-md-12">
+            <div class="form-group">
+                <input type="text" class="form-control" id="firstname" name="firstname" autocomplete="off" placeholder="Tên đầy đủ">
+                <i class="input-icon field-icon klook-icon-alt"></i>
+                <span class="invalid-feedback error error-firstname"></span>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12">
+            <div class="form-group">
+                <input type="text" class="form-control date_input" id="brithday" name="brithday" autocomplete="off" placeholder="Ngày sinh">
+                <i class="input-icon field-icon klook-icon-alt"></i>
+                <span class="invalid-feedback error error-brithday"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="field-content reg-gender">
+                <input id="MainContent__register_rdMale" type="radio" name="sex" value="1" checked="checked">
+                <label for="MainContent__register_rdMale"> Nam</label>
+                <input id="MainContent__register_rdFemale" type="radio" name="sex" value="2">
+                <label for="MainContent__register_rdFemale"> Nữ</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="form-group required">
+              <select name="zone_id" id="zone_id">
+                    <option value="">-- Tỉnh/Thành Phố --</option>
+              </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6 col-md-12">
+            <div class="form-group required">
+              <select name="district_id" id="district_id" class="form-control">
+              <option value="">Quận/Huyện</option>
+              </select>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12">
+            <div class="form-group required">
+              <select name="ward_id" id="ward_id" class="form-control">
+              <option value="">Phường/Xã</option>
+              </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="field-content reg-gender">
+                <input id="organize_personal" type="radio" name="organize" value="1" checked="checked" id="organize">
+                <label for="organize_personal"> Cá nhân</label>
+                <input id="organize_organize" type="radio" name="organize" value="2">
+                <label for="organize_organize"> Công Ty</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="text" class="form-control" name="postcode" autocomplete="off" placeholder="Mã số thuế cá nhân/CMND" id="postcode">
+        <span class="invalid-feedback error error-email"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="text" class="form-control" name="telephone" autocomplete="off" placeholder="Điện thoại" id="telephone">
+        <i class="input-icon field-icon klook-icon-telephone"></i>
+        <span class="invalid-feedback error error-telephone"></span>
+    </div>
+
+    
+    
+    <div class="form-group">
+        <input type="password" class="form-control" name="password" autocomplete="off" placeholder="Mật khẩu" id="password">
+        <i class="input-icon fa fa-lock"></i>
+        <span class="invalid-feedback error error-password"></span>
+    </div>
+    <div class="form-group">
+        <input type="password" class="form-control" name="confirm" autocomplete="off" placeholder="Nhập lại mật khẩu" id="confirm">
+        <i class="input-icon fa fa-lock"></i>
+        <span class="invalid-feedback error error-password"></span>
+    </div>
+    <div class="form-group">
+        <label for="term">
+            <input id="term" type="checkbox" name="term" class="mr5" id="term">
+            Tôi đã đọc và đồng ý <a href='' target='_blank'>Điều khoản và Chính sách Bảo mật</a>
+            <p>
+                Bằng cách nhấn vào Đăng ký, bạn đồng ý với các Điều khoản thỏa thuận, Quy chế hoạt động, Chính sách bảo mật thông tin, Cơ chế giải quyết khiếu nại, Quy định về báo giá và hỗ trợ và các quy định có liên quan khác được công khai trên diemtinnhadat.com.vn.
+            </p>
+            <span class="checkmark fcheckbox"></span>
+        </label>
+        <div><span class="invalid-feedback error error-term"></span></div>
+    </div>
+        <div class="error message-error invalid-feedback"></div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary form-submit" ng-click="register($event)">
+            Đăng ký
+            <span class="spinner-grow spinner-grow-sm icon-loading hidden" role="status" aria-hidden="true"></span>
+        </button>
+    </div>
+        <div class="c-grey f14 text-center">
+       Bạn co săn san để tạo một tai khoản?
+        <a href="#" ng-click="loadFormLogin($event);">Đăng nhập</a>
+    </div>
+
+    <div class="c-grey f14 text-center">
+       Chú ý: Thông tin Tên đăng nhập, email, số điện thoại di động không thể thay đổi sau khi đăng ký.
+Để được trợ giúp vui lòng liên hệ tổng đài CSKH 111111 hoặc email diemtinnhadat.com.vn
+    </div>
+</form>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script type="text/javascript">
+        // $.ajax({
+        //       url: 'index.php?routing=account/account/country&country_id=230' + this.value,
+        //       dataType: 'json',
+        //       beforeSend: function() {
+        //         $('select[name=\'country_id\']').prop('disabled', true);
+        //       },
+        //       complete: function() {
+        //         $('select[name=\'country_id\']').prop('disabled', false);
+        //       },
+        //       success: function(json) {
+        //         if (json['postcode_required'] == '1') {
+        //           $('input[name=\'postcode\']').parent().parent().addClass('required');
+        //         } else {
+        //           $('input[name=\'postcode\']').parent().parent().removeClass('required');
+        //         }
+                
+        //         html = '<option value="">{{ text_select }}</option>';
+                
+        //         if (json['zone'] && json['zone'] != '') {
+        //           for (i = 0; i < json['zone'].length; i++) {
+        //             html += '<option value="' + json['zone'][i]['zone_id'] + '"';
+                    
+        //             if (json['zone'][i]['zone_id'] == '{{ zone_id }}') {
+        //               html += ' selected="selected"';
+        //             }
+                    
+        //             html += '>' + json['zone'][i]['name'] + '</option>';
+        //           }
+        //         } else {
+        //           html += '<option value="0" selected="selected">{{ text_none }}</option>';
+        //         }
+                
+        //         $('select[name=\'zone_id\']').html(html);
+        //         $(".select2-search").select2();
+        //       },
+        //       error: function(xhr, ajaxOptions, thrownError) {
+        //         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+        //       }
+        // });
+    </script>
+
+<script type="text/javascript">
+// $('select[name=\'zone_id\']').on('change', function() {
+//       $.ajax({
+//       url: 'index.php?routing=localisation/district/getDistrictCode&zone_id=' + this.value,
+//       dataType: 'json',     
+//       success: function(json) {
+//         if(json.district) {
+//         html = '<option value=""> --- Quận - Huyện --- </option>';
+//         if (json != '') {
+//           for (i = 0; i < json.length; i++) {
+//         html += '<option value="' + json[i]['district_id'] + '"';
+//             if (json[i]['name'] == '') {
+//           html += ' selected="selected"';
+//           }
+//           html += '>' + json[i]['name'] + '</option>';
+//           }
+//         } else {
+//           html += '<option value="0" selected="selected"> {{ text_none }} </option>';
+//         }
+        
+//         $('select[name=\'city\']').html(html);
+//         $(".select2-search").select2();
+
+//       }
+//       },
+//       error: function(xhr, ajaxOptions, thrownError) {
+//         console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+//       }
+//       });
+
+// });
+// setTimeout(function(){ 
+//   $('select[name=\'zone_id\']').trigger('change');
+//  }, 3000);
+</script>
+
+
+<script type="text/javascript">
+// $('select[name=\'city\']').on('change', function() {
+//       $.ajax({
+//       url: 'index.php?routing=localisation/ward/getWardCode&district_id=' + this.value,
+//       dataType: 'json',     
+//       success: function(json) {
+//         if(json.ward) {
+//         html = '<option value=""> --- Xã/Phường --- </option>';
+//         if (json['ward'] != '') {
+//           for (i = 0; i < json['ward'].length; i++) {
+//         html += '<option value="' + json['ward'][i]['ward_id'] + '"';
+//             if (json['ward'][i]['name'] == '') {
+//           html += ' selected="selected"';
+//           }
+//           html += '>' + json['ward'][i]['name'] + '</option>';
+//           }
+//         } else {
+//           html += '<option value="0" selected="selected"> --- Không --- </option>';
+//         }
+        
+//         $('select[name=\'ward\']').html(html);
+//         $(".select2-search").select2();
+
+//       }
+//       },
+//       error: function(xhr, ajaxOptions, thrownError) {
+//         console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+//       }
+//       });
+
+// });
+// setTimeout(function(){ 
+//   $('select[name=\'city\']').trigger('change');
+//  }, 3000);
+
+</script>
+
+<script type="text/javascript"><!--
+$('.date_input').datetimepicker({
+  language: 'vi',
+  pickTime: false,
+  ignoreReadonly: true,
+  allowInputToggle: true,
+  useCurrent: false
+});
+//--></script>
+
+<script type="text/javascript">
+    $('select[name=\'zone_id\']').select2({
+       allowClear: true,
+       theme: "bootstrap",
+       cache: true,
+       ajax: { 
+       url: "index.php?routing=localisation/country/country&country_id={{ config_country_id }}",
+       dataType: 'json',
+       delay: 250,
+       data: function (params) {
+        return {
+          filter_name: params.term, // search term
+          page: params.page
+        };
+      },
+     processResults: function (data, page) {
+      $('select[name=\'district_id\']').html('<option value="">Quận/Huyện</option>');
+      $('select[name=\'ward_id\']').html('<option value="">Phường/Xã</option>');
+       return {
+          results: $.map(data, function (item) {
+            return {
+              text: item.name,
+              id: item.zone_id
+            }
+          })
+       };
+     }
+    },
+  });
+
+$('select[name=\'zone_id\']').on('change', function(){
+  $('select[name=\'district_id\']').select2({
+     allowClear: true,
+     theme: "bootstrap",
+     cache: false,
+     ajax: { 
+     url: 'index.php?routing=localisation/district/getDistrictCode&zone_id='+$(this).val(),
+     dataType: 'json',
+     delay: 250,
+     data: function (params) {
+      return {
+        filter_name: params.term, // search term
+        page: params.page
+      };
+    },
+   processResults: function (data, page) {
+     return {
+        results: $.map(data, function (item) {
+          $('select[name=\'ward_id\']').html('<option value="">Phường/Xã</option>');
+          return {
+            text: item.name,
+            id: item.district_id
+          }
+        })
+     };
+   }
+  },
+});
+});
+
+$('select[name=\'district_id\']').on('change', function(){
+    $('select[name=\'ward_id\']').select2({
+       allowClear: true,
+       theme: "bootstrap",
+       cache: false,
+       ajax: { 
+       url: 'index.php?routing=localisation/ward/getWardCode&district_id='+$(this).val(),
+       dataType: 'json',
+       delay: 250,
+       data: function (params) {
+        return {
+          filter_name: params.term, // search term
+          page: params.page
+        };
+      },
+     processResults: function (data, page) {
+       return {
+          results: $.map(data, function (item) {
+            return {
+              text: item.name,
+              id: item.ward_id
+            }
+          })
+       };
+     }
+    },
+  });
+});
+
+
+</script>

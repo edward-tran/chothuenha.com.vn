@@ -1,0 +1,391 @@
+{{header}}
+
+
+<div id="payment-post" class="container payment-post">
+   <div class="page-header">
+   <ul class="breadcrumb">
+      {% for breadcrumb in breadcrumbs %}
+      <li>
+         <a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a>
+      </li>
+      {% endfor %}
+   </ul>
+</div>
+   {% if success %}
+   <div class="alert alert-success alert-dismissible">
+      <i class="fa fa-check-circle">
+      </i> {{ success }}
+   </div>
+   {% endif %}
+
+    <div class="row">
+                <div class="col-md-8">
+                    <form class="form-horizontal frm-manage-post js-frm-manage-post">
+                        <section class="section box-shadow">
+                            <div class="section-header">
+                                <span class="section-title">Chọn gói tin đăng</span>
+                            </div>
+                            <div class="section-content">
+
+                                <div class="form-group js-group-package-type hidden">
+                                    <label class="label-title">Chọn gói thời gian</label>
+                                    <select class="form-control" name="package_type_time">
+                                        <option value="day">Đăng theo ngày</option>
+                                        <option value="week">Đăng theo tuần</option>
+                                        <option value="month">Đăng theo tháng</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group js-group-package">
+                                    <label class="label-title">Chọn loại tin</label>
+                                    <select class="form-control" name="post_type">
+                                       {% for post_type in post_types %}
+                                       <option value="{{post_type.post_type_id}}">{{post_type.name}} ({{post_type.price}}/ngày)</option>
+                                       {% endfor %}
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group js-group-type-date hidden">
+                                    <div class="js-package-type js-package-type-day ">
+                                        <label class="label-title">Số ngày</label>
+                                        <select class="form-control" name="total_day">
+                                            <option value="3" disabled="disabled">3 ngày</option>
+                                            <option value="4" disabled="disabled">4 ngày</option>
+                                            <option value="5" disabled="disabled">5 ngày</option>
+                                            <option value="6" disabled="disabled">6 ngày</option>
+                                            <option value="7" disabled="disabled">7 ngày</option>
+                                            <option value="8" disabled="disabled">8 ngày</option>
+                                            <option value="9" disabled="disabled">9 ngày</option>
+                                            <option value="10">10 ngày</option>
+                                            <option value="11">11 ngày</option>
+                                            <option value="12">12 ngày</option>
+                                            <option value="13">13 ngày</option>
+                                            <option value="14">14 ngày</option>
+                                            <option value="15">15 ngày</option>
+                                            <option value="16">16 ngày</option>
+                                            <option value="17">17 ngày</option>
+                                            <option value="18">18 ngày</option>
+                                            <option value="19">19 ngày</option>
+                                            <option value="20">20 ngày</option>
+                                            <option value="21">21 ngày</option>
+                                            <option value="22">22 ngày</option>
+                                            <option value="23">23 ngày</option>
+                                            <option value="24">24 ngày</option>
+                                            <option value="25">25 ngày</option>
+                                            <option value="26">26 ngày</option>
+                                            <option value="27">27 ngày</option>
+                                            <option value="28">28 ngày</option>
+                                            <option value="29">29 ngày</option>
+                                            <option value="30">30 ngày</option>
+                                            <option value="31">31 ngày</option>
+                                            <option value="32">32 ngày</option>
+                                            <option value="33">33 ngày</option>
+                                            <option value="34">34 ngày</option>
+                                            <option value="35">35 ngày</option>
+                                            <option value="36">36 ngày</option>
+                                            <option value="37">37 ngày</option>
+                                            <option value="38">38 ngày</option>
+                                            <option value="39">39 ngày</option>
+                                            <option value="40">40 ngày</option>
+                                            <option value="41">41 ngày</option>
+                                            <option value="42">42 ngày</option>
+                                            <option value="43">43 ngày</option>
+                                            <option value="44">44 ngày</option>
+                                            <option value="45">45 ngày</option>
+                                            <option value="46">46 ngày</option>
+                                            <option value="47">47 ngày</option>
+                                            <option value="48">48 ngày</option>
+                                            <option value="49">49 ngày</option>
+                                            <option value="50">50 ngày</option>
+                                            <option value="51">51 ngày</option>
+                                            <option value="52">52 ngày</option>
+                                            <option value="53">53 ngày</option>
+                                            <option value="54">54 ngày</option>
+                                            <option value="55">55 ngày</option>
+                                            <option value="56">56 ngày</option>
+                                            <option value="57">57 ngày</option>
+                                            <option value="58">58 ngày</option>
+                                            <option value="59">59 ngày</option>
+                                            <option value="60">60 ngày</option>
+                                            <option value="61">61 ngày</option>
+                                            <option value="62">62 ngày</option>
+                                            <option value="63">63 ngày</option>
+                                            <option value="64">64 ngày</option>
+                                            <option value="65">65 ngày</option>
+                                            <option value="66">66 ngày</option>
+                                            <option value="67">67 ngày</option>
+                                            <option value="68">68 ngày</option>
+                                            <option value="69">69 ngày</option>
+                                            <option value="70">70 ngày</option>
+                                            <option value="71">71 ngày</option>
+                                            <option value="72">72 ngày</option>
+                                            <option value="73">73 ngày</option>
+                                            <option value="74">74 ngày</option>
+                                            <option value="75">75 ngày</option>
+                                            <option value="76">76 ngày</option>
+                                            <option value="77">77 ngày</option>
+                                            <option value="78">78 ngày</option>
+                                            <option value="79">79 ngày</option>
+                                            <option value="80">80 ngày</option>
+                                            <option value="81">81 ngày</option>
+                                            <option value="82">82 ngày</option>
+                                            <option value="83">83 ngày</option>
+                                            <option value="84">84 ngày</option>
+                                            <option value="85">85 ngày</option>
+                                            <option value="86">86 ngày</option>
+                                            <option value="87">87 ngày</option>
+                                            <option value="88">88 ngày</option>
+                                            <option value="89">89 ngày</option>
+                                            <option value="90">90 ngày</option>
+                                        </select>
+                                    </div>
+                                    <div class="js-package-type js-package-type-week hidden">
+                                        <label class="label-title">Số tuần</label>
+                                        <select class="form-control" name="total_week">
+                                            <option value="1">1 tuần</option>
+                                        <option value="2">2 tuần</option>
+                                        <option value="3">3 tuần</option>
+                                        <option value="4">4 tuần</option>
+                                        <option value="5">5 tuần</option>
+                                        <option value="6">6 tuần</option>
+                                        <option value="7">7 tuần</option>
+                                        <option value="8">8 tuần</option>
+                                        <option value="9">9 tuần</option>
+                                        <option value="10">10 tuần</option>
+                                    </select>
+                                    </div>
+                                    <div class="form-group js-package-type js-package-type-month hidden">
+                                        <label class="label-title">Số tháng</label>
+                                        <select class="form-control" name="total_month">
+                                            <option value="1">1 tháng</option>
+                                        <option value="2">2 tháng</option>
+                                        <option value="3">3 tháng</option>
+                                        <option value="4">4 tháng</option>
+                                        <option value="5">5 tháng</option>
+                                        <option value="6">6 tháng</option>
+                                        <option value="7">7 tháng</option>
+                                        <option value="8">8 tháng</option>
+                                        <option value="9">9 tháng</option>
+                                        <option value="10">10 tháng</option>
+                                        <option value="11">11 tháng</option>
+                                        <option value="12">12 tháng</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                <div class="form-group js-group-type-label hidden" style="margin-bottom: 0;">
+                                    <label class="label-title" for="">Gắn nhãn</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="post_label" value="0" id="post_label">
+                                        <label class="form-check-label" for="post_label">Cho thuê nhanh (<span class="js-package-label-price">1.000</span> đ/ngày)</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="section box-shadow js-payment-methods">
+                            <div class="section-header"><div class="section-title">Chọn phương thức thanh toán</div></div>
+                            <div class="section-content">
+                                <div class="form-group">
+                                    <div class="payment-methods">
+                                        <div class="method-item form-check mb-3 js-payment-item js-payment-account">
+                                            <input type="radio" name="payment_method" id="payment_from_account" value="account" checked="checked" class="form-check-input">
+                                            <label for="payment_from_account" class="form-check-label">
+                                                Trừ tiền trong tài khoản Chothuenha.me <span style="display: block; font-weight: normal;">(Bạn đang có TK Chính: 55.000đ, TKKM: 0đ )</span>
+                                                <p style="color: #ff0000;" class="js-note-outofmoney hidden">Số tiền trong tài khoản của bạn không đủ để thực hiện thanh toán, vui lòng <a href="https://chothuenha.me/dashboard/nap-tien.html">nạp thêm</a> hoặc chọn phương thức khác bên dưới</p>
+                                            </label>
+                                        </div>
+                                        <div class="method-item form-check mb-3 js-payment-item js-payment-momo">
+                                            <input type="radio" name="payment_method" id="payment_from_momo" value="momo" class="form-check-input">
+                                            <label for="payment_from_momo" class="form-check-label">
+                                                Thanh toán qua ví điện tử MOMO
+                                                <i class="icon-momo"></i>
+                                            </label>
+                                        </div>
+                                        
+                                        <div class="method-item form-check mb-3 js-payment-item js-payment-bank-transfer">
+                                            <input type="radio" name="payment_method" id="payment_from_bank_transfer" value="bank_transfer" class="form-check-input">
+                                            <label for="payment_from_bank_transfer" class="form-check-label">
+                                            Chuyển khoản ngân hàng
+                                            
+                                                <p class="js-note-transfer-money">
+                                                    Nội dung chuyển khoản:
+                                                    <span style="color: #ff0000; text-transform: uppercase;font-weight: bold;">
+                                                        CTN {{' '}} {{ product_info.model }} <span class="js-package-title-ck">-</span> <span class="js-time-type-ck"></span> <span class="js-time-type-so-luong">30 ngay</span></span></p>
+                                                <p style="font-weight: normal;">
+                                                    Số tiền chuyển khoản:
+                                                    <span style="color: #ff0000;font-weight: bold;" class="js-package-grand-total">0đ</span></p>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <div class="dashboard-bar">
+                            <a class="btn back" href="{{back}}"><i></i> Quay lại</a>
+                            <button type="submit" class="btn complete" id="complete_post">Thanh toán: <span class="ml-2 js-package-grand-total">0đ</span></button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <section class="section box-shadow section-payment-summary js-payment-summary-sticky" data-margin-top="100" data-margin-bottom="50" style="">
+                        <div class="section-header"><div class="section-title">Thông tin thanh toán</div></div>
+                        <div class="section-content">
+                            <table class="table" style="margin-bottom: 0;">
+                                <tbody><tr>
+                                    <td>Loại tin:</td>
+                                    <td class="js-package-title">{{ post_type }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Gói thời gian:</td>
+                                    <td class="js-time-type">{{times}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Đơn giá:</td>
+                                    <td class="js-package-price">{{price}}</td>
+                                </tr>
+                                <tr class="js-use-label hidden">
+                                    <td>Gắn nhãn:</td>
+                                    <td><span class="js-package-label-price">1.000</span> đ/ngày</td>
+                                </tr>
+                                <tr>
+                                    <td>Số ngày:</td>
+                                    <td><span class="js-package-days">{{ days }}</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Ngày hết hạn</td>
+                                    <td class="js-package-deadline">9:38, 26/9/2022</td>
+                                </tr>
+                                <tr>
+                                    <td>Thành tiền:</td>
+                                    <td><span style="font-size: 15px; font-weight: bold; color: #16c784;" class="js-package-grand-total">{{total_payment}}</span></td>
+                                </tr>
+                            </tbody></table>
+                        </div>
+                    </section>
+                </div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    var post_type_free_id = {{post_type_free_id}};
+
+    function getInfoService() {
+        var post_type_id = $('select[name=\'post_type\']').val();
+        var package_type_time = $('select[name=\'package_type_time\']').val();
+        var total_day = $('select[name=\'total_day\']').val();
+        var total_week = $('select[name=\'total_week\']').val();
+        var total_month = $('select[name=\'total_month\']').val();
+        $.ajax({
+          url: 'index.php?routing=account/payment_post/getInfoService&post_type_id='+post_type_id+'&package_type_time='+package_type_time+'&total_day='+total_day+'&total_week='+total_week+'&total_month='+total_month,
+          type: 'GET',
+          dataType: 'json',
+          beforeSend: function() {
+          },
+          success: function(json) {
+             $('.js-package-title').html(json['post_type_name']);
+             $('.js-time-type').html(json['post_type_times']);
+             $('.js-package-price').html(json['post_type_price']);
+             $('.js-package-days').html(json['post_type_days']);
+             $('.js-package-deadline').html(json['post_type_deadline']);
+             $('.js-package-grand-total').html(json['post_type_total_payment']);
+             $('.js-time-type-so-luong').html(json['post_type_days']);
+             if(json['note-outofmoney']) {
+                $('.js-note-outofmoney').html(json['note-outofmoney']);
+                $('.js-note-outofmoney').removeClass('hidden');
+            } else {
+                $('.js-note-outofmoney').html('');
+                $('.js-note-outofmoney').addClass('hidden');
+            }
+            }
+       });
+    }
+
+    $('select[name=\'post_type\']').on('change', function(){
+        var post_type_id = $(this).val();
+        if(post_type_id != post_type_free_id) {
+            $('.js-group-package-type').removeClass('hidden');
+            $('.js-group-type-date').removeClass('hidden');
+        } else {
+            $('.js-group-package-type').addClass('hidden');
+            $('.js-group-type-date').addClass('hidden');
+        }
+        getInfoService();
+    });
+
+    $('select[name=\'total_day\']').on('change', function(){
+        getInfoService();
+    });
+
+    $('select[name=\'total_week\']').on('change', function(){
+        getInfoService();
+    });
+
+    $('select[name=\'total_month\']').on('change', function(){
+        getInfoService();
+    });
+
+    $('select[name=\'package_type_time\']').on('change', function(){
+        var package_type_time = $(this).val();
+        switch(package_type_time) {
+          case 'day':
+            $('.js-package-type-day').removeClass('hidden');
+            $('.js-package-type-week').addClass('hidden');
+            $('.js-package-type-month').addClass('hidden');
+            break;
+          case 'week':
+            $('.js-package-type-day').addClass('hidden');
+            $('.js-package-type-week').removeClass('hidden');
+            $('.js-package-type-month').addClass('hidden');
+            break;
+        case 'month':
+            $('.js-package-type-day').addClass('hidden');
+            $('.js-package-type-week').addClass('hidden');
+            $('.js-package-type-month').removeClass('hidden');
+            break;
+          default:
+            // code block
+        }
+        getInfoService();
+    });
+
+    $('#complete_post').on('click', function(){
+        showLoading();
+        var post_type_id = $('select[name=\'post_type\']').val();
+        var package_type_time = $('select[name=\'package_type_time\']').val();
+        var total_day = $('select[name=\'total_day\']').val();
+        var total_week = $('select[name=\'total_week\']').val();
+        var total_month = $('select[name=\'total_month\']').val();
+        $.ajax({
+          url: 'index.php?routing=account/payment_post/complete_post',
+          type: 'POST',
+          data: {
+            post_type_id: post_type_id,
+            package_type_time: package_type_time,
+            total_day: total_day,
+            total_week: total_week,
+            total_month: total_month,
+          },
+          dataType: 'json',
+          beforeSend: function() {
+            setTimeout(function() {
+                hideLoading();
+            }, 500);
+          },
+          success: function(json) {
+            if(json.status == true) {
+
+            } else {
+                if(json['error_total_payment']) {
+                    var $toast = toastr['error'](json['error_total_payment']);   
+                }
+            }
+          }
+        });
+    });
+    
+
+</script>
+
+
+{{footer}}

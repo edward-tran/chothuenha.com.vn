@@ -1,0 +1,145 @@
+{{ header }}
+<div class="append_html_filter append_pagination">
+<div id="account-account" class="">
+  <div class="sc-imcLir cExqpY">
+    {{ column_left }}
+  <div class="sc-bHKNvF folniP col-lg-10 col-md-9 col-sm-9 col-xs-12">
+   <div class="sc-fweGeb kUzkwc">
+      <div class="sc-ibushM dhggPq">
+         <ul class="sc-heOwwK izlmnd"></ul>
+      </div>
+   </div>
+   <div class="sc-jTWTst hYLsTD">
+      <div class="sc-cHOiLE SLkmA">
+         <div class="sc-hymtyp bjqBjR">
+            <h3 type="primary" class="sc-dlfnbm lhekIy">Danh sách tin</h3>
+         </div>
+        
+      </div>
+   </div>
+  
+   <div class="sc-jhSEkC COfqa">
+      <div class="sc-jLNwoM jvBuwT">
+
+
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <section class="section" style="padding: 0;">
+                    <div class="section-content">
+                        <div class="note alert alert-danger">
+                            <p>Lưu ý quan trọng: Trong quá trình thanh toán, bạn vui lòng <strong>KHÔNG ĐÓNG TRÌNH DUYỆT</strong>.</p>
+                            <p>Nếu gặp khó khăn trong quá trình thanh toán, xin liên hệ <strong>0917686101</strong> để chúng tôi hỗ trợ bạn.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <form class="js-form-submit-data" id="frm-payment-method-atm" action="#" data-action-url="https://chothuenha.me/api/momo/payment" method="POST" novalidate="novalidate">
+                    <section class="section box-shadow border-radius">
+                        <div class="section-content">
+                            <div class="form-step">
+                                <div class="section-header">
+                                    <h3 class="section-title">Chọn số tiền cần nạp</h3>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-check form-check-inline mr-4 js-btn-group-price">
+                                        <input class="form-check-input" type="radio" name="amount" id="radio50000" value="50000" checked="">
+                                        <label class="form-check-label" for="radio50000">
+                                        50.000 đ
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4 js-btn-group-price">
+                                        <input class="form-check-input" type="radio" name="amount" id="radio100000" value="100000">
+                                        <label class="form-check-label" for="radio100000">
+                                        100.000 đ
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4 js-btn-group-price">
+                                        <input class="form-check-input" type="radio" name="amount" id="radio200000" value="200000">
+                                        <label class="form-check-label" for="radio200000">
+                                        200.000 đ
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4 js-btn-group-price">
+                                        <input class="form-check-input" type="radio" name="amount" id="radio500000" value="500000">
+                                        <label class="form-check-label" for="radio500000">
+                                        500.000 đ
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4 js-btn-group-price">
+                                        <input class="form-check-input" type="radio" name="amount" id="radio1000000" value="1000000">
+                                        <label class="form-check-label" for="radio1000000">
+                                        1.000.000 đ
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4 js-btn-group-price">
+                                        <input class="form-check-input" type="radio" name="amount" id="radio20000000" value="2000000">
+                                        <label class="form-check-label" for="radio20000000">
+                                        2.000.000 đ
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline js-btn-group-price">
+                                        <input class="form-check-input" type="radio" name="amount" id="radio50000000" value="5000000">
+                                        <label class="form-check-label" for="radio50000000">
+                                        5.000.000 đ
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <p>Hoặc nhập số tiền cần nạp</p>
+                                    <div class="js-price-wrapper">
+                                        <div class="input-group mb-3">
+                                          <input type="text" name="amount_input" class="form-control js-price" placeholder="Nhập số tiền cần nạp" value="50.000">
+                                          <div class="input-group-append">
+                                            <span class="input-group-text" id="basic-addon2">vnđ</span>
+                                          </div>
+                                        </div>
+                                        <span class="js-price-text hidden" style="font-style: italic; margin-top: 5px; display: block;"></span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <input type="hidden" name="type_charging" value="momo">
+                        </div>
+                    </section>
+
+                    <div class="dashboard-bar">
+                        <a class="btn back" href="https://chothuenha.me/dashboard/nap-tien.html"><i></i> Quay lại</a>
+                        <button type="submit" name="thanhtoan" class="btn next js-btn-hoan-tat">Tiếp tục <i></i></button>                                                   
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <section class="section box-shadow border-radius js-payment-summary-sticky" data-margin-top="100" data-margin-bottom="50">
+                    <div class="section-header"><div class="section-title">Thông tin tài khoản</div></div>
+                    <div class="section-content">
+                        <div class="margin-bottom-5">
+                            <span>Mã thành viên: </span>
+                            <span><strong>2775</strong></span>
+                        </div>
+                        <div>
+                            <span>Số dư: </span>
+                            <span><strong>0<sup>đ</sup></strong></span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+
+
+      </div>
+      <div></div>
+      <div></div>
+   </div>
+</div>
+
+
+</div>
+</div>
+</div>
+
+
+
+
+
+{{ footer }}

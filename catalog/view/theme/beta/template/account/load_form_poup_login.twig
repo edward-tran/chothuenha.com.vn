@@ -1,0 +1,63 @@
+<div class="modal fade login" id="login" tabindex="-1" role="dialog" aria-hidden="true" ng-controller="mainController">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content relative">
+            <div class="modal-header">
+                <h4 class="modal-title">Đăng nhập</h4>
+                <span class="c-pointer" data-dismiss="modal" aria-label="Close">
+                    <i class="input-icon field-icon fa">
+                        <img src="catalog/view/theme/beta/images/ico_close.svg" alt="close">
+                    </i>
+                </span>
+            </div>
+            <div class="modal-body relative">
+                <form class="iiwis-form-login" method="POST" action="">
+    <input type="hidden" name="_token" value="">    <div class="form-group">
+        <input type="text" class="form-control" name="email" autocomplete="off" placeholder="Địa chỉ email">
+        <i class="input-icon klook-icon-email"></i>
+        <span class="invalid-feedback error error-email"></span>
+    </div>
+    <div class="form-group">
+        <input type="password" class="form-control" name="password" autocomplete="off"  placeholder="Mật khẩu">
+        <i class="input-icon fa fa-lock"></i>
+        <span class="invalid-feedback error error-password"></span>
+    </div>
+    <div class="form-group">
+        <div class="d-flex justify-content-between">
+            <label for="remember-me" class="mb0">
+                <input type="checkbox" name="remember" id="remember-me" value="1"> Nhớ tôi <span class="checkmark fcheckbox"></span>
+            </label>
+            <a href="#">Quên mật khẩu?</a>
+        </div>
+    </div>
+        <div class="error message-error invalid-feedback"></div>
+    <div class="form-group">
+        <a href="javascript:;" class="btn btn-primary form-submit" ng-click="login($event)">
+            Đăng nhập
+            <span class="spinner-grow spinner-grow-sm icon-loading hidden" role="status" aria-hidden="true"></span>
+        </a>
+    </div>
+    <div class="advanced hidden">
+            <p class="text-center f14 c-grey">or continue with</p>
+            <div class="row">
+                                    <div class="col-xs-12 col-sm-6">
+                        <a href="https://vietnamtourguide.com/social-login/facebook" class="btn btn_login_fb_link" data-channel="facebook">
+                            <i class="input-icon fa fa-facebook"></i>
+                            Facebook
+                        </a>
+                    </div>
+                                                    <div class="col-xs-12 col-sm-6">
+                        <a href="https://vietnamtourguide.com/social-login/google" class="btn btn_login_gg_link" data-channel="google">
+                            <i class="input-icon fa fa-google"></i>
+                            Google
+                        </a>
+                    </div>
+                                            </div>
+        </div>
+        <div class="c-grey font-medium f14 text-center"> Không có tài khoản? <a href="" ng-click="loadFormRegister($event);">Đăng ký</a>
+    </div>
+    <input type="hidden" name="redirect" value="{{ redirect }}" />
+</form>
+            </div>
+        </div>
+    </div>
+</div>

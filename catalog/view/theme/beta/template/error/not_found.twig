@@ -1,0 +1,96 @@
+{{ header }}
+<div class="append_html_filter">
+<div id="error-not-found" class="container">
+   <div class="row">{{ column_left }}
+    {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-sm-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content" class="{{ class }}">
+      {{ content_top }}
+      <main class="main">
+        <div class="error">error</div>
+        <img src="image/data/image.png">
+        <h2>{{ heading_title }}</h2>
+        <h6>{{ text_error }}</h6>
+        <a href="{{ continue }}" class="button">{{ button_continue }}</a>
+      </main>
+      {{ content_bottom }}
+    </div>
+    {{ column_right }}</div>
+</div>
+
+<style type="text/css">
+  .main {
+      margin-top: 5%;
+      text-align: center;
+  }
+
+.main .error {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0vw;
+    color: rgba(0,0,0,.02);
+    font-size: 25vw;
+    text-align: center;
+    font-weight: 900;
+    font-family: sans-serif;
+    pointer-events: none;
+}
+.main img {
+    width: 40%;
+    max-width: 420px;
+}
+
+.main h2 {
+    color: #3d4145;
+    font-size: 32px;
+    font-weight: 700;
+}
+.main h6 {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.main .button {
+    display: inline-block;
+    line-height: 1.25;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    margin: 1.8rem;
+    padding: 1rem 1.8rem;
+    font-size: 14px;
+    border-radius: 25rem;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    color: #fff;
+    -webkit-transition: background-color .3s ease-in-out,-webkit-box-shadow .3s ease-in-out;
+    transition: background-color .3s ease-in-out,-webkit-box-shadow .3s ease-in-out;
+    -o-transition: box-shadow .3s ease-in-out,background-color .3s ease-in-out;
+    transition: box-shadow .3s ease-in-out,background-color .3s ease-in-out;
+    transition: box-shadow .3s ease-in-out,background-color .3s ease-in-out,-webkit-box-shadow .3s ease-in-out;
+    position: relative;
+    background-image: -webkit-linear-gradient(356deg,#ee5154,#fb7100);
+    background-image: -o-linear-gradient(356deg,#ee5154,#fb7100);
+    background-image: linear-gradient(94deg,#ee5154,#fb7100);
+    -webkit-box-shadow: 0 30px 65px -10px rgb(255 139 44 / 60%);
+    box-shadow: 0 30px 65px -10px rgb(255 139 44 / 60%);
+}
+@media (max-width: 500px) {
+  .main .error {
+    top: 50vw;
+}
+}
+
+</style>
+</div>
+
+{{footer}}

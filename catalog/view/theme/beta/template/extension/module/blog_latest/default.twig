@@ -1,0 +1,34 @@
+<div class="project-list-box">
+                        <h2 class="contact-title1">Bài viết mới</h2>
+                        <ul class="list-itme-project clearfix">
+
+                           {% for blog in blogs %}
+                           <li>
+                              <div class="left-item bg-s-default">
+                                 <img src="{{ blog.image }}">
+                                 <div class="ic-play">
+                                    <a href="">
+                                    <img src="image/catalog/demo/icon-video.svg">
+                                    </a>
+                                 </div>
+                              </div>
+                              <div class="right-item">
+                                 <div class="name-item-right clamp-3-lines">
+                                    <a href="{{ blog.href }}">{{ blog.name }}</a>
+                                 </div>
+                                 <div class="time-item">
+                                    1 tháng trước
+                                 </div>
+                              </div>
+                           </li>
+                           {% endfor %}
+                        </ul>
+                        <div class="item-row">
+                           <a href="" class="btn-viewmore white-button-border">Xem thêm</a>
+                        </div>
+                     </div> 
+                       
+                       
+                       
+                       
+                      

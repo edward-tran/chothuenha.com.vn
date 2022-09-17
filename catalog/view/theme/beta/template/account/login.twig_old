@@ -1,0 +1,169 @@
+{{ header }}
+<div id="account-login">
+  {% if success %}
+  <div class="alert alert-success alert-dismissible"><i class="fa fa-check-circle"></i> {{ success }}</div>
+  {% endif %}
+  {% if error_warning %}
+  <div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}</div>
+  {% endif %}
+  <div class="row">{{ column_left }}
+    {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-sm-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content" class="{{ class }}">{{ content_top }}
+    <div class="main-outlet clearfix">
+	<div class="login-dropdown">
+  <div class="drop-login-container clearfix">
+    <div class="header">
+      <h1 class="headline">Log In To Your Account</h1>
+      <p class="subhead">Not part of the club? <a href="javascript:;">Click here</a>.</p>
+    </div>
+        <form action="{{ action }}" method="post" enctype="multipart/form-data" id="login-page-login-form" class="login-form-container clearfix">
+      <div class="col fl clearfix">
+       
+        <div class="clearfix">
+          <div class="input-group">
+            <input type="email" required="" name="email" value="{{ email }}" id="input-email" class="gmaterial ember-text-field ember-view">
+            <label for="identification" class="gmaterial">{{ entry_email }}</label>
+          </div>
+          <div class="input-group">
+            <input type="password" value="{{ password }}" name="password" autocomplete="current-password" required="" id="input-password" class="gmaterial ember-text-field ember-view">
+            <label for="password" class="gmaterial">{{ entry_password }}</label>
+          </div>
+          <div class="fr forgot-password">
+            <p class="fine-print"><a href="/user/forgot" id="ember532" class="ember-view">Forgot password?</a></p>
+          </div>
+          <div>  
+            <button type="submit" class="button cta_animate large">{{ button_login }}</button>
+            {% if redirect %}
+              <input type="hidden" name="redirect" value="{{ redirect }}" />
+              {% endif %}
+          </div>
+        </div>
+
+      </div>
+      <div class="fl clearfix vert-separator">
+        <span><em>or</em></span>
+      </div>
+      <div class="col fr clearfix social-login">
+        <a href="index.php?routing=extension/module/wlogin/facebook" class="facebook-login">
+          <div id="ember536" class="bl-asset ember-view"><picture>
+  <img alt="Facebook Login" src="image/data/Facebook_Login.png" title="" class="">
+</picture>
+
+</div>
+        </a>
+        <a href="https://accounts.google.com/o/oauth2/auth?response_type=code&amp;redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Fblacklapel.com%2Findex.php%3Frouting%3Dextension%2Fmodule%2Fwlogin%2Fgcallback&amp;client_id=305813554376-se66mj2j7d8676n42irhd8frh73rv56b.apps.googleusercontent.com&amp;scope=email+profile&amp;access_type=online&amp;approval_prompt=auto" class="google-login">
+          <div id="ember538" class="bl-asset ember-view"><picture>
+  <img alt="Google Login" src="image/data/Google_Login.png" title="" class="">
+</picture>
+
+</div>
+        </a>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="registration-page">
+  <div class="header">
+    <h2 class="headline">Get Started Today</h2>
+    <p class="subhead">Killer custom style is just a click away.</p>
+    <p>Already part of the in crowd? <a href="javascript:;" id="login_show">Log in here</a>.</p>
+  </div>
+
+  <div class="registration-forms">
+    <div class="social-login clearfix">
+      <div class="social-button">
+        <a href="index.php?routing=extension/module/wlogin/facebook" class="facebook-login">
+          <div id="ember541" class="bl-asset ember-view"><picture>
+  <img src="image/data/Facebook_Login.png" title="" alt="" class="">
+</picture>
+
+</div>
+        </a> 
+      </div>
+      <div class="social-button">
+        <a href="https://accounts.google.com/o/oauth2/auth?response_type=code&amp;redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Fblacklapel.com%2Findex.php%3Frouting%3Dextension%2Fmodule%2Fwlogin%2Fgcallback&amp;client_id=305813554376-se66mj2j7d8676n42irhd8frh73rv56b.apps.googleusercontent.com&amp;scope=email+profile&amp;access_type=online&amp;approval_prompt=auto" class="google-login">
+          <div id="ember543" class="bl-asset ember-view"><picture>
+  <img src="image/data/Google_Login.png" title="" alt="" class="">
+</picture>
+
+</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="separator">
+      <span><em>or</em></span>
+    </div>
+    <div class="text-center">
+    <p>{{ text_new_customer }}</p>
+    </div>
+
+    <div id="ember546" class="ember-view"><div class="registration-form-container">
+  <form name="page-registration-form" id="page-registration-form">
+    <input type="hidden" name="redirect_url" value="">
+    <div class="clearfix">
+      <div class="col clearfix">
+        <div class="input-group">
+          <input pattern="^[a-zA-Z-/s]{1,20}$" name="firstname" type="text" autocomplete="given-name" title="First Name" required="" autocapitalize="words" id="ember552" class="gmaterial ember-text-field ember-view">
+          <label for="firstname" class="gmaterial">First Name</label>
+        </div>
+        <div class="input-group">
+          <input pattern="^[a-zA-Z-/s]{1,20}$" name="lastname" type="text" autocomplete="family-name" title="Last Name" required="" autocapitalize="words" id="ember553" class="gmaterial ember-text-field ember-view">
+          <label for="lastname" class="gmaterial">Last Name</label>
+        </div>
+        <div class="input-group">
+          <input name="email" type="email" autocomplete="email" title="Email Address" required="" id="ember554" class="gmaterial ember-text-field ember-view">
+          <label for="email" class="gmaterial">Email Address</label>
+        </div>
+      </div>
+      <div class="col clearfix">
+        <div class="input-group">
+          <input name="password" type="password" autocomplete="new-password" title="Password" required="" id="ember555" class="gmaterial ember-text-field ember-view">
+          <label for="password" class="gmaterial">Password</label>
+        </div>
+        <div class="input-group">
+          <input name="confirmation" type="password" autocomplete="new-password" title="Confirm Password" required="" id="ember556" class="gmaterial ember-text-field ember-view">
+          <label for="confirmation" class="gmaterial">Confirm Password</label>
+        </div>
+        <div class="checkbox-container">
+          <label class="checkbox">
+            <input type="checkbox" checked="checked" id="Terms" value="1" title="Sign Up for Newsletter" name="terms-of-service" class="checkbox"> I agree to the <a href="/terms-of-use" id="ember557" class="ember-view">Terms of Service</a>.
+          </label>
+        </div>
+        <div class="checkbox-container">
+          <label class="checkbox">
+            <input name="is_subscribed" type="checkbox" id="is_subscribed" class="checkbox ember-checkbox ember-view"> Yes, I’d like to receive exclusive style tips and content!
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <div class="form-error-msg"></div>
+      <button class="register-button button cta_animate large">{{ button_continue }}</button>
+    </div>
+  </form>
+</div></div>
+
+  </div>
+</div>
+
+</div>
+      {{ content_bottom }}</div>
+    {{ column_right }}</div>
+</div>
+<script>
+  $(document).ready(function(){
+      $('#login_show').on('click', function(){
+          $('.login-dropdown').toggleClass('opened');
+      });
+  });
+
+</script>
+{{ footer }}

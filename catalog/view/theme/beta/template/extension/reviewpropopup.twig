@@ -1,0 +1,190 @@
+<div id="modal" class="white-popup-block reviewpropopup width600 mfp-hide" {% if popupbg %} style="background-image:url({{ popupbg }});" {% endif %}>
+	<a class="popup-modal-dismiss" data-effect="mfp-zoom-in" href="#"></a>
+	<img src="{{ popuplogo }}" class="img-responsive center-block" />
+	{% if popuptitle %}<h2>{{ popuptitle }}</h2>{% endif %}
+	{{ popupdesc }}
+	{% if products %}
+		{% for product in products %}
+		<hr />
+		<div class="row">
+			<div class="col-sm-5">
+				<a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-thumbnail"></a>
+			</div>
+			<div class="col-sm-7">
+				<a href="{{ product.href }}"><h3>{{ product.name }}</h3></a>
+				<form id="form-reviewpropopup_{{ product.product_id }}" method="post" class="form-horizontal" enctype="multipart/form-data">
+					{% if reviewpro_fields.namefield %}
+					<div class="{% if reviewpro_fields.namefield == '2' %} required {% endif %}">
+						<label class="control-label" for="input_review_1">{{ reviewform.name }}</label>
+						<input type="text" name="name" id="input_review_1" value="{{ customer_name }}" placeholder="{{ reviewform.name }}" class="form-control" />
+					</div>
+					{% endif %}
+					
+					{% if reviewpro_fields.emailfield %}
+					<div class="{% if reviewpro_fields.emailfield == '2' %} required {% endif %}">
+						<label class="control-label" for="input_review_2">{{ reviewform.email }}</label>
+						<input type="text" name="email" id="input_review_2" value="{{ customer_email }}" placeholder="{{ reviewform.email }}" class="form-control" />
+					</div>
+					{% endif %}
+					
+					{% if reviewpro_fields.titlefield %}
+					<div class="{% if reviewpro_fields.titlefield == '2' %} required {% endif %}">
+						<label class="control-label" for="input_review_3">{{ reviewform.rtitle }}</label>
+						<input type="text" name="title" id="input_review_3" value="" placeholder="{{ reviewform.rtitle }}" class="form-control" />
+					</div>
+					{% endif %}
+					
+					{% if reviewpro_fields.commentfield %}
+					<div class="{% if reviewpro_fields.commentfield == '2' %} required {% endif %}">
+						<label class="control-label" for="input_review_4">{{ reviewform.comment }}</label>
+						<textarea class="form-control" id="input_review_4" name="comment" placeholder="{{ reviewform.comment }}"></textarea>
+					</div>
+					{% endif %}
+					
+					{% if reviewpro_fields.ratingreq %}
+					<div class="{% if reviewpro_fields.ratingreq == '2' %} required {% endif %}">
+					  <label class="control-label">{{ reviewform.rating }}</label>
+						{% if ratinglists %}
+						{% for ratinglist in ratinglists %}
+						<div class="row">
+							<label class="col-sm-3" for="input-rating">{{ ratinglist.rating_name }}</label>
+							<div class="col-sm-9">
+								<fieldset class="rating">
+									<input type="radio" id="star5_{{ ratinglist.rating_id }}" name="rating[{{ ratinglist.rating_id }}]" value="5" /><label class="full" for="star5_{{ ratinglist.rating_id }}" title="Awesome - 5 stars"></label>
+									<input type="radio" id="star4_{{ ratinglist.rating_id }}" name="rating[{{ ratinglist.rating_id }}]" value="4" /><label class="full" for="star4_{{ ratinglist.rating_id }}" title="Pretty good - 4 stars"></label>
+									<input type="radio" id="star3_{{ ratinglist.rating_id }}" name="rating[{{ ratinglist.rating_id }}]" value="3" /><label class="full" for="star3_{{ ratinglist.rating_id }}" title="Meh - 3 stars"></label>
+									<input type="radio" id="star2_{{ ratinglist.rating_id }}" name="rating[{{ ratinglist.rating_id }}]" value="2" /><label class="full" for="star2_{{ ratinglist.rating_id }}" title="Kinda bad - 2 stars"></label>
+									<input type="radio" id="star1_{{ ratinglist.rating_id }}" name="rating[{{ ratinglist.rating_id }}]" value="1" /><label class="full" for="star1_{{ ratinglist.rating_id }}" title="Sucks big time - 1 star"></label>
+								</fieldset>
+							</div>
+						</div>
+						{% endfor %}
+						{% endif %}
+						<input type="hidden" id="input_review_6" />
+					</div>
+					{% endif %}
+					
+					{% if reviewpro_fields.attachimage %}
+					<div class="">
+					  <label class="control-label">{{ reviewform.attachmenttext }}</label>
+					  <div class="attachedfiles"></div>
+						<button type="button" id="button-popup-review" data-loading-text="{{ text_loading }}" class="btn btn-default btn-block"><i class="fa fa-upload"></i> {{ button_upload }}</button>
+					</div>
+					{% endif %}
+					
+					{% if reviewpro_fields.capcha %}
+					{{ captcha }}
+					{% endif %}
+					
+					<input type="hidden" value="{{ product.product_id }}" name="product_id" />
+					<div class="buttons clearfix">
+						<div class="pull-right">
+							<button type="button" id="form-button_{{ product.product_id }}" data-loading-text="{{ text_loading }}" class="btn btn-primary">{{ reviewform.submitreviewbtn }}</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$('#form-button_{{ product.product_id }}').on('click', function(){
+				$.ajax({
+					url: 'index.php?routing=extension/reviewpro/writereviewpro',
+					type: 'post',
+					data: $('#form-reviewpropopup_{{ product.product_id }} input[type=\'radio\']:checked, #form-reviewpropopup_{{ product.product_id }} input[type=\'text\'], #form-reviewpropopup_{{ product.product_id }} textarea, #form-reviewpropopup_{{ product.product_id }} input[type=\'hidden\'], #form-reviewpropopup_{{ product.product_id }} select, #form-reviewpropopup_{{ product.product_id }} input[type=\'file\']'),
+					dataType: 'json',
+					beforeSend: function() {
+						$('#form-button_{{ product.product_id }}').button('loading');
+					},
+					complete: function() {
+						$('#form-button_{{ product.product_id }}').button('reset');
+					},
+					success: function(json){
+						$('#form-reviewpropopup_{{ product.product_id }} .text-danger').remove();
+						$('#form-reviewpropopup_{{ product.product_id }} .required').removeClass('has-error');
+						if(json['error']){
+							for(i in json['error']){
+								var element = $('#input_review_' + i);
+								$(element).after('<div class="text-danger">' + json['error'][i] + '</div>');
+								$(element).parent().addClass('has-error');
+							}
+						}else{
+							$('form#form-reviewpropopup_{{ product.product_id }}').html('{{ thankyoumessage }}');
+						}
+					},
+					error: function(xhr, ajaxOptions, thrownError) {
+						alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+					}
+				});
+			});
+		</script>
+		{% endfor %}
+	{% endif %}
+</div>
+<script type="text/javascript"><!--
+$('button[id^=\'button-popup-review\']').on('click', function() {
+var node = this;
+$('#form-upload').remove();
+$('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+$('#form-upload input[name=\'file\']').trigger('click');
+if (typeof timer != 'undefined') {
+	clearInterval(timer);
+}
+timer = setInterval(function() {
+	if ($('#form-upload input[name=\'file\']').val() != '') {
+		clearInterval(timer);
+		$.ajax({
+			url: 'index.php?routing=extension/reviewpro/reviewfileupload',
+			type: 'post',
+			dataType: 'json',
+			data: new FormData($('#form-upload')[0]),
+			cache: false,
+			contentType: false,
+			processData: false,
+			beforeSend: function() {
+				$(node).button('loading');
+			},
+			complete: function() {
+				$(node).button('reset');
+			},
+			success: function(json) {
+				$('.text-danger').remove();
+
+				if (json['error']) {
+					$(node).parent().find('input').after('<div class="text-danger">' + json['error'] + '</div>');
+				}
+
+				if (json['success']) {
+					alert(json['success']);
+					if(json['code'] && json['image']){
+						if(json['type'] == 'zip'){
+							$('.attachedfiles').append('<label style="margin-right:5px;vertical-align:top"><a href="'+ json['href'] +'">'+ json['image'] +'</a><input type="hidden" value="'+ json['code'] +'" name="file[]"></label>')
+						}else{
+							$('.attachedfiles').append('<label style="width:100px;margin-right:5px;"><img src="'+ json['image'] +'" class="img-responsive"><input type="hidden" value="'+ json['code'] +'" name="file[]"></label>')
+						}
+					}
+				}
+			},
+			error: function(xhr, ajaxOptions, thrownError) {
+				alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+			}
+		});
+	}
+}, 500);
+});
+
+$.magnificPopup.open({
+	items: {
+		src: '#modal',
+		type: 'inline',
+		preloader: true,
+		fixedContentPos: false
+	},
+	closeBtnInside: true
+}).magnificPopup('open');
+$(document).on('click', '.popup-modal-dismiss', function (e) {
+	e.preventDefault();
+	$.magnificPopup.close();
+});
+					
+
+//--></script>

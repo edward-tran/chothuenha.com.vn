@@ -1,0 +1,2128 @@
+{{ header }}
+
+<div class="append_html_filter">
+<div id="product" class="container">
+<header class="page-header">
+    <ul class="breadcrumb">
+     {% for breadcrumb in breadcrumbs %}
+     <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+     {% endfor %}
+   </ul>
+    <h1 class="page-h1">{{ heading_title }}</h1>
+</header>
+<main role="main" class="main-content">
+        <section class="detail-highlight mb-3">
+          <div class="container px-lg-0" style="">
+                  <div class="row" id="row-breadcrumb-block">
+                      <div class="carousel-highlight col-md-8 col-xl-8">
+                          <div class="block-media">
+                              <div class="is-slide owl-carousel owl-theme slide-media active" id="slide_media_image">
+                                {% if images %}
+                              {% for image in images %}
+                              <div class="item item-media">
+                                    <a href="{{ image }}" data-fancybox="images">
+                                        <picture>
+                                            <img src="{{ image }}" class="lazy" style="">
+                                        </picture>
+                                    </a>
+                              </div>
+                              {% endfor %}
+                              {% endif %}
+                               </div>
+                              <div id="youtube_player">
+                                <div class="not-slide slide-media" id="slide_media_video">
+                                    <iframe id="player" data-uid="EbD_pFt7lkg" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" width="640" height="188" src="https://www.youtube.com/embed/EbD_pFt7lkg?autoplay=0&amp;controls=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fmeeyland.com&amp;widgetid=1"></iframe>
+                                </div>
+                                </div>
+                              <div class="nav-media">
+                                <button class="btn btn-image active"></button>
+                                <button class="btn btn-video "></button>
+                                <!--<button class="btn btn-3d"></button>-->
+                            </div>
+                                  <button class="btn btn-fancybox"></button>
+                              
+                          </div>
+                      </div>
+                       
+                      <div class="detail-highlight-right col-md-4 col-xl-4">
+                          <div class="ml-text-20 ml-text-bold mb-3">Đặc điểm nổi trội</div>
+                          <ul class="wrap-content list-unstyled">
+                              <li class="ml-text-16 wrap-content-item text-overflow-ellipsis">
+                                  2.6 Tỷ - 41.17 Triệu/m²
+                              </li> 
+                              <li class="ml-text-16 wrap-content-item  text-overflow-ellipsis {{ upc ? '' : ' disable' }}">
+                                  Giấy tờ pháp lý: {{ upc ? upc : '---' }} m²
+                              </li> 
+                              <li class="ml-text-16 wrap-content-item  text-overflow-ellipsis {{ height ? '' : ' disable' }}">
+                                  Diện tích: {{ height ? height : '---' }} m²
+                              </li> 
+                              <li class="ml-text-16 wrap-content-item  text-overflow-ellipsis {{ bedroom ? '' : ' disable' }}">
+                                Số phòng ngủ: {{ bedroom ? bedroom : '---' }}
+                            </li> 
+
+                              <li class="ml-text-16 wrap-content-item  text-overflow-ellipsis {{ bathroom ? '' : ' disable' }}">
+                                Số phòng tắm: {{ bathroom ? bathroom : '---' }}
+                            </li>
+
+                              <li class="ml-text-16 wrap-content-item text-overflow-ellipsis {{ direction ? '' : ' disable' }}">
+                                  Hướng: {{ direction ? direction : '---' }}
+                              </li> 
+                              <li class="ml-text-16 wrap-content-item  text-overflow-ellipsis {{ cate_array ? '' : ' disable' }}">
+                                  Loại nhà đất:  {{ cate_array ? cate_array : '---' }}
+                              </li> 
+                          </ul>
+                        
+                          <div class="tour-booking">
+                              <div class="ml-text-18 ml-text-bold">Đăng kí xem nhà </div>
+                              <div style="position: relative;z-index:0;min-height:120px;">
+                                
+                                <div class="lSSlideOuter ">
+                                  <div class="lSSlideWrapper usingCss" >
+                                    <ul class="list-unstyled card-calendar d-flex justify-content-between align-items-center lightSlider lsGrab lSSlide" id="booking">
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Hôm nay</div>
+                                        <div class="day-of-month attribute-text">19</div>
+                                        <div class="month attribute-text">Tháng 09</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Chủ nhật <span>|</span> ngày 19 tháng 09 năm 2021" checked="checked" style="display: none" name="tour_booking_time" value="1631984400"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 2</div>
+                                        <div class="day-of-month attribute-text">20</div>
+                                        <div class="month attribute-text">Tháng 09</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 2 <span>|</span> ngày 20 tháng 09 năm 2021" style="display: none" name="tour_booking_time" value="1632070800"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 3</div>
+                                        <div class="day-of-month attribute-text">21</div>
+                                        <div class="month attribute-text">Tháng 09</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 3 <span>|</span> ngày 21 tháng 09 năm 2021" style="display: none" name="tour_booking_time" value="1632157200"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 4</div>
+                                        <div class="day-of-month attribute-text">22</div>
+                                        <div class="month attribute-text">Tháng 09</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 4 <span>|</span> ngày 22 tháng 09 năm 2021" style="display: none" name="tour_booking_time" value="1632243600"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 5</div>
+                                        <div class="day-of-month attribute-text">23</div>
+                                        <div class="month attribute-text">Tháng 09</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 5 <span>|</span> ngày 23 tháng 09 năm 2021" style="display: none" name="tour_booking_time" value="1632330000"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 6</div>
+                                        <div class="day-of-month attribute-text">24</div>
+                                        <div class="month attribute-text">Tháng 09</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 6 <span>|</span> ngày 24 tháng 09 năm 2021" style="display: none" name="tour_booking_time" value="1632416400"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 7</div>
+                                        <div class="day-of-month attribute-text">25</div>
+                                        <div class="month attribute-text">Tháng 09</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 7 <span>|</span> ngày 25 tháng 09 năm 2021" style="display: none" name="tour_booking_time" value="1632502800"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Chủ nhật</div>
+                                        <div class="day-of-month attribute-text">26</div>
+                                        <div class="month attribute-text">Tháng 09</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Chủ nhật <span>|</span> ngày 26 tháng 09 năm 2021" style="display: none" name="tour_booking_time" value="1632589200"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 2</div>
+                                        <div class="day-of-month attribute-text">27</div>
+                                        <div class="month attribute-text">Tháng 09</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 2 <span>|</span> ngày 27 tháng 09 năm 2021" style="display: none" name="tour_booking_time" value="1632675600"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 3</div>
+                                        <div class="day-of-month attribute-text">28</div>
+                                        <div class="month attribute-text">Tháng 09</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 3 <span>|</span> ngày 28 tháng 09 năm 2021" style="display: none" name="tour_booking_time" value="1632762000"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 4</div>
+                                        <div class="day-of-month attribute-text">29</div>
+                                        <div class="month attribute-text">Tháng 09</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 4 <span>|</span> ngày 29 tháng 09 năm 2021" style="display: none" name="tour_booking_time" value="1632848400"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 5</div>
+                                        <div class="day-of-month attribute-text">30</div>
+                                        <div class="month attribute-text">Tháng 09</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 5 <span>|</span> ngày 30 tháng 09 năm 2021" style="display: none" name="tour_booking_time" value="1632934800"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 6</div>
+                                        <div class="day-of-month attribute-text">01</div>
+                                        <div class="month attribute-text">Tháng 10</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 6 <span>|</span> ngày 01 tháng 10 năm 2021" style="display: none" name="tour_booking_time" value="1633021200"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 7</div>
+                                        <div class="day-of-month attribute-text">02</div>
+                                        <div class="month attribute-text">Tháng 10</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 7 <span>|</span> ngày 02 tháng 10 năm 2021" style="display: none" name="tour_booking_time" value="1633107600"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Chủ nhật</div>
+                                        <div class="day-of-month attribute-text">03</div>
+                                        <div class="month attribute-text">Tháng 10</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Chủ nhật <span>|</span> ngày 03 tháng 10 năm 2021" style="display: none" name="tour_booking_time" value="1633194000"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 2</div>
+                                        <div class="day-of-month attribute-text">04</div>
+                                        <div class="month attribute-text">Tháng 10</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 2 <span>|</span> ngày 04 tháng 10 năm 2021" style="display: none" name="tour_booking_time" value="1633280400"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 3</div>
+                                        <div class="day-of-month attribute-text">05</div>
+                                        <div class="month attribute-text">Tháng 10</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 3 <span>|</span> ngày 05 tháng 10 năm 2021" style="display: none" name="tour_booking_time" value="1633366800"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 4</div>
+                                        <div class="day-of-month attribute-text">06</div>
+                                        <div class="month attribute-text">Tháng 10</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 4 <span>|</span> ngày 06 tháng 10 năm 2021" style="display: none" name="tour_booking_time" value="1633453200"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 5</div>
+                                        <div class="day-of-month attribute-text">07</div>
+                                        <div class="month attribute-text">Tháng 10</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 5 <span>|</span> ngày 07 tháng 10 năm 2021" style="display: none" name="tour_booking_time" value="1633539600"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 6</div>
+                                        <div class="day-of-month attribute-text">08</div>
+                                        <div class="month attribute-text">Tháng 10</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 6 <span>|</span> ngày 08 tháng 10 năm 2021" style="display: none" name="tour_booking_time" value="1633626000"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 7</div>
+                                        <div class="day-of-month attribute-text">09</div>
+                                        <div class="month attribute-text">Tháng 10</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 7 <span>|</span> ngày 09 tháng 10 năm 2021" style="display: none" name="tour_booking_time" value="1633712400"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Chủ nhật</div>
+                                        <div class="day-of-month attribute-text">10</div>
+                                        <div class="month attribute-text">Tháng 10</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Chủ nhật <span>|</span> ngày 10 tháng 10 năm 2021" style="display: none" name="tour_booking_time" value="1633798800"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 2</div>
+                                        <div class="day-of-month attribute-text">11</div>
+                                        <div class="month attribute-text">Tháng 10</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 2 <span>|</span> ngày 11 tháng 10 năm 2021" style="display: none" name="tour_booking_time" value="1633885200"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 3</div>
+                                        <div class="day-of-month attribute-text">12</div>
+                                        <div class="month attribute-text">Tháng 10</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 3 <span>|</span> ngày 12 tháng 10 năm 2021" style="display: none" name="tour_booking_time" value="1633971600"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 4</div>
+                                        <div class="day-of-month attribute-text">13</div>
+                                        <div class="month attribute-text">Tháng 10</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 4 <span>|</span> ngày 13 tháng 10 năm 2021" style="display: none" name="tour_booking_time" value="1634058000"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 5</div>
+                                        <div class="day-of-month attribute-text">14</div>
+                                        <div class="month attribute-text">Tháng 10</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 5 <span>|</span> ngày 14 tháng 10 năm 2021" style="display: none" name="tour_booking_time" value="1634144400"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 6</div>
+                                        <div class="day-of-month attribute-text">15</div>
+                                        <div class="month attribute-text">Tháng 10</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 6 <span>|</span> ngày 15 tháng 10 năm 2021" style="display: none" name="tour_booking_time" value="1634230800"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 7</div>
+                                        <div class="day-of-month attribute-text">16</div>
+                                        <div class="month attribute-text">Tháng 10</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 7 <span>|</span> ngày 16 tháng 10 năm 2021" style="display: none" name="tour_booking_time" value="1634317200"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Chủ nhật</div>
+                                        <div class="day-of-month attribute-text">17</div>
+                                        <div class="month attribute-text">Tháng 10</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Chủ nhật <span>|</span> ngày 17 tháng 10 năm 2021" style="display: none" name="tour_booking_time" value="1634403600"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 2</div>
+                                        <div class="day-of-month attribute-text">18</div>
+                                        <div class="month attribute-text">Tháng 10</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 2 <span>|</span> ngày 18 tháng 10 năm 2021" style="display: none" name="tour_booking_time" value="1634490000"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 3</div>
+                                        <div class="day-of-month attribute-text">19</div>
+                                        <div class="month attribute-text">Tháng 10</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 3 <span>|</span> ngày 19 tháng 10 năm 2021" style="display: none" name="tour_booking_time" value="1634576400"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 4</div>
+                                        <div class="day-of-month attribute-text">20</div>
+                                        <div class="month attribute-text">Tháng 10</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 4 <span>|</span> ngày 20 tháng 10 năm 2021" style="display: none" name="tour_booking_time" value="1634662800"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 5</div>
+                                        <div class="day-of-month attribute-text">21</div>
+                                        <div class="month attribute-text">Tháng 10</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 5 <span>|</span> ngày 21 tháng 10 năm 2021" style="display: none" name="tour_booking_time" value="1634749200"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 6</div>
+                                        <div class="day-of-month attribute-text">22</div>
+                                        <div class="month attribute-text">Tháng 10</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 6 <span>|</span> ngày 22 tháng 10 năm 2021" style="display: none" name="tour_booking_time" value="1634835600"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 7</div>
+                                        <div class="day-of-month attribute-text">23</div>
+                                        <div class="month attribute-text">Tháng 10</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 7 <span>|</span> ngày 23 tháng 10 năm 2021" style="display: none" name="tour_booking_time" value="1634922000"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Chủ nhật</div>
+                                        <div class="day-of-month attribute-text">24</div>
+                                        <div class="month attribute-text">Tháng 10</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Chủ nhật <span>|</span> ngày 24 tháng 10 năm 2021" style="display: none" name="tour_booking_time" value="1635008400"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 2</div>
+                                        <div class="day-of-month attribute-text">25</div>
+                                        <div class="month attribute-text">Tháng 10</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 2 <span>|</span> ngày 25 tháng 10 năm 2021" style="display: none" name="tour_booking_time" value="1635094800"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 3</div>
+                                        <div class="day-of-month attribute-text">26</div>
+                                        <div class="month attribute-text">Tháng 10</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 3 <span>|</span> ngày 26 tháng 10 năm 2021" style="display: none" name="tour_booking_time" value="1635181200"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 4</div>
+                                        <div class="day-of-month attribute-text">27</div>
+                                        <div class="month attribute-text">Tháng 10</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 4 <span>|</span> ngày 27 tháng 10 năm 2021" style="display: none" name="tour_booking_time" value="1635267600"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 5</div>
+                                        <div class="day-of-month attribute-text">28</div>
+                                        <div class="month attribute-text">Tháng 10</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 5 <span>|</span> ngày 28 tháng 10 năm 2021" style="display: none" name="tour_booking_time" value="1635354000"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 6</div>
+                                        <div class="day-of-month attribute-text">29</div>
+                                        <div class="month attribute-text">Tháng 10</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 6 <span>|</span> ngày 29 tháng 10 năm 2021" style="display: none" name="tour_booking_time" value="1635440400"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 7</div>
+                                        <div class="day-of-month attribute-text">30</div>
+                                        <div class="month attribute-text">Tháng 10</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 7 <span>|</span> ngày 30 tháng 10 năm 2021" style="display: none" name="tour_booking_time" value="1635526800"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Chủ nhật</div>
+                                        <div class="day-of-month attribute-text">31</div>
+                                        <div class="month attribute-text">Tháng 10</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Chủ nhật <span>|</span> ngày 31 tháng 10 năm 2021" style="display: none" name="tour_booking_time" value="1635613200"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 2</div>
+                                        <div class="day-of-month attribute-text">01</div>
+                                        <div class="month attribute-text">Tháng 11</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 2 <span>|</span> ngày 01 tháng 11 năm 2021" style="display: none" name="tour_booking_time" value="1635699600"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 3</div>
+                                        <div class="day-of-month attribute-text">02</div>
+                                        <div class="month attribute-text">Tháng 11</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 3 <span>|</span> ngày 02 tháng 11 năm 2021" style="display: none" name="tour_booking_time" value="1635786000"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 4</div>
+                                        <div class="day-of-month attribute-text">03</div>
+                                        <div class="month attribute-text">Tháng 11</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 4 <span>|</span> ngày 03 tháng 11 năm 2021" style="display: none" name="tour_booking_time" value="1635872400"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 5</div>
+                                        <div class="day-of-month attribute-text">04</div>
+                                        <div class="month attribute-text">Tháng 11</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 5 <span>|</span> ngày 04 tháng 11 năm 2021" style="display: none" name="tour_booking_time" value="1635958800"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 6</div>
+                                        <div class="day-of-month attribute-text">05</div>
+                                        <div class="month attribute-text">Tháng 11</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 6 <span>|</span> ngày 05 tháng 11 năm 2021" style="display: none" name="tour_booking_time" value="1636045200"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 7</div>
+                                        <div class="day-of-month attribute-text">06</div>
+                                        <div class="month attribute-text">Tháng 11</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 7 <span>|</span> ngày 06 tháng 11 năm 2021" style="display: none" name="tour_booking_time" value="1636131600"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Chủ nhật</div>
+                                        <div class="day-of-month attribute-text">07</div>
+                                        <div class="month attribute-text">Tháng 11</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Chủ nhật <span>|</span> ngày 07 tháng 11 năm 2021" style="display: none" name="tour_booking_time" value="1636218000"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 2</div>
+                                        <div class="day-of-month attribute-text">08</div>
+                                        <div class="month attribute-text">Tháng 11</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 2 <span>|</span> ngày 08 tháng 11 năm 2021" style="display: none" name="tour_booking_time" value="1636304400"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 3</div>
+                                        <div class="day-of-month attribute-text">09</div>
+                                        <div class="month attribute-text">Tháng 11</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 3 <span>|</span> ngày 09 tháng 11 năm 2021" style="display: none" name="tour_booking_time" value="1636390800"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 4</div>
+                                        <div class="day-of-month attribute-text">10</div>
+                                        <div class="month attribute-text">Tháng 11</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 4 <span>|</span> ngày 10 tháng 11 năm 2021" style="display: none" name="tour_booking_time" value="1636477200"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 5</div>
+                                        <div class="day-of-month attribute-text">11</div>
+                                        <div class="month attribute-text">Tháng 11</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 5 <span>|</span> ngày 11 tháng 11 năm 2021" style="display: none" name="tour_booking_time" value="1636563600"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 6</div>
+                                        <div class="day-of-month attribute-text">12</div>
+                                        <div class="month attribute-text">Tháng 11</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 6 <span>|</span> ngày 12 tháng 11 năm 2021" style="display: none" name="tour_booking_time" value="1636650000"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 7</div>
+                                        <div class="day-of-month attribute-text">13</div>
+                                        <div class="month attribute-text">Tháng 11</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 7 <span>|</span> ngày 13 tháng 11 năm 2021" style="display: none" name="tour_booking_time" value="1636736400"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Chủ nhật</div>
+                                        <div class="day-of-month attribute-text">14</div>
+                                        <div class="month attribute-text">Tháng 11</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Chủ nhật <span>|</span> ngày 14 tháng 11 năm 2021" style="display: none" name="tour_booking_time" value="1636822800"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 2</div>
+                                        <div class="day-of-month attribute-text">15</div>
+                                        <div class="month attribute-text">Tháng 11</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 2 <span>|</span> ngày 15 tháng 11 năm 2021" style="display: none" name="tour_booking_time" value="1636909200"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 3</div>
+                                        <div class="day-of-month attribute-text">16</div>
+                                        <div class="month attribute-text">Tháng 11</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 3 <span>|</span> ngày 16 tháng 11 năm 2021" style="display: none" name="tour_booking_time" value="1636995600"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 4</div>
+                                        <div class="day-of-month attribute-text">17</div>
+                                        <div class="month attribute-text">Tháng 11</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 4 <span>|</span> ngày 17 tháng 11 năm 2021" style="display: none" name="tour_booking_time" value="1637082000"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 5</div>
+                                        <div class="day-of-month attribute-text">18</div>
+                                        <div class="month attribute-text">Tháng 11</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 5 <span>|</span> ngày 18 tháng 11 năm 2021" style="display: none" name="tour_booking_time" value="1637168400"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 6</div>
+                                        <div class="day-of-month attribute-text">19</div>
+                                        <div class="month attribute-text">Tháng 11</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 6 <span>|</span> ngày 19 tháng 11 năm 2021" style="display: none" name="tour_booking_time" value="1637254800"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 7</div>
+                                        <div class="day-of-month attribute-text">20</div>
+                                        <div class="month attribute-text">Tháng 11</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 7 <span>|</span> ngày 20 tháng 11 năm 2021" style="display: none" name="tour_booking_time" value="1637341200"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Chủ nhật</div>
+                                        <div class="day-of-month attribute-text">21</div>
+                                        <div class="month attribute-text">Tháng 11</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Chủ nhật <span>|</span> ngày 21 tháng 11 năm 2021" style="display: none" name="tour_booking_time" value="1637427600"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 2</div>
+                                        <div class="day-of-month attribute-text">22</div>
+                                        <div class="month attribute-text">Tháng 11</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 2 <span>|</span> ngày 22 tháng 11 năm 2021" style="display: none" name="tour_booking_time" value="1637514000"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 3</div>
+                                        <div class="day-of-month attribute-text">23</div>
+                                        <div class="month attribute-text">Tháng 11</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 3 <span>|</span> ngày 23 tháng 11 năm 2021" style="display: none" name="tour_booking_time" value="1637600400"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 4</div>
+                                        <div class="day-of-month attribute-text">24</div>
+                                        <div class="month attribute-text">Tháng 11</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 4 <span>|</span> ngày 24 tháng 11 năm 2021" style="display: none" name="tour_booking_time" value="1637686800"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 5</div>
+                                        <div class="day-of-month attribute-text">25</div>
+                                        <div class="month attribute-text">Tháng 11</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 5 <span>|</span> ngày 25 tháng 11 năm 2021" style="display: none" name="tour_booking_time" value="1637773200"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 6</div>
+                                        <div class="day-of-month attribute-text">26</div>
+                                        <div class="month attribute-text">Tháng 11</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 6 <span>|</span> ngày 26 tháng 11 năm 2021" style="display: none" name="tour_booking_time" value="1637859600"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 7</div>
+                                        <div class="day-of-month attribute-text">27</div>
+                                        <div class="month attribute-text">Tháng 11</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 7 <span>|</span> ngày 27 tháng 11 năm 2021" style="display: none" name="tour_booking_time" value="1637946000"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Chủ nhật</div>
+                                        <div class="day-of-month attribute-text">28</div>
+                                        <div class="month attribute-text">Tháng 11</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Chủ nhật <span>|</span> ngày 28 tháng 11 năm 2021" style="display: none" name="tour_booking_time" value="1638032400"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 2</div>
+                                        <div class="day-of-month attribute-text">29</div>
+                                        <div class="month attribute-text">Tháng 11</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 2 <span>|</span> ngày 29 tháng 11 năm 2021" style="display: none" name="tour_booking_time" value="1638118800"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 3</div>
+                                        <div class="day-of-month attribute-text">30</div>
+                                        <div class="month attribute-text">Tháng 11</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 3 <span>|</span> ngày 30 tháng 11 năm 2021" style="display: none" name="tour_booking_time" value="1638205200"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 4</div>
+                                        <div class="day-of-month attribute-text">01</div>
+                                        <div class="month attribute-text">Tháng 12</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 4 <span>|</span> ngày 01 tháng 12 năm 2021" style="display: none" name="tour_booking_time" value="1638291600"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 5</div>
+                                        <div class="day-of-month attribute-text">02</div>
+                                        <div class="month attribute-text">Tháng 12</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 5 <span>|</span> ngày 02 tháng 12 năm 2021" style="display: none" name="tour_booking_time" value="1638378000"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 6</div>
+                                        <div class="day-of-month attribute-text">03</div>
+                                        <div class="month attribute-text">Tháng 12</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 6 <span>|</span> ngày 03 tháng 12 năm 2021" style="display: none" name="tour_booking_time" value="1638464400"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 7</div>
+                                        <div class="day-of-month attribute-text">04</div>
+                                        <div class="month attribute-text">Tháng 12</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 7 <span>|</span> ngày 04 tháng 12 năm 2021" style="display: none" name="tour_booking_time" value="1638550800"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Chủ nhật</div>
+                                        <div class="day-of-month attribute-text">05</div>
+                                        <div class="month attribute-text">Tháng 12</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Chủ nhật <span>|</span> ngày 05 tháng 12 năm 2021" style="display: none" name="tour_booking_time" value="1638637200"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 2</div>
+                                        <div class="day-of-month attribute-text">06</div>
+                                        <div class="month attribute-text">Tháng 12</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 2 <span>|</span> ngày 06 tháng 12 năm 2021" style="display: none" name="tour_booking_time" value="1638723600"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 3</div>
+                                        <div class="day-of-month attribute-text">07</div>
+                                        <div class="month attribute-text">Tháng 12</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 3 <span>|</span> ngày 07 tháng 12 năm 2021" style="display: none" name="tour_booking_time" value="1638810000"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 4</div>
+                                        <div class="day-of-month attribute-text">08</div>
+                                        <div class="month attribute-text">Tháng 12</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 4 <span>|</span> ngày 08 tháng 12 năm 2021" style="display: none" name="tour_booking_time" value="1638896400"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 5</div>
+                                        <div class="day-of-month attribute-text">09</div>
+                                        <div class="month attribute-text">Tháng 12</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 5 <span>|</span> ngày 09 tháng 12 năm 2021" style="display: none" name="tour_booking_time" value="1638982800"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 6</div>
+                                        <div class="day-of-month attribute-text">10</div>
+                                        <div class="month attribute-text">Tháng 12</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 6 <span>|</span> ngày 10 tháng 12 năm 2021" style="display: none" name="tour_booking_time" value="1639069200"></label>
+                                    </li>
+                                    <li class="card-item tour-booking-time active" style="width:94px">
+                                        <div class="day-of-week attribute-text">Thứ 7</div>
+                                        <div class="day-of-month attribute-text">11</div>
+                                        <div class="month attribute-text">Tháng 12</div>
+                                    <label class="tour-booking-label"><input type="radio" data-text="Thứ 7 <span>|</span> ngày 11 tháng 12 năm 2021" style="display: none" name="tour_booking_time" value="1639155600"></label>
+                                    </li>
+                                </ul></div></div>
+                            </div>
+                            <div class="button-options d-flex justify-content-between" id="select-type-schedule">
+                                <label class="watch-live btn-custom tour-booking-mode active">
+                                    Xem trực tiếp
+                                    <input type="radio" style="display:none;" name="tour_booking_mode" value="1" checked="checked">
+                                    <div class="hover-popup">Đặt lịch hẹn với người đăng tin để xem trực tiếp bất động sản</div>
+                                </label>
+
+                                <label class="watch-live-video btn-custom tour-booking-mode">
+                                    Xem live video
+                                    <input type="radio" style="display:none;" name="tour_booking_mode" value="2">
+                                    <div class="hover-popup">Đặt lịch hẹn với người đăng tin để xem live video bất động sản</div>
+                                </label>
+                               
+                            </div>
+                            <button class="set-tour" id="btn_show_modal_booking">
+                                Đặt lịch hẹn
+                            </button>
+
+                            
+                          </div>
+                      </div>
+                    
+                  </div>
+              </div>
+          </section>
+          <section class="main-detail-content tab-info-container" id="tab_info">
+              <div class="container px-lg-0 container-tab">
+                  <nav class="row header-content">
+                      <div class="col-6 nav nav-tabs px-0" role="tablist">
+                          <a class="nav-item nav-link attribute-text active" data-tab="#nav-home" role="tab">Giới thiệu</a>
+                          <a class="nav-item nav-link attribute-text" data-tab="#nav-profile" role="tab">Mô tả</a>
+                          <a class="nav-item nav-link attribute-text" data-tab="#meey-info">Thông tin</a>
+                      </div>
+                      <div class="list-actions col-6 row align-items-center justify-content-end article-card">
+                          <div class="action-item favorite function-heart" id="btn-favorite-613f6b4a0ae51b001969f53e">
+                              Yêu thích
+                          </div>
+                          <div class="share-social">
+                              <button href="#" class="btn-custom share-btn ml-text-14" data-toggle="modal" data-target="#modal_share">Chia sẻ</button>
+                          </div>
+                          <!--<div class="share-social">
+                            <button href="#" class="btn-custom report-btn ml-text-14" data-toggle="modal" data-target="#modal_report">Báo xấu</button>
+                          </div>-->
+                      </div>
+                  </nav>
+              </div>
+          </section>
+          <section class="main-detail-content mb-3">
+              <div class="mark-tab-info"></div>
+              <div class="container px-lg-0 container-content">
+                  <div class="row tab-content justify-content-between" id="nav-tabContent" >
+                      <div class="col-8 introduce-content tab-pane fade show active attribute-text">
+                          <h1 id="nav-home" class="title ml-text-bold-2 ml-text-20 ellipsis-3-lines vip_1">
+                               Chỉ 10% vốn tự có sở hữu ngay căn hộ chuẩn resort 6* giữa Thành phố xanh Ecopark, khuyến mại tới 10%</h1>
+                          <div class="address ml-text-14 ml-text-gray ml-mb-12">{{ location }}</div>
+                          <div class="d-flex ml-mb-12 align-items-center introduce-line">
+                              <div class=" ml-text-14 ml-text-gray">Ngày đăng: {{ ' ' }} {{ date_available }}</div>
+                              <div class=" ml-text-14 ml-text-gray">Ngày hết hạn: {{ expiration_date }}</div>
+                              <div class=" ml-text-14 ml-text-gray">Lượt xem: {{ ' ' }} {{ viewed }}</div>
+                          </div>
+                          <div class="price-sec row">
+                                  <div class="col-12 d-flex align-items-center">
+                                    <div class="item">
+                                        <div class="label ml-text-14 ml-text-gray">Mức giá: <span class="ml-text-12 ml-text-gray show">Có thể thương lượng</span>
+                                        </div>
+                                        <div class="ml-text-16 ml-text-bold-2 price-article">2.6 Tỷ - 41.17 Triệu/m²</div>
+                                    </div>
+                                    <div class="item" id="meey-value">
+                                        <div class="label ml-text-14 ml-text-gray">Giá định giá bởi AI<button class="btn-show-tooltip">?<div class="hover-popup">*Cơ sở định giá trên 10.000 BĐS ở dự án</div></button></div>
+                                        <div class="ml-text-16 ml-text-bold AI-value"></div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="label ml-text-14 ml-text-gray">Diện tích:</div>
+                                        <div class="ml-text-16 ml-text-bold">{{ height }} m²</div>
+                                    </div>
+                                </div>
+
+                            
+                          </div>
+                          <div id="nav-profile" class="info-description">
+                              <h2 class="title ml-text-20 ml-text-bold-2">Thông tin mô tả</h2>
+                              <div class="des-detail ml-text-14">
+                                {{ description }}
+                              </div>
+                              <div class="basic-info" id="meey-info">
+                                  <div class="card-info-header">Thông tin cơ bản</div>
+                                  <ul class="card-info-detail list-unstyled">
+                                      <li class="d-flex">
+                                          <span class="label">Địa chỉ:</span>
+                                          <span class="attribute-info">{{ location }}</span>
+                                      </li>
+                                      <li class="d-flex">
+                                          <span class="label">Nhu cầu:</span>
+                                          <span class="attribute-info">{{ need ? need : '---' }}</span>
+                                      </li>
+                                      <li class="d-flex">
+                                          <span class="label">Loại nhà đất:</span>
+                                      <span class="attribute-info">Chung cư</span>
+                                      </li>
+                                      <li class="d-flex">
+                                          <span class="label">Diện tích:</span>
+                                          <span class="attribute-info">{{ height }} m²</span>
+                                      </li>
+                                      <li class="d-flex">
+                                          <span class="label">Diện tích sử dụng:</span>
+                                          <span class="attribute-info">{{ use_area ? use_area : '---' }}</span>
+                                      </li>
+                                  </ul>
+                                  <ul class="info-footer row list-unstyled">
+                                      <li class="item">
+                                          <span class="label">Mặt tiền</span>
+                                          <span class="attribute-info">{{ facade? facade : '---' }}</span>
+                                      </li>
+                                      <li class="item">
+                                          <span class="label">Đường rộng</span>
+                                          <span class="attribute-info">{{ large_road ? large_road : '---' }}</span>
+                                      </li>
+                                      <li class="item">
+                                          <span class="label">Chiều sâu</span>
+                                          <span class="attribute-info">{{ depth ? depth : '---' }}</span>
+                                      </li>
+                                      <li class="item">
+                                          <span class="label">Hướng nhà</span>
+                                          <span class="attribute-info">{{ direction ? direction : '---' }}</span>
+                                      </li>
+                                  </ul>
+                              </div>
+                              <div class="basic-info">
+                                  <div class="card-info-header">Thông tin khác</div>
+                                  <ul class="info-footer row list-unstyled">
+                                      <li class="item">
+                                        <span class="label">Hướng ban công</span>
+                                        <span class="attribute-info">
+                                          {{ balcony_direction ? balcony_direction : '---' }}
+                                        </span>
+                                    </li>
+
+                                      <li class="item">
+                                          <span class="label">Tổng số tầng</span>
+                                          <span class="attribute-info">
+                                            {{ total_floors ? total_floors : '---' }}
+                                          </span>
+                                      </li>
+                                      <li class="item">
+                                          <span class="label">Đặc điểm nổi trội</span>
+                                          <span class="attribute-info">
+                                            {{ outstanding_features ? outstanding_features : '---' }}
+                                          </span>
+                                      </li>
+                                      <li class="item">
+                                          <span class="label">Tầng thứ</span>
+                                          <span class="attribute-info">
+                                            {{ second_floor ? second_floor : '---' }}
+                                          </span>
+                                      </li>
+                                      <li class="item">
+                                          <span class="label">Mức độ giao dịch</span>
+                                          <span class="attribute-info">
+                                            {{ transaction_level ? transaction_level : '---' }}
+                                          </span>
+                                      </li>
+                                      <li class="item">
+                                        <span class="label">Số phòng tắm</span>
+                                        <span class="attribute-info">
+                                          {{ number_bathrooms ? number_bathrooms : '---' }}
+                                        </span>
+                                    </li>
+
+                                     
+                                      <li class="item">
+                                        <span class="label">Số phòng ngủ</span>
+                                        <span class="attribute-info">
+                                          {{ number_bedrooms ? number_bedrooms : '---' }}
+                                        </span>
+                                    </li>
+
+                                      
+                                      <li class="item">
+                                          <span class="label">Giấy tờ pháp lý</span>
+                                          <span class="attribute-info">
+                                            {{ upc ? upc : '---' }}
+                                          </span>
+                                      </li> 
+                                  </ul>
+                              </div>
+                               <div class="basic-info">
+                                  <div class="card-info-header">Thông tin dự án</div>
+                                  <ul class="card-info-detail list-unstyled">
+                                      <li class="d-flex">
+                                          <span class="label">Loại tin đăng:</span>
+                                          <span class="attribute-info">{{ post_type ? post_type : '---' }}</span>
+                                      </li>
+                                      <li class="d-flex">
+                                          <span class="label">Chủ đầu tư:</span>
+                                          <span class="attribute-info">{{ mpn ? mpn : '---' }}</span>
+                                      </li>
+                                      <li class="d-flex">
+                                          <span class="label">Quy mô:</span>
+                                          <span class="attribute-info">
+                                            {{ project_size ? project_size : '---' }}
+                                          </span>
+                                      </li>
+                                  </ul>
+                              </div> 
+                          </div>
+                       
+                      
+
+                      </div>
+                      <div class="col-4 detail-info-right">
+                          <div class="poster-info">
+                              <div class="user-header-info d-flex">
+                                      <div class="avatar">
+                                        <img src="{{ avata }}" alt="no avatar">
+                                    </div>
+
+                                  <div class="wrap-info">
+                                      <div class="poster-name is-certificate">
+                                        {{ firstname }}
+                                      </div>
+                                      <div class="poster-role d-flex justify-content-between">
+                                          <div class="ml-text-14">Nhà môi giới</div>
+                                              <span class="user-activate"></span>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="info-detail-poster">
+                                  <div class="wrap-info-detail d-flex justify-content-between ml-mb-8">
+                                      <div class="">Đánh giá: Đang cập nhật</div>
+                                      <div class="">Tham gia từ: {{ customer_date_added }}</div>
+                                  </div>
+                                  <div class="wrap-info-detail d-flex justify-content-between ml-mb-8">
+                                  <div class="">Số tin đăng: 1</div>
+                                  </div>
+                              </div>
+                              <div class="flex-wrapper-circle">
+                                  <div class="circle-percent">
+                                      <svg viewBox="0 0 36 36" class="circular-chart green">
+                                          <path class="circle-bg" d="M18 2.0845
+                                            a 15.9155 15.9155 0 0 1 0 31.831
+                                            a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                                          <!-- edit percent ->> stroke-dasharray="60, 100" -->
+                                          <path class="circle" stroke-dasharray="0, 100" d="M18 2.0845
+                                            a 15.9155 15.9155 0 0 1 0 31.831
+                                            a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                                          <text x="18" y="22.35" class="percentage">N/A</text>
+                                      </svg>
+                                  </div>
+                                  <div class="wrap-text">
+                                      <div class="ml-text-14 ml-text-bold ml-mb-2">Xếp hạng</div>
+                                      <div class="ml-text-14 ml-text-gray">Đang cập nhật</div>
+                                  </div>
+                              </div>
+                              <div class="wrap-button-chat d-flex">
+                                  <button class="button-chat tracking-chat" type="button" onclick="sendMessage('613ddda535f1dc0018d9197e', 'https://meeyland.com/mua-ban-nha-dat/chi-voi-10-von-tu-co-so-huu-ngay-can-ho-chuan-resort-6-giua-tp-xanh-ecopark-khuyen-mai-toi-10-1631546186881')">
+                                    Chat với người đăng tin
+                                </button>
+
+                                  <span>* Thường trả lời sau 30 phút</span>
+                              </div>
+                          </div>
+                          <div class="phone-number tracking-call">
+                              <div class="wrap-phone-number d-flex align-items-center">
+                                  <div class="phone" data-phone="{{ telephone ? telephone : '00000000' }}">0000***</div>
+                                  <a class="show-number tracking-call" href="javascript:void(0)">Bấm để hiện số</a>
+                              </div>
+                          </div>
+  
+                            
+
+                          
+                      </div>
+                  </div>
+              <div class=" row home-section-watched mb-3" id="article-watched" style="display: none;" data-notid="613f6b4a0ae51b001969f53e">
+                      <div class="section-block-head px-0">
+                          <div class="block-head-title  px-0">
+                              Tin đã xem
+                          </div>
+                      </div>
+                      <div class="" id="watched-article-detail">
+                        
+                      </div>
+                  </div>
+                  <div class=" row home-section-favorite mb-3">
+                    <div class="section-block-head px-0">
+                        <div class="block-head-title  px-0">
+                            Tin đăng tương tự
+                         </div>
+                    </div>
+                    <div class="lSSlideOuter ">
+                      <div class="lSSlideWrapper usingCss">
+                      <div class="lightSlider lsGrab lSSlide" id="related-article-detail">
+                          <div class="article-card lslide active" >
+                             <div class="article-card-head">
+                                <div class="card-head-img">
+                                   <a href="/mua-ban-nha-dat/ban-chung-cu-vi-tri-dat-vi-tri-nam-tren-xa-xuan-quan-tinh-hung-yen-gia-hat-de-chi-270-trieu-1627573548583" class="call-traking"></a>
+                                   <img class="card-image-top lazy-load lazy" alt="Bán chung cư 100m2 xã Xuân Quan, tỉnh Hưng Yên, giá 270 triệu" src="https://images.meeyland.com/images/prod/20210729_123746_3003200_0.jpg?d=306x185" style="">
+                                </div>
+                                <div class="card-head-function">
+                                   
+                                   <div class="list-function">
+                                      <button class="btn-custom btn-func function-heart  " id="btn-favorite-6102967c0badcb5cd707b715" data-article-id="6102967c0badcb5cd707b715">
+                                      </button>
+                                   </div>
+                                </div>
+                             </div>
+                             <div class="article-card-body">
+                                <div class="card-title">
+                                   
+                                   <a href="/mua-ban-nha-dat/ban-chung-cu-vi-tri-dat-vi-tri-nam-tren-xa-xuan-quan-tinh-hung-yen-gia-hat-de-chi-270-trieu-1627573548583" class="call-traking">
+                                      <h3 data-toggle="tooltip" data-placement="top" title="Bán chung cư 100m2 xã Xuân Quan, tỉnh Hưng Yên, giá 270 triệu" class="">
+                                         Bán chung cư 100m2 xã Xuân Quan, tỉnh Hưng Yên, giá 270 triệu
+                                      </h3>
+                                   </a>
+                                </div>
+                                <div class="article-info">
+                                   <div class="article-price">
+                                      270 Triệu - 2.7 Triệu/m²
+                                   </div>
+                                </div>
+                                <div class="article-info-detail row">
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-area" data-toggle="tooltip" data-placement="top" title="Diện tích: 100 m²">
+                                         100 m²
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-wideroad" data-toggle="tooltip" data-placement="top" title="Đường rộng: {{ large_road ? large_road : '---'}}">
+                                         {{ large_road ? large_road : '---'}}
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-frontface" data-toggle="tooltip" data-placement="top" title="Mặt tiền">
+                                         ---
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-compass" data-toggle="tooltip" data-placement="top" title="Hướng">
+                                         ---
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-creator-type" data-toggle="tooltip" data-placement="top" title="Đối tượng: Nhà môi giới">
+                                         Nhà môi giới
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-type-of-house" data-toggle="tooltip" data-placement="top" title="Loại nhà đất: Chung cư">
+                                         Chung cư
+                                      </div>
+                                   </div>
+                                </div>
+                                <div class="article-info-location" data-toggle="tooltip" data-placement="top" title="Vị trí" :="" huyện="" văn="" giang,="" tỉnh="" hưng="" yên"="">
+                                   Huyện Văn Giang, Tỉnh Hưng Yên
+                                </div>
+                             </div>
+                             <div class="article-card-footer">
+                                <div class="no-wrap items-center chip-content-footer icon-date">51 ngày trước</div>
+                                <div class="no-wrap items-center chip-content-footer icon-eye">6</div>
+                                <a class="no-wrap items-center chip-content-footer icon-messenge tracking-chat" data-article-id="6102967c0badcb5cd707b715" href="javascript:void(0)" onclick="sendMessage('60cb115be911b501a1f414a9', 'https://meeyland.com/mua-ban-nha-dat/ban-chung-cu-vi-tri-dat-vi-tri-nam-tren-xa-xuan-quan-tinh-hung-yen-gia-hat-de-chi-270-trieu-1627573548583')">Chat ngay</a>
+                             </div>
+                          </div>
+                          <div class="article-card lslide">
+                             <div class="article-card-head">
+                                <div class="card-head-img">
+                                   <a href="/mua-ban-nha-dat/ban-va-cho-thue-can-ho-chung-cu-or-can-ho-mat-dat-ecopark-1617009355223" class="call-traking"></a>
+                                   <img class="card-image-top lazy-load lazy" alt="Bán và cho thuê căn hộ chung cư hoặc căn hộ mặt đất Ecopark, Văn Giang, Hưng Yên" src="https://static.meeyland.com/articles/z2398249402495_c339d544c31873b4740c7f3b062cace8.1617009296622.jpg?d=306x185" style="">
+                                </div>
+                                <div class="card-head-function">
+                                   
+                                   <div class="list-function">
+                                      <button class="btn-custom btn-func function-heart  " id="btn-favorite-60619acbe1353f00115141e5" data-article-id="60619acbe1353f00115141e5">
+                                      </button>
+                                   </div>
+                                </div>
+                             </div>
+                             <div class="article-card-body">
+                                <div class="card-title">
+                                   
+                                   <a href="/mua-ban-nha-dat/ban-va-cho-thue-can-ho-chung-cu-or-can-ho-mat-dat-ecopark-1617009355223" class="call-traking">
+                                      <h3 data-toggle="tooltip" data-placement="top" title="Bán và cho thuê căn hộ chung cư hoặc căn hộ mặt đất Ecopark, Văn Giang, Hưng Yên" class="">
+                                         Bán và cho thuê căn hộ chung cư hoặc căn hộ mặt đất Ecopark, Văn Giang, Hưng Yên
+                                      </h3>
+                                   </a>
+                                </div>
+                                <div class="article-info">
+                                   <div class="article-price">
+                                      1.2 Tỷ - 24 Triệu/m²
+                                   </div>
+                                </div>
+                                <div class="article-info-detail row">
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-area" data-toggle="tooltip" data-placement="top" title="Diện tích: 50 m²">
+                                         50 m²
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-wideroad" data-toggle="tooltip" data-placement="top" title="Đường rộng: Mặt phố - Mặt đường">
+                                         Mặt phố - Mặt đường
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-frontface" data-toggle="tooltip" data-placement="top" title="Mặt tiền">
+                                         ---
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-compass" data-toggle="tooltip" data-placement="top" title="Hướng">
+                                         ---
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-creator-type" data-toggle="tooltip" data-placement="top" title="Đối tượng: Nhà môi giới">
+                                         Nhà môi giới
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-type-of-house" data-toggle="tooltip" data-placement="top" title="Loại nhà đất: Biệt thự - Song lập - Đơn lập, Nhà liền kề - Song lập - Đơn lập, Chung cư">
+                                         Biệt thự - Song lập - Đơn lập, Nhà liền kề - Song lập - Đơn lập, Chung cư
+                                      </div>
+                                   </div>
+                                </div>
+                                <div class="article-info-location" data-toggle="tooltip" data-placement="top" title="Vị trí" :="" huyện="" văn="" giang,="" tỉnh="" hưng="" yên"="">
+                                   Huyện Văn Giang, Tỉnh Hưng Yên
+                                </div>
+                             </div>
+                             <div class="article-card-footer">
+                                <div class="no-wrap items-center chip-content-footer icon-date">29/03/2021</div>
+                                <div class="no-wrap items-center chip-content-footer icon-eye">293</div>
+                                <a class="no-wrap items-center chip-content-footer icon-messenge tracking-chat" data-article-id="60619acbe1353f00115141e5" href="javascript:void(0)" onclick="sendMessage('60618587e08fc40019bb054d', 'https://meeyland.com/mua-ban-nha-dat/ban-va-cho-thue-can-ho-chung-cu-or-can-ho-mat-dat-ecopark-1617009355223')">Chat ngay</a>
+                             </div>
+                          </div>
+                          <div class="article-card lslide">
+                             <div class="article-card-head">
+                                <div class="card-head-img">
+                                   <a href="/mua-ban-nha-dat/ban-gap-can-58m2-view-ho-toa-sky3-aquabay-gia-re-nhat-thi-truong-lh-0917-889-426-1624007627149" class="call-traking"></a>
+                                   <img class="card-image-top lazy" alt="Bán gấp căn 58m2, view hồ, tòa Sky 3 Aquabay, giá rẻ nhất thị trường" src="https://static.meeyland.com/articles/z2560132552374_0f9dbffdc29a6be4aa3d2f0fe7d597b8.1624007624356.jpg?d=306x185" style="">
+                                </div>
+                                <div class="card-head-function">
+                                   
+                                   <div class="list-function">
+                                      <button class="btn-custom btn-func function-heart  " id="btn-favorite-60cc63cbf2aa510019a632a6" data-article-id="60cc63cbf2aa510019a632a6">
+                                      </button>
+                                   </div>
+                                </div>
+                             </div>
+                             <div class="article-card-body">
+                                <div class="card-title">
+                                   
+                                   <a href="/mua-ban-nha-dat/ban-gap-can-58m2-view-ho-toa-sky3-aquabay-gia-re-nhat-thi-truong-lh-0917-889-426-1624007627149" class="call-traking">
+                                      <h3 data-toggle="tooltip" data-placement="top" title="Bán gấp căn 58m2, view hồ, tòa Sky 3 Aquabay, giá rẻ nhất thị trường" class="">
+                                         Bán gấp căn 58m2, view hồ, tòa Sky 3 Aquabay, giá rẻ nhất thị trường
+                                      </h3>
+                                   </a>
+                                </div>
+                                <div class="article-info">
+                                   <div class="article-price">
+                                      1.75 Tỷ - 30.17 Triệu/m²
+                                   </div>
+                                </div>
+                                <div class="article-info-detail row">
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-area" data-toggle="tooltip" data-placement="top" title="Diện tích: 58 m²">
+                                         58 m²
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-wideroad" data-toggle="tooltip" data-placement="top" title="Đường rộng: Ngõ 2 ô tô tránh">
+                                         Ngõ 2 ô tô tránh
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-frontface" data-toggle="tooltip" data-placement="top" title="Mặt tiền">
+                                         ---
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-compass" data-toggle="tooltip" data-placement="top" title="Hướng: Đông Nam">
+                                         Đông Nam
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-creator-type" data-toggle="tooltip" data-placement="top" title="Đối tượng: Nhà môi giới">
+                                         Nhà môi giới
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-type-of-house" data-toggle="tooltip" data-placement="top" title="Loại nhà đất: Chung cư">
+                                         Chung cư
+                                      </div>
+                                   </div>
+                                </div>
+                                <div class="article-info-location" data-toggle="tooltip" data-placement="top" title="Vị trí" :="" huyện="" văn="" giang,="" tỉnh="" hưng="" yên"="">
+                                   Huyện Văn Giang, Tỉnh Hưng Yên
+                                </div>
+                             </div>
+                             <div class="article-card-footer">
+                                <div class="no-wrap items-center chip-content-footer icon-date">18/06/2021</div>
+                                <div class="no-wrap items-center chip-content-footer icon-eye">15</div>
+                                <a class="no-wrap items-center chip-content-footer icon-messenge tracking-chat" data-article-id="60cc63cbf2aa510019a632a6" href="javascript:void(0)" onclick="sendMessage('60af0c934214d8587776e9df', 'https://meeyland.com/mua-ban-nha-dat/ban-gap-can-58m2-view-ho-toa-sky3-aquabay-gia-re-nhat-thi-truong-lh-0917-889-426-1624007627149')">Chat ngay</a>
+                             </div>
+                          </div>
+                          <div class="article-card lslide">
+                             <div class="article-card-head">
+                                <div class="card-head-img">
+                                   <a href="/mua-ban-nha-dat/can-ho-khoang-nong-swan-park-onsen-ecopark-view-ho-thien-nga-1623727432437" class="call-traking"></a>
+                                   <img class="card-image-top lazy-load lazy" alt="Bán căn hộ khoáng nóng Swan Park Onsen Ecopark, diện tích 30m2, giá 1,8 tỷ" src="https://static.meeyland.com/articles/11.1623727281297.png?d=306x185" style="">
+                                </div>
+                                <div class="card-head-function">
+                                   
+                                   <div class="list-function">
+                                      <button class="btn-custom btn-func function-heart  " id="btn-favorite-60c81d48c551f700117c2387" data-article-id="60c81d48c551f700117c2387">
+                                      </button>
+                                   </div>
+                                </div>
+                             </div>
+                             <div class="article-card-body">
+                                <div class="card-title">
+                                   
+                                   <a href="/mua-ban-nha-dat/can-ho-khoang-nong-swan-park-onsen-ecopark-view-ho-thien-nga-1623727432437" class="call-traking">
+                                      <h3 data-toggle="tooltip" data-placement="top" title="Bán căn hộ khoáng nóng Swan Park Onsen Ecopark, diện tích 30m2, giá 1,8 tỷ" class="">
+                                         Bán căn hộ khoáng nóng Swan Park Onsen Ecopark, diện tích 30m2, giá 1,8 tỷ
+                                      </h3>
+                                   </a>
+                                </div>
+                                <div class="article-info">
+                                   <div class="article-price">
+                                      1.7 Tỷ - 53.13 Triệu/m²
+                                   </div>
+                                </div>
+                                <div class="article-info-detail row">
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-area" data-toggle="tooltip" data-placement="top" title="Diện tích: 32 m²">
+                                         32 m²
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-wideroad" data-toggle="tooltip" data-placement="top" title="Đường rộng: Mặt phố - Mặt đường">
+                                         Mặt phố - Mặt đường
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-frontface" data-toggle="tooltip" data-placement="top" title="Mặt tiền">
+                                         ---
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-compass" data-toggle="tooltip" data-placement="top" title="Hướng">
+                                         ---
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-creator-type" data-toggle="tooltip" data-placement="top" title="Đối tượng: Nhà môi giới">
+                                         Nhà môi giới
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-type-of-house" data-toggle="tooltip" data-placement="top" title="Loại nhà đất: Chung cư">
+                                         Chung cư
+                                      </div>
+                                   </div>
+                                </div>
+                                <div class="article-info-location" data-toggle="tooltip" data-placement="top" title="Vị trí" :="" huyện="" văn="" giang,="" tỉnh="" hưng="" yên"="">
+                                   Huyện Văn Giang, Tỉnh Hưng Yên
+                                </div>
+                             </div>
+                             <div class="article-card-footer">
+                                <div class="no-wrap items-center chip-content-footer icon-date">15/06/2021</div>
+                                <div class="no-wrap items-center chip-content-footer icon-eye">22</div>
+                                <a class="no-wrap items-center chip-content-footer icon-messenge tracking-chat" data-article-id="60c81d48c551f700117c2387" href="javascript:void(0)" onclick="sendMessage('5efb305b5e0d921192dfd0ef', 'https://meeyland.com/mua-ban-nha-dat/can-ho-khoang-nong-swan-park-onsen-ecopark-view-ho-thien-nga-1623727432437')">Chat ngay</a>
+                             </div>
+                          </div>
+                          <div class="article-card lslide">
+                             <div class="article-card-head">
+                                <div class="card-head-img">
+                                   <a href="/mua-ban-nha-dat/dang-ban-ban-can-ho-chung-cu-tai-duong-truc-view-dep-thoang-mat-rong-rai-co-day-du-tien-nghi-giao-thong-thuan-loi-1598836665723" class="call-traking"></a>
+                                   <img class="card-image-top lazy-load lazy" alt="Đang bán Bán căn hộ chung cư tại Đường Trúc view đẹp,thoáng mát rộng rãi có đầy đủ tiện nghi giao thông thuận lợi" src="https://images.meeyland.com/26022020/20191216/20191216102451-4c9f_wm.jpg?d=306x185" style="">
+                                </div>
+                                <div class="card-head-function">
+                                   
+                                   <div class="list-function">
+                                      <button class="btn-custom btn-func function-heart  " id="btn-favorite-5e27c4f6e78b2b3c48121266" data-article-id="5e27c4f6e78b2b3c48121266">
+                                      </button>
+                                   </div>
+                                </div>
+                             </div>
+                             <div class="article-card-body">
+                                <div class="card-title">
+                                   
+                                   <a href="/mua-ban-nha-dat/dang-ban-ban-can-ho-chung-cu-tai-duong-truc-view-dep-thoang-mat-rong-rai-co-day-du-tien-nghi-giao-thong-thuan-loi-1598836665723" class="call-traking">
+                                      <h3 data-toggle="tooltip" data-placement="top" title="Đang bán Bán căn hộ chung cư tại Đường Trúc view đẹp,thoáng mát rộng rãi có đầy đủ tiện nghi giao thông thuận lợi" class="">
+                                         Đang bán Bán căn hộ chung cư tại Đường Trúc view đẹp,thoáng mát rộng rãi có đầy đủ tiện nghi giao thông thuận lợi
+                                      </h3>
+                                   </a>
+                                </div>
+                                <div class="article-info">
+                                   <div class="article-price">
+                                      1.05 Tỷ - 23.33 Triệu/m²
+                                   </div>
+                                </div>
+                                <div class="article-info-detail row">
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-area" data-toggle="tooltip" data-placement="top" title="Diện tích: 45 m²">
+                                         45 m²
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-wideroad" data-toggle="tooltip" data-placement="top" title="Đường rộng">
+                                         ---
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-frontface" data-toggle="tooltip" data-placement="top" title="Mặt tiền">
+                                         ---
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-compass" data-toggle="tooltip" data-placement="top" title="Hướng">
+                                         ---
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-creator-type" data-toggle="tooltip" data-placement="top" title="Đối tượng: Nhà môi giới">
+                                         Nhà môi giới
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-type-of-house" data-toggle="tooltip" data-placement="top" title="Loại nhà đất: Chung cư">
+                                         Chung cư
+                                      </div>
+                                   </div>
+                                </div>
+                                <div class="article-info-location" data-toggle="tooltip" data-placement="top" title="Vị trí" :="" huyện="" văn="" giang,="" tỉnh="" hưng="" yên"="">
+                                   Huyện Văn Giang, Tỉnh Hưng Yên
+                                </div>
+                             </div>
+                             <div class="article-card-footer">
+                                <div class="no-wrap items-center chip-content-footer icon-date">22/01/2020</div>
+                                <div class="no-wrap items-center chip-content-footer icon-eye">6</div>
+                                <a class="no-wrap items-center chip-content-footer icon-messenge tracking-chat" data-article-id="5e27c4f6e78b2b3c48121266" href="javascript:void(0)" onclick="sendMessage('5ddde47aa9efa709e493c521', 'https://meeyland.com/mua-ban-nha-dat/dang-ban-ban-can-ho-chung-cu-tai-duong-truc-view-dep-thoang-mat-rong-rai-co-day-du-tien-nghi-giao-thong-thuan-loi-1598836665723')">Chat ngay</a>
+                             </div>
+                          </div>
+                          <div class="article-card lslide">
+                             <div class="article-card-head">
+                                <div class="card-head-img">
+                                   <a href="/mua-ban-nha-dat/dang-ban-ban-can-ho-chung-cu-tai-duong-truc-view-dep-thoang-mat-rong-rai-co-day-du-tien-nghi-giao-thong-thuan-loi-1599023457800" class="call-traking"></a>
+                                   <img class="card-image-top lazy-load lazy" alt="Đang bán Bán căn hộ chung cư tại Đường Trúc view đẹp,thoáng mát rộng rãi có đầy đủ tiện nghi giao thông thuận lợi" src="https://images.meeyland.com/01032020/20191025/20191025095005-048f_wm.jpeg?d=306x185" style="">
+                                </div>
+                                <div class="card-head-function">
+                                   
+                                   <div class="list-function">
+                                      <button class="btn-custom btn-func function-heart  " id="btn-favorite-5e030f57e78b2b130cf5f93b" data-article-id="5e030f57e78b2b130cf5f93b">
+                                      </button>
+                                   </div>
+                                </div>
+                             </div>
+                             <div class="article-card-body">
+                                <div class="card-title">
+                                   
+                                   <a href="/mua-ban-nha-dat/dang-ban-ban-can-ho-chung-cu-tai-duong-truc-view-dep-thoang-mat-rong-rai-co-day-du-tien-nghi-giao-thong-thuan-loi-1599023457800" class="call-traking">
+                                      <h3 data-toggle="tooltip" data-placement="top" title="Đang bán Bán căn hộ chung cư tại Đường Trúc view đẹp,thoáng mát rộng rãi có đầy đủ tiện nghi giao thông thuận lợi" class="">
+                                         Đang bán Bán căn hộ chung cư tại Đường Trúc view đẹp,thoáng mát rộng rãi có đầy đủ tiện nghi giao thông thuận lợi
+                                      </h3>
+                                   </a>
+                                </div>
+                                <div class="article-info">
+                                   <div class="article-price">
+                                      1.54 Tỷ - 25.58 Triệu/m²
+                                   </div>
+                                </div>
+                                <div class="article-info-detail row">
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-area" data-toggle="tooltip" data-placement="top" title="Diện tích: 60 m²">
+                                         60 m²
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-wideroad" data-toggle="tooltip" data-placement="top" title="Đường rộng">
+                                         ---
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-frontface" data-toggle="tooltip" data-placement="top" title="Mặt tiền">
+                                         ---
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-compass" data-toggle="tooltip" data-placement="top" title="Hướng: Đông Nam">
+                                         Đông Nam
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-creator-type" data-toggle="tooltip" data-placement="top" title="Đối tượng: Nhà môi giới">
+                                         Nhà môi giới
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-type-of-house" data-toggle="tooltip" data-placement="top" title="Loại nhà đất: Chung cư">
+                                         Chung cư
+                                      </div>
+                                   </div>
+                                </div>
+                                <div class="article-info-location" data-toggle="tooltip" data-placement="top" title="Vị trí" :="" huyện="" văn="" giang,="" tỉnh="" hưng="" yên"="">
+                                   Huyện Văn Giang, Tỉnh Hưng Yên
+                                </div>
+                             </div>
+                             <div class="article-card-footer">
+                                <div class="no-wrap items-center chip-content-footer icon-date">25/12/2019</div>
+                                <div class="no-wrap items-center chip-content-footer icon-eye">7</div>
+                                <a class="no-wrap items-center chip-content-footer icon-messenge tracking-chat" data-article-id="5e030f57e78b2b130cf5f93b" href="javascript:void(0)" onclick="sendMessage('5df0a611a9efa70d406fabc2', 'https://meeyland.com/mua-ban-nha-dat/dang-ban-ban-can-ho-chung-cu-tai-duong-truc-view-dep-thoang-mat-rong-rai-co-day-du-tien-nghi-giao-thong-thuan-loi-1599023457800')">Chat ngay</a>
+                             </div>
+                          </div>
+                          <div class="article-card lslide">
+                             <div class="article-card-head">
+                                <div class="card-head-img">
+                                   <a href="/mua-ban-nha-dat/ban-can-ho-chung-cu-co-noi-that-sang-trong-gia-re-tot-nhat-1599049689288" class="call-traking"></a>
+                                   <img class="card-image-top lazy-load lazy" alt="Bán căn hộ chung cư có nội thất sang trọng giá rẻ tốt nhất" src="https://images.meeyland.com/images/12122019/20190911135417-dd1a_wm.jpg?d=306x185" style="">
+                                </div>
+                                <div class="card-head-function">
+                                   
+                                   <div class="list-function">
+                                      <button class="btn-custom btn-func function-heart  " id="btn-favorite-5df2ca9454a460303caef832" data-article-id="5df2ca9454a460303caef832">
+                                      </button>
+                                   </div>
+                                </div>
+                             </div>
+                             <div class="article-card-body">
+                                <div class="card-title">
+                                   
+                                   <a href="/mua-ban-nha-dat/ban-can-ho-chung-cu-co-noi-that-sang-trong-gia-re-tot-nhat-1599049689288" class="call-traking">
+                                      <h3 data-toggle="tooltip" data-placement="top" title="Bán căn hộ chung cư có nội thất sang trọng giá rẻ tốt nhất" class="">
+                                         Bán căn hộ chung cư có nội thất sang trọng giá rẻ tốt nhất
+                                      </h3>
+                                   </a>
+                                </div>
+                                <div class="article-info">
+                                   <div class="article-price">
+                                      1.45 Tỷ - 22.31 Triệu/m²
+                                   </div>
+                                </div>
+                                <div class="article-info-detail row">
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-area" data-toggle="tooltip" data-placement="top" title="Diện tích: 65 m²">
+                                         65 m²
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-wideroad" data-toggle="tooltip" data-placement="top" title="Đường rộng">
+                                         ---
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-frontface" data-toggle="tooltip" data-placement="top" title="Mặt tiền">
+                                         ---
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-compass" data-toggle="tooltip" data-placement="top" title="Hướng: Tây Bắc">
+                                         Tây Bắc
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-creator-type" data-toggle="tooltip" data-placement="top" title="Đối tượng: Nhà môi giới">
+                                         Nhà môi giới
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-type-of-house" data-toggle="tooltip" data-placement="top" title="Loại nhà đất: Chung cư">
+                                         Chung cư
+                                      </div>
+                                   </div>
+                                </div>
+                                <div class="article-info-location" data-toggle="tooltip" data-placement="top" title="Vị trí" :="" huyện="" văn="" giang,="" tỉnh="" hưng="" yên"="">
+                                   Huyện Văn Giang, Tỉnh Hưng Yên
+                                </div>
+                             </div>
+                             <div class="article-card-footer">
+                                <div class="no-wrap items-center chip-content-footer icon-date">13/12/2019</div>
+                                <div class="no-wrap items-center chip-content-footer icon-eye">12</div>
+                                <a class="no-wrap items-center chip-content-footer icon-messenge tracking-chat" data-article-id="5df2ca9454a460303caef832" href="javascript:void(0)" onclick="sendMessage('5df24a22a9efa70d40704c35', 'https://meeyland.com/mua-ban-nha-dat/ban-can-ho-chung-cu-co-noi-that-sang-trong-gia-re-tot-nhat-1599049689288')">Chat ngay</a>
+                             </div>
+                          </div>
+                          <div class="article-card lslide">
+                             <div class="article-card-head">
+                                <div class="card-head-img">
+                                   <a href="/mua-ban-nha-dat/ban-can-ho-chung-cu-dien-tich-92-3-day-du-noi-that-view-bao-dep-1599027298822" class="call-traking"></a>
+                                   <img class="card-image-top lazy-load lazy" alt="Bán căn hộ chung cư diện tích 92 3 đầy đủ nội thất view bao đẹp" src="https://images.meeyland.com/orignal/batdongsan/28122019/20190703105132-2f70_wm.jpg?d=306x185" style="">
+                                </div>
+                                <div class="card-head-function">
+                                   
+                                   <div class="list-function">
+                                      <button class="btn-custom btn-func function-heart  " id="btn-favorite-5dfb141fe78b2b2c98d23b95" data-article-id="5dfb141fe78b2b2c98d23b95">
+                                      </button>
+                                   </div>
+                                </div>
+                             </div>
+                             <div class="article-card-body">
+                                <div class="card-title">
+                                   
+                                   <a href="/mua-ban-nha-dat/ban-can-ho-chung-cu-dien-tich-92-3-day-du-noi-that-view-bao-dep-1599027298822" class="call-traking">
+                                      <h3 data-toggle="tooltip" data-placement="top" title="Bán căn hộ chung cư diện tích 92 3 đầy đủ nội thất view bao đẹp" class="">
+                                         Bán căn hộ chung cư diện tích 92 3 đầy đủ nội thất view bao đẹp
+                                      </h3>
+                                   </a>
+                                </div>
+                                <div class="article-info">
+                                   <div class="article-price">
+                                      2.24 Tỷ - 24.35 Triệu/m²
+                                   </div>
+                                </div>
+                                <div class="article-info-detail row">
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-area" data-toggle="tooltip" data-placement="top" title="Diện tích: 92 m²">
+                                         92 m²
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-wideroad" data-toggle="tooltip" data-placement="top" title="Đường rộng">
+                                         ---
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-frontface" data-toggle="tooltip" data-placement="top" title="Mặt tiền">
+                                         ---
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-compass" data-toggle="tooltip" data-placement="top" title="Hướng">
+                                         ---
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-creator-type" data-toggle="tooltip" data-placement="top" title="Đối tượng: Nhà môi giới">
+                                         Nhà môi giới
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-type-of-house" data-toggle="tooltip" data-placement="top" title="Loại nhà đất: Chung cư">
+                                         Chung cư
+                                      </div>
+                                   </div>
+                                </div>
+                                <div class="article-info-location" data-toggle="tooltip" data-placement="top" title="Vị trí" :="" huyện="" văn="" giang,="" tỉnh="" hưng="" yên"="">
+                                   Huyện Văn Giang, Tỉnh Hưng Yên
+                                </div>
+                             </div>
+                             <div class="article-card-footer">
+                                <div class="no-wrap items-center chip-content-footer icon-date">19/12/2019</div>
+                                <div class="no-wrap items-center chip-content-footer icon-eye">13</div>
+                                <a class="no-wrap items-center chip-content-footer icon-messenge tracking-chat" data-article-id="5dfb141fe78b2b2c98d23b95" href="javascript:void(0)" onclick="sendMessage('5de7fe84a9efa70d406c4a3d', 'https://meeyland.com/mua-ban-nha-dat/ban-can-ho-chung-cu-dien-tich-92-3-day-du-noi-that-view-bao-dep-1599027298822')">Chat ngay</a>
+                             </div>
+                          </div>
+                          <div class="article-card lslide">
+                             <div class="article-card-head">
+                                <div class="card-head-img">
+                                   <a href="/mua-ban-nha-dat/ban-can-ho-chung-cu-58-hung-yen-view-dep-tang-dep-1598925311089" class="call-traking"></a>
+                                   <img class="card-image-top lazy-load lazy" alt="Bán căn hộ chung cư 58 Hưng Yên view đẹp tầng đẹp" src="https://images.meeyland.com/25022020/20191219/20191219083520-0522_wm.jpg?d=306x185" style="">
+                                </div>
+                                <div class="card-head-function">
+                                   
+                                   <div class="list-function">
+                                      <button class="btn-custom btn-func function-heart  " id="btn-favorite-5e156ca9e78b2b3a74c48478" data-article-id="5e156ca9e78b2b3a74c48478">
+                                      </button>
+                                   </div>
+                                </div>
+                             </div>
+                             <div class="article-card-body">
+                                <div class="card-title">
+                                   
+                                   <a href="/mua-ban-nha-dat/ban-can-ho-chung-cu-58-hung-yen-view-dep-tang-dep-1598925311089" class="call-traking">
+                                      <h3 data-toggle="tooltip" data-placement="top" title="Bán căn hộ chung cư 58 Hưng Yên view đẹp tầng đẹp" class="">
+                                         Bán căn hộ chung cư 58 Hưng Yên view đẹp tầng đẹp
+                                      </h3>
+                                   </a>
+                                </div>
+                                <div class="article-info">
+                                   <div class="article-price">
+                                      Thương lượng
+                                   </div>
+                                </div>
+                                <div class="article-info-detail row">
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-area" data-toggle="tooltip" data-placement="top" title="Diện tích: 58 m²">
+                                         58 m²
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-wideroad" data-toggle="tooltip" data-placement="top" title="Đường rộng">
+                                         ---
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-frontface" data-toggle="tooltip" data-placement="top" title="Mặt tiền">
+                                         ---
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-compass" data-toggle="tooltip" data-placement="top" title="Hướng: Tây Bắc">
+                                         Tây Bắc
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-creator-type" data-toggle="tooltip" data-placement="top" title="Đối tượng: Nhà môi giới">
+                                         Nhà môi giới
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-type-of-house" data-toggle="tooltip" data-placement="top" title="Loại nhà đất: Chung cư">
+                                         Chung cư
+                                      </div>
+                                   </div>
+                                </div>
+                                <div class="article-info-location" data-toggle="tooltip" data-placement="top" title="Vị trí" :="" huyện="" văn="" giang,="" tỉnh="" hưng="" yên"="">
+                                   Huyện Văn Giang, Tỉnh Hưng Yên
+                                </div>
+                             </div>
+                             <div class="article-card-footer">
+                                <div class="no-wrap items-center chip-content-footer icon-date">08/01/2020</div>
+                                <div class="no-wrap items-center chip-content-footer icon-eye">16</div>
+                                <a class="no-wrap items-center chip-content-footer icon-messenge tracking-chat" data-article-id="5e156ca9e78b2b3a74c48478" href="javascript:void(0)" onclick="sendMessage('5dd234f2d6be4e1d9c5205c5', 'https://meeyland.com/mua-ban-nha-dat/ban-can-ho-chung-cu-58-hung-yen-view-dep-tang-dep-1598925311089')">Chat ngay</a>
+                             </div>
+                          </div>
+                          <div class="article-card lslide">
+                             <div class="article-card-head">
+                                <div class="card-head-img">
+                                   <a href="/mua-ban-nha-dat/ban-can-ho-chung-cu-co-noi-that-sang-trong-gia-re-tot-nhat-1598760403223" class="call-traking"></a>
+                                   <img class="card-image-top lazy-load lazy" alt="Bán căn hộ chung cư có nội thất sang trọng giá rẻ tốt nhất" src="https://images.meeyland.com/26022020/20190713/20190713090042-dcb7_wm.jpg?d=306x185" style="">
+                                </div>
+                                <div class="card-head-function">
+                                   
+                                   <div class="list-function">
+                                      <button class="btn-custom btn-func function-heart  " id="btn-favorite-5e32a73ce78b2b38b8d0832f" data-article-id="5e32a73ce78b2b38b8d0832f">
+                                      </button>
+                                   </div>
+                                </div>
+                             </div>
+                             <div class="article-card-body">
+                                <div class="card-title">
+                                   
+                                   <a href="/mua-ban-nha-dat/ban-can-ho-chung-cu-co-noi-that-sang-trong-gia-re-tot-nhat-1598760403223" class="call-traking">
+                                      <h3 data-toggle="tooltip" data-placement="top" title="Bán căn hộ chung cư có nội thất sang trọng giá rẻ tốt nhất" class="">
+                                         Bán căn hộ chung cư có nội thất sang trọng giá rẻ tốt nhất
+                                      </h3>
+                                   </a>
+                                </div>
+                                <div class="article-info">
+                                   <div class="article-price">
+                                      1.7 Tỷ - 26.15 Triệu/m²
+                                   </div>
+                                </div>
+                                <div class="article-info-detail row">
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-area" data-toggle="tooltip" data-placement="top" title="Diện tích: 65 m²">
+                                         65 m²
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-wideroad" data-toggle="tooltip" data-placement="top" title="Đường rộng">
+                                         ---
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-frontface" data-toggle="tooltip" data-placement="top" title="Mặt tiền">
+                                         ---
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-compass" data-toggle="tooltip" data-placement="top" title="Hướng: Tây Nam">
+                                         Tây Nam
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-creator-type" data-toggle="tooltip" data-placement="top" title="Đối tượng: Nhà môi giới">
+                                         Nhà môi giới
+                                      </div>
+                                   </div>
+                                   <div class="col-6">
+                                      <div class="article-info-detail-item no-wrap items-center icon-type-of-house" data-toggle="tooltip" data-placement="top" title="Loại nhà đất: Chung cư">
+                                         Chung cư
+                                      </div>
+                                   </div>
+                                </div>
+                                <div class="article-info-location" data-toggle="tooltip" data-placement="top" title="Vị trí" :="" huyện="" văn="" giang,="" tỉnh="" hưng="" yên"="">
+                                   Huyện Văn Giang, Tỉnh Hưng Yên
+                                </div>
+                             </div>
+                             <div class="article-card-footer">
+                                <div class="no-wrap items-center chip-content-footer icon-date">30/01/2020</div>
+                                <div class="no-wrap items-center chip-content-footer icon-eye">11</div>
+                                <a class="no-wrap items-center chip-content-footer icon-messenge tracking-chat" data-article-id="5e32a73ce78b2b38b8d0832f" href="javascript:void(0)" onclick="sendMessage('5dd9faffa9efa70cf84d871b', 'https://meeyland.com/mua-ban-nha-dat/ban-can-ho-chung-cu-co-noi-that-sang-trong-gia-re-tot-nhat-1598760403223')">Chat ngay</a>
+                             </div>
+                          </div>
+                    </div>
+                    <div class="lSAction"><a class="lSPrev disabled"></a><a class="lSNext"></a></div>
+                  </div>
+                  </div>
+                </div>
+
+              </div>
+          </section>
+</main>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.card-info-header').click(function () {
+      const $parent = $(this).parent()
+      if ($parent.hasClass('hide-info')) {
+        $parent.removeClass('hide-info')
+      } else {
+        $parent.addClass('hide-info')
+      }
+    })
+    $('[data-toggle="copy"]').on('click', function() {
+        const $btn = $(this);
+        const $input = $btn.parents('.input-group').find('input');
+        if ($input.length > 0) {
+          $input.focus();
+          $input[0].select();
+          document.execCommand('copy');
+          $btn.html('Đã sao chép');
+          setTimeout(function () {
+            $btn.html('Sao chép link');
+          }, 2000);
+        }
+  });
+    $('#btn_view_calendar_monthly').click(function (e) {
+      e.preventDefault();
+      initPopupSchedule();
+      return false;
+    });
+  });
+</script>
+<script type="text/javascript">
+  $("#related-article-detail").lightSlider({
+      item: 3.6,
+      loop: false,
+      slideMove: 1,
+      easing: "cubic-bezier(0.25, 0, 0.25, 1)",
+      auto: false,
+      pager: false,
+      enableDrag: true,
+      slideMargin: 12,
+      enableTouch: true,
+      pauseOnHover: true,
+      onSliderLoad: function (el) {
+        $('.home-section-favorite .lSAction .lSPrev').addClass('disabled')
+      },
+      onAfterSlide: function (el) {
+        if (el.getCurrentSlideCount() == 1) {
+          $('.home-section-favorite .lSAction .lSPrev').addClass('disabled')
+        } else {
+          $('.home-section-favorite .lSAction .lSPrev').removeClass('disabled')
+        }
+        if (el.getCurrentSlideCount()*2 >= $('#related-article-detail .article-card').length - 2) {
+          $('.home-section-favorite .lSAction .lSNext').addClass('disabled')
+        } else {
+          $('.home-section-favorite .lSAction .lSNext').removeClass('disabled')
+        }
+      },
+    });
+  $('#slide_media_image').owlCarousel({
+                responsive:{
+                  0:{
+                      items:1,
+                  },
+                  750:{
+                      items:1,
+                  },
+                  970:{
+                      items:1,
+                  },
+                  1170:{
+                      items:1,
+                  }
+              },
+                margin: 0,
+                nav: true,
+                loop: false,
+                dots: true,
+                autoWidth: false,
+                lazyLoad:true,
+                autoplay: true,
+                autoplayTimeout: 4000,
+                singleItem: true,
+                rewindNav : false,
+              
+            });
+</script>
+
+<script type="text/javascript">
+  $('.show-number').click(function (e) {
+    
+    e.preventDefault();
+    if ($('[data-phone]').hasClass('toggle')) {
+      $('[data-phone]').removeClass('toggle');
+      $('[data-phone]').html($('[data-phone]').data('phone').substr(0, 4) + '***');
+      $(this).text($.i18n('detail-click_show_number'))
+    } else {
+      $('[data-phone]').addClass('toggle');
+      $('[data-phone]').html($('[data-phone]').data('phone'));
+      $(this).text($.i18n('common-collapse'))
+    }
+    return false;
+  });
+</script>
+
+<script type="text/javascript">
+  $('#btn_show_modal_booking').click(function () {
+      $('#tour_booking_modal').modal('show');
+      initFormBooking();
+    });
+
+    const initFormBooking = () => {
+      initDatePicker();
+      const mode = $('.tour-booking input[name="tour_booking_mode"]:checked').val();
+      $('input[name="tour_booking_mode"][value="' + mode + '"]').prop('checked', true);
+      
+      const $timeSelected = $('#booking li.active input');
+      const scheduleDate = parseInt($timeSelected.val());
+      const formatDate=formatDateSchedule(scheduleDate*1000);
+      $('#scheduleDate').val(formatDate);
+      $('#tour_booking_fullname').val($('#tour_booking_fullname').data('value'))
+      $('#tour_booking_phone').val($('#tour_booking_phone').data('value'))
+      $('#tour_booking_email').val($('#tour_booking_email').data('value'))
+      $('#tour_booking_content').val('')
+      $('[data-field]').removeClass('error')
+      $('#tour_booking_error_modal .btn-ok').click(function(){
+          $('#tour_booking_error_modal').removeClass('show');
+      })
+      setTimeSchedule(scheduleDate)
+    };
+
+    const setTimeSchedule = (scheduleDate) => {
+    const tagSelectTime='select-custom';
+    try {
+      let getModateNow=moment();
+      let getMoScheduleDate=moment(scheduleDate * 1000);
+      let getDataScheduleTime=$('#dataScheduleTime').text();
+          getDataScheduleTime=JSON.parse(getDataScheduleTime);
+      if(getModateNow.format('YYYY-MM-DD')==getMoScheduleDate.format('YYYY-MM-DD')){
+        getDataScheduleTime=getDataScheduleTime.filter(item=>item.use>=getModateNow.format('HH:mm'))
+      }
+      let elementScheduleTime=getDataScheduleTime.map(item=>{
+        return `<option value=${item.index}>${item.use}</option>`
+      })
+      if(elementScheduleTime.length==0){
+         elementScheduleTime.unshift(`<option value=''>--:--</option>`)
+      }
+      
+      $('#scheduleTime').html(elementScheduleTime);
+      setSelect(tagSelectTime);
+
+      if(getDataScheduleTime.length==0){
+         const elementTime= $(`.${tagSelectTime} .select-selected`)
+         if(elementTime){
+           elementTime.addClass('disable');
+         }
+      }
+
+      let $ScheduleTime = $('[data-field="scheduleTime"]');
+      $ScheduleTime.removeClass('error');
+      $ScheduleTime.find('.message').text();
+      if(getDataScheduleTime.length==0){
+          $ScheduleTime.addClass('error');
+          $ScheduleTime.find('.message').text($.i18n('detail-time-not-option'));
+      }
+    } catch (error) {
+        console.log("Error->Set Time: ",error)
+    }
+  }
+
+  const setSelect=(className)=>{
+    var x, i, j, l, ll, selElmnt, a, b, c;
+    /*look for any elements with the class "className":*/
+    $(`.${className} .select-selected`).remove();
+    $(`.${className} .select-items`).remove();
+    x = document.getElementsByClassName(className);
+    
+    l = x.length;
+    for (i = 0; i < l; i++) {
+      selElmnt = x[i].getElementsByTagName("select")[0];
+      ll = selElmnt.length;
+      /*for each element, create a new DIV that will act as the selected item:*/
+      a = document.createElement("DIV");
+      a.setAttribute("class", "select-selected");
+      a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+      x[i].appendChild(a);
+      /*for each element, create a new DIV that will contain the option list:*/
+      b = document.createElement("DIV");
+      b.setAttribute("class", "select-items select-hide");
+      for (j = 0; j < ll; j++) {
+        /*for each option in the original select element,
+        create a new DIV that will act as an option item:*/
+        c = document.createElement("DIV");
+        c.innerHTML = selElmnt.options[j].innerHTML;
+        c.addEventListener("click", function(e) {
+            /*when an item is clicked, update the original select box,
+            and the selected item:*/
+            var y, i, k, s, h, sl, yl;
+            s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+            sl = s.length;
+            h = this.parentNode.previousSibling;
+            for (i = 0; i < sl; i++) {
+              if (s.options[i].innerHTML == this.innerHTML) {
+                s.selectedIndex = i;
+                h.innerHTML = this.innerHTML;
+                y = this.parentNode.getElementsByClassName("same-as-selected");
+                yl = y.length;
+                for (k = 0; k < yl; k++) {
+                  y[k].removeAttribute("class");
+                }
+                this.setAttribute("class", "same-as-selected");
+                break;
+              }
+            }
+            h.click();
+        });
+        b.appendChild(c);
+      }
+      x[i].appendChild(b);
+      a.addEventListener("click", function(e) {
+          /*when the select box is clicked, close any other select boxes,
+          and open/close the current select box:*/
+          e.stopPropagation();
+          closeAllSelect(this);
+          this.nextSibling.classList.toggle("select-hide");
+          this.classList.toggle("select-arrow-active");
+        });
+    }
+    function closeAllSelect(elmnt) {
+      /*a function that will close all select boxes in the document,
+      except the current select box:*/
+      var x, y, i, xl, yl, arrNo = [];
+      x = document.getElementsByClassName("select-items");
+      y = document.getElementsByClassName("select-selected");
+      xl = x.length;
+      yl = y.length;
+      for (i = 0; i < yl; i++) {
+        if (elmnt == y[i]) {
+          arrNo.push(i)
+        } else {
+          y[i].classList.remove("select-arrow-active");
+        }
+      }
+      for (i = 0; i < xl; i++) {
+        if (arrNo.indexOf(i)) {
+          x[i].classList.add("select-hide");
+        }
+      }
+    }
+    /*if the user clicks anywhere outside the select box,
+    then close all select boxes:*/
+    document.addEventListener("click", closeAllSelect);
+  }
+
+  const formatDateSchedule=(date)=>{
+    return moment(date).format('DD/MM/YYYY');
+  }
+
+  const initDatePicker=()=>{
+    
+    let dataScheduleDate=$('#dataScheduleDate').text();
+    dataScheduleDate=JSON.parse(dataScheduleDate);
+    const listDateShow=dataScheduleDate.map(item=>moment(item.time).format('DD/MM/YYYY'));
+    $( "#scheduleDate" ).datepicker({ 
+      dateFormat: 'dd/mm/yy',
+      locale: 'vi',
+      beforeShowDay: function(date){
+        var str =formatDateSchedule(date)
+        return [ listDateShow.includes(str),'',]
+    },
+    beforeShow: function (input, inst) {
+      var rect = input.getBoundingClientRect();
+      setTimeout(function () {
+        inst.dpDiv.css({ top: rect.top + 45, left: rect.left + 0 });
+      }, 0);
+  }
+    });
+  }
+
+  const initScrollPage = (windowOffset, tabOffset) => {
+    const $tab_info = $('#tab_info');
+    if (windowOffset >= tabOffset) {
+      if ($tab_info.hasClass('fixed') == false) {
+        $tab_info.addClass('fixed');
+        $('.mark-tab-info').addClass('active');
+      }
+    } else {
+      if ($tab_info.hasClass('fixed') == true) {
+        $tab_info.removeClass('fixed');
+        $('.mark-tab-info').removeClass('active');
+      }
+    }
+  };
+
+  const scrollPage = () => {
+    const $tab_info = $('#tab_info');
+    let tabOffset = $tab_info.offset().top;
+    $(window).scroll(function () {
+      let windowOffset = $(window).scrollTop();
+      initScrollPage(windowOffset + 15, tabOffset);
+      initActiveTab(windowOffset + 100);
+    });
+    initScrollPage($(window).scrollTop(), tabOffset);
+    initActiveTab($(window).scrollTop() + 100);
+
+    $('#tab_info [data-tab]').click(function (e) {
+      e.preventDefault();
+      const elm = $(this).data('tab');
+      $('html, body').animate({
+        scrollTop: $(elm).offset().top - 57
+      }, 400);
+      return false;
+    });
+  };
+  const initActiveTab = (windowOffset) => {
+    const nav_profile = $('#nav-profile').offset().top;
+    const meey_info = $('#meey-info').offset().top;
+    if (windowOffset < nav_profile) {
+      $('#tab_info [data-tab]').removeClass('active');
+      $('#tab_info [data-tab="#nav-home"]').addClass('active');
+    } else if (windowOffset >= nav_profile && windowOffset < meey_info) {
+      $('#tab_info [data-tab]').removeClass('active');
+      $('#tab_info [data-tab="#nav-profile"]').addClass('active');
+    } else if (windowOffset >= meey_info) {
+      $('#tab_info [data-tab]').removeClass('active');
+      $('#tab_info [data-tab="#meey-info"]').addClass('active');
+    } else {
+
+    }
+  };
+  scrollPage();
+
+  let schedulePaid = [];
+  function formatNumber(numb, fix = 0) {
+    if (!numb) numb = 0
+    let fixPow = Math.pow(10, fix);
+    numb = Math.round(numb * fixPow) / fixPow;
+    return numb.toString().replace(/\d(?=(\d{3})+(?!\d))/g, '$&,');
+  }
+  const initPopupSchedule = () => {
+    const $modal = $('#calendar_monthly_popup');
+    const $list = $modal.find('.list-schedule-paid tbody');
+    let html = '';
+    schedulePaid.map((item, index) => {
+      html += `<tr>
+            <td>${index + 1}</td>
+            <td>${formatNumber(item.remainSource)}</td>
+            <td>${formatNumber(item.sourcePerMonth)}</td>
+            <td>${formatNumber(item.interestPaid)}</td>
+            <td>${formatNumber(item.sourcePerMonth + item.interestPaid)}</td> 
+        </tr>`;
+    });
+    $list.html(html);
+    $('#lsp_total_interest_paid').html(formatNumber(0));
+    $('#lsp_total_paid').html(formatNumber(0 + 0));
+    $modal.modal('show')
+  }
+    
+</script>
+
+
+
+<script type="text/javascript"></script>
+<div id="dataScheduleDate" class="d-none">[{"dateOfWeek":"Hôm nay","dateOfMonth":"19","month":"Tháng 09","value":1631984400,"time":1631984400000,"fullText":"Chủ nhật &lt;span&gt;|&lt;/span&gt; ngày 19 tháng 09 năm 2021","fullTextDetail":"Chủ nhật, ngày 19, tháng 09"},{"dateOfWeek":"Thứ 2","dateOfMonth":"20","month":"Tháng 09","value":1632070800,"time":1632070800000,"fullText":"Thứ 2 &lt;span&gt;|&lt;/span&gt; ngày 20 tháng 09 năm 2021","fullTextDetail":"Thứ 2, ngày 20, tháng 09"},{"dateOfWeek":"Thứ 3","dateOfMonth":"21","month":"Tháng 09","value":1632157200,"time":1632157200000,"fullText":"Thứ 3 &lt;span&gt;|&lt;/span&gt; ngày 21 tháng 09 năm 2021","fullTextDetail":"Thứ 3, ngày 21, tháng 09"},{"dateOfWeek":"Thứ 4","dateOfMonth":"22","month":"Tháng 09","value":1632243600,"time":1632243600000,"fullText":"Thứ 4 &lt;span&gt;|&lt;/span&gt; ngày 22 tháng 09 năm 2021","fullTextDetail":"Thứ 4, ngày 22, tháng 09"},{"dateOfWeek":"Thứ 5","dateOfMonth":"23","month":"Tháng 09","value":1632330000,"time":1632330000000,"fullText":"Thứ 5 &lt;span&gt;|&lt;/span&gt; ngày 23 tháng 09 năm 2021","fullTextDetail":"Thứ 5, ngày 23, tháng 09"},{"dateOfWeek":"Thứ 6","dateOfMonth":"24","month":"Tháng 09","value":1632416400,"time":1632416400000,"fullText":"Thứ 6 &lt;span&gt;|&lt;/span&gt; ngày 24 tháng 09 năm 2021","fullTextDetail":"Thứ 6, ngày 24, tháng 09"},{"dateOfWeek":"Thứ 7","dateOfMonth":"25","month":"Tháng 09","value":1632502800,"time":1632502800000,"fullText":"Thứ 7 &lt;span&gt;|&lt;/span&gt; ngày 25 tháng 09 năm 2021","fullTextDetail":"Thứ 7, ngày 25, tháng 09"},{"dateOfWeek":"Chủ nhật","dateOfMonth":"26","month":"Tháng 09","value":1632589200,"time":1632589200000,"fullText":"Chủ nhật &lt;span&gt;|&lt;/span&gt; ngày 26 tháng 09 năm 2021","fullTextDetail":"Chủ nhật, ngày 26, tháng 09"},{"dateOfWeek":"Thứ 2","dateOfMonth":"27","month":"Tháng 09","value":1632675600,"time":1632675600000,"fullText":"Thứ 2 &lt;span&gt;|&lt;/span&gt; ngày 27 tháng 09 năm 2021","fullTextDetail":"Thứ 2, ngày 27, tháng 09"},{"dateOfWeek":"Thứ 3","dateOfMonth":"28","month":"Tháng 09","value":1632762000,"time":1632762000000,"fullText":"Thứ 3 &lt;span&gt;|&lt;/span&gt; ngày 28 tháng 09 năm 2021","fullTextDetail":"Thứ 3, ngày 28, tháng 09"},{"dateOfWeek":"Thứ 4","dateOfMonth":"29","month":"Tháng 09","value":1632848400,"time":1632848400000,"fullText":"Thứ 4 &lt;span&gt;|&lt;/span&gt; ngày 29 tháng 09 năm 2021","fullTextDetail":"Thứ 4, ngày 29, tháng 09"},{"dateOfWeek":"Thứ 5","dateOfMonth":"30","month":"Tháng 09","value":1632934800,"time":1632934800000,"fullText":"Thứ 5 &lt;span&gt;|&lt;/span&gt; ngày 30 tháng 09 năm 2021","fullTextDetail":"Thứ 5, ngày 30, tháng 09"},{"dateOfWeek":"Thứ 6","dateOfMonth":"01","month":"Tháng 10","value":1633021200,"time":1633021200000,"fullText":"Thứ 6 &lt;span&gt;|&lt;/span&gt; ngày 01 tháng 10 năm 2021","fullTextDetail":"Thứ 6, ngày 01, tháng 10"},{"dateOfWeek":"Thứ 7","dateOfMonth":"02","month":"Tháng 10","value":1633107600,"time":1633107600000,"fullText":"Thứ 7 &lt;span&gt;|&lt;/span&gt; ngày 02 tháng 10 năm 2021","fullTextDetail":"Thứ 7, ngày 02, tháng 10"},{"dateOfWeek":"Chủ nhật","dateOfMonth":"03","month":"Tháng 10","value":1633194000,"time":1633194000000,"fullText":"Chủ nhật &lt;span&gt;|&lt;/span&gt; ngày 03 tháng 10 năm 2021","fullTextDetail":"Chủ nhật, ngày 03, tháng 10"},{"dateOfWeek":"Thứ 2","dateOfMonth":"04","month":"Tháng 10","value":1633280400,"time":1633280400000,"fullText":"Thứ 2 &lt;span&gt;|&lt;/span&gt; ngày 04 tháng 10 năm 2021","fullTextDetail":"Thứ 2, ngày 04, tháng 10"},{"dateOfWeek":"Thứ 3","dateOfMonth":"05","month":"Tháng 10","value":1633366800,"time":1633366800000,"fullText":"Thứ 3 &lt;span&gt;|&lt;/span&gt; ngày 05 tháng 10 năm 2021","fullTextDetail":"Thứ 3, ngày 05, tháng 10"},{"dateOfWeek":"Thứ 4","dateOfMonth":"06","month":"Tháng 10","value":1633453200,"time":1633453200000,"fullText":"Thứ 4 &lt;span&gt;|&lt;/span&gt; ngày 06 tháng 10 năm 2021","fullTextDetail":"Thứ 4, ngày 06, tháng 10"},{"dateOfWeek":"Thứ 5","dateOfMonth":"07","month":"Tháng 10","value":1633539600,"time":1633539600000,"fullText":"Thứ 5 &lt;span&gt;|&lt;/span&gt; ngày 07 tháng 10 năm 2021","fullTextDetail":"Thứ 5, ngày 07, tháng 10"},{"dateOfWeek":"Thứ 6","dateOfMonth":"08","month":"Tháng 10","value":1633626000,"time":1633626000000,"fullText":"Thứ 6 &lt;span&gt;|&lt;/span&gt; ngày 08 tháng 10 năm 2021","fullTextDetail":"Thứ 6, ngày 08, tháng 10"},{"dateOfWeek":"Thứ 7","dateOfMonth":"09","month":"Tháng 10","value":1633712400,"time":1633712400000,"fullText":"Thứ 7 &lt;span&gt;|&lt;/span&gt; ngày 09 tháng 10 năm 2021","fullTextDetail":"Thứ 7, ngày 09, tháng 10"},{"dateOfWeek":"Chủ nhật","dateOfMonth":"10","month":"Tháng 10","value":1633798800,"time":1633798800000,"fullText":"Chủ nhật &lt;span&gt;|&lt;/span&gt; ngày 10 tháng 10 năm 2021","fullTextDetail":"Chủ nhật, ngày 10, tháng 10"},{"dateOfWeek":"Thứ 2","dateOfMonth":"11","month":"Tháng 10","value":1633885200,"time":1633885200000,"fullText":"Thứ 2 &lt;span&gt;|&lt;/span&gt; ngày 11 tháng 10 năm 2021","fullTextDetail":"Thứ 2, ngày 11, tháng 10"},{"dateOfWeek":"Thứ 3","dateOfMonth":"12","month":"Tháng 10","value":1633971600,"time":1633971600000,"fullText":"Thứ 3 &lt;span&gt;|&lt;/span&gt; ngày 12 tháng 10 năm 2021","fullTextDetail":"Thứ 3, ngày 12, tháng 10"},{"dateOfWeek":"Thứ 4","dateOfMonth":"13","month":"Tháng 10","value":1634058000,"time":1634058000000,"fullText":"Thứ 4 &lt;span&gt;|&lt;/span&gt; ngày 13 tháng 10 năm 2021","fullTextDetail":"Thứ 4, ngày 13, tháng 10"},{"dateOfWeek":"Thứ 5","dateOfMonth":"14","month":"Tháng 10","value":1634144400,"time":1634144400000,"fullText":"Thứ 5 &lt;span&gt;|&lt;/span&gt; ngày 14 tháng 10 năm 2021","fullTextDetail":"Thứ 5, ngày 14, tháng 10"},{"dateOfWeek":"Thứ 6","dateOfMonth":"15","month":"Tháng 10","value":1634230800,"time":1634230800000,"fullText":"Thứ 6 &lt;span&gt;|&lt;/span&gt; ngày 15 tháng 10 năm 2021","fullTextDetail":"Thứ 6, ngày 15, tháng 10"},{"dateOfWeek":"Thứ 7","dateOfMonth":"16","month":"Tháng 10","value":1634317200,"time":1634317200000,"fullText":"Thứ 7 &lt;span&gt;|&lt;/span&gt; ngày 16 tháng 10 năm 2021","fullTextDetail":"Thứ 7, ngày 16, tháng 10"},{"dateOfWeek":"Chủ nhật","dateOfMonth":"17","month":"Tháng 10","value":1634403600,"time":1634403600000,"fullText":"Chủ nhật &lt;span&gt;|&lt;/span&gt; ngày 17 tháng 10 năm 2021","fullTextDetail":"Chủ nhật, ngày 17, tháng 10"},{"dateOfWeek":"Thứ 2","dateOfMonth":"18","month":"Tháng 10","value":1634490000,"time":1634490000000,"fullText":"Thứ 2 &lt;span&gt;|&lt;/span&gt; ngày 18 tháng 10 năm 2021","fullTextDetail":"Thứ 2, ngày 18, tháng 10"},{"dateOfWeek":"Thứ 3","dateOfMonth":"19","month":"Tháng 10","value":1634576400,"time":1634576400000,"fullText":"Thứ 3 &lt;span&gt;|&lt;/span&gt; ngày 19 tháng 10 năm 2021","fullTextDetail":"Thứ 3, ngày 19, tháng 10"},{"dateOfWeek":"Thứ 4","dateOfMonth":"20","month":"Tháng 10","value":1634662800,"time":1634662800000,"fullText":"Thứ 4 &lt;span&gt;|&lt;/span&gt; ngày 20 tháng 10 năm 2021","fullTextDetail":"Thứ 4, ngày 20, tháng 10"},{"dateOfWeek":"Thứ 5","dateOfMonth":"21","month":"Tháng 10","value":1634749200,"time":1634749200000,"fullText":"Thứ 5 &lt;span&gt;|&lt;/span&gt; ngày 21 tháng 10 năm 2021","fullTextDetail":"Thứ 5, ngày 21, tháng 10"},{"dateOfWeek":"Thứ 6","dateOfMonth":"22","month":"Tháng 10","value":1634835600,"time":1634835600000,"fullText":"Thứ 6 &lt;span&gt;|&lt;/span&gt; ngày 22 tháng 10 năm 2021","fullTextDetail":"Thứ 6, ngày 22, tháng 10"},{"dateOfWeek":"Thứ 7","dateOfMonth":"23","month":"Tháng 10","value":1634922000,"time":1634922000000,"fullText":"Thứ 7 &lt;span&gt;|&lt;/span&gt; ngày 23 tháng 10 năm 2021","fullTextDetail":"Thứ 7, ngày 23, tháng 10"},{"dateOfWeek":"Chủ nhật","dateOfMonth":"24","month":"Tháng 10","value":1635008400,"time":1635008400000,"fullText":"Chủ nhật &lt;span&gt;|&lt;/span&gt; ngày 24 tháng 10 năm 2021","fullTextDetail":"Chủ nhật, ngày 24, tháng 10"},{"dateOfWeek":"Thứ 2","dateOfMonth":"25","month":"Tháng 10","value":1635094800,"time":1635094800000,"fullText":"Thứ 2 &lt;span&gt;|&lt;/span&gt; ngày 25 tháng 10 năm 2021","fullTextDetail":"Thứ 2, ngày 25, tháng 10"},{"dateOfWeek":"Thứ 3","dateOfMonth":"26","month":"Tháng 10","value":1635181200,"time":1635181200000,"fullText":"Thứ 3 &lt;span&gt;|&lt;/span&gt; ngày 26 tháng 10 năm 2021","fullTextDetail":"Thứ 3, ngày 26, tháng 10"},{"dateOfWeek":"Thứ 4","dateOfMonth":"27","month":"Tháng 10","value":1635267600,"time":1635267600000,"fullText":"Thứ 4 &lt;span&gt;|&lt;/span&gt; ngày 27 tháng 10 năm 2021","fullTextDetail":"Thứ 4, ngày 27, tháng 10"},{"dateOfWeek":"Thứ 5","dateOfMonth":"28","month":"Tháng 10","value":1635354000,"time":1635354000000,"fullText":"Thứ 5 &lt;span&gt;|&lt;/span&gt; ngày 28 tháng 10 năm 2021","fullTextDetail":"Thứ 5, ngày 28, tháng 10"},{"dateOfWeek":"Thứ 6","dateOfMonth":"29","month":"Tháng 10","value":1635440400,"time":1635440400000,"fullText":"Thứ 6 &lt;span&gt;|&lt;/span&gt; ngày 29 tháng 10 năm 2021","fullTextDetail":"Thứ 6, ngày 29, tháng 10"},{"dateOfWeek":"Thứ 7","dateOfMonth":"30","month":"Tháng 10","value":1635526800,"time":1635526800000,"fullText":"Thứ 7 &lt;span&gt;|&lt;/span&gt; ngày 30 tháng 10 năm 2021","fullTextDetail":"Thứ 7, ngày 30, tháng 10"},{"dateOfWeek":"Chủ nhật","dateOfMonth":"31","month":"Tháng 10","value":1635613200,"time":1635613200000,"fullText":"Chủ nhật &lt;span&gt;|&lt;/span&gt; ngày 31 tháng 10 năm 2021","fullTextDetail":"Chủ nhật, ngày 31, tháng 10"},{"dateOfWeek":"Thứ 2","dateOfMonth":"01","month":"Tháng 11","value":1635699600,"time":1635699600000,"fullText":"Thứ 2 &lt;span&gt;|&lt;/span&gt; ngày 01 tháng 11 năm 2021","fullTextDetail":"Thứ 2, ngày 01, tháng 11"},{"dateOfWeek":"Thứ 3","dateOfMonth":"02","month":"Tháng 11","value":1635786000,"time":1635786000000,"fullText":"Thứ 3 &lt;span&gt;|&lt;/span&gt; ngày 02 tháng 11 năm 2021","fullTextDetail":"Thứ 3, ngày 02, tháng 11"},{"dateOfWeek":"Thứ 4","dateOfMonth":"03","month":"Tháng 11","value":1635872400,"time":1635872400000,"fullText":"Thứ 4 &lt;span&gt;|&lt;/span&gt; ngày 03 tháng 11 năm 2021","fullTextDetail":"Thứ 4, ngày 03, tháng 11"},{"dateOfWeek":"Thứ 5","dateOfMonth":"04","month":"Tháng 11","value":1635958800,"time":1635958800000,"fullText":"Thứ 5 &lt;span&gt;|&lt;/span&gt; ngày 04 tháng 11 năm 2021","fullTextDetail":"Thứ 5, ngày 04, tháng 11"},{"dateOfWeek":"Thứ 6","dateOfMonth":"05","month":"Tháng 11","value":1636045200,"time":1636045200000,"fullText":"Thứ 6 &lt;span&gt;|&lt;/span&gt; ngày 05 tháng 11 năm 2021","fullTextDetail":"Thứ 6, ngày 05, tháng 11"},{"dateOfWeek":"Thứ 7","dateOfMonth":"06","month":"Tháng 11","value":1636131600,"time":1636131600000,"fullText":"Thứ 7 &lt;span&gt;|&lt;/span&gt; ngày 06 tháng 11 năm 2021","fullTextDetail":"Thứ 7, ngày 06, tháng 11"},{"dateOfWeek":"Chủ nhật","dateOfMonth":"07","month":"Tháng 11","value":1636218000,"time":1636218000000,"fullText":"Chủ nhật &lt;span&gt;|&lt;/span&gt; ngày 07 tháng 11 năm 2021","fullTextDetail":"Chủ nhật, ngày 07, tháng 11"},{"dateOfWeek":"Thứ 2","dateOfMonth":"08","month":"Tháng 11","value":1636304400,"time":1636304400000,"fullText":"Thứ 2 &lt;span&gt;|&lt;/span&gt; ngày 08 tháng 11 năm 2021","fullTextDetail":"Thứ 2, ngày 08, tháng 11"},{"dateOfWeek":"Thứ 3","dateOfMonth":"09","month":"Tháng 11","value":1636390800,"time":1636390800000,"fullText":"Thứ 3 &lt;span&gt;|&lt;/span&gt; ngày 09 tháng 11 năm 2021","fullTextDetail":"Thứ 3, ngày 09, tháng 11"},{"dateOfWeek":"Thứ 4","dateOfMonth":"10","month":"Tháng 11","value":1636477200,"time":1636477200000,"fullText":"Thứ 4 &lt;span&gt;|&lt;/span&gt; ngày 10 tháng 11 năm 2021","fullTextDetail":"Thứ 4, ngày 10, tháng 11"},{"dateOfWeek":"Thứ 5","dateOfMonth":"11","month":"Tháng 11","value":1636563600,"time":1636563600000,"fullText":"Thứ 5 &lt;span&gt;|&lt;/span&gt; ngày 11 tháng 11 năm 2021","fullTextDetail":"Thứ 5, ngày 11, tháng 11"},{"dateOfWeek":"Thứ 6","dateOfMonth":"12","month":"Tháng 11","value":1636650000,"time":1636650000000,"fullText":"Thứ 6 &lt;span&gt;|&lt;/span&gt; ngày 12 tháng 11 năm 2021","fullTextDetail":"Thứ 6, ngày 12, tháng 11"},{"dateOfWeek":"Thứ 7","dateOfMonth":"13","month":"Tháng 11","value":1636736400,"time":1636736400000,"fullText":"Thứ 7 &lt;span&gt;|&lt;/span&gt; ngày 13 tháng 11 năm 2021","fullTextDetail":"Thứ 7, ngày 13, tháng 11"},{"dateOfWeek":"Chủ nhật","dateOfMonth":"14","month":"Tháng 11","value":1636822800,"time":1636822800000,"fullText":"Chủ nhật &lt;span&gt;|&lt;/span&gt; ngày 14 tháng 11 năm 2021","fullTextDetail":"Chủ nhật, ngày 14, tháng 11"},{"dateOfWeek":"Thứ 2","dateOfMonth":"15","month":"Tháng 11","value":1636909200,"time":1636909200000,"fullText":"Thứ 2 &lt;span&gt;|&lt;/span&gt; ngày 15 tháng 11 năm 2021","fullTextDetail":"Thứ 2, ngày 15, tháng 11"},{"dateOfWeek":"Thứ 3","dateOfMonth":"16","month":"Tháng 11","value":1636995600,"time":1636995600000,"fullText":"Thứ 3 &lt;span&gt;|&lt;/span&gt; ngày 16 tháng 11 năm 2021","fullTextDetail":"Thứ 3, ngày 16, tháng 11"},{"dateOfWeek":"Thứ 4","dateOfMonth":"17","month":"Tháng 11","value":1637082000,"time":1637082000000,"fullText":"Thứ 4 &lt;span&gt;|&lt;/span&gt; ngày 17 tháng 11 năm 2021","fullTextDetail":"Thứ 4, ngày 17, tháng 11"},{"dateOfWeek":"Thứ 5","dateOfMonth":"18","month":"Tháng 11","value":1637168400,"time":1637168400000,"fullText":"Thứ 5 &lt;span&gt;|&lt;/span&gt; ngày 18 tháng 11 năm 2021","fullTextDetail":"Thứ 5, ngày 18, tháng 11"},{"dateOfWeek":"Thứ 6","dateOfMonth":"19","month":"Tháng 11","value":1637254800,"time":1637254800000,"fullText":"Thứ 6 &lt;span&gt;|&lt;/span&gt; ngày 19 tháng 11 năm 2021","fullTextDetail":"Thứ 6, ngày 19, tháng 11"},{"dateOfWeek":"Thứ 7","dateOfMonth":"20","month":"Tháng 11","value":1637341200,"time":1637341200000,"fullText":"Thứ 7 &lt;span&gt;|&lt;/span&gt; ngày 20 tháng 11 năm 2021","fullTextDetail":"Thứ 7, ngày 20, tháng 11"},{"dateOfWeek":"Chủ nhật","dateOfMonth":"21","month":"Tháng 11","value":1637427600,"time":1637427600000,"fullText":"Chủ nhật &lt;span&gt;|&lt;/span&gt; ngày 21 tháng 11 năm 2021","fullTextDetail":"Chủ nhật, ngày 21, tháng 11"},{"dateOfWeek":"Thứ 2","dateOfMonth":"22","month":"Tháng 11","value":1637514000,"time":1637514000000,"fullText":"Thứ 2 &lt;span&gt;|&lt;/span&gt; ngày 22 tháng 11 năm 2021","fullTextDetail":"Thứ 2, ngày 22, tháng 11"},{"dateOfWeek":"Thứ 3","dateOfMonth":"23","month":"Tháng 11","value":1637600400,"time":1637600400000,"fullText":"Thứ 3 &lt;span&gt;|&lt;/span&gt; ngày 23 tháng 11 năm 2021","fullTextDetail":"Thứ 3, ngày 23, tháng 11"},{"dateOfWeek":"Thứ 4","dateOfMonth":"24","month":"Tháng 11","value":1637686800,"time":1637686800000,"fullText":"Thứ 4 &lt;span&gt;|&lt;/span&gt; ngày 24 tháng 11 năm 2021","fullTextDetail":"Thứ 4, ngày 24, tháng 11"},{"dateOfWeek":"Thứ 5","dateOfMonth":"25","month":"Tháng 11","value":1637773200,"time":1637773200000,"fullText":"Thứ 5 &lt;span&gt;|&lt;/span&gt; ngày 25 tháng 11 năm 2021","fullTextDetail":"Thứ 5, ngày 25, tháng 11"},{"dateOfWeek":"Thứ 6","dateOfMonth":"26","month":"Tháng 11","value":1637859600,"time":1637859600000,"fullText":"Thứ 6 &lt;span&gt;|&lt;/span&gt; ngày 26 tháng 11 năm 2021","fullTextDetail":"Thứ 6, ngày 26, tháng 11"},{"dateOfWeek":"Thứ 7","dateOfMonth":"27","month":"Tháng 11","value":1637946000,"time":1637946000000,"fullText":"Thứ 7 &lt;span&gt;|&lt;/span&gt; ngày 27 tháng 11 năm 2021","fullTextDetail":"Thứ 7, ngày 27, tháng 11"},{"dateOfWeek":"Chủ nhật","dateOfMonth":"28","month":"Tháng 11","value":1638032400,"time":1638032400000,"fullText":"Chủ nhật &lt;span&gt;|&lt;/span&gt; ngày 28 tháng 11 năm 2021","fullTextDetail":"Chủ nhật, ngày 28, tháng 11"},{"dateOfWeek":"Thứ 2","dateOfMonth":"29","month":"Tháng 11","value":1638118800,"time":1638118800000,"fullText":"Thứ 2 &lt;span&gt;|&lt;/span&gt; ngày 29 tháng 11 năm 2021","fullTextDetail":"Thứ 2, ngày 29, tháng 11"},{"dateOfWeek":"Thứ 3","dateOfMonth":"30","month":"Tháng 11","value":1638205200,"time":1638205200000,"fullText":"Thứ 3 &lt;span&gt;|&lt;/span&gt; ngày 30 tháng 11 năm 2021","fullTextDetail":"Thứ 3, ngày 30, tháng 11"},{"dateOfWeek":"Thứ 4","dateOfMonth":"01","month":"Tháng 12","value":1638291600,"time":1638291600000,"fullText":"Thứ 4 &lt;span&gt;|&lt;/span&gt; ngày 01 tháng 12 năm 2021","fullTextDetail":"Thứ 4, ngày 01, tháng 12"},{"dateOfWeek":"Thứ 5","dateOfMonth":"02","month":"Tháng 12","value":1638378000,"time":1638378000000,"fullText":"Thứ 5 &lt;span&gt;|&lt;/span&gt; ngày 02 tháng 12 năm 2021","fullTextDetail":"Thứ 5, ngày 02, tháng 12"},{"dateOfWeek":"Thứ 6","dateOfMonth":"03","month":"Tháng 12","value":1638464400,"time":1638464400000,"fullText":"Thứ 6 &lt;span&gt;|&lt;/span&gt; ngày 03 tháng 12 năm 2021","fullTextDetail":"Thứ 6, ngày 03, tháng 12"},{"dateOfWeek":"Thứ 7","dateOfMonth":"04","month":"Tháng 12","value":1638550800,"time":1638550800000,"fullText":"Thứ 7 &lt;span&gt;|&lt;/span&gt; ngày 04 tháng 12 năm 2021","fullTextDetail":"Thứ 7, ngày 04, tháng 12"},{"dateOfWeek":"Chủ nhật","dateOfMonth":"05","month":"Tháng 12","value":1638637200,"time":1638637200000,"fullText":"Chủ nhật &lt;span&gt;|&lt;/span&gt; ngày 05 tháng 12 năm 2021","fullTextDetail":"Chủ nhật, ngày 05, tháng 12"},{"dateOfWeek":"Thứ 2","dateOfMonth":"06","month":"Tháng 12","value":1638723600,"time":1638723600000,"fullText":"Thứ 2 &lt;span&gt;|&lt;/span&gt; ngày 06 tháng 12 năm 2021","fullTextDetail":"Thứ 2, ngày 06, tháng 12"}]</div>
+
+ <div class="modal fade modal-share" id="modal_share" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <div class="modal-title">Chia sẻ tin này với bạn bè</div>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <div class="input-group">
+                      <input type="text" class="form-control" value="https://meeyland.com/mua-ban-nha-dat/tuyet-pham-nha-sai-gon-can-ho-can-1-pn-chi-50tr-m2-1631089685968" readonly>
+                      <div class="input-group-append">
+                        <button class="input-group-text" data-toggle="copy">Sao chép link</button>
+                      </div>
+                  </div>
+                  <div class="share-buttons">
+                      <button class="btn btn-facebook" data-href="https://meeyland.com/mua-ban-nha-dat/tuyet-pham-nha-sai-gon-can-ho-can-1-pn-chi-50tr-m2-1631089685968">Chia sẻ qua Facebook</button>
+                      <div class="zalo-share-button btn btn-zalo" data-href="https://meeyland.com/mua-ban-nha-dat/tuyet-pham-nha-sai-gon-can-ho-can-1-pn-chi-50tr-m2-1631089685968" data-oaid="579745863508352884" data-layout="2" data-color="blue" data-customize=true>Chia sẻ qua Zalo</div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+<div class="modal fade modal-calendar_monthly " id="calendar_monthly_popup" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <div class="modal-title">Xem lịch trả nợ hàng tháng</div>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <table class="table list-schedule-paid">
+                      <thead>
+                          <tr>
+                              <th scope="col">Số kỳ</th>
+                              <th scope="col">Dư nợ đầu kỳ (VNĐ)</th>
+                              <th scope="col">Gốc phải trả (VNĐ)</th>
+                              <th scope="col">Lãi phải trả (VNĐ)</th>
+                              <th scope="col">Gốc + Lãi (VNĐ)</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                      </tbody>
+                      <tfoot>
+                          <tr>
+                              <td colspan="3" style="text-align: right;padding-right: 16px;">Tổng</td>
+                              <td id="lsp_total_interest_paid">0</td>
+                              <td id="lsp_total_paid">0</td>
+                          </tr>
+                      </tfoot>
+                  </table>
+                  <div class="note">
+                      (*) Công cụ tính toán trên website chỉ mang tính chất tham khảo
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+<div class="modal tour-booking-modal" id="tour_booking_modal" tabindex="-1" style="display: none;" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <div class="modal-title">ĐẶT LỊCH HẸN</div>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <form action="#" class="tour-booking-form" id="tour_booking_form">
+                      <input type="hidden" name="articleId" value="613874155223d3001896638a">
+                      <div class="block-header">
+                          <div class="view-mode">
+                              <div class="modal-header-title">Loại xem</div>
+                              <label class="block-radio">
+                                <input type="radio" name="tour_booking_mode" value="1">
+                                <span class="text">Xem trực tiếp</span>
+                                <span class="checkmark"></span>
+                                <span class="bg"></span>
+                            </label>
+
+
+                              <label class="block-radio">
+                                <input type="radio" name="tour_booking_mode" value="2">
+                                <span class="text">Xem live video</span>
+                                <span class="checkmark"></span>
+                                <span class="bg"></span>
+                            </label>
+
+                          </div>
+                          <div class="time-selected" style="margin-top:9px;">
+                              <div class="row">
+                              <div class="col-12 col-md-6">
+                                  <div class="form-group" data-field="scheduleDate">
+                                      <label for="tour_booking_phone">Thời gian xem nhà</label>
+                                      <div class="input-group">
+                                          <div class="input-group-prepend" style="position: absolute;z-index: 99999999;">
+                                              <span class="icon icon-calendar"></span>
+                                          </div>
+                                          <input type="text" readonly="true" style="position: static !important;padding-left: 50px;" class="form-control hasDatepicker" name="scheduleDate" id="scheduleDate">
+                                          <span class="message"></span>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div id="dataScheduleDate" class="d-none">[{"dateOfWeek":"Hôm nay","dateOfMonth":"19","month":"Tháng 09","value":1631984400,"time":1631984400000,"fullText":"Chủ nhật &lt;span&gt;|&lt;/span&gt; ngày 19 tháng 09 năm 2021","fullTextDetail":"Chủ nhật, ngày 19, tháng 09"},{"dateOfWeek":"Thứ 2","dateOfMonth":"20","month":"Tháng 09","value":1632070800,"time":1632070800000,"fullText":"Thứ 2 &lt;span&gt;|&lt;/span&gt; ngày 20 tháng 09 năm 2021","fullTextDetail":"Thứ 2, ngày 20, tháng 09"},{"dateOfWeek":"Thứ 3","dateOfMonth":"21","month":"Tháng 09","value":1632157200,"time":1632157200000,"fullText":"Thứ 3 &lt;span&gt;|&lt;/span&gt; ngày 21 tháng 09 năm 2021","fullTextDetail":"Thứ 3, ngày 21, tháng 09"},{"dateOfWeek":"Thứ 4","dateOfMonth":"22","month":"Tháng 09","value":1632243600,"time":1632243600000,"fullText":"Thứ 4 &lt;span&gt;|&lt;/span&gt; ngày 22 tháng 09 năm 2021","fullTextDetail":"Thứ 4, ngày 22, tháng 09"},{"dateOfWeek":"Thứ 5","dateOfMonth":"23","month":"Tháng 09","value":1632330000,"time":1632330000000,"fullText":"Thứ 5 &lt;span&gt;|&lt;/span&gt; ngày 23 tháng 09 năm 2021","fullTextDetail":"Thứ 5, ngày 23, tháng 09"},{"dateOfWeek":"Thứ 6","dateOfMonth":"24","month":"Tháng 09","value":1632416400,"time":1632416400000,"fullText":"Thứ 6 &lt;span&gt;|&lt;/span&gt; ngày 24 tháng 09 năm 2021","fullTextDetail":"Thứ 6, ngày 24, tháng 09"},{"dateOfWeek":"Thứ 7","dateOfMonth":"25","month":"Tháng 09","value":1632502800,"time":1632502800000,"fullText":"Thứ 7 &lt;span&gt;|&lt;/span&gt; ngày 25 tháng 09 năm 2021","fullTextDetail":"Thứ 7, ngày 25, tháng 09"},{"dateOfWeek":"Chủ nhật","dateOfMonth":"26","month":"Tháng 09","value":1632589200,"time":1632589200000,"fullText":"Chủ nhật &lt;span&gt;|&lt;/span&gt; ngày 26 tháng 09 năm 2021","fullTextDetail":"Chủ nhật, ngày 26, tháng 09"},{"dateOfWeek":"Thứ 2","dateOfMonth":"27","month":"Tháng 09","value":1632675600,"time":1632675600000,"fullText":"Thứ 2 &lt;span&gt;|&lt;/span&gt; ngày 27 tháng 09 năm 2021","fullTextDetail":"Thứ 2, ngày 27, tháng 09"},{"dateOfWeek":"Thứ 3","dateOfMonth":"28","month":"Tháng 09","value":1632762000,"time":1632762000000,"fullText":"Thứ 3 &lt;span&gt;|&lt;/span&gt; ngày 28 tháng 09 năm 2021","fullTextDetail":"Thứ 3, ngày 28, tháng 09"},{"dateOfWeek":"Thứ 4","dateOfMonth":"29","month":"Tháng 09","value":1632848400,"time":1632848400000,"fullText":"Thứ 4 &lt;span&gt;|&lt;/span&gt; ngày 29 tháng 09 năm 2021","fullTextDetail":"Thứ 4, ngày 29, tháng 09"},{"dateOfWeek":"Thứ 5","dateOfMonth":"30","month":"Tháng 09","value":1632934800,"time":1632934800000,"fullText":"Thứ 5 &lt;span&gt;|&lt;/span&gt; ngày 30 tháng 09 năm 2021","fullTextDetail":"Thứ 5, ngày 30, tháng 09"},{"dateOfWeek":"Thứ 6","dateOfMonth":"01","month":"Tháng 10","value":1633021200,"time":1633021200000,"fullText":"Thứ 6 &lt;span&gt;|&lt;/span&gt; ngày 01 tháng 10 năm 2021","fullTextDetail":"Thứ 6, ngày 01, tháng 10"},{"dateOfWeek":"Thứ 7","dateOfMonth":"02","month":"Tháng 10","value":1633107600,"time":1633107600000,"fullText":"Thứ 7 &lt;span&gt;|&lt;/span&gt; ngày 02 tháng 10 năm 2021","fullTextDetail":"Thứ 7, ngày 02, tháng 10"},{"dateOfWeek":"Chủ nhật","dateOfMonth":"03","month":"Tháng 10","value":1633194000,"time":1633194000000,"fullText":"Chủ nhật &lt;span&gt;|&lt;/span&gt; ngày 03 tháng 10 năm 2021","fullTextDetail":"Chủ nhật, ngày 03, tháng 10"},{"dateOfWeek":"Thứ 2","dateOfMonth":"04","month":"Tháng 10","value":1633280400,"time":1633280400000,"fullText":"Thứ 2 &lt;span&gt;|&lt;/span&gt; ngày 04 tháng 10 năm 2021","fullTextDetail":"Thứ 2, ngày 04, tháng 10"},{"dateOfWeek":"Thứ 3","dateOfMonth":"05","month":"Tháng 10","value":1633366800,"time":1633366800000,"fullText":"Thứ 3 &lt;span&gt;|&lt;/span&gt; ngày 05 tháng 10 năm 2021","fullTextDetail":"Thứ 3, ngày 05, tháng 10"},{"dateOfWeek":"Thứ 4","dateOfMonth":"06","month":"Tháng 10","value":1633453200,"time":1633453200000,"fullText":"Thứ 4 &lt;span&gt;|&lt;/span&gt; ngày 06 tháng 10 năm 2021","fullTextDetail":"Thứ 4, ngày 06, tháng 10"},{"dateOfWeek":"Thứ 5","dateOfMonth":"07","month":"Tháng 10","value":1633539600,"time":1633539600000,"fullText":"Thứ 5 &lt;span&gt;|&lt;/span&gt; ngày 07 tháng 10 năm 2021","fullTextDetail":"Thứ 5, ngày 07, tháng 10"},{"dateOfWeek":"Thứ 6","dateOfMonth":"08","month":"Tháng 10","value":1633626000,"time":1633626000000,"fullText":"Thứ 6 &lt;span&gt;|&lt;/span&gt; ngày 08 tháng 10 năm 2021","fullTextDetail":"Thứ 6, ngày 08, tháng 10"},{"dateOfWeek":"Thứ 7","dateOfMonth":"09","month":"Tháng 10","value":1633712400,"time":1633712400000,"fullText":"Thứ 7 &lt;span&gt;|&lt;/span&gt; ngày 09 tháng 10 năm 2021","fullTextDetail":"Thứ 7, ngày 09, tháng 10"},{"dateOfWeek":"Chủ nhật","dateOfMonth":"10","month":"Tháng 10","value":1633798800,"time":1633798800000,"fullText":"Chủ nhật &lt;span&gt;|&lt;/span&gt; ngày 10 tháng 10 năm 2021","fullTextDetail":"Chủ nhật, ngày 10, tháng 10"},{"dateOfWeek":"Thứ 2","dateOfMonth":"11","month":"Tháng 10","value":1633885200,"time":1633885200000,"fullText":"Thứ 2 &lt;span&gt;|&lt;/span&gt; ngày 11 tháng 10 năm 2021","fullTextDetail":"Thứ 2, ngày 11, tháng 10"},{"dateOfWeek":"Thứ 3","dateOfMonth":"12","month":"Tháng 10","value":1633971600,"time":1633971600000,"fullText":"Thứ 3 &lt;span&gt;|&lt;/span&gt; ngày 12 tháng 10 năm 2021","fullTextDetail":"Thứ 3, ngày 12, tháng 10"},{"dateOfWeek":"Thứ 4","dateOfMonth":"13","month":"Tháng 10","value":1634058000,"time":1634058000000,"fullText":"Thứ 4 &lt;span&gt;|&lt;/span&gt; ngày 13 tháng 10 năm 2021","fullTextDetail":"Thứ 4, ngày 13, tháng 10"},{"dateOfWeek":"Thứ 5","dateOfMonth":"14","month":"Tháng 10","value":1634144400,"time":1634144400000,"fullText":"Thứ 5 &lt;span&gt;|&lt;/span&gt; ngày 14 tháng 10 năm 2021","fullTextDetail":"Thứ 5, ngày 14, tháng 10"},{"dateOfWeek":"Thứ 6","dateOfMonth":"15","month":"Tháng 10","value":1634230800,"time":1634230800000,"fullText":"Thứ 6 &lt;span&gt;|&lt;/span&gt; ngày 15 tháng 10 năm 2021","fullTextDetail":"Thứ 6, ngày 15, tháng 10"},{"dateOfWeek":"Thứ 7","dateOfMonth":"16","month":"Tháng 10","value":1634317200,"time":1634317200000,"fullText":"Thứ 7 &lt;span&gt;|&lt;/span&gt; ngày 16 tháng 10 năm 2021","fullTextDetail":"Thứ 7, ngày 16, tháng 10"},{"dateOfWeek":"Chủ nhật","dateOfMonth":"17","month":"Tháng 10","value":1634403600,"time":1634403600000,"fullText":"Chủ nhật &lt;span&gt;|&lt;/span&gt; ngày 17 tháng 10 năm 2021","fullTextDetail":"Chủ nhật, ngày 17, tháng 10"},{"dateOfWeek":"Thứ 2","dateOfMonth":"18","month":"Tháng 10","value":1634490000,"time":1634490000000,"fullText":"Thứ 2 &lt;span&gt;|&lt;/span&gt; ngày 18 tháng 10 năm 2021","fullTextDetail":"Thứ 2, ngày 18, tháng 10"},{"dateOfWeek":"Thứ 3","dateOfMonth":"19","month":"Tháng 10","value":1634576400,"time":1634576400000,"fullText":"Thứ 3 &lt;span&gt;|&lt;/span&gt; ngày 19 tháng 10 năm 2021","fullTextDetail":"Thứ 3, ngày 19, tháng 10"},{"dateOfWeek":"Thứ 4","dateOfMonth":"20","month":"Tháng 10","value":1634662800,"time":1634662800000,"fullText":"Thứ 4 &lt;span&gt;|&lt;/span&gt; ngày 20 tháng 10 năm 2021","fullTextDetail":"Thứ 4, ngày 20, tháng 10"},{"dateOfWeek":"Thứ 5","dateOfMonth":"21","month":"Tháng 10","value":1634749200,"time":1634749200000,"fullText":"Thứ 5 &lt;span&gt;|&lt;/span&gt; ngày 21 tháng 10 năm 2021","fullTextDetail":"Thứ 5, ngày 21, tháng 10"},{"dateOfWeek":"Thứ 6","dateOfMonth":"22","month":"Tháng 10","value":1634835600,"time":1634835600000,"fullText":"Thứ 6 &lt;span&gt;|&lt;/span&gt; ngày 22 tháng 10 năm 2021","fullTextDetail":"Thứ 6, ngày 22, tháng 10"},{"dateOfWeek":"Thứ 7","dateOfMonth":"23","month":"Tháng 10","value":1634922000,"time":1634922000000,"fullText":"Thứ 7 &lt;span&gt;|&lt;/span&gt; ngày 23 tháng 10 năm 2021","fullTextDetail":"Thứ 7, ngày 23, tháng 10"},{"dateOfWeek":"Chủ nhật","dateOfMonth":"24","month":"Tháng 10","value":1635008400,"time":1635008400000,"fullText":"Chủ nhật &lt;span&gt;|&lt;/span&gt; ngày 24 tháng 10 năm 2021","fullTextDetail":"Chủ nhật, ngày 24, tháng 10"},{"dateOfWeek":"Thứ 2","dateOfMonth":"25","month":"Tháng 10","value":1635094800,"time":1635094800000,"fullText":"Thứ 2 &lt;span&gt;|&lt;/span&gt; ngày 25 tháng 10 năm 2021","fullTextDetail":"Thứ 2, ngày 25, tháng 10"},{"dateOfWeek":"Thứ 3","dateOfMonth":"26","month":"Tháng 10","value":1635181200,"time":1635181200000,"fullText":"Thứ 3 &lt;span&gt;|&lt;/span&gt; ngày 26 tháng 10 năm 2021","fullTextDetail":"Thứ 3, ngày 26, tháng 10"},{"dateOfWeek":"Thứ 4","dateOfMonth":"27","month":"Tháng 10","value":1635267600,"time":1635267600000,"fullText":"Thứ 4 &lt;span&gt;|&lt;/span&gt; ngày 27 tháng 10 năm 2021","fullTextDetail":"Thứ 4, ngày 27, tháng 10"},{"dateOfWeek":"Thứ 5","dateOfMonth":"28","month":"Tháng 10","value":1635354000,"time":1635354000000,"fullText":"Thứ 5 &lt;span&gt;|&lt;/span&gt; ngày 28 tháng 10 năm 2021","fullTextDetail":"Thứ 5, ngày 28, tháng 10"},{"dateOfWeek":"Thứ 6","dateOfMonth":"29","month":"Tháng 10","value":1635440400,"time":1635440400000,"fullText":"Thứ 6 &lt;span&gt;|&lt;/span&gt; ngày 29 tháng 10 năm 2021","fullTextDetail":"Thứ 6, ngày 29, tháng 10"},{"dateOfWeek":"Thứ 7","dateOfMonth":"30","month":"Tháng 10","value":1635526800,"time":1635526800000,"fullText":"Thứ 7 &lt;span&gt;|&lt;/span&gt; ngày 30 tháng 10 năm 2021","fullTextDetail":"Thứ 7, ngày 30, tháng 10"},{"dateOfWeek":"Chủ nhật","dateOfMonth":"31","month":"Tháng 10","value":1635613200,"time":1635613200000,"fullText":"Chủ nhật &lt;span&gt;|&lt;/span&gt; ngày 31 tháng 10 năm 2021","fullTextDetail":"Chủ nhật, ngày 31, tháng 10"},{"dateOfWeek":"Thứ 2","dateOfMonth":"01","month":"Tháng 11","value":1635699600,"time":1635699600000,"fullText":"Thứ 2 &lt;span&gt;|&lt;/span&gt; ngày 01 tháng 11 năm 2021","fullTextDetail":"Thứ 2, ngày 01, tháng 11"},{"dateOfWeek":"Thứ 3","dateOfMonth":"02","month":"Tháng 11","value":1635786000,"time":1635786000000,"fullText":"Thứ 3 &lt;span&gt;|&lt;/span&gt; ngày 02 tháng 11 năm 2021","fullTextDetail":"Thứ 3, ngày 02, tháng 11"},{"dateOfWeek":"Thứ 4","dateOfMonth":"03","month":"Tháng 11","value":1635872400,"time":1635872400000,"fullText":"Thứ 4 &lt;span&gt;|&lt;/span&gt; ngày 03 tháng 11 năm 2021","fullTextDetail":"Thứ 4, ngày 03, tháng 11"},{"dateOfWeek":"Thứ 5","dateOfMonth":"04","month":"Tháng 11","value":1635958800,"time":1635958800000,"fullText":"Thứ 5 &lt;span&gt;|&lt;/span&gt; ngày 04 tháng 11 năm 2021","fullTextDetail":"Thứ 5, ngày 04, tháng 11"},{"dateOfWeek":"Thứ 6","dateOfMonth":"05","month":"Tháng 11","value":1636045200,"time":1636045200000,"fullText":"Thứ 6 &lt;span&gt;|&lt;/span&gt; ngày 05 tháng 11 năm 2021","fullTextDetail":"Thứ 6, ngày 05, tháng 11"},{"dateOfWeek":"Thứ 7","dateOfMonth":"06","month":"Tháng 11","value":1636131600,"time":1636131600000,"fullText":"Thứ 7 &lt;span&gt;|&lt;/span&gt; ngày 06 tháng 11 năm 2021","fullTextDetail":"Thứ 7, ngày 06, tháng 11"},{"dateOfWeek":"Chủ nhật","dateOfMonth":"07","month":"Tháng 11","value":1636218000,"time":1636218000000,"fullText":"Chủ nhật &lt;span&gt;|&lt;/span&gt; ngày 07 tháng 11 năm 2021","fullTextDetail":"Chủ nhật, ngày 07, tháng 11"},{"dateOfWeek":"Thứ 2","dateOfMonth":"08","month":"Tháng 11","value":1636304400,"time":1636304400000,"fullText":"Thứ 2 &lt;span&gt;|&lt;/span&gt; ngày 08 tháng 11 năm 2021","fullTextDetail":"Thứ 2, ngày 08, tháng 11"},{"dateOfWeek":"Thứ 3","dateOfMonth":"09","month":"Tháng 11","value":1636390800,"time":1636390800000,"fullText":"Thứ 3 &lt;span&gt;|&lt;/span&gt; ngày 09 tháng 11 năm 2021","fullTextDetail":"Thứ 3, ngày 09, tháng 11"},{"dateOfWeek":"Thứ 4","dateOfMonth":"10","month":"Tháng 11","value":1636477200,"time":1636477200000,"fullText":"Thứ 4 &lt;span&gt;|&lt;/span&gt; ngày 10 tháng 11 năm 2021","fullTextDetail":"Thứ 4, ngày 10, tháng 11"},{"dateOfWeek":"Thứ 5","dateOfMonth":"11","month":"Tháng 11","value":1636563600,"time":1636563600000,"fullText":"Thứ 5 &lt;span&gt;|&lt;/span&gt; ngày 11 tháng 11 năm 2021","fullTextDetail":"Thứ 5, ngày 11, tháng 11"},{"dateOfWeek":"Thứ 6","dateOfMonth":"12","month":"Tháng 11","value":1636650000,"time":1636650000000,"fullText":"Thứ 6 &lt;span&gt;|&lt;/span&gt; ngày 12 tháng 11 năm 2021","fullTextDetail":"Thứ 6, ngày 12, tháng 11"},{"dateOfWeek":"Thứ 7","dateOfMonth":"13","month":"Tháng 11","value":1636736400,"time":1636736400000,"fullText":"Thứ 7 &lt;span&gt;|&lt;/span&gt; ngày 13 tháng 11 năm 2021","fullTextDetail":"Thứ 7, ngày 13, tháng 11"},{"dateOfWeek":"Chủ nhật","dateOfMonth":"14","month":"Tháng 11","value":1636822800,"time":1636822800000,"fullText":"Chủ nhật &lt;span&gt;|&lt;/span&gt; ngày 14 tháng 11 năm 2021","fullTextDetail":"Chủ nhật, ngày 14, tháng 11"},{"dateOfWeek":"Thứ 2","dateOfMonth":"15","month":"Tháng 11","value":1636909200,"time":1636909200000,"fullText":"Thứ 2 &lt;span&gt;|&lt;/span&gt; ngày 15 tháng 11 năm 2021","fullTextDetail":"Thứ 2, ngày 15, tháng 11"},{"dateOfWeek":"Thứ 3","dateOfMonth":"16","month":"Tháng 11","value":1636995600,"time":1636995600000,"fullText":"Thứ 3 &lt;span&gt;|&lt;/span&gt; ngày 16 tháng 11 năm 2021","fullTextDetail":"Thứ 3, ngày 16, tháng 11"},{"dateOfWeek":"Thứ 4","dateOfMonth":"17","month":"Tháng 11","value":1637082000,"time":1637082000000,"fullText":"Thứ 4 &lt;span&gt;|&lt;/span&gt; ngày 17 tháng 11 năm 2021","fullTextDetail":"Thứ 4, ngày 17, tháng 11"},{"dateOfWeek":"Thứ 5","dateOfMonth":"18","month":"Tháng 11","value":1637168400,"time":1637168400000,"fullText":"Thứ 5 &lt;span&gt;|&lt;/span&gt; ngày 18 tháng 11 năm 2021","fullTextDetail":"Thứ 5, ngày 18, tháng 11"},{"dateOfWeek":"Thứ 6","dateOfMonth":"19","month":"Tháng 11","value":1637254800,"time":1637254800000,"fullText":"Thứ 6 &lt;span&gt;|&lt;/span&gt; ngày 19 tháng 11 năm 2021","fullTextDetail":"Thứ 6, ngày 19, tháng 11"},{"dateOfWeek":"Thứ 7","dateOfMonth":"20","month":"Tháng 11","value":1637341200,"time":1637341200000,"fullText":"Thứ 7 &lt;span&gt;|&lt;/span&gt; ngày 20 tháng 11 năm 2021","fullTextDetail":"Thứ 7, ngày 20, tháng 11"},{"dateOfWeek":"Chủ nhật","dateOfMonth":"21","month":"Tháng 11","value":1637427600,"time":1637427600000,"fullText":"Chủ nhật &lt;span&gt;|&lt;/span&gt; ngày 21 tháng 11 năm 2021","fullTextDetail":"Chủ nhật, ngày 21, tháng 11"},{"dateOfWeek":"Thứ 2","dateOfMonth":"22","month":"Tháng 11","value":1637514000,"time":1637514000000,"fullText":"Thứ 2 &lt;span&gt;|&lt;/span&gt; ngày 22 tháng 11 năm 2021","fullTextDetail":"Thứ 2, ngày 22, tháng 11"},{"dateOfWeek":"Thứ 3","dateOfMonth":"23","month":"Tháng 11","value":1637600400,"time":1637600400000,"fullText":"Thứ 3 &lt;span&gt;|&lt;/span&gt; ngày 23 tháng 11 năm 2021","fullTextDetail":"Thứ 3, ngày 23, tháng 11"},{"dateOfWeek":"Thứ 4","dateOfMonth":"24","month":"Tháng 11","value":1637686800,"time":1637686800000,"fullText":"Thứ 4 &lt;span&gt;|&lt;/span&gt; ngày 24 tháng 11 năm 2021","fullTextDetail":"Thứ 4, ngày 24, tháng 11"},{"dateOfWeek":"Thứ 5","dateOfMonth":"25","month":"Tháng 11","value":1637773200,"time":1637773200000,"fullText":"Thứ 5 &lt;span&gt;|&lt;/span&gt; ngày 25 tháng 11 năm 2021","fullTextDetail":"Thứ 5, ngày 25, tháng 11"},{"dateOfWeek":"Thứ 6","dateOfMonth":"26","month":"Tháng 11","value":1637859600,"time":1637859600000,"fullText":"Thứ 6 &lt;span&gt;|&lt;/span&gt; ngày 26 tháng 11 năm 2021","fullTextDetail":"Thứ 6, ngày 26, tháng 11"},{"dateOfWeek":"Thứ 7","dateOfMonth":"27","month":"Tháng 11","value":1637946000,"time":1637946000000,"fullText":"Thứ 7 &lt;span&gt;|&lt;/span&gt; ngày 27 tháng 11 năm 2021","fullTextDetail":"Thứ 7, ngày 27, tháng 11"},{"dateOfWeek":"Chủ nhật","dateOfMonth":"28","month":"Tháng 11","value":1638032400,"time":1638032400000,"fullText":"Chủ nhật &lt;span&gt;|&lt;/span&gt; ngày 28 tháng 11 năm 2021","fullTextDetail":"Chủ nhật, ngày 28, tháng 11"},{"dateOfWeek":"Thứ 2","dateOfMonth":"29","month":"Tháng 11","value":1638118800,"time":1638118800000,"fullText":"Thứ 2 &lt;span&gt;|&lt;/span&gt; ngày 29 tháng 11 năm 2021","fullTextDetail":"Thứ 2, ngày 29, tháng 11"},{"dateOfWeek":"Thứ 3","dateOfMonth":"30","month":"Tháng 11","value":1638205200,"time":1638205200000,"fullText":"Thứ 3 &lt;span&gt;|&lt;/span&gt; ngày 30 tháng 11 năm 2021","fullTextDetail":"Thứ 3, ngày 30, tháng 11"},{"dateOfWeek":"Thứ 4","dateOfMonth":"01","month":"Tháng 12","value":1638291600,"time":1638291600000,"fullText":"Thứ 4 &lt;span&gt;|&lt;/span&gt; ngày 01 tháng 12 năm 2021","fullTextDetail":"Thứ 4, ngày 01, tháng 12"},{"dateOfWeek":"Thứ 5","dateOfMonth":"02","month":"Tháng 12","value":1638378000,"time":1638378000000,"fullText":"Thứ 5 &lt;span&gt;|&lt;/span&gt; ngày 02 tháng 12 năm 2021","fullTextDetail":"Thứ 5, ngày 02, tháng 12"},{"dateOfWeek":"Thứ 6","dateOfMonth":"03","month":"Tháng 12","value":1638464400,"time":1638464400000,"fullText":"Thứ 6 &lt;span&gt;|&lt;/span&gt; ngày 03 tháng 12 năm 2021","fullTextDetail":"Thứ 6, ngày 03, tháng 12"},{"dateOfWeek":"Thứ 7","dateOfMonth":"04","month":"Tháng 12","value":1638550800,"time":1638550800000,"fullText":"Thứ 7 &lt;span&gt;|&lt;/span&gt; ngày 04 tháng 12 năm 2021","fullTextDetail":"Thứ 7, ngày 04, tháng 12"},{"dateOfWeek":"Chủ nhật","dateOfMonth":"05","month":"Tháng 12","value":1638637200,"time":1638637200000,"fullText":"Chủ nhật &lt;span&gt;|&lt;/span&gt; ngày 05 tháng 12 năm 2021","fullTextDetail":"Chủ nhật, ngày 05, tháng 12"},{"dateOfWeek":"Thứ 2","dateOfMonth":"06","month":"Tháng 12","value":1638723600,"time":1638723600000,"fullText":"Thứ 2 &lt;span&gt;|&lt;/span&gt; ngày 06 tháng 12 năm 2021","fullTextDetail":"Thứ 2, ngày 06, tháng 12"}]</div>
+                              <div class="col-12 col-md-5 ">
+
+                                    <div class="form-group" data-field="scheduleTime" style="margin-top:30px;">
+                                    
+                                      <div class="input-group select-custom" style="overflow: unset;">
+                                          <div class="input-group-prepend" style="position: absolute;">
+                                              <span class="icon icon-time"></span>
+                                          </div>
+                                          <select style="padding-left: 55px;" class="form-control-custom" name="scheduleTime" id="scheduleTime"><option value="1">07:00</option><option value="2">07:30</option><option value="3">08:00</option><option value="4">08:30</option><option value="5">09:00</option><option value="6">09:30</option><option value="7">10:00</option><option value="8">10:30</option><option value="9">11:00</option><option value="10">11:30</option><option value="11">13:00</option><option value="12">13:30</option><option value="13">14:00</option><option value="14">14:30</option><option value="15">15:00</option><option value="16">15:30</option><option value="17">16:00</option><option value="18">16:30</option><option value="19">17:00</option><option value="20">17:30</option><option value="21">18:00</option><option value="22">18:30</option><option value="23">19:00</option><option value="24">19:30</option><option value="25">20:00</option><option value="26">20:30</option><option value="27">21:00</option><option value="28">21:30</option><option value="29">22:00</option><option value="30">22:30</option></select>
+                                       <div class="select-selected">20:00</div><div class="select-items select-hide"><div>07:00</div><div>07:30</div><div>08:00</div><div>08:30</div><div>09:00</div><div>09:30</div><div>10:00</div><div>10:30</div><div>11:00</div><div>11:30</div><div>13:00</div><div>13:30</div><div>14:00</div><div>14:30</div><div>15:00</div><div>15:30</div><div>16:00</div><div>16:30</div><div>17:00</div><div>17:30</div><div>18:00</div><div>18:30</div><div>19:00</div><div>19:30</div><div class="same-as-selected">20:00</div><div>20:30</div><div>21:00</div><div>21:30</div><div>22:00</div><div>22:30</div></div></div>
+                                      <span class="message">Không còn khung giờ hợp lệ trong ngày</span>
+                                      </div>
+
+
+                              </div>
+                              <div id="dataScheduleTime" class="d-none">[{"index":1,"group":"1","use":"07:00","text":"07:00 - 07:30"},{"index":2,"group":"1","use":"07:30","text":"07:30 - 08:00"},{"index":3,"group":"1","use":"08:00","text":"08:00 - 08:30"},{"index":4,"group":"1","use":"08:30","text":"08:30 - 09:00"},{"index":5,"group":"1","use":"09:00","text":"09:00 - 09:30"},{"index":6,"group":"1","use":"09:30","text":"09:30 - 10:00"},{"index":7,"group":"1","use":"10:00","text":"10:00 - 10:30"},{"index":8,"group":"1","use":"10:30","text":"10:30 - 11:00"},{"index":9,"group":"1","use":"11:00","text":"11:00 - 11:30"},{"index":10,"group":"1","use":"11:30","text":"11:30 - 12:00"},{"index":11,"group":"1","use":"13:00","text":"13:00 - 13:30"},{"index":12,"group":"1","use":"13:30","text":"13:30 - 14:00"},{"index":13,"group":"1","use":"14:00","text":"14:00 - 14:30"},{"index":14,"group":"1","use":"14:30","text":"14:30 - 15:00"},{"index":15,"group":"1","use":"15:00","text":"15:00 - 15:30"},{"index":16,"group":"1","use":"15:30","text":"15:30 - 16:00"},{"index":17,"group":"1","use":"16:00","text":"16:00 - 16:30"},{"index":18,"group":"1","use":"16:30","text":"16:30 - 17:00"},{"index":19,"group":"1","use":"17:00","text":"17:00 - 17:30"},{"index":20,"group":"1","use":"17:30","text":"17:30 - 18:00"},{"index":21,"group":"2","use":"18:00","text":"18:00 - 18:30"},{"index":22,"group":"2","use":"18:30","text":"18:30 - 19:00"},{"index":23,"group":"2","use":"19:00","text":"19:00 - 19:30"},{"index":24,"group":"2","use":"19:30","text":"19:30 - 20:00"},{"index":25,"group":"2","use":"20:00","text":"20:00 - 20:30"},{"index":26,"group":"2","use":"20:30","text":"20:30 - 21:00"},{"index":27,"group":"2","use":"21:00","text":"21:00 - 21:30"},{"index":28,"group":"2","use":"21:30","text":"21:30 - 22:00"},{"index":29,"group":"2","use":"22:00","text":"22:00 - 22:30"},{"index":30,"group":"2","use":"22:30","text":"22:30 - 23:00"}]</div>
+                          </div>
+                          </div>
+                      </div>
+                      <div class="text-spin">Vui lòng cung cấp thông tin để chúng tôi có thể liên hệ với bạn</div>
+                      <div class="row">
+                          <div class="col-12 col-md-6">
+                              <div class="form-group" data-field="senderFullname">
+                                  <label for="tour_booking_fullname">Họ và tên <span>*</span></label>
+                                  <div class="input-group">
+                                      <div class="input-group-prepend">
+                                          <span class="icon icon-user"></span>
+                                      </div>
+                                  <input id="tour_booking_fullname" maxlength="50" autocomplete="off" name="tour_booking_fullname" type="text" class="form-control" placeholder="Nhập họ tên" value="" data-value="">
+                                  </div>
+                                  <span class="message"></span>
+                              </div>
+                              <div class="form-group" data-field="senderPhone">
+                                  <label for="tour_booking_phone">Số điện thoại <span>*</span></label>
+                                  <div class="input-group">
+                                      <div class="input-group-prepend">
+                                          <span class="icon icon-phone"></span>
+                                      </div>
+                                      <input id="tour_booking_phone" autocomplete="off" name="tour_booking_phone" type="text" class="form-control" placeholder="Số di động" value="" data-value="">
+                                  </div>
+                                  <span class="message"></span>
+                              </div>
+                              <div class="form-group" data-field="senderEmail">
+                                  <label for="tour_booking_email">Email <span>*</span></label>
+                                  <div class="input-group">
+                                      <div class="input-group-prepend">
+                                          <span class="icon icon-email"></span>
+                                      </div>
+                                      <input id="tour_booking_email" autocomplete="off" name="tour_booking_email" type="text" class="form-control" placeholder="Email" value="" data-value="">
+                                  </div>
+                                  <span class="message"></span>
+                              </div>
+                          </div>
+                          <div class="col-12 col-md-6">
+                              <div class="form-group form-group-textarea" data-field="content">
+                                  <textarea maxlength="1000" name="tour_booking_content" id="tour_booking_content" cols="30" rows="10" placeholder="Nhập ghi chú"></textarea>
+                                  <span class="message"></span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-group error-submit">
+                          <span class="message"></span>
+                      </div>
+                      <div class="block-footer">
+                          <button type="submit" class="btn btn-link btn-submit">Đặt lịch</button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+  </div>
+{{ footer }}

@@ -1,0 +1,12 @@
+<div class="filter filter-area">
+                           <div class="title-block-center text-upper">
+                              <strong> {{title}} </strong>
+                           </div>
+                           <ul>
+                           	{% for price in prices %}
+                              <li class="active">
+                                 <a href="{{ price.href }}" title="{{ price.name }}"> {{ price.name }} </a>
+                              </li>
+                            {% endfor %}
+                           </ul>
+                        </div>

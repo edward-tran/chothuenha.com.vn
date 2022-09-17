@@ -1,0 +1,76 @@
+
+{% if products %}
+<section class="awe-section-3">
+   <section class="clearfix section_bds_noibat">
+      <div class="col-lg-12">
+         <h2 class="title">
+            <a href="category.html" title="Dự án nhà đất nổi bật"><span class="cl">{{ title }}</span></a>
+         </h2>
+         <div class="content clearfix">
+            <div class="slick_wraped slickone clearfix">
+              {% for product in products %}
+               <div class="item">
+                  <div class="item_product_list_large product_convert clearfix">
+                     <form action="/cart/add" method="post" class="variants product-action clearfix" data-id="product-actions-18303251" enctype="multipart/form-data">
+                        <div class="wrap_thumb">
+                           <div class="product-thumbnail clearfix">
+                              <div class="image_thumb">
+                                 <div class="clearfix slick_gallery">
+                                    <div class="item">
+                                       <img class="imag lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaEAAAEqAQMAAACGEX2aAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAACZJREFUaN7twTEBAAAAwiD7pzbFPmAAAAAAAAAAAAAAAAAAAAAQOz7cAAG8Je16AAAAAElFTkSuQmCC"  data-src="{{ product.thumb }}" alt="{{ product.name }}">
+                                    </div>
+                                    <div class="item">
+                                       <img class="imag "  src="catalog/view/theme/beta/images/pd-35.jpg" alt="{{ product.name }}">
+                                    </div>
+                                    <div class="item">
+                                       <img class="imag "  src="catalog/view/theme/beta/images/pd-36.jpg" alt="{{ product.name }}">
+                                    </div>
+                                    <div class="item">
+                                       <img class="imag "  src="catalog/view/theme/beta/images/pd-37.jpg" alt="{{ product.name }}">
+                                    </div>
+                                 </div>
+                              </div>
+                            <!--   <span class="lb ban hidden">Cho bán</span> -->
+                              <span class="lb hot">Hot</span>
+                           </div>
+                        </div>
+                        <div class="product-info clearfix">
+                           <h3 class="product-name clearfix"><a href="{{ product.href }}" title="{{ product.name }}">{{ product.name }}</a></h3>
+                           <p class="sum">
+                              {{ product.short_description }}
+                           </p>
+                           <ul class="clearfix profile">
+                              <li class="position "src="catalog/view/theme/beta/images/position.png">Đường Cổ linh,Thạch Bàn,Long Biên,Hà Nội</li>
+                              <li class=""src="catalog/view/theme/beta/images/bed.png"><span>Phòng ngủ</span> 01</li>
+                              <li class=""src="catalog/view/theme/beta/images/bath.png"><span>Phòng tắm</span> 01</li>
+                              <li class=""src="catalog/view/theme/beta/images/square.png"><span>Diện tích</span> Trên 50m2</li>
+                           </ul>
+                           <div class="clearfix price_button">
+                              <div class="price-box">
+                                 
+                                   {% if product.price %}
+                                   <span class="product-price">
+                                    {% if not product.special %}
+                                      <span class="product-price product-price-convert">{{ product.price }}</span>
+                                    {% else %}
+                                    <span class="product-price product-price-convert">{{ product.special }} <span class="price-old">{{ product.price }}</span></span>
+                                    {% endif %}
+                                     </span>
+                                  {% endif %}
+                                
+                              </div>
+                              <a class="btn-buy btn-cart btn btn-views bnt_hover_effect " title="Xem chi tiết" href="{{ product.href }}">
+                              Xem chi tiết <i class="fa fa-angle-right"></i>
+                              </a>
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+              {% endfor %}
+            </div>
+         </div>
+      </div>
+   </section>
+</section>
+{% endif %}

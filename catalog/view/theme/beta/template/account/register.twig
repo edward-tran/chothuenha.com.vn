@@ -1,0 +1,102 @@
+{{ header }}
+<div id="account-register">
+  
+  {% if success %}
+  <div class="alert alert-success alert-dismissible"><i class="fa fa-check-circle"></i> {{ success }}</div>
+  {% endif %}
+  {% if error_warning %}
+  <div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}</div>
+  {% endif %}
+  <div class="">{{ column_left }}
+    {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-sm-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content">{{ content_top }}
+      <main class="signin_main">
+   <div class="container" ng-controller="mainController">
+      <div class="{{ class }}">
+         <div class="row justify-content-center iiwis-register-form-page iiwis-register-page">
+            <div class="col-lg-2"></div>
+            <div class="col-md-5 col-xs-offset-1">
+               <div class="">
+                  <h4 class="form-title">{{ text_register }}</h4>
+                   <form action="{{ action }}" method="post" enctype="multipart/form-data" class="iiwis-form-register ng-pristine form-register">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="full_name" autocomplete="off" placeholder="{{ entry_full_name }}" value="{{ full_name }}" id="res_input_full_name">
+                        <i class="input-icon klook-icon-telephone"></i>
+                        <span class="invalid-feedback error error-telephone"></span>
+                     </div>
+                     <div class="form-group">
+                        <input type="text" class="form-control" name="telephone" autocomplete="off" placeholder="{{ entry_telephone }}" value="{{ telephone }}" id="res_input_telephone">
+                        <i class="input-icon klook-icon-telephone"></i>
+                        <span class="invalid-feedback error error-telephone"></span>
+                     </div>
+                     <div class="form-group">
+                        <input type="password" name="password" value="{{ password }}" placeholder="{{ entry_password }}" id="res_input_password" class="form-control" autocomplete="off"/>
+                        <i class="input-icon fa fa-lock"></i>
+                        <span class="invalid-feedback error error-password"></span>
+                     </div>
+                      <div class="form-group">
+                        <input type="password" name="confirm" value="{{ confirm }}" placeholder="{{ entry_confirm }}" id="res_input_confirm" class="form-control" autocomplete="off"/>
+                        <i class="input-icon fa fa-lock"></i>
+                        <span class="invalid-feedback error error-password"></span>
+                     </div>
+
+                      <input type="hidden" name="redirect" id="login_input_redirect" value="{{ redirect }}">
+
+                     {% if text_agree %}
+                      <div class="form-group">
+                        
+                          <div>{{ text_agree }}
+                            {% if agree %}
+                            <input type="checkbox" name="agree" value="1" checked="checked" />
+                            {% else %}
+                            <input type="checkbox" name="agree" value="1" />
+                            {% endif %}
+                            &nbsp;
+                          </div>
+                        </div>
+                       
+                    {% endif %}
+
+
+                     <div class="error message-error invalid-feedback"></div>
+                     <div class="form-group">
+                        <button type="button" id="btn_register_from" class="btn btn-primary form-submit" ng-click="register($event)">
+                        {{ button_register }}
+                        </button>
+                     </div>
+                  </form>
+               </div>
+            </div>
+            <div class="col-lg-4"></div>
+         </div>
+      </div>
+   </div>
+</main>
+      {{ content_bottom }}</div>
+    {{ column_right }}</div>
+</div>
+
+<script type="text/javascript">
+  // var is_checked = $('input[name=\'agree\']').is(':checked'); 
+  var is_checked = $("input[name=\'agree\']").prop("checked"); 
+  if(is_checked == false) {
+    $('#btn_register_from').attr('disabled', true);
+  }
+  $('input[name=\'agree\']').click(function(){
+    if($(this).is(':checked')){
+        $('#btn_register_from').attr('disabled', false);
+    } else {
+        $('#btn_register_from').attr('disabled', true);
+  }
+  
+});
+
+</script>
+
+{{ footer }}

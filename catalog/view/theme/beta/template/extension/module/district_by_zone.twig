@@ -1,0 +1,9 @@
+<div class="section box-shadow border-radius">
+  <div class="section-header">
+    <span class="section-title">Cho thuê nhà Hồ Chí Minh</span>
+</div>
+<div class="section-content"><ul class="links-group col-3 clearfix">
+{% for district in districts %}
+<li><a href="{{district.href}}">{{district.name}}</a></li>
+{% endfor %}
+</ul></div></div>

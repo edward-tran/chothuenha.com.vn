@@ -1,0 +1,12 @@
+<div class="filter filter-area">
+                           <div class="title-block-center text-upper">
+                              <strong> {{title}} </strong>
+                           </div>
+                           <ul>
+                           	{% for area in areas %}
+                              <li class="active">
+                                 <a href="{{ area.href }}" title="{{ area.name }}"> {{ area.name }} </a>
+                              </li>
+                            {% endfor %}
+                           </ul>
+                        </div>

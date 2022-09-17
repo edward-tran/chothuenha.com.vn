@@ -1,0 +1,336 @@
+{{ header }}
+<div id="account-edit" class="container" ng-controller="mainController">
+  <div class="row">{{ column_left }}
+    {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-sm-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content" class="{{ class }}">{{ content_top }}
+<div class="backdrop" style="display: none;">
+  <div class="loader">Loading...</div>
+</div>
+<div id="content">
+   <div class="container">
+      <div class="show_warning"></div>
+      <form action="{{ action }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+         <div class="row profile">
+          
+          {{ menu_left_profile }}
+          <div class="right-col col-lg-9">
+            <div class="bg-right">
+              <div class="rowHeader">
+                <h2>THAY ĐỔI THÔNG TIN CÁ NHÂN</h2>
+                </div>
+                 <div class="panel panel-default">
+                    <div class="form-group required">
+                      <label class="col-sm-12 control-label" for="input-name">Họ và tên</label>
+                      <div class="col-sm-12">
+                        <input type="text" name="firstname" value="{{ firstname }}" placeholder="{{ entry_firstname }}" id="input-firstname" class="form-control" />
+                        {% if error_firstname %}
+                        <div class="text-danger">{{ error_firstname }}</div>
+                        {% endif %}
+                      </div>
+                    </div>
+
+                    <div class="form-group required">
+                      <label class="col-sm-12 control-label" for="input-name">Ngày sinh</label>
+                      <div class="col-sm-12">
+                        <input type="text" class="form-control date_input" id="brithday" name="brithday" autocomplete="off" placeholder="Ngày sinh" value="{{ brithday }}">
+                        <i class="input-icon field-icon klook-icon-alt"></i>
+                        <span class="invalid-feedback error error-brithday"></span>
+                        {% if error_brithday %}
+                        <div class="text-danger">{{ error_brithday }}</div>
+                        {% endif %}
+                      </div>
+                    </div>
+
+                    <div class="required">
+                      <label class="col-sm-12 control-label" for="input-name">Giới tính</label>
+                      <div class="col-sm-12">
+                        <label class="radio-inline">
+                          <input type="radio" name="sex" {{ sex == 1 ? 'checked' : '' }}>Nam
+                        </label>
+                        <label class="radio-inline">
+                          <input type="radio" name="sex" {{ sex == 0 ? 'checked' : '' }}>Nữ
+                        </label>
+                      </div>
+                    </div>
+                     
+                     <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group required">
+                            <label class="col-sm-12 control-label">
+                            <span>Tỉnh/Thành phố</span>
+                            </label>
+                            <div class="col-sm-12">
+                              <select class="form-control" name="zone_id" id="input-zone_id" data-placeholder="{{ text_none }}">
+                                <option value="">-- Tỉnh/Thành phố --</option>
+                                <option value="{{ addresses.zone_id }}" selected="selected">{{ addresses.zone }}</option>
+                              </select>
+                            </div>
+                         </div>
+                         </div>
+                         <div class="col-sm-6">
+                          <div class="form-group required">
+                            <label class="col-sm-12 control-label">
+                            <span>Quận/Huyện</span>
+                            </label>
+                            <div class="col-sm-12">
+                              <select class="form-control" name="district_id" id="input-district_id">
+                                <option value="" selected="selected">-- Quận/Huyện --</option>
+                                <option value="{{ addresses.district_id }}" selected="selected">{{ addresses.district }}</option>
+                              </select>
+                            </div>
+                         </div>
+                         </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group required">
+                            <label class="col-sm-12 control-label">
+                            <span>Phường/Xã</span>
+                            </label>
+                            <div class="col-sm-12">
+                              <select class="form-control" name="ward_id" id="input-ward_id">
+                                <option value="" selected="selected">-- Phường/Xã --</option>
+                                <option value="{{ addresses.ward_id }}" selected="selected">{{ addresses.ward }}</option>
+                              </select>
+                            </div>
+                         </div>
+                         </div>
+                         <div class="col-sm-6">
+                          <div class="form-group">
+                            <label class="col-sm-12 control-label">
+                            <span>Đường/Phố</span>
+                            </label>
+                            <div class="col-sm-12">
+                              <input class="form-control" name="address_2" value="{{ addresses.address_2 }}" id="input-address_2" placeholder="Đường/Phố">
+                            </div>
+                         </div>
+                         </div>
+                     </div>
+                    
+                      <div class="form-group">
+                         <label class="col-sm-12 control-label" for="input-address">Địa chỉ</label>
+                         <div class="col-sm-12">
+                            <div class="price">
+                               <input type="text" name="address_1" value="{{ addresses.address_1 }}" id="input-address" class="form-control" placeholder="Địa chỉ">
+                            </div>
+                         </div>
+                      </div>
+                  </div>
+                    
+                    <div class="rowHeader">
+                      <h2>Thông tin liên hệ</h2>
+                    </div>
+                  <div class="panel panel-default">
+                    <div class="form-group required">
+                         <label class="col-sm-12 control-label" for="input-telephone">Số điện thoại chính </label>
+                         <div class="col-sm-12">
+                               <input type="text" name="telephone" value="{{ telephone }}" placeholder="Số điện thoại chính" id="input-telephone" class="form-control" />
+                         </div>
+                      </div>
+                      <div class="form-group required">
+                         <label class="col-sm-12 control-label" for="input-email">Email </label>
+                         <div class="col-sm-12">
+                               <input type="text" name="email" value="{{ email }}" placeholder="Email" id="input-email" class="form-control" />
+                         </div>
+                      </div>
+
+                      <div class="form-group required">
+                         <label class="col-sm-12 control-label" for="input-postcode">Mã số thuế/CMND</label>
+                         <div class="col-sm-12">
+                               <input type="text" name="postcode" value="{{ addresses.postcode }}" placeholder="Mã số thuế/CMND" id="input-postcode" class="form-control" />
+                         </div>
+                      </div>
+                      <div class="form-group">
+                         <label class="col-sm-12 control-label" for="input-facebook">Facebook</label>
+                         <div class="col-sm-12">
+                               <input type="text" name="facebook" value="{{ facebook }}" placeholder="Facebook" id="input-facebook" class="form-control" />
+                         </div>
+                      </div>
+                      <div class="form-group">
+                         <label class="col-sm-12 control-label" for="input-skype">Skype</label>
+                         <div class="col-sm-12">
+                               <input type="text" name="skype" value="{{ skype }}" placeholder="Skype" id="input-skype" class="form-control" />
+                         </div>
+                      </div>
+                      <div class="form-group">
+                         <label class="col-sm-12 control-label" for="input-zalo">Zalo</label>
+                         <div class="col-sm-12">
+                               <input type="text" name="zalo" value="{{ zalo }}" placeholder="Zalo" id="input-zalo" class="form-control" />
+                         </div>
+                      </div>
+                      <div class="form-group">
+                         <label class="col-sm-12 control-label" for="input-viber">Viber</label>
+                         <div class="col-sm-12">
+                               <input type="text" name="viber" value="{{ viber }}" placeholder="Viber" id="input-viber" class="form-control" />
+                         </div>
+                      </div>
+                  </div>
+
+                  <div class="panel panel-default">
+                    <div class="form-group text-center">
+                      <a href="javascript:;" class="btn btn-primary" id="update-customer">Cập nhật</a>
+                    </div>
+                  </div>
+                  </div>
+          </div>
+          {{ menu_right_profile }}
+         </div>
+         <input type="hidden" name="project_id" value="266">
+      </form>
+   </div>
+</div>
+{{ content_bottom }}</div>
+{{ column_right }}</div>
+</div>
+<!-- END ZONE ID  -->
+<script type="text/javascript"><!--
+$('.date_input').datetimepicker({
+  language: 'vi',
+  pickTime: false,
+  ignoreReadonly: true,
+  allowInputToggle: true,
+  useCurrent: false
+});
+//--></script>
+<script type="text/javascript">
+$('select[name=\'zone_id\']').on('click', function(){
+    $(this).select2({
+       allowClear: true,
+       theme: "bootstrap",
+       cache: true,
+       ajax: { 
+       url: "index.php?routing=localisation/country/country&country_id={{ config_country_id }}",
+       dataType: 'json',
+       delay: 250,
+       data: function (params) {
+        return {
+          filter_name: params.term, // search term
+          page: params.page
+        };
+      },
+     processResults: function (data, page) {
+       return {
+          results: $.map(data, function (item) {
+            return {
+              text: item.name,
+              id: item.zone_id
+            }
+          })
+       };
+     }
+    },
+  });
+})
+
+
+$('select[name=\'zone_id\']').on('change', function(){
+    $('select[name=\'district_id\']').select2({
+       allowClear: true,
+       theme: "bootstrap",
+       cache: false,
+       ajax: { 
+       url: 'index.php?routing=localisation/district/getDistrictCode&zone_id='+$(this).val(),
+       dataType: 'json',
+       delay: 250,
+       data: function (params) {
+        return {
+          filter_name: params.term, // search term
+          page: params.page
+        };
+      },
+     processResults: function (data, page) {
+       return {
+          results: $.map(data, function (item) {
+            return {
+              text: item.name,
+              id: item.district_id
+            }
+          })
+       };
+     }
+    },
+  });
+});
+
+
+$('select[name=\'district_id\']').on('change', function(){
+    $('select[name=\'ward_id\']').select2({
+       allowClear: true,
+       theme: "bootstrap",
+       cache: false,
+       ajax: { 
+       url: 'index.php?routing=localisation/ward/getWardCode&district_id='+$(this).val(),
+       dataType: 'json',
+       delay: 250,
+       data: function (params) {
+        return {
+          filter_name: params.term, // search term
+          page: params.page
+        };
+      },
+     processResults: function (data, page) {
+       return {
+          results: $.map(data, function (item) {
+            return {
+              text: item.name,
+              id: item.ward_id
+            }
+          })
+       };
+     }
+    },
+  });
+});
+</script>
+
+<script type="text/javascript">
+  $('#update-customer').on('click', function(e){
+    $('.show_warning').html('');
+    $('.text-danger').remove();
+    $('.col-sm-12').removeClass('has-error');
+    var _this = $(this);
+    e.preventDefault();
+    $('.backdrop').show();
+    $.ajax({
+        type: 'POST',
+        url: 'index.php?routing=account/edit/updateCustomer',
+        dataType: 'json',
+        data: $('.form-horizontal').serialize(),
+        async: true,
+        success:function(response){
+            if(response.error_warning) {
+                for (i in response) {
+                  if(response[i]) {
+                    var element = $('#input-' + i.replace('error_', ''));
+                    $(element).after('<div class="text-danger">' + response[i] + '</div>');
+                    $(element).parent().addClass('has-error');
+                  }
+                }
+                var $toast = toastr['error'](response.error_warning);
+            } else {
+                var title = response.message;
+                $('.show_warning').html('');
+                var $toast = toastr['success'](response.message);
+            }
+
+            setTimeout(function() {
+              $('.backdrop').hide();
+            }, 1000);
+            
+            return;
+        },
+        error:function(xhr, status, error){
+            $('.backdrop').hide();
+            console.log('error: ' +xhr.responseText);
+        },
+    });
+ 
+  });
+</script>
+{{ footer }}

@@ -1,0 +1,45 @@
+<div class="md-dialog-container" id="dialog-form-login" style="height: 0">
+    <md-dialog>
+        <form method="post" action="" novalidate="novalidate" class="ng-pristine ng-valid ng-dirty form form-login ng-pristine ng-valid" ng-cloak name="form_login" id="form_login">                    
+            <md-toolbar>
+            <div class="md-toolbar-tools custom_width">
+              <h2 style="color: #fff">Đăng nhập</h2>
+              <span flex></span>
+              <md-button class="md-icon-button" ng-click="cancelDialog($event, 'dialog-form-login')">
+                <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+              </md-button>
+            </div>
+          </md-toolbar>
+
+        <md-dialog-content>
+          <div class="md-dialog-content custom_width">
+              
+            <div class="modal-body">
+                
+                    
+                    <label for="input_telephone">Số điện thoại của bạn</label>
+                     <div class="form-group">
+                        <input type="text" class="form-control" id="login_input_telephone" name="telephone" autocomplete="off" value="" placeholder="Số điện thoại của bạn">
+                        <i class="input-icon field-icon fa"><img src="image/data/user.png" width="20px;"></i>
+                    </div>
+                    
+                    <label for="input_password">Mật khẩu</label>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="login_input_password" name="password" autocomplete="off" placeholder="Mật khẩu">
+                        <i class="input-icon field-icon fa"><img src="image/data/ico_pass_login_form.svg"></i>
+                    </div>
+                    <input type="hidden" name="redirect" id="login_input_redirect" value="">
+                    <div class="form-group">
+                        <button class="md-raised md-accent mt-4 w-100 md-button md-ink-ripple" type="button" ng-click="login($event)">Đăng nhập</button>
+                    </div>
+         
+                    <div class="c-grey f14 text-center">
+                    Bạn đã có tài khoản?
+                    <a href="javascript:;" ng-click="showFormReister($event)">Đăng ký</a>
+                    </div>
+            </div>
+          </div>
+        </md-dialog-content>
+        </form>
+    </md-dialog>
+</div>

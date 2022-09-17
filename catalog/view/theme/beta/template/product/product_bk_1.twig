@@ -1,0 +1,1010 @@
+{{ header }}
+
+<div class="append_html_filter">
+<div id="product" class="container">
+<header class="page-header">
+    <ul class="breadcrumb">
+     {% for breadcrumb in breadcrumbs %}
+     <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+     {% endfor %}
+   </ul>
+    <h1 class="page-h1">{{ heading_title }}</h1>
+</header>
+<main role="main" class="main-content">
+        <section class="detail-highlight mb-3">
+          <div class="container px-lg-0" style="">
+                  <div class="row" id="row-breadcrumb-block">
+                      <div class="carousel-highlight col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                          <div class="block-media">
+                              <div class="is-slide owl-carousel owl-theme slide-media active" id="slide_media_image">
+                                {% if images %}
+                              {% for image in images %}
+                              <div class="item item-media">
+                                    <a href="{{ image }}" data-fancybox="images">
+                                        <picture>
+                                            <img src="{{ image }}" class="lazy" style="">
+                                        </picture>
+                                    </a>
+                              </div>
+                              {% endfor %}
+                              {% endif %}
+                               </div>
+                              <div class="nav-media">
+                                <button class="btn btn-image active"></button>
+                                {% if video %}
+                                <button data-fancybox="product" class="btn btn-video lightbox-image" href="{{video}}" data-id="{{ product_id }}"></button>
+                                {% endif %}
+                            </div>
+                                  <button class="btn btn-fancybox"></button>
+                              
+                          </div>
+                      </div>
+                       
+                      <div class="detail-highlight-right col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                          <div class="ml-text-20 ml-text-bold mb-3">Đặc điểm nổi trội</div>
+                          <ul class="wrap-content list-unstyled">
+                              <li class="ml-text-16 wrap-content-item text-overflow-ellipsis">
+                                  {{ price }}/Tháng
+                              </li> 
+                              
+                              <li class="ml-text-16 wrap-content-item  text-overflow-ellipsis {{ height ? '' : ' disable' }}">
+                                  Diện tích:  {{ acreage ? acreage : '---' }} m²
+                              </li> 
+                              <li class="ml-text-16 wrap-content-item  text-overflow-ellipsis {{ bedroom ? '' : ' disable' }}">
+                                Số phòng ngủ: {{ bedroom ? bedroom : '---' }}
+                            </li> 
+
+                              <li class="ml-text-16 wrap-content-item  text-overflow-ellipsis {{ bathroom ? '' : ' disable' }}">
+                                Số phòng tắm: {{ bathroom ? bathroom : '---' }}
+                            </li>
+
+                            <li class="ml-text-16 wrap-content-item  text-overflow-ellipsis {{ floors ? '' : ' disable' }}">
+                                Số tầng: {{ floors ? floors : '---' }}
+                            </li>
+
+                              <li class="ml-text-16 wrap-content-item text-overflow-ellipsis {{ direction ? '' : ' disable' }}">
+                                  Hướng: {{ direction ? direction : '---' }}
+                              </li> 
+
+                               <li class="ml-text-16 wrap-content-item text-overflow-ellipsis {{ balcony ? '' : ' disable' }}">
+                                  Hướng ban công: {{ balcony ? balcony : '---' }}
+                              </li> 
+
+                              <li class="ml-text-16 wrap-content-item text-overflow-ellipsis {{ large_road ? '' : ' disable' }}">
+                                  Đường vào: {{ large_road ? large_road : '---' }}m²
+                              </li> 
+
+                              <li class="ml-text-16 wrap-content-item text-overflow-ellipsis {{ facade ? '' : ' disable' }}">
+                                  Mặt tiền: {{ facade ? facade : '---' }}m²
+                              </li> 
+
+                              <li class="ml-text-16 wrap-content-item text-overflow-ellipsis {{ interiors ? '' : ' disable' }}">
+                                  Nội thất: {{ interiors ? interiors : '---' }}
+                              </li> 
+
+                              <li class="ml-text-16 wrap-content-item  text-overflow-ellipsis {{ cate_array ? '' : ' disable' }}">
+                                  Loại nhà đất:  {{ cate_array ? cate_array : '---' }}
+                              </li> 
+                          </ul>
+                        
+                          <div class="tour-booking">
+                           
+                            <div class="button-options d-flex justify-content-between" id="select-type-schedule">
+                                <label class="watch-live btn-custom tour-booking-mode active">
+                                  <a target="_blank" rel="nofollow" href="{{ link_chat_zalo }}">Nhắn Zalo
+                                  <div class="hover-popup">Nhắn tin cho khách hàng qua Zalo chat</div>
+                                  </a>
+                                </label>
+
+                                <label class="watch-live-video btn-custom tour-booking-mode" id="btn_show_modal_report">
+                                    Báo xấu
+                                    <div class="hover-popup">Báo xấu đăng tin (Nội dung bài đăng không đúng sự thật)</div>
+                                </label>
+                               
+                            </div>
+                            <a class="set-tour" href="tel:{{ telephone ? telephone : '00000000' }}" >
+                            
+                                Gọi điện
+                            </a>
+
+                            
+                          </div>
+                      </div>
+                    
+                  </div>
+              </div>
+          </section>
+          <section class="main-detail-content tab-info-container" id="tab_info">
+              <div class="container px-lg-0 container-tab">
+                  <nav class="row header-content">
+                      <div class="col-6 nav nav-tabs px-0" role="tablist">
+                          <a class="nav-item nav-link attribute-text active" data-tab="#nav-home" role="tab">Giới thiệu</a>
+                          <a class="nav-item nav-link attribute-text" data-tab="#nav-profile" role="tab">Mô tả</a>
+                          <a class="nav-item nav-link attribute-text" data-tab="#meey-info">Thông tin</a>
+                      </div>
+                      <div class="list-actions col-6 row align-items-center justify-content-end article-card">
+                          <span data-post-id="{{ product_id }}" class="{{ wishlist ? 'saved' : '' }} home-save js-btn-save action-item favorite function-heart" data-toggle="tooltip" class="btn btn-default" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product_id }}');">
+                              Yêu thích
+                          </span>
+                          <div class="share-social">
+                              <button class="btn-custom share-btn ml-text-14" ng-click="modalShare($event)">Chia sẻ</button>
+                          </div>
+                      </div>
+                  </nav>
+              </div>
+          </section>
+          <section class="main-detail-content mb-3">
+              <div class="mark-tab-info">
+                
+              </div>
+              <div class="container px-lg-0 container-content">
+                  <div class="row tab-content justify-content-between" id="nav-tabContent" >
+                      <div class="col-8 introduce-content tab-pane fade show active attribute-text">
+                          <h1 id="nav-home" class="title ml-text-bold-2 ml-text-20 ellipsis-3-lines vip_1">{{ heading_title }}</h1>
+                          <div class="address ml-text-14 ml-text-gray ml-mb-12">{{ location }}</div>
+                          <div class="d-flex ml-mb-12 align-items-center introduce-line">
+                              <div class=" ml-text-14 ml-text-gray">Ngày đăng: {{ ' ' }} {{ date_added }}</div>
+                              <div class=" ml-text-14 ml-text-gray">Ngày hết hạn: {{ expiration_date }}</div>
+                              <div class=" ml-text-14 ml-text-gray">Lượt xem: {{ ' ' }} {{ viewed }}</div>
+                          </div>
+                          <div class="price-sec row">
+                                  <div class="col-12 d-flex align-items-center">
+                                    <div class="item">
+                                        
+                                        <div class="ml-text-16 ml-text-bold-2 price-article">{{ price }}/Tháng</div>
+                                    </div>
+                                 
+                                    <div class="item">
+                                        <div class="label ml-text-14 ml-text-gray">
+                                        Diện tích</div>
+                                        <div class="ml-text-16 ml-text-bold">{{ acreage }} m²</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="label ml-text-14 ml-text-gray">
+                                        Phòng ngủ</div>
+                                        <div class="ml-text-16 ml-text-bold">{{ bedroom }} PN</div>
+                                    </div>
+                                </div>
+
+                            
+                          </div>
+                          <div id="nav-profile" class="info-description">
+                              <h2 class="title ml-text-20 ml-text-bold-2">Thông tin mô tả</h2>
+                              <div class="des-detail ml-text-14">
+                                {{ description }}
+                              </div>
+                              <div class="basic-info" id="meey-info">
+                                  <div class="card-info-header">Thông tin cơ bản</div>
+                                  <ul class="card-info-detail list-unstyled">
+                                      <li class="d-flex">
+                                          <span class="label">Địa chỉ:</span>
+                                          <span class="attribute-info">{{ location }}</span>
+                                      </li>
+                                     
+                                      <li class="d-flex">
+                                          <span class="label">Loại nhà đất:</span>
+                                          <span class="attribute-info">{{ type_name ? type_name : '---' }}</span>
+                                      </li>
+                                      <li class="d-flex">
+                                          <span class="label">Diện tích:</span>
+                                          <span class="attribute-info">{{ acreage }} m²</span>
+                                      </li>
+                                      <li class="d-flex">
+                                          <span class="label">Mặt tiền:</span>
+                                          <span class="attribute-info">{{ facade ? facade : '---' }} m²</span>
+                                      </li>
+
+                                      <li class="d-flex">
+                                          <span class="label">Đường rộng:</span>
+                                          <span class="attribute-info">{{ large_road ? large_road : '---' }} m²</span>
+                                      </li>
+
+                                      <li class="d-flex">
+                                          <span class="label">Hướng nhà:</span>
+                                          <span class="attribute-info">{{ direction ? direction : '---' }}</span>
+                                      </li>
+
+                                      <li class="d-flex">
+                                          <span class="label">Hướng ban công:</span>
+                                          <span class="attribute-info">{{ balcony ? balcony : '---' }}</span>
+                                      </li>
+                                  </ul>
+                                 
+                              </div>
+                              <div class="basic-info">
+                                  <div class="card-info-header">Thông tin khác</div>
+
+                                  <ul class="card-info-detail list-unstyled">
+                                      <li class="d-flex">
+                                          <span class="label">Tổng số tầng:</span>
+                                          <span class="attribute-info">{{ floors }}</span>
+                                      </li>
+
+                                      <li class="d-flex">
+                                          <span class="label">Số phòng ngủ:</span>
+                                          <span class="attribute-info">{{ bedroom }}</span>
+                                      </li>
+
+                                      <li class="d-flex">
+                                          <span class="label">Số phòng tắm:</span>
+                                          <span class="attribute-info">{{ bathroom }}</span>
+                                      </li>
+                                     
+
+                                  </ul>
+
+                              </div>
+                               <div class="basic-info">
+                                  <div class="card-info-header">Thông tin dự án</div>
+                                  <ul class="card-info-detail list-unstyled">
+                                      <li class="d-flex">
+                                          <span class="label">Loại tin đăng:</span>
+                                          <span class="attribute-info">{{ post_type ? post_type : '---' }}</span>
+                                      </li>
+                                      <li class="d-flex">
+                                          <span class="label">Chủ đầu tư:</span>
+                                          <span class="attribute-info">{{ mpn ? mpn : '---' }}</span>
+                                      </li>
+                                      <li class="d-flex">
+                                          <span class="label">Quy mô:</span>
+                                          <span class="attribute-info">
+                                            {{ project_size ? project_size : '---' }}
+                                          </span>
+                                      </li>
+                                  </ul>
+                              </div> 
+
+                              <div class="basic-info">
+                                <div class="card-info-header">Xem trên bản đồ</div>
+                                <ul class="card-info-detail list-unstyled">
+                                  <div class="re__section re__pr-map js__section">
+                                      <span class="re__section-title"><i class="fa fa-map-marker" aria-hidden="true"></i> Địa chỉ: {{ location }}</span>
+                                      <div class="re__section-body js__section-body">
+                                        <iframe width="100%" height="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDchyX-A_d7CfLqRnkv14Nrzx3aJe0F-8U&q={{ location }}&zoom=14" allowfullscreen=""></iframe>
+                                      </div>
+                                  </div>
+                                </ul>
+                              </div>
+
+                              {% if tags %}
+                              <div class="basic-info">
+                                <div class="card-info-header">Tìm kiếm theo từ khóa</div>
+                                <ul class="card-info-detail list-unstyled">
+                                  <div class="re__section-body js__section-body">
+
+                                    {% for i in 0..tags|length %}
+                                    {% if tags[i].tag %}
+                                    <span>
+                                        <a class="re__tag--md" href="{{ tags[i].href }}" title="{{ tags[i].tag }}">{{ tags[i].tag }}</a>
+                                    </span>
+                                    {% endif %}
+                                    {% endfor %}
+
+                                    
+                                  </div>
+                                </ul>
+                              </div>
+                              {% endif %}
+
+
+                              <div class="basic-info">
+                                <div class="re__pr-short-info re__pr-config js__pr-config">
+                                    <div class="re__pr-short-info-item js__pr-config-item"><span class="title">Ngày đăng</span><span class="value">{{ date_added }}</span>
+                                      
+                                    </div>
+                                    <div class="re__pr-short-info-item js__pr-config-item"><span class="title">Ngày hết hạn</span><span class="value">{{ expiration_date }}</span>
+                                      
+                                    </div>
+                                    <div class="re__pr-short-info-item js__pr-config-item"><span class="title">Loại tin</span><span class="value">{{ post_type }}</span>
+                                      
+                                    </div>
+                                    <div class="re__pr-short-info-item js__pr-config-item"><span class="title">Mã tin</span><span class="value">{{ product_id }}</span>
+                                      
+                                    </div>
+
+                                    
+                                </div>
+                              </div>
+
+                          </div>
+                       
+                      
+
+                      </div>
+                      <div class="col-4 detail-info-right">
+                          <div class="poster-info">
+                              <div class="user-header-info d-flex">
+                                      <div class="avatar">
+                                        <img src="{{ avata }}" alt="no avatar">
+                                    </div>
+
+                                  <div class="wrap-info">
+                                      <div class="poster-name is-certificate">
+                                        {{ full_name }}
+                                      </div>
+                                      <div class="poster-role d-flex justify-content-between">
+                                          <div class="ml-text-14">Nhà môi giới</div>
+                                              <span class="user-activate"></span>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="info-detail-poster">
+                                  <div class="wrap-info-detail d-flex justify-content-between ml-mb-8">
+                                      <div class="">Đánh giá: Đang cập nhật</div>
+                                      <div class="">Tham gia từ: {{ customer_date_added }}</div>
+                                  </div>
+                                  <div class="wrap-info-detail d-flex justify-content-between ml-mb-8">
+                                  <div class="">Số tin đăng: {{ total_product_post }}</div>
+                                  </div>
+                              </div>
+                              <!-- <div class="flex-wrapper-circle">
+                                  <div class="circle-percent">
+                                      <svg viewBox="0 0 36 36" class="circular-chart green">
+                                          <path class="circle-bg" d="M18 2.0845
+                                            a 15.9155 15.9155 0 0 1 0 31.831
+                                            a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                                          <path class="circle" stroke-dasharray="0, 100" d="M18 2.0845
+                                            a 15.9155 15.9155 0 0 1 0 31.831
+                                            a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                                          <text x="18" y="22.35" class="percentage">N/A</text>
+                                      </svg>
+                                  </div>
+                                  <div class="wrap-text">
+                                      <div class="ml-text-14 ml-text-bold ml-mb-2">Xếp hạng</div>
+                                      <div class="ml-text-14 ml-text-gray">Đang cập nhật</div>
+                                  </div>
+                              </div> -->
+                              <div class="wrap-button-chat d-flex">
+                                <md-button target="_blank" rel="nofollow" href="{{ link_chat_zalo }}" class="button-chat tracking-chat">
+                                  
+                                    Chat với người đăng tin
+                                </md-button>
+
+                                  <span>* Thường trả lời sau 30 phút</span>
+                              </div>
+                          </div>
+                          <div class="phone-number tracking-call">
+                              <div class="wrap-phone-number d-flex align-items-center">
+                                  <div class="phone" data-phone="{{ telephone ? telephone : '00000000' }}">0000***</div>
+                                  <a class="show-number tracking-call" href="javascript:void(0)">Bấm để hiện số</a>
+                              </div>
+                          </div>
+                          
+                      </div>
+                  </div>
+
+                
+
+                  <div class=" row home-section-watched mb-3" id="article-watched" style="display: none;" data-notid="613f6b4a0ae51b001969f53e">
+                      <div class="section-block-head px-0">
+                          <div class="block-head-title  px-0">
+                              Tin đã xem
+                          </div>
+                      </div>
+                      <div class="" id="watched-article-detail">
+                        
+                      </div>
+                  </div>
+                  {% if products %}
+                  <div class=" row home-section-favorite mb-3">
+                    <div class="section-block-head px-0">
+                        <div class="block-head-title  px-0">
+                            Tin đăng tương tự
+                         </div>
+                    </div>
+                    <div class="lSSlideOuter ">
+                      <div class="lSSlideWrapper usingCss">
+                      <div class="lightSlider lsGrab lSSlide owl-carousel" id="related-article-detail">
+                          {% for product in products %}
+                          <div class="article-card lslide" >
+                               <div class="article-card-head">
+                                  <div class="card-head-img">
+                                     <a href="{{ product.href }}" class="call-traking"></a>
+                                     <img class="card-image-top lazy-load lazy" alt="{{ product.name }}" src="{{ product.thumb }}" style="">
+                                  </div>
+                                  <div class="card-head-function">
+                                     
+                                     <div class="list-function">
+                                        <span data-post-id="{{ product.product_id }}" class="{{ product.wishlist ? 'saved' : '' }} btn-custom btn-func function-heart" data-toggle="tooltip" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');">
+                                        </span>
+                                     </div>
+                                  </div>
+                               </div>
+                               <div class="article-card-body">
+                                  <div class="card-title">
+                                     
+                                     <a href="{{ product.href }}" class="call-traking">
+                                        <h3 data-toggle="tooltip" data-placement="top" title="{{ product.name }}" class="">
+                                           {{ product.name }}
+                                        </h3>
+                                     </a>
+                                  </div>
+                                  <div class="article-info">
+                                     <div class="article-price">
+                                        {{ product.price }}/Tháng
+                                     </div>
+                                  </div>
+                                  <div class="article-info-detail row">
+                                     <div class="col-6">
+                                        <div class="article-info-detail-item no-wrap items-center icon-area" data-toggle="tooltip" data-placement="top" title="Diện tích: {{ product.acreage ? product.acreage : '---'}} m²">
+                                           {{ product.acreage ? product.acreage : '---'}}m²
+                                        </div>
+                                     </div>
+                                     <div class="col-6">
+                                        <div class="article-info-detail-item no-wrap items-center icon-wideroad" data-toggle="tooltip" data-placement="top" title="Đường rộng: {{ product.large_road ? product.large_road : '---'}}">
+                                           {{ product.large_road ? product.large_road : '---'}}m
+                                        </div>
+                                     </div>
+                                     
+                                     <div class="col-6">
+                                        <div class="article-info-detail-item no-wrap items-center icon-compass" data-toggle="tooltip" data-placement="top" title="Hướng {{ product.direction ? product.direction : '---'}}">
+                                           {{ product.direction ? product.direction : '---'}}
+                                        </div>
+                                     </div>
+                                     <div class="col-6">
+                                        <div class="article-info-detail-item no-wrap items-center icon-frontface" data-toggle="tooltip" data-placement="top" title="Hướng ban công: {{ product.balcony ? product.balcony : '---'}}">
+                                          {{ product.balcony ? product.balcony : '---'}}
+                                        </div>
+                                     </div>
+                                     <div class="col-6">
+                                        <div class="article-info-detail-item no-wrap items-center icon-creator-type" data-toggle="tooltip" data-placement="top" title="Đối tượng: Nhà môi giới">{{ product.customer_full_name }}</div>
+                                     </div>
+                                     <div class="col-6">
+                                        <div class="article-info-detail-item no-wrap items-center icon-type-of-house" data-toggle="tooltip" data-placement="top" title="Loại nhà đất: Chung cư">{{ product.type_name }}</div>
+                                     </div>
+                                  </div>
+                                  <a class="article-info-location" data-toggle="tooltip" data-placement="top" title="Vị trí" href="{{ product.link_location }}">
+                                     {{ product.location }}
+                                  </a>
+                               </div>
+                               <div class="article-card-footer">
+                                  <div class="no-wrap items-center chip-content-footer icon-date">51 ngày trước</div>
+                                  <div class="no-wrap items-center chip-content-footer icon-eye">{{ product.viewed }}</div>
+                               </div>
+                          </div>
+                          {% endfor %}
+
+                          
+                        
+                    </div>
+                    <div class="lSAction"><a class="lSPrev disabled"></a><a class="lSNext"></a>
+                      
+                    </div>
+                    </div>
+                    </div>
+                  </div>
+                  {% endif %}
+
+              </div>
+          </section>
+</main>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.card-info-header').click(function () {
+      const $parent = $(this).parent()
+      if ($parent.hasClass('hide-info')) {
+        $parent.removeClass('hide-info')
+      } else {
+        $parent.addClass('hide-info')
+      }
+    })
+    $('[data-toggle="copy"]').on('click', function() {
+        const $btn = $(this);
+        const $input = $btn.parents('.input-group').find('input');
+        if ($input.length > 0) {
+          $input.focus();
+          $input[0].select();
+          document.execCommand('copy');
+          $btn.html('Đã sao chép');
+          setTimeout(function () {
+            $btn.html('Sao chép link');
+          }, 2000);
+        }
+  });
+    $('#btn_view_calendar_monthly').click(function (e) {
+      e.preventDefault();
+      initPopupSchedule();
+      return false;
+    });
+  });
+</script>
+<script type="text/javascript">
+  // $("#related-article-detail").lightSlider({
+  //     item: 3.6,
+  //     loop: false,
+  //     slideMove: 1,
+  //     easing: "cubic-bezier(0.25, 0, 0.25, 1)",
+  //     auto: false,
+  //     pager: false,
+  //     enableDrag: true,
+  //     slideMargin: 12,
+  //     enableTouch: true,
+  //     pauseOnHover: true,
+  //     onSliderLoad: function (el) {
+  //       $('.home-section-favorite .lSAction .lSPrev').addClass('disabled')
+  //     },
+  //     onAfterSlide: function (el) {
+  //       if (el.getCurrentSlideCount() == 1) {
+  //         $('.home-section-favorite .lSAction .lSPrev').addClass('disabled')
+  //       } else {
+  //         $('.home-section-favorite .lSAction .lSPrev').removeClass('disabled')
+  //       }
+  //       if (el.getCurrentSlideCount()*2 >= $('#related-article-detail .article-card').length - 2) {
+  //         $('.home-section-favorite .lSAction .lSNext').addClass('disabled')
+  //       } else {
+  //         $('.home-section-favorite .lSAction .lSNext').removeClass('disabled')
+  //       }
+  //     },
+  //   });
+ 
+
+  $('#related-article-detail').owlCarousel({
+                responsive:{
+                  0:{
+                      items:1,
+                  },
+                  750:{
+                      items:3,
+                  },
+                  970:{
+                      items:3,
+                  },
+                  1170:{
+                      items:4,
+                  }
+              },
+                margin: 10,
+                nav: false,
+                loop: false,
+                dots: true,
+                autoWidth: false,
+                lazyLoad:true,
+                autoplay: true,
+                autoplayTimeout: 4000,
+                singleItem: true,
+                rewindNav : false,
+              
+  });
+
+  $('#slide_media_image').owlCarousel({
+                responsive:{
+                  0:{
+                      items:1,
+                  },
+                  750:{
+                      items:1,
+                  },
+                  970:{
+                      items:1,
+                  },
+                  1170:{
+                      items:1,
+                  }
+              },
+                margin: 0,
+                nav: false,
+                loop: false,
+                dots: true,
+                autoWidth: false,
+                lazyLoad:true,
+                autoplay: false,
+                // autoplayTimeout: 4000,
+                singleItem: true,
+                rewindNav : false,
+              
+  });
+</script>
+
+<script type="text/javascript">
+  $('.show-number').click(function (e) {
+    
+    e.preventDefault();
+    if ($('[data-phone]').hasClass('toggle')) {
+      $('[data-phone]').removeClass('toggle');
+      $('[data-phone]').html($('[data-phone]').data('phone').substr(0, 4) + '***');
+      // $(this).text($.i18n('detail-click_show_number'))
+    } else {
+      $('[data-phone]').addClass('toggle');
+      $('[data-phone]').html($('[data-phone]').data('phone'));
+      // $(this).text($.i18n('common-collapse'))
+    }
+    return false;
+  });
+</script>
+
+<script type="text/javascript">
+
+  $('#btn_show_modal_booking').click(function () {
+      $('#tour_booking_modal').modal('show');
+    });
+
+    $('#btn_show_modal_report').click(function () {
+      $('#tour_report_modal').modal('show');
+    
+    });
+
+    const initFormBooking = () => {
+    
+      const mode = $('.tour-booking input[name="tour_booking_mode"]:checked').val();
+      $('input[name="tour_booking_mode"][value="' + mode + '"]').prop('checked', true);
+      const $timeSelected = $('#booking li.active input');
+     
+    
+      $('#booking_fullname').val($('#booking_fullname').data('value'))
+      $('#booking_telephone').val($('#booking_telephone').data('value'))
+      $('#booking_email').val($('#booking_email').data('value'))
+      $('#booking_content').val('')
+      $('[data-field]').removeClass('error')
+      $('#tour_booking_error_modal .btn-ok').click(function(){
+          $('#tour_booking_error_modal').removeClass('show');
+      })
+ 
+    };
+
+  
+
+
+
+
+  const initScrollPage = (windowOffset, tabOffset) => {
+    const $tab_info = $('#tab_info');
+    if (windowOffset >= tabOffset) {
+      if ($tab_info.hasClass('fixed') == false) {
+        $tab_info.addClass('fixed');
+        $('.mark-tab-info').addClass('active');
+      }
+    } else {
+      if ($tab_info.hasClass('fixed') == true) {
+        $tab_info.removeClass('fixed');
+        $('.mark-tab-info').removeClass('active');
+      }
+    }
+  };
+
+  const scrollPage = () => {
+    const $tab_info = $('#tab_info');
+    let tabOffset = $tab_info.offset().top;
+    $(window).scroll(function () {
+      let windowOffset = $(window).scrollTop();
+      initScrollPage(windowOffset + 15, tabOffset);
+      initActiveTab(windowOffset + 100);
+    });
+    initScrollPage($(window).scrollTop(), tabOffset);
+    initActiveTab($(window).scrollTop() + 100);
+
+    $('#tab_info [data-tab]').click(function (e) {
+      e.preventDefault();
+      const elm = $(this).data('tab');
+      $('html, body').animate({
+        scrollTop: $(elm).offset().top - 57
+      }, 400);
+      return false;
+    });
+  };
+  const initActiveTab = (windowOffset) => {
+    const nav_profile = $('#nav-profile').offset().top;
+    const meey_info = $('#meey-info').offset().top;
+    if (windowOffset < nav_profile) {
+      $('#tab_info [data-tab]').removeClass('active');
+      $('#tab_info [data-tab="#nav-home"]').addClass('active');
+    } else if (windowOffset >= nav_profile && windowOffset < meey_info) {
+      $('#tab_info [data-tab]').removeClass('active');
+      $('#tab_info [data-tab="#nav-profile"]').addClass('active');
+    } else if (windowOffset >= meey_info) {
+      $('#tab_info [data-tab]').removeClass('active');
+      $('#tab_info [data-tab="#meey-info"]').addClass('active');
+    } else {
+
+    }
+  };
+  scrollPage();
+
+  let schedulePaid = [];
+  function formatNumber(numb, fix = 0) {
+    if (!numb) numb = 0
+    let fixPow = Math.pow(10, fix);
+    numb = Math.round(numb * fixPow) / fixPow;
+    return numb.toString().replace(/\d(?=(\d{3})+(?!\d))/g, '$&,');
+  }
+  const initPopupSchedule = () => {
+    const $modal = $('#calendar_monthly_popup');
+    const $list = $modal.find('.list-schedule-paid tbody');
+    let html = '';
+    schedulePaid.map((item, index) => {
+      html += `<tr>
+            <td>${index + 1}</td>
+            <td>${formatNumber(item.remainSource)}</td>
+            <td>${formatNumber(item.sourcePerMonth)}</td>
+            <td>${formatNumber(item.interestPaid)}</td>
+            <td>${formatNumber(item.sourcePerMonth + item.interestPaid)}</td> 
+        </tr>`;
+    });
+    $list.html(html);
+    $('#lsp_total_interest_paid').html(formatNumber(0));
+    $('#lsp_total_paid').html(formatNumber(0 + 0));
+    $modal.modal('show')
+  }
+    
+</script>
+
+
+
+
+<div class="modal fade modal-calendar_monthly " id="calendar_monthly_popup" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <div class="modal-title">Xem lịch trả nợ hàng tháng</div>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <table class="table list-schedule-paid">
+                      <thead>
+                          <tr>
+                              <th scope="col">Số kỳ</th>
+                              <th scope="col">Dư nợ đầu kỳ (VNĐ)</th>
+                              <th scope="col">Gốc phải trả (VNĐ)</th>
+                              <th scope="col">Lãi phải trả (VNĐ)</th>
+                              <th scope="col">Gốc + Lãi (VNĐ)</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                      </tbody>
+                      <tfoot>
+                          <tr>
+                              <td colspan="3" style="text-align: right;padding-right: 16px;">Tổng</td>
+                              <td id="lsp_total_interest_paid">0</td>
+                              <td id="lsp_total_paid">0</td>
+                          </tr>
+                      </tfoot>
+                  </table>
+                  <div class="note">
+                      (*) Công cụ tính toán trên website chỉ mang tính chất tham khảo
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+<div class="modal fade modal-share" id="modal_share" tabindex="-1" style="display: none;" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <div class="modal-title">Chia sẻ tin này với bạn bè</div>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <div class="input-group">
+                      <input type="text" class="form-control" value="{{ link_product }}" readonly>
+                      <div class="input-group-append">
+                        <button class="input-group-text" data-toggle="copy">Sao chép link</button>
+                      </div>
+                  </div>
+                  <div class="share-buttons">
+
+
+
+                    <a tracking-id="share-ldp" tracking-label="type=facebook" class="btn btn-facebook" id="facebook" target="_blank" rel="nofollow" href="https://www.facebook.com/sharer/sharer.php?u={{ link_product }}">Chia sẻ qua Facebook</a>
+
+                     <a
+                     class="zalo-share-button btn btn-zalo"
+                     tracking-id='share-ldp'
+                           tracking-label="type=zalo" class="zalo-share-button re__list-standard-1line-no-underline--md lazyload"
+                           data-script="https://sp.zalo.me/plugins/sdk.js"
+                           data-href=""
+                           data-oaid="579745863508352884"
+                           data-layout="2"
+                           data-color="blue"
+                           data-customize=true>
+                            Chia sẻ qua Zalo
+                        </a>
+
+                    
+                  </div>
+              </div>
+          </div>
+      </div>
+</div>
+
+<!--   <div class="modal tour-booking-modal" id="tour_booking_modal" tabindex="-1" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">YÊU CẦU LIÊN HỆ</div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" class="tour-booking-form" id="tour_booking_form">
+                       
+                        <div class="block-header">
+                           
+                            
+                        </div>
+                        <div class="text-spin">Vui lòng cung cấp thông tin để chúng tôi có thể liên hệ với bạn</div>
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+
+                              <div class="form-group" data-field="scheduleDate">
+                                        <label for="booking_telephone">Thời gian xem nhà</label>
+                                        <div class="input-group">
+                                            <md-datepicker ng-model="scheduleDate" md-placeholder="Thời gian xem nhà" ></md-datepicker>
+                                            <span class="message"></span>
+                                        </div>
+                                    </div>
+
+                              <div class="form-group" data-field="scheduleTime" style="margin-top:30px;">
+                                      
+                                <div class="input-group select-custom" style="overflow: unset;">
+                                    <div class="input-group-prepend" style="position: absolute;">
+                                        <span class="icon icon-time"></span>
+                                    </div>
+                                    <input type="time" min="00:00" max="23:00" name="scheduleTime" value="" id="scheduleTime" placeholder="Giờ bắt đầu" class="form-control">
+                                 
+                               </div>
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <label for="booking_fullname">Họ và tên <span>*</span></label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="icon icon-user"></span>
+                                        </div>
+                                    <input id="booking_fullname" autocomplete="off" name="booking_fullname" type="text" class="form-control" placeholder="Nhập họ tên" value="">
+                                    </div>
+                                    <span class="message"></span>
+                                </div>
+                                <div class="form-group" data-field="senderPhone">
+                                    <label for="booking_telephone">Số điện thoại <span>*</span></label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="icon icon-phone"></span>
+                                        </div>
+                                        <input id="booking_telephone" autocomplete="off" name="booking_telephone" type="text" class="form-control" placeholder="Số di động" value="">
+                                    </div>
+                                    <span class="message"></span>
+                                </div>
+                                <div class="form-group" data-field="senderEmail">
+                                    <label for="booking_email">Email <span>*</span></label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="icon icon-email"></span>
+                                        </div>
+                                        <input id="booking_email" autocomplete="off" name="booking_email" type="text" class="form-control" placeholder="Email" value="">
+                                    </div>
+                                    <span class="message"></span>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="form-group form-group-textarea" data-field="content">
+                                    <textarea maxlength="1000" name="booking_content" id="booking_content" cols="30" rows="15" placeholder="Lời nhắn (Tôi quan tâm đến sản phẩm này)">Tôi quan tâm đến sản phẩm này</textarea>
+                                    <span class="message"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group error-submit">
+                            <span class="message"></span>
+                        </div>
+                        <div class="block-footer">
+                            <button type="button" ng-click="submitFormBooking($event)" class="btn btn-link btn-submit">Gửi yêu cầu</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+  </div> -->
+
+   <div class="modal tour-booking-modal" id="tour_report_modal" tabindex="-1" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">Báo cáo tin rao có thông tin không đúng</div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" class="tour-booking-form" id="tour_report_form">
+                    
+                        <div class="text-spin">Vui lòng cung cấp thông tin để chúng tôi có thể liên hệ với bạn</div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 re__pl-popup-tab-content js__tab js__tab-info">
+
+                                <input type="hidden" name="product_id" value="{{ product_id }}">
+
+                                <div class="re__form-group">
+                                  <div class="re__colright">
+                                    <div class="re__form-group">
+                                      <div class="re__colright">
+                                          <label class="re__label-checkbox" for="info-1">
+                                              <input type="checkbox" name="info[]" class="info" id="info-1" value="Địa chỉ của bất động sản">
+                                              <span>Địa chỉ của bất động sản</span>
+                                          </label>
+                                          <label class="re__label-checkbox" for="info-2">
+                                              <input type="checkbox" class="info" name="info[]" id="info-2" value=" Các thông tin về đặc điểm: giá, diện tích, mô tả ....">
+                                              <span>Các thông tin về: giá, diện tích, mô tả ....</span>
+                                          </label>
+                                          <label class="re__label-checkbox" for="info-3">
+                                              <input type="checkbox" class="info" id="info-3" value="Ảnh">
+                                              <span>Ảnh</span>
+                                          </label>
+                                          <label class="re__label-checkbox" for="info-4">
+                                              <input type="checkbox" name="info[]" class="info" id="info-4" value="Trùng với tin rao khác">
+                                              <span>Trùng với tin rao khác</span>
+                                          </label>
+                                          <label class="re__label-checkbox" for="info-5">
+                                              <input type="checkbox" name="info[]" class="info" id="info-5" value="Không liên lạc được">
+                                              <span>Không liên lạc được</span>
+                                          </label>
+                                          <label class="re__label-checkbox" for="info-6">
+                                              <input type="checkbox" name="info[]" class="info" id="info-6" value="Tin không có thật">
+                                              <span>Tin không có thật</span>
+                                          </label>
+                                          <label class="re__label-checkbox" for="info-7">
+                                              <input type="checkbox"  name="info[]" class="info" id="info-7" value="Bất động sản đã bán">
+                                              <span>Bất động sản đã bán</span>
+                                          </label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="input-booking-fullname">Họ và tên <span>*</span></label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="icon icon-user"></span>
+                                        </div>
+                                    <input id="input-booking-fullname" autocomplete="off" name="booking_fullname" type="text" class="form-control" placeholder="Nhập họ tên" value="{{ customer_fullname }}">
+                                    </div>
+                                    <span class="message"></span>
+                                </div>
+                                <div class="form-group" data-field="senderPhone">
+                                    <label for="input-booking-telephone">Số điện thoại <span>*</span></label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="icon icon-phone"></span>
+                                        </div>
+                                        <input id="input-booking-telephone" autocomplete="off" name="booking_telephone" type="text" class="form-control" placeholder="Số di động" value="{{ customer_telephone }}">
+                                    </div>
+                                    <span class="message"></span>
+                                </div>
+                                <div class="form-group" data-field="senderEmail">
+                                    <label for="input-booking-email">Email <span>*</span></label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="icon icon-email"></span>
+                                        </div>
+                                        <input id="input-booking-email" autocomplete="off" name="booking_email" type="text" class="form-control" placeholder="Email" value="{{ customer_email }}">
+                                    </div>
+                                    <span class="message"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group form-group-textarea" data-field="content">
+                                    <textarea maxlength="1000" name="booking_content" id="input-booking-content" cols="30" rows="15" placeholder="Phản hồi khác"></textarea>
+                                    <span class="message"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group error-submit">
+                            <span class="message"></span>
+                        </div>
+                        <div class="block-footer">
+                            <button type="button" ng-click="submitFormReport($event)" class="btn btn-link btn-submit">Gửi yêu cầu</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+  </div>
+
+ 
+</div>
+</div>
+
+
+
+{{ footer }}

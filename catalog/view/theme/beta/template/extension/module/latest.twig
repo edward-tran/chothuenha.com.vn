@@ -1,0 +1,59 @@
+{% if products %} 
+<div class="section section-listing">
+  <div class="section-header clearfix">
+    <span class="section-title small float-left">Danh sách tin đăng</span>
+      <ul class="home-sort float-right clearfix">
+        <span>Sắp xếp: </span>
+        {% for sort in sorts %}
+        <li><a class="" href="{{sort.href }}">{{sort.text}}</a></li>
+        {% endfor %}
+      </ul>
+  </div>
+
+  <div class="section-content">
+    <div class="home-listing">
+      {% for product in products %}
+       <article class="home-item box-shadow border-radius vip40">
+        <figure class="home-thumb">
+          <a href="{{product.href}}" title="{{product.name}}">
+           <img class="imag lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaEAAAEqAQMAAACGEX2aAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAACZJREFUaN7twTEBAAAAwiD7pzbFPmAAAAAAAAAAAAAAAAAAAAAQOz7cAAG8Je16AAAAAElFTkSuQmCC"  data-src="{{product.thumb}}" alt="{{product.href}}">
+          </a>
+          <span data-post-id="{{ product.product_id }}" class="{{ product.wishlist ? 'saved' : '' }} home-save js-btn-save" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');"><i></i>
+          </span>
+          <span class="images-count">{{ product.number_image }} ảnh</span>
+          {% if product.video %}
+          <span class="icon video white"></span>
+          {% endif %}
+        </figure>
+        <div class="home-meta">
+          <h4 class="home-title"><a style="color: #055699;" href="{{product.href}}" title="{{product.name}}"><span class="star star-4"></span> {{product.name}} </a></h4>
+          <div class="meta-row clearfix">
+            <span class="home-price">{{ product.price }} <i>/tháng</i></span>
+            <span class="home-acreage"> {{ product.acreage ? product.acreage : '---' }}m<sup>2</sup></span>
+            <span class="home-bedroom">{{ product.bedroom ? product.bedroom : '---' }} pn</span>
+            <span class="home-bathroom">{{ product.bathroom ? product.bathroom : '---' }} wc</span>
+            <span class="home-publish">Hôm nay</span>
+          </div>
+          <div class="meta-row clearfix meta_author">
+            <span class="home-broker">
+              <img src="{{ product.customer_image }}"><span>{{ product.customer_full_name }}</span>
+            </span>
+            <a class="home-location" href="{{ product.link_location }}" title="{{ product.location }}">{{ product.location }}</a>
+          </div>
+          <div class="meta-row clearfix meta_description">
+            <p class="home-summary">{{product.description}}</p>
+          </div>
+          </div>
+       </article>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="row">
+      <input type="hidden" name="url_pagination" value="{{ url_pagination }}">
+      <input type="hidden" name="url_current" value="{{ url_current }}">
+      <div class="col-sm-12 text-center">{{ pagination }}</div>
+  </div>
+</div>
+
+
+{% endif %}

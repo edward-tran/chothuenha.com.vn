@@ -1,0 +1,132 @@
+{% if reviews %}
+{% for review in reviews %}
+<div class="reviewpro">
+	<div class="reviewhead">
+		<p class="authorname">
+			{{ review.author }}
+			{% if review.verifyreview %}<span class="authorverify">{{ purchaseverify.verify }}</span>{% endif %}
+			{% if adminlogin %}
+				<a class="adminreply" rel="{{ review.review_id }}">Reply to {{ review.author }}</a>
+			{% endif %}
+			<span class="reviewdate">{{ review.date_added }}</span>
+		</p>
+	</div>
+	<div class="reviewcontent">
+		<div class="row">
+			<div class="col-sm-7">
+				<p class="reviewtitle">{{ review.title }}</p>
+				<p class="reviewdesc">{{ review.text }}</p>
+				<p>{{ review.average}}</p>
+				{% if reviewpro_fields.attachvisible %}
+				{% if review.attachmentfiles %}
+					<div class="reviewimage">
+					{% for attachfile in review.attachmentfiles %}
+						{% if attachfile.thumb %}
+						<a href="{{ attachfile.popup }}">
+							<img src="{{ attachfile.thumb }}"  />
+						</a>
+						{% endif %}
+					{% endfor %}
+					</div>
+					{% for attachfile in review.attachmentfiles %}
+						{% if not attachfile.thumb %}
+							<a class="reviewdownloadfile" rel="{{ attachfile.file }}">Attachment <i class="fa fa-download"></i></a>
+						{% endif %}
+					{% endfor %}
+				{% endif %}
+				{% endif %}
+			</div>
+			<div class="col-sm-5">
+				{% if rating_desc %}
+					{% for ratings in rating_desc %}
+						<div class="reviewbarsec">
+							{{ ratings.rating_name }}
+						</div>
+						<div class="partuclarreview">
+							{% for i in 1..5 %}
+								{% if i <= review.rating[ratings.rating_id].rating %}
+									<i class="fa fa-star"></i>
+								{% else %}
+									<i class="fa fa-star-o"></i>
+								{% endif %}
+							{% endfor %}
+						</div>
+						<div class="clearfix"></div>
+					{% endfor %}
+				{% endif %}
+			</div>
+			{% if reviewpro_fields.reviewshare %}
+			<br />
+			<div class="col-sm-12">
+				<!-- AddThis Button BEGIN -->
+				<div class="addthis_toolbox addthis_default_style" data-url="{{ review.share }}">
+					<a class="addthis_counter addthis_pill_style"></a>
+					<a class="addthis_button_compact">
+					  <img src="https://s7.addthis.com/static/btn/sm-plus.gif" width="16" height="16" border="0" alt="Share" />
+					</a>
+				</div>
+				<!-- AddThis Button END --> 
+			</div>
+			{% endif %}
+			
+		</div>
+	</div>
+</div>
+{% endfor %}
+{% else %}
+<p>{{ text_no_reviews }}</p>
+{% endif %}
+
+
+{% if reviewabuseguest %}
+<div id="abuse" class="white-popup-block reviewpropopup mfp-hide">
+	<a class="popup-modal-dismiss" data-effect="mfp-zoom-in" href="#"></a>
+	<h2>{{ reporttext.formtitle }}</h2>
+	<form id="form-abuse" method="post" class="form-horizontal" enctype="multipart/form-data">
+		{% if getreports %}
+		{% if reviewpro_fields.selectreason %}
+		<div class="form-group {% if reviewpro_fields.selectreason == '2' %} required {% endif %}">
+		  <label class="col-sm-3 control-label" for="input_reason_1">{{ reporttext.reviewtitle }}</label>
+		  <div class="col-sm-9">
+			<select class="form-control" name="abuse_reason" id="input_reason_1">
+				{% for getreport in getreports %}
+					<option value="{{ getreport.reason_id }}">{{ getreport.name }}</option>
+				{% endfor %}
+			</select>
+		  </div>
+		</div>
+		{% endif %}
+		{% endif %}
+		{% if reviewpro_fields.reportcomment %}
+		<div class="form-group {% if reviewpro_fields.reportcomment == '2' %} required {% endif %}">
+		  <label class="col-sm-3 control-label" for="input_reason_2">{{ reporttext.commentfield }}</label>
+		  <div class="col-sm-9">
+			<textarea id="input_reason_2" name="comment" class="form-control" placeholder="{{ reporttext.commentfield }}"></textarea>
+		  </div>
+		</div>
+		{% endif %}
+		<input type="hidden" name="review_id" value="" id="review_id_hidden" />
+		<div class="buttons clearfix">
+		  <div class="pull-right">
+			<button type="button" id="button-abuse" data-loading-text="{{ text_loading }}" class="btn btn-primary">{{ reporttext.btntext }}</button>
+		  </div>
+		</div>
+	</form>
+</div>
+{% endif %}
+
+{% if adminlogin %}
+<div id="adminreply" class="white-popup-block reviewpropopup mfp-hide">
+	<a class="popup-modal-dismiss" data-effect="mfp-zoom-in" href="#"></a>
+	<h2>Reply</h2>
+	<form id="form-adminreply" method="post" class="form-horizontal" enctype="multipart/form-data">
+		<textarea class="form-control" placeholder="Reply" name="comment"></textarea>
+		<input type="hidden" name="review_id" value="" id="review_id_reply_hidden" />
+		<div class="buttons clearfix">
+		  <div class="pull-right">
+			<button type="button" id="button-adminreply" data-loading-text="{{ text_loading }}" class="btn btn-primary">{{ button_continue }}</button>
+		  </div>
+		</div>
+	</form>
+</div>
+{% endif %}

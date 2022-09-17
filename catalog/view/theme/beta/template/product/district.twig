@@ -1,0 +1,88 @@
+{{ header }}
+<div class="append_html_filter">
+<div id="product-district" class="container">
+  <div class="row">{{ column_left }}
+    {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'left-col col-lg-8' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <header class="page-header">
+      <ul class="breadcrumb">
+       {% for breadcrumb in breadcrumbs %}
+       <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+       {% endfor %}
+     </ul>
+      <h1 class="page-h1">{{ heading_title }}</h1>
+      {% if products %}
+        <div class="page-description">Cho thuê nhà nguyên căn giá rẻ, mới nhất 2022 - Mới xây, chính chủ, hẻm xe hơi. Đăng tin cho thuê nhà nguyên căn miễn phí, hiệu quả cao.</div>
+      {% endif %}
+    </header>
+    <div id="content" class="{{ class }}">
+      {{ content_top }}
+         {% if products %}
+         <div class="section section-listing">
+            <div class="section-header clearfix">
+               <span class="section-title small float-left">Danh sách tin đăng</span>
+               <ul class="home-sort float-right clearfix">
+                  <span>Sắp xếp: </span>
+                  <li><a class="" href="">Mặc định</a></li>
+                  <li><a class="" href="">Mới nhất</a></li>
+                  <li><a class="" href="">Có video</a></li>
+               </ul>
+            </div>
+            <div class="section-content">
+               <div class="home-listing">
+                  {% for product in products %}
+                   <article class="home-item box-shadow border-radius vip40">
+                    <figure class="home-thumb">
+                      <a href="{{product.href}}" title="{{product.name}}">
+                       <img class="imag lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaEAAAEqAQMAAACGEX2aAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAACZJREFUaN7twTEBAAAAwiD7pzbFPmAAAAAAAAAAAAAAAAAAAAAQOz7cAAG8Je16AAAAAElFTkSuQmCC"  data-src="{{product.thumb}}" alt="{{product.href}}">
+                      </a>
+                      <span class="home-save js-btn-save" data-post-id="200134349" title="Lưu tin này"><i></i></span><span class="images-count">3 ảnh</span>
+                    </figure>
+                    <div class="home-meta">
+                      <h4 class="home-title"><a style="color: #055699;" href="{{product.href}}" title="{{product.name}}"><span class="star star-4"></span> {{product.name}} </a></h4>
+                      <div class="meta-row clearfix">
+                        <span class="home-price">40 <i>triệu/tháng</i></span>
+                        <span class="home-acreage"> {{ product.height ? product.height : '---' }}<sup>2</sup></span>
+                        <span class="home-bedroom">10 pn</span>
+                        <span class="home-bathroom">5 wc</span>
+                        <span class="home-publish">Hôm nay</span>
+                      </div>
+                      <div class="meta-row clearfix">
+                        <span class="home-broker">
+                          <img src="image/data/default_user.svg"><span>Châu Mỹ Linh</span>
+                        </span>
+                        <a class="home-location" href="{{product.href}}" title="{{ product.location }}">{{ product.location }}</a>
+                      </div>
+                      <div class="meta-row clearfix">
+                        <p class="home-summary">{{product.description}}</p>
+                      </div>
+                      </div>
+                   </article>
+                  {% endfor %}
+                </div>
+            </div>
+         </div>
+         {% endif %}
+    </div>
+      {% if not districts and not products %}
+      <p>{{ text_empty }}</p>
+      
+      {% endif %}
+      {{ content_bottom }}
+    {% if products %}
+      {{ column_right }}
+    {% endif %}
+    </div>
+     <div class="row">
+           <div class="col-sm-6 text-left">{{ pagination }}</div>
+           <div class="col-sm-6 text-right">{{ results }}</div>
+      </div>
+</div>
+</div>
+</div>
+{{ footer }} 

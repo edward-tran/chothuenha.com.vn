@@ -1,0 +1,85 @@
+<section class="section_bds_choban clearfix">
+             <div class="col-lg-12">
+                <h2 class="title">
+                   <a href="nha-dat-ban" title="Bất động sản cho bán">{{ heading_title }}</a>
+                </h2>
+                <div class="clearfix contentpr section-list-time-tab product-hot-tab">
+                   <div class="slickwrap slick_three_row product-hot-content">
+
+                      {% for product in products %}
+                      
+                      <div class="article-card">
+                         <div class="article-card-head">
+                            <div class="card-head-img">
+                               <a href="{{ product.href }}" class="call-traking"></a>
+                               <img class="card-image-top lazyload" alt="{{ product.name }}" data-src="{{ product.thumb }}" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaEAAAEqAQMAAACGEX2aAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAACZJREFUaN7twTEBAAAAwiD7pzbFPmAAAAAAAAAAAAAAAAAAAAAQOz7cAAG8Je16AAAAAElFTkSuQmCC">
+                            </div>
+                            <div class="card-head-function">
+                               
+                               <div class="list-function">
+                                  <button class="btn-custom btn-func function-heart" id="btn-favorite-613874155223d3001896638a">
+                                  </button>
+                               </div>
+                            </div>
+                         </div>
+                         <div class="article-card-body">
+                            <div class="card-title">
+                               
+                               <a href="{{ product.href }}" class="call-traking">
+                                  <h3 data-toggle="tooltip" data-placement="top" title="" class="vip_1" data-original-title="{{ product.name }}">
+                                     {{ product.name }}
+                                  </h3>
+                               </a>
+                            </div>
+                            <div class="article-info">
+                               <div class="article-price">
+                                  Thương lượng
+                               </div>
+                            </div>
+                            <div class="article-info-detail row">
+                               <div class="col-6">
+                                  <div class="article-info-detail-item no-wrap items-center icon-area" data-toggle="tooltip" data-placement="top" title="" data-original-title="Diện tích: {{ product.height ? product.height : '---' }} m²">
+                                     {{ product.height ? product.height : '---' }} m²
+                                  </div>
+                               </div>
+                               <div class="col-6">
+                                  <div class="article-info-detail-item no-wrap items-center icon-wideroad" data-toggle="tooltip" data-placement="top" title="" data-original-title="Đường rộng: {{ product.large_road ? product.large_road : '---' }}">
+                                     {{ product.large_road ? product.large_road : '---' }}
+                                  </div>
+                               </div>
+                               <div class="col-6">
+                                  <div class="article-info-detail-item no-wrap items-center icon-frontface" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mặt tiền">
+                                    {{ product.facade ? product.facade : '---' }}
+                                  </div>
+                               </div>
+                               <div class="col-6">
+                                  <div class="article-info-detail-item no-wrap items-center icon-compass" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hướng">
+                                    {{ product.direction ? product.direction : '---' }}
+                                  </div>
+                               </div>
+                               <div class="col-6">
+                                  <div class="article-info-detail-item no-wrap items-center icon-creator-type" data-toggle="tooltip" data-placement="top" title="" data-original-title="Đối tượng: Nhà môi giới">
+                                     Nhà môi giới
+                                  </div>
+                               </div>
+                               <div class="col-6">
+                                  <div class="article-info-detail-item no-wrap items-center icon-type-of-house" data-toggle="tooltip" data-placement="top" title="" data-original-title="Loại nhà đất: {{ product.category ? product.category : '---' }}">
+                                     {{ product.category ? product.category : '---' }}
+                                  </div>
+                               </div>
+                            </div>
+                            <div class="article-info-location" data-toggle="tooltip" data-placement="top" title="" :="" quận="" bình="" tân,="" thành="" phố="" hồ="" chí="" minh"="" data-original-title="Vị trí">
+                               {{ product.location }}
+                            </div>
+                         </div>
+                         <div class="article-card-footer">
+                            <div class="no-wrap items-center chip-content-footer icon-date">{{ product.date_added }}</div>
+                            <div class="no-wrap items-center chip-content-footer icon-eye">{{ product.viewed }}</div>
+                            <a class="no-wrap items-center chip-content-footer icon-messenge tracking-chat" href="javascript:void(0)" onclick="sendMessage('5f3b49d6ac95b218bb7bb351', '{{ product.href }}')">Chat ngay</a>
+                         </div>
+                      </div>
+                      {% endfor %}
+                   </div>
+                </div>
+             </div>
+          </section>

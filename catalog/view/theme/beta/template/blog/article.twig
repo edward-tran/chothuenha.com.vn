@@ -1,0 +1,76 @@
+{{ header }}
+<div class="append_html_filter append_pagination">
+  <div id="product-category" class="container">
+    <div class="row">{{ column_left }}
+      {% if column_left and column_right %}
+      {% set class = 'col-sm-6' %}
+      {% elseif column_left or column_right %}
+      {% set class = 'left-col col-lg-8' %}
+      {% else %}
+      {% set class = 'col-sm-12' %}
+      {% endif %}
+      <header class="page-header">
+        <ul class="breadcrumb">
+         {% for breadcrumb in breadcrumbs %}
+         <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+         {% endfor %}
+       </ul>
+        <h1 class="page-h1">{{ heading_title }}</h1>
+     <div class="page-description">Tổng hợp tin tức bất động sản cho thuê nhà hiện nay. Chia sẻ những kinh nghiệm, giải pháp thuê nhà nguyên căn giá rẻ chất lượng tốt nhất</div></header>
+      <div id="content" class="{{ class }}">
+        <div class="container">
+        {{ content_top }}
+      </div>
+           <div class="section section-listing">
+             
+              <div class="section-content">
+                 <div class="home-listing">
+                    {% for article in articles %}
+                     <article class="home-item box-shadow border-radius vip40">
+                      <figure class="home-thumb">
+                        <a href="{{article.href}}" title="{{article.article_title}}">
+                         <img class="imag lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaEAAAEqAQMAAACGEX2aAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAACZJREFUaN7twTEBAAAAwiD7pzbFPmAAAAAAAAAAAAAAAAAAAAAQOz7cAAG8Je16AAAAAElFTkSuQmCC"  data-src="{{article.image}}" alt="{{article.href}}">
+                        </a>
+                      </figure>
+                      <div class="home-meta">
+                        <h4 class="home-title"><a style="color: #055699;" href="{{article.href}}" title="{{article.article_title}}"> {{article.article_title}} </a></h4>
+
+                        <div class="article-publish"><i class="icon clock size-14 margin-right-2"></i> {{ article.date_added }}</div>
+
+                        <div class="meta-row clearfix">
+                          <p class="home-summary">{{article.description}}</p>
+                        </div>
+
+                        <div class="article-publish">
+                          <a href="{{article.href}}">
+                            <i class="fa fa-eye" aria-hidden="true"></i>&nbsp; Xem thêm 
+                          </a>
+                        </div>
+
+                        </div>
+                     </article>
+                    {% endfor %}
+                  </div>
+              </div>
+           </div>
+
+          <div class="row">
+           <input type="hidden" name="url_pagination" value="{{ url_pagination }}">
+           <input type="hidden" name="url_current" value="{{ url_current }}">
+           <div class="text-center col-lg-12 col-md-12 col-sm-12 col-xs-12">{{ pagination }}</div>
+           <div class="text-center col-lg-12 col-md-12 col-sm-12 col-xs-12 result_right">{{ results }}</div>
+      </div>
+
+      </div>
+        {% if not articles %}
+        <p>{{ text_empty }}</p>
+        <div class="buttons">
+          <div class="pull-right"><a href="{{ continue }}" class="btn btn-primary">{{ button_continue }}</a></div>
+        </div>
+        {% endif %}
+        {{ content_bottom }}
+      {{ column_right }}</div>
+  </div>
+  </div>
+</div>
+{{ footer }} 

@@ -1,0 +1,271 @@
+{{ header }}
+<div class="append_html_filter page-bang-gia-dich-vu">
+  <div id="product-category">
+    <div class="">{{ column_left }}
+      {% if column_left and column_right %}
+      {% set class = 'col-sm-6' %}
+      {% elseif column_left or column_right %}
+      {% set class = 'left-col col-lg-8' %}
+      {% else %}
+      {% set class = 'col-sm-12' %}
+      {% endif %}
+      <div class="container">
+         <header class="page-header">
+           <ul class="breadcrumb">
+            {% for breadcrumb in breadcrumbs %}
+            <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+            {% endfor %}
+          </ul>
+         </header>
+      </div>
+      
+      <div class="container-fluid">
+         <div id="content" class="{{ class }}">
+          		
+         		<section class="section section-text" style="background-color: transparent; box-shadow: none;">
+                  <div class="section-header" style="text-align: center;">
+                     <h1 class="page-h1">Bảng giá dịch vụ</h1>
+                  </div>
+                  <div class="section-content">
+                  <div class="table-responsive">
+                     <table class="table table-pricing">
+                        <thead>
+                           <tr>
+                              <th style="background: #fff; border: 0;"></th>
+                              <th class="package_tinthuong" style="background-color:#055699; color: #fff; vertical-align: middle;">Tin thường</th>
+                              <th class="package_vip4" style="background-color:#007BFF; color: #fff; vertical-align: middle;">Tin VIP 4<span class="star star-1"></span></th>
+                              <th class="package_vip3" style="background-color:#ea2e9d; color: #fff; vertical-align: middle;">Tin VIP 3<span class="star star-2"></span></th>
+                              <th class="package_vip2" style="background-color:#FF6600; color: #fff; vertical-align: middle;">Tin VIP 2<span class="star star-3"></span></th>
+                              <th class="package_vip1" style="background-color:#E13427; color: #fff; vertical-align: middle;">Tin VIP 1<span class="star star-4"></span></th>
+                              <th class="package_vipdacbiet" style="background-color:#E13427; color: #fff; vertical-align: middle;">Tin VIP Đặc biệt<span class="star star-5"></span></th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <td class="nowrap"><strong>Giá ngày</strong></td>
+                              <td><span class="price-day">1.000 đ</span></td>
+                              <td><span class="price-day">5.000 đ</span></td>
+                              <td><span class="price-day">10.000 đ</span></td>
+                              <td><span class="price-day">15.000 đ</span></td>
+                              <td><span class="price-day">20.000 đ</span></td>
+                              <td><span class="price-day">30.000 đ</span></td>
+                           </tr>
+                           <tr>
+                              <td class="nowrap"><strong>Giá tuần (7 ngày)</strong></td>
+                              <td><span class="price-week">6.000 đ</span></td>
+                              <td><span class="price-week">30.000 đ</span></td>
+                              <td><span class="price-week">60.000 đ</span></td>
+                              <td><span class="price-week">90.000 đ</span></td>
+                              <td><span class="price-week">120.000 đ</span></td>
+                              <td><span class="price-week">180.000 đ</span></td>
+                           </tr>
+                           <tr>
+                              <td class="nowrap"><strong>Giá tháng (30 ngày)</strong></td>
+                              <td><span class="price-month">20.000 đ</span></td>
+                              <td><span class="price-month">100.000 đ</span></td>
+                              <td><span class="price-month">200.000 đ</span></td>
+                              <td><span class="price-month">300.000 đ</span></td>
+                              <td><span class="price-month">400.000 đ</span></td>
+                              <td><span class="price-month">600.000 đ</span></td>
+                           </tr>
+                           <tr>
+                              <td class="nowrap"><strong>Giá đẩy tin</strong></td>
+                              <td>1.000 đ</td>
+                              <td>1.000 đ</td>
+                              <td>2.000 đ</td>
+                              <td>3.000 đ</td>
+                              <td>4.000 đ</td>
+                              <td>5.000 đ</td>
+                           </tr>
+                           <tr>
+                              <td class="nowrap"><strong>Đăng tối thiểu</strong></td>
+                              <td>10 ngày</td>
+                              <td>3 ngày</td>
+                              <td>3 ngày</td>
+                              <td>3 ngày</td>
+                              <td>3 ngày</td>
+                              <td>3 ngày</td>
+                           </tr>
+                           <tr>
+                              <td class="nowrap" style="vertical-align: middle;"><strong>Màu sắc tiêu đề</strong></td>
+                              <td>
+                                 <p><span style="color:#055699; font-weight: bold;">Tiêu đề màu mặc định, viết thường</span></p>
+                              </td>
+                              <td>
+                                 <p><span style="color:#007BFF; font-weight: bold;">TIÊU ĐỀ MÀU XANH, IN HOA</span></p>
+                              </td>
+                              <td>
+                                 <p><span style="color:#ea2e9d; font-weight: bold;">TIÊU ĐỀ MÀU HỒNG, IN HOA</span></p>
+                              </td>
+                              <td>
+                                 <p><span style="color:#FF6600; font-weight: bold;">TIÊU ĐỀ MÀU CAM, IN HOA</span></p>
+                              </td>
+                              <td>
+                                 <p><span style="color:#E13427; font-weight: bold;">TIÊU ĐỀ MÀU ĐỎ, IN HOA</span></p>
+                              </td>
+                              <td>
+                                 <p><span style="color:#E13427; font-weight: bold;">TIÊU ĐỀ MÀU ĐỎ, IN HOA</span></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="nowrap" style="vertical-align: middle;"><strong>Vị trí</strong></td>
+                              <td>
+                                 <p>Hiển thị sau các tin VIP</p>
+                              </td>
+                              <td>
+                                 <p>Hiển thị sau tin VIP đặc biệt, Tin VIP 1, Tin VIP 2, Tin VIP 3 và trên các tin khác</p>
+                              </td>
+                              <td>
+                                 <p>Hiển thị sau tin VIP đặc biệt, Tin VIP 1, Tin VIP 2 và trên các tin khác</p>
+                              </td>
+                              <td>
+                                 <p>Hiển thị sau tin VIP đặc biệt, Tin VIP 1 và trên các tin khác</p>
+                              </td>
+                              <td>
+                                 <p>Hiển thị sau tin VIP đặc biệt và trên các tin khác</p>
+                              </td>
+                              <td>
+                                 <p>Hiển thị ở trên tất cả các tin khác. được hưởng nhiều ưu tiên và hiệu quả giao dịch cao nhất.</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="nowrap" style="vertical-align: middle;"><strong>Tự động duyệt</strong></td>
+                              <td>
+                                 <p><img style="margin: 0 auto;" src="image/data/icon-x-red.svg"></p>
+                              </td>
+                              <td>
+                                 <p><img style="margin: 0 auto;" src="image/data/icon-tick-green.svg"></p>
+                              </td>
+                              <td>
+                                 <p><img style="margin: 0 auto;" src="image/data/icon-tick-green.svg"></p>
+                              </td>
+                              <td>
+                                 <p><img style="margin: 0 auto;" src="image/data/icon-tick-green.svg"></p>
+                              </td>
+                              <td>
+                                 <p><img style="margin: 0 auto;" src="image/data/icon-tick-green.svg"></p>
+                              </td>
+                              <td>
+                                 <p><img style="margin: 0 auto;" src="image/data/icon-tick-green.svg"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="nowrap" style="vertical-align: middle;"><strong>Hiển thị số điện thoại<br> ở trang danh sách</strong></td>
+                              <td>
+                                 <p><img style="margin: 0 auto;" src="image/data/icon-x-red.svg"></p>
+                              </td>
+                              <td>
+                                 <p><img style="margin: 0 auto;" src="image/data/icon-x-red.svg"></p>
+                              </td>
+                              <td>
+                                 <p><img style="margin: 0 auto;" src="image/data/icon-x-red.svg"></p>
+                              </td>
+                              <td>
+                                 <p><img style="margin: 0 auto;" src="image/data/icon-x-red.svg"></p>
+                              </td>
+                              <td>
+                                 <p><img style="margin: 0 auto;" src="image/data/icon-tick-green.svg"></p>
+                              </td>
+                              <td>
+                                 <p><img style="margin: 0 auto;" src="image/data/icon-tick-green.svg"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="nowrap" style="vertical-align: middle;"><strong>Huy hiệu nổi bật</strong></td>
+                              <td>
+                                 <p><img style="margin: 0 auto;" src="image/data/icon-x-red.svg"></p>
+                              </td>
+                              <td>
+                                 <p><img style="margin: 0 auto;" src="image/data/icon-x-red.svg"></p>
+                              </td>
+                              <td>
+                                 <p><img style="margin: 0 auto;" src="image/data/icon-x-red.svg"></p>
+                              </td>
+                              <td>
+                                 <p><img style="margin: 0 auto;" src="image/data/icon-x-red.svg"></p>
+                              </td>
+                              <td>
+                                 <p><img style="margin: 0 auto;" src="image/data/icon-x-red.svg"></p>
+                              </td>
+                              <td>
+                                 <p><img style="height: 30px; margin: 0 auto;" src="image/data/hot.svg"></p>
+                              </td>
+                           </tr>
+                           <!-- <tr>
+                              <td style="background: #fff; border-bottom: 0;"></td>
+                              <td style="background: #fff; border-bottom: 0;"><button class="btn btn-primary btn-block js-jump-to" data-jumpto="demo-tinthuong">Xem demo</button></td>
+                              <td style="background: #fff; border-bottom: 0;"><button class="btn btn-primary btn-block js-jump-to" data-jumpto="demo-vip-4">Xem demo</button></td>
+                              <td style="background: #fff; border-bottom: 0;"><button class="btn btn-primary btn-block js-jump-to" data-jumpto="demo-vip-3">Xem demo</button></td>
+                              <td style="background: #fff; border-bottom: 0;"><button class="btn btn-primary btn-block js-jump-to" data-jumpto="demo-vip-2">Xem demo</button></td>
+                              <td style="background: #fff; border-bottom: 0;"><button class="btn btn-primary btn-block js-jump-to" data-jumpto="demo-vip-1">Xem demo</button></td>
+                              <td style="background: #fff; border-bottom: 0;"><button class="btn btn-primary btn-block js-jump-to" data-jumpto="demo-vip-dacbiet">Xem demo</button></td>
+                           </tr> -->
+                        </tbody>
+                     </table>
+                  </div>
+                  </div>
+               </section>
+
+
+
+               <div class="container">
+                  <section class="section" style="padding: 50px 0; box-shadow: none; background-color: transparent;">
+                     <div class="section-header">
+                        <div class="section-title big" style="text-align: center; margin-bottom: 50px;">Minh họa tin đăng</div>
+                     </div>
+                     <div class="section-content">
+                        <div class="vip-demo clearfix" id="demo-vip-dacbiet">
+                           <div class="vip-demo-left">
+                              <div class="section-title">Tin VIP Đặc biệt<span class="star star-5"></span></div>
+                              <p><span style="color:#E13427; font-weight: bold;">TIÊU ĐỀ IN HOA MÀU ĐỎ</span>, gắn biểu tượng 5 ngôi sao màu vàng và biểu tượng nổi bật ở tiêu đề tin đăng. Hiển thị ở trên tất cả các tin khác, được hưởng nhiều ưu tiên và hiệu quả giao dịch cao nhất.</p>
+                           </div>
+                           <img src="image/data/demo-vipdacbiet.jpg">
+                        </div>
+                        <div class="vip-demo clearfix" id="demo-vip-1">
+                           <div class="vip-demo-left">
+                              <div class="section-title">Tin VIP 1 <span class="star star-4"></span></div>
+                              <p><span style="color:#E13427; font-weight: bold;">TIÊU ĐỀ IN HOA MÀU ĐỎ</span>, gắn biểu tượng 4 ngôi sao màu vàng ở tiêu đề tin đăng. Hiển thị sau tin VIP đặc biệt và trên các tin khác.</p>
+                           </div>
+                           <img src="image/data/demo-vip1.jpg">
+                        </div>
+                        <div class="vip-demo clearfix" id="demo-vip-2">
+                           <div class="vip-demo-left">
+                              <div class="section-title">Tin VIP 2 <span class="star star-3"></span></div>
+                              <p><span style="color:#FF6600; font-weight: bold;">TIÊU ĐỀ IN HOA MÀU CAM</span>, gắn biểu tượng 3 ngôi sao màu vàng ở tiêu đề tin đăng. Hiển thị sau tin VIP đặc biệt, Tin VIP 1 và trên các tin khác.</p>
+                           </div>
+                           <img src="image/data/demo-vip2.jpg">
+                        </div>
+                        <div class="vip-demo clearfix" id="demo-vip-3">
+                           <div class="vip-demo-left">
+                              <div class="section-title">Tin VIP 3 <span class="star star-2"></span></div>
+                              <p><span style="color:#ea2e9d; font-weight: bold;">TIÊU ĐỀ IN HOA MÀU HỒNG</span>, gắn biểu tượng 2 ngôi sao màu vàng ở tiêu đề tin đăng. Hiển thị sau tin VIP đặc biệt, Tin VIP 1, Tin VIP 2 và trên các tin khác.</p>
+                           </div>
+                           <img src="image/data/demo-vip3.jpg">
+                        </div>
+                        <div class="vip-demo clearfix" id="demo-vip-4">
+                           <div class="vip-demo-left">
+                              <div class="section-title">Tin VIP 4 <span class="star star-1"></span></div>
+                              <p><span style="color:#007BFF; font-weight: bold;">TIÊU ĐỀ IN HOA MÀU XANH</span>, gắn biểu tượng 1 ngôi sao màu vàng ở tiêu đề tin đăng. Hiển thị sau tin VIP đặc biệt, Tin VIP 1, Tin VIP 2, Tin VIP 3 và trên các tin khác.</p>
+                           </div>
+                           <img src="image/data/demo-vip4.jpg">
+                        </div>
+                        <div class="vip-demo clearfix" id="demo-tinthuong">
+                           <div class="vip-demo-left">
+                              <div class="section-title">Tin thường</div>
+                              <p><span style="color:#055699; font-weight: bold;">Tiêu đề màu mặc định, viết thường</span>. Hiển thị sau các tin VIP.</p>
+                           </div>
+                           <img src="image/data/demo-tinthuong.jpg">
+                        </div>
+                     </div>
+                  </section>
+               </div>
+
+         </div>
+          
+          </div>
+       </div>
+     
+  </div>
+  </div>
+</div>
+{{ footer }} 

@@ -1,0 +1,21 @@
+<?php
+$_['text_history'] = 'Lịch sử';
+$_['text_shopping_cart'] = 'Giỏ hàng';
+$_['text_register'] = 'Đăng ký';
+$_['text_account'] = 'Tài khoản';
+$_['text_doad'] = 'Tải xuống';
+$_['text_login'] = 'Đăng nhập';
+$_['text_recent_products'] = 'Dự án xem gần đây';
+$_['text_my_account'] = 'Tài khoản của tôi';
+$_['text_new'] = 'Mới';
+$_['text_items_product'] = 'Có <span class = "text-color">% s item </ span> trong giỏ hàng của bạn';
+$_['text_items'] = '<span class = "items_cart">% s </ span> <span class = "items_cart1"> item (s) </ span> <span class = "items_cart2"> -% s </ span> ';
+$_['button_cart'] = 'Thêm vào giỏ hàng';
+$_['text_search'] = 'Tìm kiếm';
+$_['text_all_categories'] = 'Tất cả chuyên mục';
+$_['text_head_categories'] = 'Chuyên mục';
+$_['text_head_cart'] = 'Giỏ hàng';
+$_['text_head_account'] = 'Tài khoản';
+$_['text_head_search'] = 'Tìm kiếm';
+$_['text_head_recent_view'] = 'Chế độ xem gần đây';
+$_['text_head_gotop'] = 'Chuyển đến đầu trang';

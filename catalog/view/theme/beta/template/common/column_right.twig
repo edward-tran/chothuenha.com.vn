@@ -1,0 +1,8 @@
+{% if modules %}
+<aside id="column-right" class="right-col col-lg-4 col-md-4 col-sm-4 col-xs-12 right-container">
+<div class="right-block">
+  {% for module in modules %}
+  {{ module }}
+  {% endfor %}
+</div>
+{% endif %}

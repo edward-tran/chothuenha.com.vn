@@ -1,0 +1,81 @@
+<div class="ReactModalConfirmProduct ReactModal__Overlay ReactModal__Overlay--after-open modal fade modal_center" tabindex="-1" role="dialog" aria-hidden="true" id="ReactModalConfirmProduct">
+   <div class="modal-dialog">
+      <div class="ReactModal__Content ReactModal__Content--after-open modal-content">
+         <div class="sc-fkubWd hpdicD" style="height: auto; display: flex;">
+            <div class="sc-iuGMqu kKOGoe"><h5 class="sc-eCssSg jNJTkf">Xem lại thông tin</h5></div>
+            <div class="sc-eCjkpP hpyseS" ng-click="closeModel($event, 'ReactModalConfirmProduct')">
+               <svg font-size="24px" width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19 5L5 19" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M19 19L5 5" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+               </svg>
+            </div>
+         </div>
+         
+         <div class="sc-gfHAkt iJDgoh">
+            <div class="sc-cscDqW ckpuwl">
+               <div class="sc-bqyKva kNPgPf" style="margin-bottom: 8px; word-break: break-all;">{{ name }}</div>
+               <div class="sc-fuddRA gqDLJn">
+                  <span class="sc-kEjbxe bhKKEC">{{ price_service }}/tháng</span>
+               </div>
+
+               <div class="sc-xYrCb eNJDUu"></div>
+               <div class="sc-fuddRA fRRaOG">
+                  <div class="sc-iBPRYJ jfvWqv">Số ngày đăng tin</div>
+                  <div type="secondary" class="sc-iBPRYJ fTqJhL">{{date_post}}</div>
+               </div>
+
+               <div class="sc-xYrCb eNJDUu"></div>
+               <div class="sc-fuddRA fRRaOG">
+                  <div class="sc-iBPRYJ jfvWqv">Ngày đăng tin</div>
+                  <div type="secondary" class="sc-iBPRYJ fTqJhL">{{from_date}}</div>
+               </div>
+
+               <div class="sc-xYrCb eNJDUu"></div>
+               <div class="sc-fuddRA fRRaOG">
+                  <div class="sc-iBPRYJ jfvWqv">Ngày hết hạn</div>
+                  <div type="secondary" class="sc-iBPRYJ fTqJhL">{{to_date}}</div>
+               </div>
+
+               <div class="sc-xYrCb eNJDUu"></div>
+               <div class="sc-fuddRA fRRaOG">
+                  <div class="sc-iBPRYJ jfvWqv">Loại tin</div>
+                  <div type="secondary" class="sc-iBPRYJ fTqJhL">{{service_name}}</div>
+               </div>
+            </div>
+            <div class="sc-dRdNNs btYtPl" style="margin: 8px 0px;">
+               <div class="sc-loxJbH gNsuQT"></div>
+               <div class="sc-cUmtma qwzFA">
+                  <div class="sc-iBPRYJ jfvWqv">VAT (10%)</div>
+                  <div type="tertiary" class="sc-iBPRYJ oLMna">
+                     <span type="secondary" class="sc-idOhPF jOmGtR">
+                        {{price_vat}}
+                     </span>
+               </div>
+
+               </div>
+               <div class="sc-hqeptv jHPrOq"></div>
+               <div>
+                  <div class="sc-cUmtma cMBlQH">
+                     <div class="sc-iBPRYJ jfvWqv">Bạn trả</div>
+                     <div class="sc-cUmtma fNavVe">
+                        <div class="sc-dQppl cVCjcE">{{price_finnal}}</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="sc-irOQnY dGmIxJ">
+            <div></div>
+            <div class="sc-dNyEce kYIehs">
+               <button ng-click="closeModel($event, 'ReactModalConfirmProduct')" class="sc-kLgntA bwpqkK sc-fWHrfq cXqieI">
+                  <div class="sc-iktFzd gaGeRK"><span class="sc-iwyYcG gBmyGv">Thay đổi</span></div>
+               </button>
+               <button class="sc-kLgntA cIlsIO" ng-click="acceptAddProduct($event)">
+                  <div class="sc-iktFzd gaGeRK"><span class="sc-iwyYcG gBmyGv">Đăng tin</span></div>
+               </button>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

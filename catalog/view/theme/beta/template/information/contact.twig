@@ -1,0 +1,215 @@
+{{ header }}
+<div class="append_html_filter">
+<section class="page-title" style="background-image: url('image/data/baner_solution.jpg');">
+
+  <div class="container">
+      <div class="content-box">
+          <div class="content-wrapper">
+              <div class="title">
+                  <h1>{{ heading_title }}</h1>
+              </div>
+              <ul class="bread-crumb clearfix">
+                {% for breadcrumb in breadcrumbs %}
+                  <li class="breadcrumb-item"><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }} &nbsp;</a></li>
+                  {% endfor %}
+                </ul>
+
+          </div>                    
+      </div>
+  </div>
+</section>
+<div id="information-contact" class="container top30">
+  <div class="row">{{ column_left }}
+    {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-sm-12' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+<div id="content" class="{{ class }}">
+  <div class="border_contact border_contact_top">
+              <div class=""   >
+                
+              <h2 class="">{{ heading_title }}</h2>
+            
+                 
+              </div>
+              <div class=""   >
+                
+                    {{ comment }}
+                
+              </div>
+              <section class="contact_top">
+                 <div class="container">
+                   <div class="row">
+                      <div class="col-lg-4"  >
+                    
+                                     <div class="">
+                                        <a class="" href="javascript:;">
+                                        <i aria-hidden="true" class="organey-icon- organey-icon-location-1"></i> </a>
+                                     </div>
+                                     <div class="">
+                                        <h3 class="">
+                                           <a href="javascript:;">
+                                           {{ text_address }} </a>
+                                        </h3>
+                                        <p class="">
+                                          {{ address }}
+                                        </p>
+                                     </div>
+
+                      </div>
+                      <div class="col-lg-4"  >
+              
+                                     <div class="">
+                                        <a class="" href="javascript:;">
+                                        <i aria-hidden="true" class="organey-icon- organey-icon-phone-1"></i> </a>
+                                     </div>
+                                     <div class="">
+                                        <h3 class="">
+                                           <a href="javascript:;">
+                                           Contact </a>
+                                        </h3>
+                                        <p class="">
+                                           Mobile: <strong>0{{ telephone }}</strong><br>
+                                           Fax: <strong>{{ fax }}</strong><br>
+                                           E-mail: <a href="mailto:{{config_email}}">{{config_email}}</a> 
+                                        </p>
+                                     </div>
+
+                      </div>
+                      <div class="col-lg-4"  >
+               
+                                     <div class="">
+                                        <a class="" href="javascript:;">
+                                        <i aria-hidden="true" class="organey-icon- organey-icon-mail-1"></i> </a>
+                                     </div>
+                                     <div class="">
+                                        <h3 class="">
+                                           <a href="javascript:;">
+                                           Hour of operation </a>
+                                        </h3>
+                                        <p class="">
+                                           Open: <strong>{{ open }}</strong><br>
+                                        </p>
+                                     </div>
+
+                      </div>
+                   </div>
+                 </div>
+              </section>
+  </div>
+  <div class="border_contact border_contact_bottom">
+          
+               
+                  <h2 class="">{{ text_contact }}</h2>
+             
+            
+                  <h5 class="action-title text-success text-center"></h5>
+               
+                 {{ text_description }}
+              
+           
+           
+               
+                  <div  class="wpcf7" id="wpcf7-f4-p586-o1" lang="en-US" dir="ltr">
+                    
+                      <form action="{{ action }}" method="post" enctype="multipart/form-data" class="form-horizontal wpcf7-form init" id="form-contact">
+                        <div class="row-inline row">
+                           <div class="col-lg-6">
+                              <span class="wpcf7-form-control-wrap your-name">
+                                <input type="text" id="input-name" name="name" value="{{ name }}"  class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"   placeholder="{{ entry_name }} *">
+                              </span>
+                                <br>
+                              <span class="wpcf7-form-control-wrap your-email">
+                                <input type="email" id="input-email" name="email" value="{{ email }}"  class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email"   placeholder="{{ entry_email }} *">
+                              </span>
+                                <br>
+                              <span class="wpcf7-form-control-wrap your-mobile">
+                                <input type="text" id="input-telephone" name="telephone" value="{{ telephone }}"  class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"   placeholder="{{ entry_phone }} *"></span>
+                           </div>
+                           <div class="col-lg-6">
+                              <span class="wpcf7-form-control-wrap textarea"><textarea id="input-enquiry" name="enquiry"  rows="8" class="wpcf7-form-control wpcf7-textarea"  placeholder="{{ entry_enquiry }}">{{ enquiry }}</textarea></span>
+                           </div>
+                        </div>
+                        <div class="row-inline">
+                           <div class="text-left">
+                              <input type="submit" id="submit-contact" value="{{ button_submit }}" class="wpcf7-form-control wpcf7-submit btn btn-primary btn-comment button_gradient width100"><span class="ajax-loader"></span>
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+  </div>
+</div>
+{{ column_right }}
+</div>
+</div>
+
+<section>
+{{ content_top }}
+{{ content_bottom }}
+</section>
+
+<script type="text/javascript">
+  $('#submit-contact').on('click', function(e){
+    $(".action-title").html('');
+    showLoading();
+    $('.text-danger').remove();
+    $('.form-group').removeClass('has-error');
+    $('.wpcf7-form-control-wrap').removeClass('has-error');
+      e.preventDefault();
+      $.ajax({
+        url: 'index.php?routing=information/contact/send',
+        type: 'POST',
+        dataType: 'json',
+        data: $('#form-contact').serialize(),
+        beforeSend: function() {
+          $('#submit-contact').button('loading');
+        },
+        complete: function() {
+          $('#submit-contact').button('reset');
+        },
+        success: function(response) {
+          $('#submit-contact').button('reset');
+          if(response.success == false) {
+                for (i in response) {
+                  if(response[i]) {
+                    var element = $('#input-' + i.replace('error_', ''));
+                    // console.log(element);
+                    // $(element).after('<div class="text-danger">' + response[i] + '</div>');
+                    $(element).parent().addClass('has-error');
+                  }
+                }
+            } else {
+              $('#input-name').val('');
+              $('#input-email').val('');
+              $('#input-telephone').val('');
+              $('#input-enquiry').val('');
+                var title = response.message;
+                $(".action-title").html(title);
+            }
+
+            setTimeout(function() {
+                hideLoading();
+            }, 1000);
+
+            
+            return;
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+          alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+          setTimeout(function() {
+                hideLoading();
+            }, 1000);
+        }
+      });
+  });
+</script>
+
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.952701654705!2d106.70603191480045!3d10.738128892347563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f4117c93d65%3A0xe64fc72203e6467a!2zVGjhuq10IEThu4UgRMOgbmc!5e0!3m2!1sen!2s!4v1635348295767!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+
+{{ footer }}
+</div>

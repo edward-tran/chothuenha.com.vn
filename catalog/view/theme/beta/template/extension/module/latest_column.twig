@@ -1,0 +1,19 @@
+<div class="section box-shadow border-radius">
+   <div class="section-header"><span class="section-title">Tin mới đăng</span></div>
+   <div class="section-content">
+      <div class="home-listing aside clearfix">
+        {% for product in products %}
+         <div class="home-item clearfix vip10_package">
+            <a href="{{ product.href }}" title="{{ product.name }}">
+               <figure class="home-thumb"><img alt="{{ product.name }}" class="lazy_done" src="{{product.thumb}}" data-src="{{product.thumb}}" data-loaded="true"></figure>
+               <div class="home-meta">
+                  <h4 class="home-title">{{ product.name }}</h4>
+                  <span class="home-price">Thỏa thuận</span>
+               </div>
+            </a>
+         </div>
+         {% endfor %}
+        
+      </div>
+   </div>
+</div>

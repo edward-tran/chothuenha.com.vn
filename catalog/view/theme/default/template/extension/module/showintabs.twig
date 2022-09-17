@@ -1,0 +1,140 @@
+{% if tabs %}
+<div class="show-in-tab-mod">
+	<div class="show-in-tab">
+		<ul class="nav nav-tabs">
+			{% set active = 'class="active"' %}
+			{% for keyTab,tab in tabs %}
+		    	<li><a href="#tab-{{mod_id}}-{{keyTab}}" data-toggle="tab" aria-expanded="true">{{tab.title}}</a></li>
+			{% endfor %}
+		</ul>
+	</div>
+	<div class="tab-content">
+		{% set active = 'active' %}
+		{% for keyTab,tab in tabs %}
+			{% if carousel  == 0 %}
+			    {% set class_s = 'product-layout-tab col-lg-4 col-md-4 col-sm-6 col-xs-6' %}
+			    {% set row_s = '' %}
+			    {% set class_carousel = '' %}
+			    {% set class_carousel = 'tab-show-content' %}
+			{% else %}
+				{% set class_s = '' %}
+				{% set row_s = '' %}
+				{% set class_carousel = 'owl-carousel' %}
+			{% endif %}
+		    <div id="tab-{{mod_id}}-{{keyTab}}" role="tabpanel" class="tab-pane {{active}}">
+		    	<div class="{{ carousel == 0 ? 'row' : '' }}">
+			    	<div class="owl-car{{mod_id}} {{class_carousel}}" >
+			    		{% for product in tab.products %}
+						  <div  class="{{class_s}}">
+						    <div class="product-thumb transition">
+						    	<div class="item-inner">
+						      <div class="image"><a href="{{product.href}}"><img src="{{product.thumb}}" alt="{{product.name}}" title="{{product.name}}" class="img-responsive" /></a></div>
+						      <div class="caption">
+						        <h4><a href="{{product.href}}">{{product.name}}</a></h4>
+						        {% if product.rating %}
+						          <div class="rating">{% for i in 1..5 %}
+						            {% if product.rating < i %} <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> {% else %} <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> {% endif %}
+						            {% endfor %}</div>
+						          {% else %}
+						          	<div class="rating">{% for i in 1..5 %}
+						            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+						            {% endfor %}</div>
+						          {% endif %}
+
+						        {% if product.price %}
+						          <p class="price"> {% if not product.special %}
+						            {{ product.price }}
+						            {% else %} <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span> {% endif %}
+						            {% if product.tax %} <span class="price-tax">{{ text_tax }} {{ product.tax }}</span> {% endif %} </p>
+						          {% endif %}
+						      
+						      <div class="button-group">
+						          <button type="button" onclick="cart.add('{{ product.product_id }}');"><i class="fa fa-shopping-cart"></i></button>
+						          <button type="button" data-toggle="tooltip" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');"><i class="fa fa-heart"></i></button>
+						          <button type="button" data-toggle="tooltip" title="{{ button_compare }}" onclick="compare.add('{{ product.product_id }}');"><i class="fa fa-exchange"></i></button>
+						        </div>
+						        </div>
+						        </div>
+						    </div>
+						  </div>
+						{% endfor %}
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				<div class="tab-links col-lg-12">
+					{{tab.link}}
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+	<script type="text/javascript"><!--
+	//Fix the product layout responsiveness
+	$(document).ready(function() {
+		if (typeof showtabFLAG == 'undefined'){
+			//Set flag
+			showtabFLAG = true;
+			//Columns number
+			colsTab = $('#column-right, #column-left').length;
+			//default values for carousel
+			xsItems = 2;
+			smItems = 2;
+			mdItems = 3;
+			lgItems = 3;
+			//Check columns conditions
+			if (colsTab == 2) {
+				smItems = 2;
+			 	mdItems = 2;
+				lgItems = 2;
+				$('#content .product-layout-tab').attr('class', 'product-layout-tab product-grid col-lg-6 col-md-6 col-sm-12 col-xs-12');
+				$('#content .product-layout-tab:nth-child(3n+2)').after('<div class="clearfix visible-md visible-sm"></div>');
+			} else if (colsTab == 1) {
+				mdItems = 2;
+				lgItems = 1;
+				$('#content .product-layout-tab').attr('class', 'product-layout-tab product-grid col-lg-4 col-md-4 col-sm-6 col-xs-6');
+				$('#content .product-layout-tab:nth-child(3n+3)').after('<div class="clearfix visible-lg"></div>');
+			}else{
+				$('#content .product-layout-tab:nth-child(3n+3)').after('<div class="clearfix"></div>');
+			}
+		}
+	});
+	//--></script>
+	{% if carousel %}
+		<script type="text/javascript"><!--
+		$(document).ready(function() {
+			var pagi = parseInt('{{ pagi }}');
+			var nav = parseInt('{{ nav }}');
+			$('.owl-car{{mod_id}}').owlCarousel({
+				baseClass:'owl-car-tab',
+				responsive:{
+	              0:{
+	                  items:xsItems,
+	              },
+	              750:{
+	                  items:smItems,
+	              },
+	              970:{
+	                  items:mdItems,
+	              },
+	              1170:{
+	                  items:{{lg_items}},
+	              }
+	          },
+				lazyLoad:true,
+				autoplay: true,
+				autoplayTimeout: 4000,
+				loop: true,
+				singleItem: true,
+				nav: nav,
+				dots: pagi,
+				rewindNav : false,
+				margin: 10,
+				navText: [
+		        '<i class="fa fa-chevron-left fa-5x"></i>',
+		        '<i class="fa fa-chevron-right fa-5x"></i>'
+		        ]
+			});
+		});
+		//--></script> 
+	{% endif %}
+</div>
+{% endif %}

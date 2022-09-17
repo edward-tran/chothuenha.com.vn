@@ -1,0 +1,197 @@
+{% if image %}
+{% if featured_found is defined %}
+{% set bg_blog = image %}
+{% else %}
+{% set bg_blog = image %}
+{% endif %}
+{% endif %}
+<link href="catalog/view/javascript/jquery/owl-carousel/css/owl.carousel.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="catalog/view/javascript/jquery/owl-carousel/js/owl.carousel.min.js"></script>
+<div class="breadcrumb_background margin-bottom-40" style="background-image: url('{{bg_blog}}')">
+  <div class="title_full">
+    <div class="container text-center">
+      <p class="title_page">Cam Sành Canada</p>
+    </div>
+  </div>
+  <section class="bread-crumb">
+  <span class="crumb-border"></span>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <ul class="breadcrumb">
+        {% for breadcrumb in breadcrumbs %}
+            <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+        {% endfor %}
+    </ul>
+      </div>
+    </div>
+  </div>
+</section> 
+</div>
+<div class="container ">
+
+    
+    
+    <div class="row">
+    
+    {% if column_left and column_right %}
+        {% set class = 'col-sm-6 fluid-allsidebar' %}
+    {% elseif column_left or column_right %}
+        {% set class = 'col-md-9 col-sm-12 fluid-sidebar' %}
+    {% else %}
+        {% set class = 'col-sm-12' %}
+    {% endif %}
+    
+    <div id="content" class="{{ class }}">
+        {{ content_top }}
+        
+        <div class="rows form-group">
+            {% if article_info_found is defined %}
+                <div class="article-info">
+                    <div class="article-title">
+                        <h3>{{ article_info.article_title }}</h3>
+                    </div>
+                    <div class="article-sub-title">
+                        <span class="article-author"><a href="{{ author_url }}">{{ text_posted_by }}: {{ article_info.author_name }}</a></span>
+                        <span class="article-date">{{ text_created }}: {{ article_date_modified }}</span>
+                        {% if article_info.allow_comment %}
+                            <span class="article-comment">{{ total_comment }}</span>
+                        {% endif %}
+                    </div>
+
+                    
+
+                    
+                    
+                    <div class="article-description" style="clear: both;">
+                            {{ article_info.description }}
+                    </div>
+                    
+                    {% if article_additional_description %}
+                        <div class="article-description">
+                             {{ article_additional_description }}
+                        </div>
+                    {% endif %}
+                    
+                    {% if products %}
+                        <div class="panel--related">
+                           
+                                <h3 class="text-related">{{ text_related_product }}</h3>
+                           
+                           
+                                <div class="product-layout product-latest owl-carousel">
+                                    {% for product in products %}
+                                        {% if product.product_id %}
+                                       
+                                        <div>
+                                            <div class="product-thumb transition">
+                                                <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+                                                <div class="caption">
+                                                  <h4><a href="{{ product.href }}">{{ product.name }}</a></h4>
+                                                  {% if product.rating %}
+                                                  <div class="rating"> {% for j in 1..5 %}
+                                                    {% if product.rating < j %} <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span> {% else %} <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span> {% endif %}
+                                                    {% endfor %} </div>
+                                                  {% else %}
+                                                            <div class="rating">{% for i in 1..5 %}
+                                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                            {% endfor %}</div>
+                                                  {% endif %}
+                                                  {% if product.price %}
+                                                  <p class="price"> {% if not product.special %}
+                                                    {{ product.price }}
+                                                    {% else %} <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span> {% endif %}
+                                                    {% if product.tax %} <span class="price-tax">{{ text_tax }} {{ product.tax }}</span> {% endif %} </p>
+                                                  {% endif %} 
+                                                <div class="button-group">
+                                                  <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"><span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span> <i class="fa fa-shopping-cart"></i></button>
+                                                  <button type="button" data-toggle="tooltip" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');"><i class="fa fa-heart"></i></button>
+                                                  <button type="button" data-toggle="tooltip" title="{{ button_compare }}" onclick="compare.add('{{ product.product_id }}');"><i class="fa fa-exchange"></i></button>
+                                                </div>
+                                                </div>
+                                              </div>
+                                        </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                         
+                        </div>
+                    {% endif %}
+                   
+                    {% if blog_related_articles is defined and related_articles %}
+                    <div>
+                        <div class="block-recent">
+                            <h2 class="title-form-coment title_blog">
+                                <a href="tin-tuc" title="Tin tức khác:">{{ text_related_article }}</a>
+                            </h2>
+                            <ul class="padding-0">
+                                
+                                {% for related_article in related_articles %}
+                                
+                                <li>
+                                    <a href="{{ related_article.article_href }}" title="{{ related_article.article_title }}">{{ related_article.article_title }}</a>
+                                </li>           
+                                {% endfor %}
+                                
+                               
+                                
+                                
+                            </ul>
+                        </div>
+                    </div>
+                       
+                    {% endif %}
+
+                 
+
+                
+
+                    {% if article_info.allow_comment %}                                
+                        <div class="panel panel-default related-comment">
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <div id="comments" class="blog-comment-info">
+                                        <div id="comment-list"></div>
+                                        <div id="comment-section"></div>
+                                        <h2 id="review-title">
+                                            {{ text_write_comment }}
+                                            <i class="fa fa-times-circle fa-lg" id="reply-remove" style="display:none; cursor: pointer;" onclick="removeCommentId();"></i>
+                                        </h2>                           
+                                        <input type="hidden" name="blog_article_reply_id" value="0" id="blog-reply-id"/>
+                                        
+                                        <div class="form-group contacts-form row">
+                                            <div class="col-md-6">
+                                               <b>{{ entry_name }}</b><br />
+                                               <input type="text" name="name" value="" class="form-control" /><br />
+                                            </div>
+                                            <div class="col-md-12">
+                                               <b>{{ entry_review }}</b><br />
+                                                <textarea name="text" class="form-control" rows="6"></textarea>
+                                                <span style="font-size: 11px;">{{ text_note }}</span>
+                                                <br /><br />
+                                            </div>
+                                            <div class="col-md-12">
+                                                {{ captcha }}
+                                            </div>
+                                          
+                                        </div>
+                                        
+                                        <div class="text-left"><a id="button-comment" class="btn btn-primary btn-comment button_gradient"><span>{{ button_submit }}</span></a></div>           
+                                    </div>                                          
+                                </div>
+                            </div>                                    
+                        </div>                                    
+                    {% endif %}
+                    
+                </div>
+            {% else %}
+                <h3 class="text-center">{{ text_no_found }}</h3>
+            {% endif %}
+        </div>
+        
+        {{ content_bottom }}
+    </div>
+    {{ column_left }}
+    {{ column_right }}
+    </div>  
+</div>

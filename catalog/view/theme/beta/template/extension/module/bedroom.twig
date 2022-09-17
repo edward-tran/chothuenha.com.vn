@@ -1,0 +1,12 @@
+<div class="filter filter-bedroom">
+                           <div class="title-block-center text-upper">
+                              <strong> {{title}} </strong>
+                           </div>
+                           <ul>
+                           	{% for bedroom in bedrooms %}
+                              <li class="active">
+                                 <a href="{{ bedroom.href }}" title="{{ bedroom.name }}"> {{ bedroom.name }} </a>
+                              </li>
+                            {% endfor %}
+                           </ul>
+                        </div>

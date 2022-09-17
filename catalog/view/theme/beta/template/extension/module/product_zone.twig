@@ -1,0 +1,15 @@
+<div class="section box-shadow border-radius">
+  <div class="section-header">
+    <span class="section-title">{{ heading_title }}</span>
+</div>
+<div class="section-content">
+  <ul class="links-group clearfix">
+{% for zone in zones %}
+  <li>
+    <a href="{{zone.href}}" title="{{ zone.name }}">{{ zone.name }}</a>
+  </li>
+{% endfor %}
+
+</ul>
+</div>
+</div>

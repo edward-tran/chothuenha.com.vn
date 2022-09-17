@@ -1,0 +1,20 @@
+<ul class="user-member clearfix">
+  <li>
+    <div class="member-info" ng-mouseenter="$mdMenu.open()">
+        <a href="">
+            <img class="member-avatar" src="{{ avata }}">
+            <div class="member-name">{{ full_name }}</div>
+        </a>
+        <div class="member-dropdown-content"> 
+            <md-button rel="nofollow" href="{{ account }}">Quản lý tin đăng</md-button>
+            <md-button rel="nofollow" href="{{ payment }}">Nạp tiền vào tài khoản</md-button>
+            <md-button rel="nofollow" href="{{ transaction_payment }}">Lịch sử nạp tiền</md-button>
+            <md-button rel="nofollow" href="{{ transaction_pay }}">Lịch sử thanh toán</md-button>
+            <md-button rel="nofollow" href="{{ account }}">Thông tin cá nhân</md-button>
+            <md-button rel="nofollow" href="{{ password }}">Đổi mật khẩu</md-button>
+            <md-button rel="nofollow" href="{{ wishlist }}">Tin đã lưu</md-button>
+            <md-button rel="nofollow" href="{{ logout }}">{{ text_logout }}</md-button>
+        </div>
+    </div>
+  </li>
+</ul>

@@ -1,0 +1,76 @@
+ <div class="md-dialog-container" id="form_register" style="height: 0">
+    <md-dialog>
+        <form action="" method="post" novalidate="novalidate" class="ng-pristine ng-valid ng-dirty" ng-cloak name="form_register" id="register_serivice">
+            <md-toolbar>
+            <div class="md-toolbar-tools custom_width">
+              <h2 style="color: #fff">Đăng ký</h2>
+              <span flex></span>
+              <md-button class="md-icon-button" ng-click="cancelDialog()">
+                <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+              </md-button>
+            </div>
+          </md-toolbar>
+
+        <md-dialog-content>
+          <div class="md-dialog-content custom_width">
+              
+            <div class="modal-body">
+                <form class="form bravo-form-register ng-pristine ng-valid" id="sign_up" method="post">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="input_full_name" name="full_name" autocomplete="off" placeholder="Họ tên của bạn">
+                                <i class="input-icon field-icon fa"><img src="image/data/ico_fullname_signup.svg"></i>
+                                <span class="invalid-feedback error error-full_name"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="input_telephone" name="telephone" autocomplete="off" onkeyup="onChangeTelephone(this.value)" placeholder="Số điện thoại">
+                                <i class="input-icon field-icon fa"><img src="image/data/ico_fullname_signup.svg"></i>
+                                <span class="invalid-feedback error error-telephone"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                     <div class="form-group">
+                        <input type="text" class="form-control" id="input_username" name="username" autocomplete="off" value="" readonly placeholder="Tên đăng nhập">
+                        <i class="input-icon field-icon fa"><img src="image/data/ico_fullname_signup.svg"></i>
+                        <span class="invalid-feedback error error-username"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="input_email" name="email" autocomplete="off" placeholder="Email của bạn (Nếu có - Không bắt buộc )">
+                        <i class="input-icon field-icon fa"><img src="image/data/ico_email_login_form.svg"></i>
+                        <span class="invalid-feedback error error-email"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <select class="form-control" name="service_type" id="input_service_type">
+                            <option value="">--Chọn sản phẩm bạn quan tâm--</option>
+                            <option value="spa">Quản lý khách hàng cho chủ Spa</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="input_password" name="password" autocomplete="off" placeholder="Mật khẩu">
+                        <i class="input-icon field-icon fa"><img src="image/data/ico_pass_login_form.svg"></i>
+                        <span class="invalid-feedback error error-password"></span>
+                    </div>
+                   
+                    <div class="error message-error invalid-feedback"></div>
+                    <div class="form-group">
+                        <button class="md-raised md-accent mt-4 w-100 md-button md-ink-ripple" type="button" ng-click="registerService($event, 'spa')">Đăng ký</button>
+                    </div>
+         
+                    <div class="c-grey f14 text-center">
+                    Bạn đã có tài khoản?
+                    <a href="javascript:;" ng-click="register($event)">Đăng nhập</a>
+                    </div>
+                </form>
+            </div>
+          </div>
+        </md-dialog-content>
+        </form>
+    </md-dialog>
+</div>
+ <md-progress-circular md-mode="indeterminate" ng-show="isLoading"></md-progress-circular>
+ 

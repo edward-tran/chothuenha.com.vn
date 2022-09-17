@@ -1,0 +1,48 @@
+:root {
+    --white-color: #fff;
+    --black-color: #000000;
+    --text-color: #333333;
+    --light-text-color: #848484;
+    --bold-text-color: #212529;
+    --primary-color: #fff;
+    --border-color: #dbdbdb;
+    --header-height: 590px;
+    --header-banner-width: 100%;
+    --headernavbar-height: 64px;
+    --header-search: 200px;
+    --button-color: #f5720e;
+    --button-hover: #f94a2f;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+.primary-button {
+    position: relative;
+    display: inline-block;
+    background-color: var(--button-color);
+    border: 1px solid var(--button-color);
+    border-radius: 5px;
+    color: var(--white-color);
+    height: 40px;
+    width: 190px;
+    line-height: 38px;;
+    font-size: 1.7rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    /* vertical-align: middle; */
+}
+
+.primary-button:hover {
+    background-color: var(--button-hover);
+}

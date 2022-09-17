@@ -1,0 +1,248 @@
+<div class="site-overlay"></div>
+<div class="menu_{{type}}" id="menu_id_{{code}}">
+    {% if type != "vertical" %}
+        <!-- <div class="navbar-header">
+          <button type="button" data-toggle="collapse" data-target="#navbar-collapse-{{code}}" class="navbar-toggle">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div> -->
+    {% endif %}
+    {% if type == "vertical" %}
+    <div class="vertical-name">
+      <h4 class="title">
+        <span class="btn-open-mobile"><i class="fa fa-bars"></i></span>
+        <a href="javascript:;" data-toggle="collapse"  data-target="#navbar-collapse-{{code}}">
+
+          {% if info != "" %}
+          {% set title= info.name_lang[language_current] %}
+          {{title.title}}
+          {% endif %}
+        </a>
+      </h4>
+    {% endif %}
+
+    <div id="navbar-collapse-{{code}}">
+          <span class="hamburger-menu2"><span class="bar animate"></span></span>
+      <ul class="nav navbar-nav">
+        {% for menu1 in menus %}
+        {% if menu1.children %}
+        {% if menu1.style == '' or menu1.style == 'dropdown' %}
+        <li class="dropdown">
+          <a href="{{menu1.url}}">{{menu1.title}}</a> <i class="fa fa-angle-down" data-toggle="dropdown" aria-expanded="true"></i>
+          <ul role="menu"  class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+            {% for menu2 in menu1.children %}
+            {% if menu2.children %}
+            <li class="dropdown-submenu">
+              <a href="{{menu2.url}}">
+                {% if menu2.font %}
+                <i class="fa {{menu2.font}}"></i>
+                {% endif %}
+                {% if menu2.image %}
+                <img src="{{menu2.thumb}}" class="img-thumbnail" />
+                {% endif %}
+                {{menu2.title}}
+              </a>
+              <ul role="menu" class="dropdown-menu">
+              {% for menu3 in menu2.children %}
+              {% if menu3.children %}
+              <li class="dropdown-submenu">
+                <a href="{{menu3.url}}">
+                  {% if menu3.font %}
+                  <i class="fa {{menu3.font}}"></i>
+                  {% endif %}	
+                  {% if menu3.image %}
+                  <img src="{{menu3.thumb}}" class="img-thumbnail" />
+                  {% endif %}
+                  {{menu3.title}}
+                </a>
+                <ul class="dropdown-menu">
+                {% for menu4 in menu3.children %}
+                  {% if menu4.children  %}
+                  <li>
+                    <a href="{{menu4.url}}">
+                   {% if menu4.font  %}
+                   <i class="fa {{menu4.font}}"></i>
+                   {% endif %}
+                      {% if menu4.image  %}
+                      <img src="{{menu4.thumb}}" class="img-thumbnail" />
+                      {% endif %}
+                      {{menu4.title}}
+                    </a>
+                  </li>
+                  {% endif %}                 
+                {% endfor %}   
+                </ul>
+              </li>
+              {% else %}
+              <li>
+                <a href="{{menu3.url}}">
+                  {% if menu3.font  %}
+                  <i class="fa {{menu3.font}}"></i>
+                  {% endif %}   				
+                  {% if menu3.image  %}
+                  <img src="{{menu3.thumb}}" class="img-thumbnail" />
+                  {% endif %}   
+                   {{menu3.title}}
+                </a>
+              </li>
+              {% endif %} 
+              {% endfor %} 
+              </ul>
+            </li>
+            {% else %}
+            <li>
+              <a href="{{menu2.url}}">
+                {% if menu2.font  %}
+                <i class="fa {{menu2.font}}"></i>
+                {% endif %}		  
+                {% if menu2.image  %}
+                <img src="{{menu2.thumb}}" class="img-thumbnail" />
+                {% endif %}
+                {{menu2.title}}
+              </a>
+            </li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </li>
+        {% endif %}
+        {% if menu1.style =='lists'  %}
+        <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false">{{menu1.title}}</a> <i class="fa fa-angle-down" data-toggle="dropdown" aria-expanded="true"></i>
+          <ul class="dropdown-menu">
+            <li>
+              <div class="content">
+                <div class="row">
+                {% for menu2 in menu1.children %}
+                  <ul class="col-sm-2 list-unstyled">
+                    <li>
+                      <a href="{{menu2.url}}">
+                         {% if menu2.font  %}
+                         <i class="fa {{menu2.font}}"></i>
+                         {% endif %}
+                         {% if menu2.image  %}
+                          <img src="{{menu2.thumb}}" class="img-thumbnail" />
+                        {% endif %}
+                        <h4>{{menu2.title}}</h4>
+                      </a>
+                    </li>
+                    {% if menu2.children  %}
+                    {% for menu3 in menu2.children %}
+                    <li>
+                      <a href="{{menu3.url}}">
+                       {% if menu3.font  %}
+                       <i class="fa {{menu3.font}}"></i>
+                       {% endif %}                     
+                        {% if menu3.image  %}
+                        <img src="{{menu3.thumb}}" class="img-thumbnail" />
+                        {% endif %}
+                        {{menu3.title}}
+                      </a>
+                    </li>
+                    {% endfor %}
+                    {% endif %}
+                  </ul>
+               {% endfor %}
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+        {% endif %}
+        {% if menu1.style == 'tabbed' %}
+          <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false">{{menu1.title}} </a> <i class="fa fa-angle-down" data-toggle="dropdown" aria-expanded="true"></i>
+            <ul class="dropdown-menu">
+              <li>
+                <div class="content">
+                  <div class="row">
+                    <div id="tabbable" class="tabbable">
+                      <ul class="nav nav-pills nav-stacked col-md-2">
+                        {% set activeTab = 0 %}
+                        {% for activeTab in 0..2 %}
+                        {% for menu2 in menu1.children %}
+                        <li  class="{{ (activeTab == 0) ? 'active' : '' }}">
+                          <a href="#{{menu2.id}}" data-toggle="tab" data-parent="#tabbable" >{{menu2.title}}</a>
+                        </li>
+                        {% set activeTab = activeTab + 1 %}
+                        {% endfor %}
+                        {% endfor %}
+                      </ul>
+                      <div class="tab-content col-md-10">
+                        {% set activePane = 0 %}
+                        {% for activePane in 0..2 %}
+                        {% for menu2 in menu1.children %}
+                        <div class="tab-pane  {{ (activeTab == 0) ? 'active' : '' }}" id="{{menu2.id}}">
+                            {% if menu2.children %}
+                            {% for menu3 in menu2.children %}
+                            <ul class="col-sm-3 list-unstyled pull-left">
+                              <li>
+                                <a href="{{menu3.url}}">
+                                 {% if menu3.font %}
+                                 <i class="fa {{menu3.font}}"></i>
+                                 {% endif %}
+                                  {% if menu3.image %}
+                                  <img src="{{menu3.thumb}}" class="img-thumbnail" />
+                                  {% endif %}
+                                  <h4>{{menu3.title}}</h4>                           
+                                </a>
+                              </li>
+                              {% if menu3.children %}
+                              {% for menu4 in menu3.children %}
+                              <li>
+                                <a href="{{menu4.url}}" {{ (menu4.window) ? 'targets=\"_blank\"' : '' }}>
+                                 {% if menu4.font %}
+                                 <i class="fa {{menu4.font}}"></i>
+                                 {% endif %}  
+                                {% if menu4.image %}
+                                  <img src="{{menu4.thumb}}" class="img-thumbnail" />
+                                {% endif %}   
+                                {{menu4.title}}                       
+                                </a>
+                              </li>
+                              {% endfor %}
+                              {% endif %}
+                            </ul>
+                            {% endfor %}
+                            {% endif %}
+                        </div>
+                        {% set activePane = activePane+1 %}
+                        {% endfor %}
+                       {% endfor %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+        {% endif %}
+        {% else %}
+        <li>
+          <a href="{{menu1.url}}" {{ (menu1.window) ? 'target="menu1.window"' : '' }}>
+            {% if menu1.font %}
+              <i class="fa {{menu1.font}}"></i>
+            {% endif %}
+            {% if menu1.image %}
+              <img src="{{menu1.thumb}}" class="img-thumbnail" />
+            {% endif %}
+            {{menu1.title}}
+          </a>
+        </li>
+        {% endif %}
+
+        {% endfor %}
+      </ul>
+    </div>
+    {% if type == 'vertical' %}
+        </div>
+    {% endif %}
+</div>
+    <script>
+      $(function() {
+        window.prettyPrint && prettyPrint()
+        $(document).on('click', '.navbar .dropdown-menu', function(e) {
+          e.stopPropagation()
+        })
+      })
+    </script>
